@@ -369,13 +369,20 @@ footer {
             Submit a project enquiry to begin a conversation.
         </div>
 
-        <form class="contact-form" action="https://formspree.io/f/mdawyeej" method="POST">
-            <input type="hidden" name="_next" value="https://oddscape.co.uk/thanks.html">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mdawyeej" method="POST">
             <input type="text" name="name" placeholder="Name">
             <input type="email" name="email" placeholder="Your email" required>
             <textarea name="message" placeholder="Tell me a little about your project, site, or idea." required></textarea>
             <button type="submit">Send Enquiry</button>
         </form>
+
+        <div id="form-success" class="form-success" style="display:none;">
+            <div class="contact-gate-title">Message Received</div>
+            <div class="contact-gate-subtitle">
+                Thank you for your contact.<br><br>
+                If relevant, a response will follow.
+            </div>
+        </div>
 
         <div class="contact-note">
             Email address not publicly displayed. Relevant enquiries only.
