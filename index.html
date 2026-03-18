@@ -375,13 +375,21 @@ footer {
             Submit a project enquiry to begin a conversation.
         </div>
 
-        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mdawyeej" method="POST">
-            <input type="text" name="name" placeholder="Name">
-            <input type="email" name="email" placeholder="Your email" required>
-            <input type="text" name="_gotcha" style="display:none">
-            <textarea name="message" placeholder="Tell me a little about your project, site, or idea." required></textarea>
-            <button type="submit">Send Enquiry</button>
-        </form>
+<form class="contact-form" id="contact-form" action="https://formspree.io/f/mdawyeej" method="POST">
+
+    <input type="hidden" name="_subject" value="Oddscape Enquiry">
+
+    <input type="text" name="name" placeholder="Name">
+
+    <input type="email" name="_replyto" placeholder="Your email" required>
+
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+
+    <textarea name="message" placeholder="Tell me a little about your project, site, or idea." required></textarea>
+
+    <button type="submit">Send Enquiry</button>
+
+</form>
 
         <div id="form-success" class="form-success" style="display:none;">
             <div class="contact-gate-title">Message Received</div>
