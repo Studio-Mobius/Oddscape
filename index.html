@@ -32,19 +32,34 @@ h1 {
     font-weight: 700;
     letter-spacing: -1px;
     line-height: 1.05;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
 }
 
+/* HERO IMAGE */
 .hero-image {
     width: 100vw;
-    height: 38vh;
-    min-height: 220px;
-    max-height: 420px;
+    height: 50vh;
+    min-height: 260px;
+    max-height: 560px;
     overflow: hidden;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 8px;
+    background: #1b2530;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.12) 0%,
+        rgba(0,0,0,0.18) 45%,
+        rgba(0,0,0,0.34) 100%
+    );
+    pointer-events: none;
 }
 
 .hero-image img {
@@ -63,7 +78,7 @@ h1 {
     font-size: 18px;
     color: #c8cdd2;
     max-width: 900px;
-    margin: 16px auto 4px;
+    margin: 18px auto 6px;
     padding: 0 20px;
     line-height: 1.6;
 }
@@ -204,6 +219,7 @@ p {
     text-align: center;
     line-height: 1.5;
 }
+
 .form-success {
     max-width: 460px;
     margin: 0 auto;
@@ -230,23 +246,23 @@ footer {
     }
 
     .hero-image {
-        height: auto;
-        min-height: 0;
-        max-height: none;
+        height: 31vh;
+        min-height: 180px;
+        max-height: 300px;
         margin-top: 6px;
     }
 
     .hero-image img {
         width: 100%;
-        height: auto;
-        object-fit: contain;
+        height: 100%;
+        object-fit: cover;
         object-position: center;
     }
 
     .tagline {
         font-size: 15px;
         line-height: 1.45;
-        margin: 12px auto 0;
+        margin: 14px auto 0;
         padding: 0 16px;
     }
 
@@ -293,9 +309,9 @@ footer {
     }
 
     .hero-image {
-        height: 42vh;
+        height: 44vh;
         min-height: 220px;
-        max-height: 360px;
+        max-height: 380px;
     }
 
     .tagline {
@@ -329,7 +345,7 @@ footer {
 </header>
 
 <div class="hero-image">
-    <img src="./images/alde-map.png" alt="Alde Estuary Terrain Study">
+    <img src="./images/alde-map.png" alt="Alde Estuary Terrain Study" draggable="false">
 </div>
 
 <div class="tagline">
@@ -375,21 +391,14 @@ footer {
             Submit a project enquiry to begin a conversation.
         </div>
 
-<form class="contact-form" id="contact-form" action="https://formspree.io/f/mdawyeej" method="POST">
-
-    <input type="hidden" name="_subject" value="Oddscape Enquiry">
-
-    <input type="text" name="name" placeholder="Name">
-
-    <input type="email" name="_replyto" placeholder="Your email" required>
-
-    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
-
-    <textarea name="message" placeholder="Tell me a little about your project, site, or idea." required></textarea>
-
-    <button type="submit">Send Enquiry</button>
-
-</form>
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mdawyeej" method="POST">
+            <input type="hidden" name="_subject" value="Oddscape Enquiry">
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="_replyto" placeholder="Your email" required>
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+            <textarea name="message" placeholder="Tell me a little about your project, site, or idea." required></textarea>
+            <button type="submit">Send Enquiry</button>
+        </form>
 
         <div id="form-success" class="form-success" style="display:none;">
             <div class="contact-gate-title">Message Received</div>
@@ -410,6 +419,7 @@ footer {
     oddscape.co.uk<br><br>
     Linux • Stercore pinguini agitur.
 </footer>
+
 <script>
 document.getElementById("contact-form").addEventListener("submit", async function(e) {
     e.preventDefault();
@@ -421,7 +431,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
         method: form.method,
         body: data,
         headers: {
-            'Accept': 'application/json'
+            "Accept": "application/json"
         }
     });
 
@@ -434,5 +444,6 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     }
 });
 </script>
+
 </body>
-</html>
+</html
