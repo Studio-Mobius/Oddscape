@@ -6,9 +6,17 @@
 <title>Studio Oddscape</title>
 
 <style>
-body {
+
+/* 🔥 FULL RESET (fixes right gap) */
+html, body {
     margin: 0;
-    padding-top: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* BASE */
+body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background:
         radial-gradient(circle at top,
@@ -19,25 +27,25 @@ body {
     line-height: 1.6;
 }
 
+/* 🔥 HEADER OVER IMAGE */
 header {
     position: absolute;
-    top: 0;
+    top: 40%;
     left: 0;
     width: 100%;
-    padding: 120px 20px 90px;
+    transform: translateY(-40%);
     text-align: center;
     z-index: 10;
-    background: transparent;
+    padding: 0 20px;
 }
 
 h1 {
     font-size: 72px;
-    line-height: 1.05;
-    margin: 0 0 24px 0;
+    margin: 0 0 20px 0;
     color: #d4b46a;
     font-weight: 700;
     letter-spacing: -1px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    text-shadow: 0 6px 30px rgba(0,0,0,0.7);
 }
 
 .tagline {
@@ -46,18 +54,27 @@ h1 {
     max-width: 760px;
     margin: 0 auto;
     line-height: 1.7;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    text-shadow: 0 3px 18px rgba(0,0,0,0.6);
 }
 
+/* 🔥 FULL-WIDTH HERO (fixes gap properly) */
 .hero-image {
-    width: 100%;
+    width: 100vw;
     height: 600px;
-    overflow: hidden;
     position: relative;
-    margin: 0;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
+/* overlay for readability */
 .hero-image::before {
     content: "";
     position: absolute;
@@ -65,24 +82,22 @@ h1 {
     background: rgba(0,0,0,0.45);
 }
 
+/* fade into page */
 .hero-image::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    height: 120px;
+    height: 140px;
     background: linear-gradient(to bottom, rgba(0,0,0,0), #1b2530);
 }
 
+/* CONTENT */
 section {
     max-width: 900px;
     margin: auto;
     padding: 60px 20px;
-}
-
-section:first-of-type {
-    margin-top: 40px;
 }
 
 h2 {
@@ -99,6 +114,7 @@ p {
     max-width: 820px;
 }
 
+/* PROJECT GRID */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -117,11 +133,11 @@ p {
 .project strong {
     display: inline-block;
     font-size: 28px;
-    line-height: 1.2;
     margin-bottom: 10px;
     color: #ffffff;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 40px 20px 60px;
@@ -130,11 +146,8 @@ footer {
     margin-top: 40px;
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 700px) {
-    header {
-        padding: 90px 20px 70px;
-    }
 
     h1 {
         font-size: 42px;
@@ -146,7 +159,7 @@ footer {
     }
 
     .hero-image {
-        height: 360px;
+        height: 420px;
     }
 
     h2 {
@@ -161,6 +174,7 @@ footer {
         font-size: 22px;
     }
 }
+
 </style>
 </head>
 
@@ -174,7 +188,7 @@ footer {
 </header>
 
 <div class="hero-image">
-    <img src="Grey-OcreAlde.png" alt="Alde Estuary Terrain Study">
+    <img src="images/alde.jpg" alt="Alde Estuary Terrain Study">
 </div>
 
 <section>
