@@ -6,8 +6,6 @@
 <title>Studio Oddscape</title>
 
 <style>
-
-/* RESET */
 html, body {
     margin: 0;
     padding: 0;
@@ -15,19 +13,14 @@ html, body {
     overflow-x: hidden;
 }
 
-/* BASE */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background:
-        radial-gradient(circle at top,
-        #36424f 0%,
-        #263442 55%,
-        #1b2530 100%);
+        radial-gradient(circle at top, #36424f 0%, #263442 55%, #1b2530 100%);
     color: #e6e6e6;
     line-height: 1.6;
 }
 
-/* HEADER OVER IMAGE */
 header {
     position: absolute;
     top: 40%;
@@ -37,6 +30,7 @@ header {
     text-align: center;
     z-index: 10;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -57,7 +51,6 @@ h1 {
     text-shadow: 0 3px 18px rgba(0,0,0,0.6);
 }
 
-/* HERO */
 .hero-image {
     width: 100vw;
     height: 600px;
@@ -65,24 +58,25 @@ h1 {
     overflow: hidden;
     left: 50%;
     transform: translateX(-50%);
+    background: #101923;
 }
 
 .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
 }
 
-/* OVERLAY */
 .hero-image::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.35); /* slightly lighter so image shows */
+    background: rgba(0,0,0,0.35);
+    pointer-events: none;
 }
 
-/* FADE INTO PAGE */
 .hero-image::after {
     content: "";
     position: absolute;
@@ -91,9 +85,9 @@ h1 {
     bottom: 0;
     height: 140px;
     background: linear-gradient(to bottom, rgba(0,0,0,0), #1b2530);
+    pointer-events: none;
 }
 
-/* CONTENT */
 section {
     max-width: 900px;
     margin: auto;
@@ -114,7 +108,6 @@ p {
     max-width: 820px;
 }
 
-/* PROJECT GRID */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -137,7 +130,6 @@ p {
     color: #ffffff;
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 40px 20px 60px;
@@ -146,9 +138,7 @@ footer {
     margin-top: 40px;
 }
 
-/* MOBILE */
 @media (max-width: 700px) {
-
     h1 {
         font-size: 42px;
         letter-spacing: 0;
@@ -174,7 +164,6 @@ footer {
         font-size: 22px;
     }
 }
-
 </style>
 </head>
 
@@ -188,8 +177,7 @@ footer {
 </header>
 
 <div class="hero-image">
-    <!-- 🔥 FIXED IMAGE PATH -->
-    <img src="images/Grey-OcreAlde.png" alt="Alde Estuary Terrain Study">
+    <img src="./images/Grey-OcreAlde.png" alt="Alde Estuary Terrain Study">
 </div>
 
 <section>
@@ -203,7 +191,6 @@ footer {
 
 <section>
     <h2>Current Areas of Exploration</h2>
-
     <div class="projects">
         <div class="project">
             <strong>Thorpeness</strong><br>
