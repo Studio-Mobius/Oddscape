@@ -7,7 +7,7 @@
 
 <style>
 
-/* 🔥 FULL RESET (fixes right gap) */
+/* RESET */
 html, body {
     margin: 0;
     padding: 0;
@@ -27,7 +27,7 @@ body {
     line-height: 1.6;
 }
 
-/* 🔥 HEADER OVER IMAGE */
+/* HEADER OVER IMAGE */
 header {
     position: absolute;
     top: 40%;
@@ -57,7 +57,7 @@ h1 {
     text-shadow: 0 3px 18px rgba(0,0,0,0.6);
 }
 
-/* 🔥 FULL-WIDTH HERO (fixes gap properly) */
+/* HERO */
 .hero-image {
     width: 100vw;
     height: 600px;
@@ -74,15 +74,15 @@ h1 {
     display: block;
 }
 
-/* overlay for readability */
+/* OVERLAY */
 .hero-image::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.35); /* slightly lighter so image shows */
 }
 
-/* fade into page */
+/* FADE INTO PAGE */
 .hero-image::after {
     content: "";
     position: absolute;
@@ -188,6 +188,7 @@ footer {
 </header>
 
 <div class="hero-image">
+    <!-- 🔥 FIXED IMAGE PATH -->
     <img src="images/Grey-OcreAlde.png" alt="Alde Estuary Terrain Study">
 </div>
 
