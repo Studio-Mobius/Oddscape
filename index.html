@@ -103,6 +103,10 @@ p {
     color: #e6e6e6;
 }
 
+section p {
+    max-width: 780px;
+}
+
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -115,6 +119,12 @@ p {
     padding: 24px;
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+.project:hover {
+    transform: translateY(-3px);
+    border-color: rgba(224,194,122,0.4);
 }
 
 .project strong {
@@ -192,10 +202,10 @@ p {
 }
 
 .contact-form button {
-    padding: 14px 18px;
-    font-size: 16px;
+    padding: 16px 18px;
+    font-size: 18px;
     font-family: inherit;
-    font-weight: 600;
+    font-weight: 700;
     color: #1b2530;
     background: #e0c27a;
     border: none;
@@ -262,7 +272,7 @@ footer {
     .tagline {
         font-size: 15px;
         line-height: 1.45;
-        margin: 14px auto 4;
+        margin: 14px auto 4px;
         padding: 0 16px;
     }
 
@@ -349,20 +359,45 @@ footer {
 </div>
 
 <div class="tagline">
-    Experimental Landscapes • Terrain Intelligence • Environmental Change
+    Understand Your Land Before You Change It
 </div>
 
 <section>
     <h2>About</h2>
     <p>
-        Studio Oddscape explores landscapes shaped by entropy, erosion, and environmental change.
-        Studio Oddscape combines GIS analysis, LiDAR terrain modelling, and landscape interpretation
-        to reveal patterns within evolving environments.
+        Studio Oddscape helps people understand their land through terrain analysis, LiDAR data, and landscape design.
+        By revealing patterns in elevation, drainage, erosion, and form, Oddscape provides clear, practical insight
+        for gardens, sites, and environmental projects.
     </p>
 </section>
 
 <section>
-    <h2>Current Areas of Exploration</h2>
+    <h2>Site Insight Report</h2>
+    <p>
+        A clear visual understanding of your land before you design, build, or invest.
+        Ideal for gardens, small sites, drainage questions, and early-stage landscape decisions.
+    </p>
+
+    <div class="projects">
+        <div class="project">
+            <strong>From £75</strong><br>
+            LiDAR-based terrain map with a plain-English summary.
+        </div>
+
+        <div class="project">
+            <strong>What’s Included</strong><br>
+            Elevation, slope, drainage patterns, and site interpretation.
+        </div>
+
+        <div class="project">
+            <strong>Delivery</strong><br>
+            Digital PDF report delivered within 3–5 days.
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Example Study Areas</h2>
 
     <div class="projects">
         <div class="project">
@@ -386,14 +421,14 @@ footer {
     <h2>Contact</h2>
 
     <div class="contact-gate">
-        <div class="contact-gate-title">Open a Channel</div>
+        <div class="contact-gate-title">Start Your Project</div>
         <div class="contact-gate-subtitle">
-            Submit a project enquiry to begin a conversation.
+            Tell me about your site, project, or idea and I’ll recommend the best next step.
         </div>
 
         <form class="contact-form" id="contact-form" action="https://formspree.io/f/xpqykkye" method="POST">
             <input type="hidden" name="_subject" value="Oddscape Enquiry">
-            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="_replyto" placeholder="Your email" required>
             <textarea name="message" placeholder="Tell me a little about your project, site, or idea." required></textarea>
             <button type="submit">Send Enquiry</button>
@@ -402,7 +437,7 @@ footer {
         <div id="form-success" class="form-success" style="display:none;">
             <div class="contact-gate-title">Message Received</div>
             <div class="contact-gate-subtitle">
-                Thank you for your contact.<br><br>
+                Thank you for your enquiry.<br><br>
                 If relevant, a response will follow.
             </div>
         </div>
@@ -416,7 +451,7 @@ footer {
 <footer>
     Studio Oddscape<br>
     oddscape.co.uk<br><br>
-    Linux • Stercore pinguini agitur.
+    Terrain Insight • Landscape Design • UK
 </footer>
 
 <script>
@@ -426,23 +461,27 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     const form = e.target;
     const data = new FormData(form);
 
-    const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            "Accept": "application/json"
-        }
-    });
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                "Accept": "application/json"
+            }
+        });
 
-    if (response.ok) {
-        form.reset();
-        form.style.display = "none";
-        document.getElementById("form-success").style.display = "block";
-    } else {
-        alert("Something went wrong. Please try again.");
+        if (response.ok) {
+            form.reset();
+            form.style.display = "none";
+            document.getElementById("form-success").style.display = "block";
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    } catch (error) {
+        alert("Network error. Please try again.");
     }
 });
 </script>
 
 </body>
-</html
+</html>
