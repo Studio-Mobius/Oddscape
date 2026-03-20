@@ -262,6 +262,13 @@ footer {
         margin-top: 6px;
     }
 
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
     .tagline {
         font-size: 15px;
         line-height: 1.45;
@@ -335,7 +342,7 @@ footer {
 
     <div class="projects">
         <div class="project">
-            <strong>£75 — Starter Insight</strong><br>
+            <strong>£95 — Starter Insight</strong><br>
             A quick LiDAR-based terrain overview with a clear, plain-English summary.<br><br>
             Ideal for early understanding of gardens and small sites.
         </div>
@@ -343,7 +350,7 @@ footer {
         <div class="project">
             <strong>£150–£300 — Site Insight Report</strong><br>
             Detailed analysis including elevation, slope, drainage patterns,
-            and interpretation tailored to your site.<br><br>
+            and interpretation tailored to your site and scale.<br><br>
             Suitable for planning, design decisions, and problem-solving.
         </div>
 
@@ -419,4 +426,29 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     e.preventDefault();
 
     const form = e.target;
-    const data =
+    const data = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+            form.reset();
+            form.style.display = "none";
+            document.getElementById("form-success").style.display = "block";
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    } catch (error) {
+        alert("Network error. Please try again.");
+    }
+});
+</script>
+
+</body>
+</html>
