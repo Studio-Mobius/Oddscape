@@ -262,13 +262,6 @@ footer {
         margin-top: 6px;
     }
 
-    .hero-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-
     .tagline {
         font-size: 15px;
         line-height: 1.45;
@@ -334,26 +327,31 @@ footer {
 </section>
 
 <section>
-    <h2>Site Insight Report</h2>
+    <h2>Site Insight Options</h2>
     <p>
         A clear visual understanding of your land before you design, build, or invest.
-        Ideal for gardens, small sites, drainage questions, and early-stage landscape decisions.
+        Choose the level of insight that fits your project.
     </p>
 
     <div class="projects">
         <div class="project">
-            <strong>From £75</strong><br>
-            LiDAR-based terrain map with a plain-English summary.
+            <strong>£75 — Starter Insight</strong><br>
+            A quick LiDAR-based terrain overview with a clear, plain-English summary.<br><br>
+            Ideal for early understanding of gardens and small sites.
         </div>
 
         <div class="project">
-            <strong>What’s Included</strong><br>
-            Elevation, slope, drainage patterns, and site interpretation.
+            <strong>£150–£300 — Site Insight Report</strong><br>
+            Detailed analysis including elevation, slope, drainage patterns,
+            and interpretation tailored to your site.<br><br>
+            Suitable for planning, design decisions, and problem-solving.
         </div>
 
         <div class="project">
-            <strong>Delivery</strong><br>
-            Digital PDF report delivered within 3–5 days.
+            <strong>£500+ — Advanced Terrain Analysis</strong><br>
+            Full site breakdown with layered mapping, design insight, and deeper
+            interpretation of landscape processes.<br><br>
+            For complex sites, larger areas, or professional use.
         </div>
     </div>
 </section>
@@ -421,29 +419,4 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     e.preventDefault();
 
     const form = e.target;
-    const data = new FormData(form);
-
-    try {
-        const response = await fetch(form.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                "Accept": "application/json"
-            }
-        });
-
-        if (response.ok) {
-            form.reset();
-            form.style.display = "none";
-            document.getElementById("form-success").style.display = "block";
-        } else {
-            alert("Something went wrong. Please try again.");
-        }
-    } catch (error) {
-        alert("Network error. Please try again.");
-    }
-});
-</script>
-
-</body>
-</html>
+    const data =
