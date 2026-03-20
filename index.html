@@ -1,186 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oddscape</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oddscape</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  background: #0e0e0e;
-  color: #f3f0e8;
-}
+  <style>
+    :root{
+      --bg-top:#243545;
+      --bg-mid:#223243;
+      --bg-bottom:#1d2a37;
+      --panel:rgba(58, 71, 90, 0.62);
+      --panel-border:rgba(255,255,255,0.10);
+      --text:rgba(255,255,255,0.90);
+      --muted:rgba(255,255,255,0.72);
+      --gold:#e3c46b;
+      --button:#dcc377;
+      --button-text:#1b2430;
+      --rule:rgba(255,255,255,0.12);
+    }
 
-/* HERO */
-.hero {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
+    *{box-sizing:border-box;}
 
-.hero-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #d4af37;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-  width: 90%;
-}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 50% 10%, rgba(47,77,106,0.35), transparent 40%),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 52%, var(--bg-bottom) 100%);
+    }
 
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  margin-bottom: 10px;
-}
+    img{
+      max-width:100%;
+      display:block;
+    }
 
-.tagline {
-  font-size: 1.2rem;
-}
+    .hero{
+      position:relative;
+      min-height:58vh;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(18,28,38,0.10), rgba(18,28,38,0.40)),
+        linear-gradient(180deg, #314455 0%, #223243 100%);
+    }
 
-/* SECTIONS */
-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 50px 20px;
-}
+    .hero-image{
+      width:100%;
+      height:58vh;
+      object-fit:cover;
+      object-position:center center;
+    }
 
-h2 {
-  color: #d4af37;
-  margin-bottom: 20px;
-}
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+      padding:0 0 32px 0;
+      background:linear-gradient(180deg, rgba(8,13,18,0.05) 20%, rgba(8,13,18,0.45) 100%);
+    }
 
-p {
-  line-height: 1.7;
-}
+    .hero-inner{
+      width:min(92%, 1100px);
+      margin:0 auto;
+    }
 
-/* SERVICES */
-.service-grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
+    .hero-title{
+      margin:0 0 10px;
+      color:#fff;
+      font-size:clamp(2.6rem, 7vw, 5rem);
+      line-height:0.98;
+      font-weight:750;
+      letter-spacing:-0.03em;
+      text-shadow:0 3px 18px rgba(0,0,0,0.35);
+    }
 
-.service-card {
-  padding: 20px;
-  border-radius: 14px;
-  background: rgba(20,20,20,0.6);
-  border: 1px solid rgba(212,175,55,0.25);
-}
+    .hero-tagline{
+      max-width:860px;
+      margin:0;
+      font-size:clamp(1.2rem, 2.7vw, 2rem);
+      line-height:1.45;
+      color:rgba(255,255,255,0.92);
+      text-shadow:0 2px 10px rgba(0,0,0,0.30);
+    }
 
-.price {
-  color: #d4af37;
-  font-weight: bold;
-}
+    .section{
+      padding:72px 0;
+    }
 
-ul {
-  padding-left: 18px;
-}
-</style>
+    .section-inner{
+      width:min(92%, 1100px);
+      margin:0 auto;
+    }
 
+    .section-title{
+      margin:0 0 18px;
+      font-size:clamp(2.3rem, 6vw, 4.2rem);
+      line-height:1.04;
+      font-weight:750;
+      letter-spacing:-0.03em;
+      color:var(--gold);
+    }
+
+    .section-rule{
+      height:1px;
+      width:100%;
+      background:var(--rule);
+      margin:0 0 34px;
+    }
+
+    .section-intro{
+      max-width:940px;
+      margin:0 0 42px;
+      font-size:clamp(1.2rem, 2.8vw, 2rem);
+      line-height:1.58;
+      color:var(--text);
+    }
+
+    .project-grid,
+    .service-stack{
+      display:grid;
+      gap:28px;
+    }
+
+    .glass-card{
+      background:var(--panel);
+      border:1px solid var(--panel-border);
+      border-radius:26px;
+      box-shadow:0 10px 40px rgba(0,0,0,0.14);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .project-card,
+    .service-card,
+    .contact-card{
+      padding:34px 28px;
+    }
+
+    .project-card h3,
+    .service-card h3{
+      margin:0 0 18px;
+      font-size:clamp(1.8rem, 4.5vw, 3.2rem);
+      line-height:1.14;
+      font-weight:740;
+      letter-spacing:-0.03em;
+      color:#fff;
+    }
+
+    .project-card p,
+    .service-card p{
+      margin:0 0 18px;
+      font-size:clamp(1.14rem, 2.5vw, 1.85rem);
+      line-height:1.6;
+      color:rgba(255,255,255,0.88);
+    }
+
+    .project-card p:last-child,
+    .service-card p:last-child{
+      margin-bottom:0;
+    }
+
+    .contact-card h3{
+      margin:0 0 18px;
+      text-align:center;
+      font-size:clamp(2rem, 5vw, 3.4rem);
+      line-height:1.08;
+      font-weight:500;
+      letter-spacing:-0.03em;
+      color:var(--gold);
+    }
+
+    .contact-card > p{
+      max-width:860px;
+      margin:0 auto 28px;
+      text-align:center;
+      font-size:clamp(1.16rem, 2.6vw, 1.8rem);
+      line-height:1.6;
+      color:rgba(255,255,255,0.88);
+    }
+
+    .contact-form{
+      display:grid;
+      gap:22px;
+      margin-top:18px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(17,26,35,0.46);
+      color:#fff;
+      padding:22px 24px;
+      font-size:clamp(1.15rem, 2.5vw, 1.75rem);
+      line-height:1.45;
+      outline:none;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.02);
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder{
+      color:rgba(255,255,255,0.62);
+    }
+
+    .contact-form textarea{
+      min-height:220px;
+      resize:vertical;
+    }
+
+    .contact-form button{
+      appearance:none;
+      border:none;
+      border-radius:18px;
+      padding:24px 28px;
+      background:var(--button);
+      color:var(--button-text);
+      font-size:clamp(1.3rem, 2.8vw, 2rem);
+      font-weight:750;
+      cursor:pointer;
+      transition:transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .contact-form button:hover{
+      transform:translateY(-1px);
+      opacity:0.97;
+    }
+
+    .contact-note{
+      margin:28px auto 0;
+      max-width:760px;
+      text-align:center;
+      font-size:clamp(1rem, 2.1vw, 1.45rem);
+      line-height:1.5;
+      color:var(--muted);
+    }
+
+    .footer{
+      width:min(92%, 1100px);
+      margin:0 auto;
+      padding:28px 0 46px;
+      color:rgba(255,255,255,0.5);
+      font-size:0.95rem;
+    }
+
+    @media (max-width: 700px){
+      .hero{
+        min-height:46vh;
+      }
+
+      .hero-image{
+        height:46vh;
+      }
+
+      .hero-overlay{
+        padding-bottom:22px;
+      }
+
+      .project-card,
+      .service-card,
+      .contact-card{
+        padding:26px 20px;
+      }
+
+      .section{
+        padding:56px 0;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <!-- ⚠️ CHANGE THIS IMAGE PATH TO YOUR ACTUAL FILE -->
-  <img src="hero.jpg" class="hero-image">
-
-  <div class="hero-text">
-    <h1>Oddscape</h1>
-    <p class="tagline">
-      Avoid costly mistakes by understanding how your land actually behaves.
-    </p>
-  </div>
-</section>
-
-<!-- INTRO -->
-<section>
-  <h2>Understand your land before you change it</h2>
-
-  <p>
-    Every piece of land has a story — how water moves, where it gathers,
-    how it responds over time. Oddscape helps you see that clearly before
-    making decisions that could cost time and money to undo.
-  </p>
-
-  <p>
-    Using terrain data, mapping, and visual interpretation, I provide
-    clear, practical insight into how your site behaves — not just how it looks.
-  </p>
-</section>
-
-<!-- SERVICES -->
-<section>
-  <h2>Services</h2>
-
-  <div class="service-grid">
-
-    <div class="service-card">
-      <h3>Terrain Snapshot</h3>
-      <p class="price">£120</p>
-      <p>
-        A clear, accessible overview of your land to highlight key features,
-        water flow, and potential issues before you begin.
-      </p>
-      <ul>
-        <li>Terrain overview</li>
-        <li>Surface water direction</li>
-        <li>Key observations</li>
-        <li>Simple visual output</li>
-      </ul>
+  <!-- HERO -->
+  <header class="hero">
+    <!-- Replace only this URL if your real image lives somewhere else -->
+    <img
+      class="hero-image"
+      src="https://oddscape.co.uk/hero.jpg"
+      alt="Oddscape landscape hero image"
+      onerror="this.style.display='none'; this.parentElement.style.minHeight='44vh';"
+    />
+    <div class="hero-overlay">
+      <div class="hero-inner">
+        <h1 class="hero-title">Oddscape</h1>
+        <p class="hero-tagline">
+          Avoid costly mistakes by understanding how your land actually behaves.
+        </p>
+      </div>
     </div>
+  </header>
 
-    <div class="service-card">
-      <h3>Site Insight Report</h3>
-      <p class="price">From £300</p>
-      <p>
-        A more detailed look at how your land behaves, helping guide
-        design, drainage, and planning decisions with confidence.
-      </p>
-      <ul>
-        <li>Terrain and slope analysis</li>
-        <li>Water behaviour insight</li>
-        <li>Potential problem areas</li>
-        <li>Practical recommendations</li>
-      </ul>
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div class="project-grid">
+        <div class="glass-card project-card">
+          <h3>Thorpeness</h3>
+          <p>Coastal terrain study and shoreline evolution.</p>
+        </div>
+
+        <div class="glass-card project-card">
+          <h3>Shingle Street</h3>
+          <p>Landscape dynamics and coastal instability.</p>
+        </div>
+
+        <div class="glass-card project-card">
+          <h3>Alde Estuary</h3>
+          <p>Terrain intelligence and estuarine form.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="service-card">
-      <h3>Full Site Review</h3>
-      <p class="price">From £750</p>
-      <p>
-        A deeper exploration of your site, combining terrain understanding
-        with strategic guidance for more complex or high-value projects.
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Site Insight Report</h2>
+      <div class="section-rule"></div>
+
+      <p class="section-intro">
+        A clear, visual understanding of how your land behaves before you design,
+        build, or invest. Ideal for gardens, small sites, drainage questions,
+        and early-stage landscape decisions.
       </p>
-      <ul>
-        <li>Detailed terrain interpretation</li>
-        <li>Drainage and behaviour overview</li>
-        <li>Strategic guidance</li>
-        <li>Visual outputs</li>
-      </ul>
+
+      <div class="service-stack">
+        <div class="glass-card service-card">
+          <h3>Initial Terrain Insight — £75</h3>
+          <p>
+            A quick initial reading of your site using LiDAR data — ideal for early
+            questions before deeper analysis.
+          </p>
+          <p>
+            Elevation and slope mapping, basic drainage patterns, and a plain-English summary.
+          </p>
+        </div>
+
+        <div class="glass-card service-card">
+          <h3>Site Terrain Analysis — from £200</h3>
+          <p>
+            A more detailed assessment for projects where layout, drainage, or landform
+            need clearer interpretation before work begins.
+          </p>
+          <p>
+            Includes terrain behaviour, water flow observations, potential problem areas,
+            and practical guidance for next steps.
+          </p>
+        </div>
+
+        <div class="glass-card service-card">
+          <h3>Full Site Review — from £500</h3>
+          <p>
+            A deeper strategic overview for more involved sites, combining terrain reading,
+            mapped interpretation, and design-led thinking.
+          </p>
+          <p>
+            Suitable for complex gardens, larger plots, or projects where understanding
+            the land properly could prevent expensive mistakes later.
+          </p>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Contact</h2>
+      <div class="section-rule"></div>
 
-<!-- CLOSING -->
-<section>
-  <h2>Work with the land, not against it</h2>
-  <p>
-    Understanding your land early helps avoid costly mistakes later.
-    Oddscape gives you a clearer picture so you can move forward with confidence.
-  </p>
-</section>
+      <div class="glass-card contact-card">
+        <h3>Start Your Project</h3>
+        <p>
+          Tell me about your site, project, or idea and I’ll recommend the best next step.
+        </p>
+
+        <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <textarea
+            name="message"
+            rows="6"
+            placeholder="Tell me a little about your project, site, or idea."
+            required
+          ></textarea>
+
+          <button type="submit">Send Enquiry</button>
+        </form>
+
+        <p class="contact-note">
+          Email address not publicly displayed. Relevant enquiries only.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">oddscape.co.uk</div>
 
 </body>
 </html>
