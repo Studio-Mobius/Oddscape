@@ -1,158 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oddscape — Terrain Intelligence</title>
+<div class="hero-text">
+  <h1>Land Risk &amp; Terrain Intelligence</h1>
+  <p class="tagline">
+    Understand how your land behaves before you invest.
+  </p>
+</div>
 
-<style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #0e0e0e;
-  color: #f3f0e8;
-}
-
-/* HERO */
-.hero {
-  min-height: 75vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-  background: radial-gradient(circle at center, #1a1a1a 0%, #0e0e0e 100%);
-}
-
-.hero-overlay {
-  max-width: 900px;
-}
-
-.hero h1 {
-  font-size: clamp(2.4rem, 5vw, 4.6rem);
-  margin-bottom: 14px;
-  color: #d4af37;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-
-.tagline {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  margin-bottom: 26px;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 14px 26px;
-  border-radius: 999px;
-  background: #d4af37;
-  color: #111;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  background: #e0bc4a;
-}
-
-/* SECTIONS */
-section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 70px 20px;
-}
-
-h2 {
-  color: #d4af37;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  margin-bottom: 20px;
-}
-
-p {
-  line-height: 1.7;
-}
-
-/* GRID */
-.service-grid,
-.audience-grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  margin-top: 30px;
-}
-
-/* CARDS */
-.service-card,
-.audience-card {
-  padding: 24px;
-  border-radius: 18px;
-  background: rgba(20,20,20,0.6);
-  border: 1px solid rgba(212,175,55,0.25);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(6px);
-}
-
-.service-card h3 {
-  margin-bottom: 8px;
-}
-
-.price {
-  font-weight: bold;
-  margin-bottom: 12px;
-  color: #d4af37;
-}
-
-ul {
-  padding-left: 18px;
-}
-
-/* FOOTER STYLE */
-.footer {
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 0.9rem;
-  opacity: 0.6;
-}
-</style>
-
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-overlay">
-    <h1>Land Risk & Terrain Intelligence</h1>
-    <p class="tagline">Understand how your land behaves before you invest.</p>
-    <a href="#services" class="cta-button">View Services</a>
-  </div>
-</section>
-
-<!-- INTRO -->
-<section>
+<section class="intro">
   <h2>See how water moves across your land before you build</h2>
+
   <p>
-    Oddscape provides terrain-based insight to help you understand flood risk,
-    drainage behaviour, slope, and land response before committing to costly work.
+    Oddscape helps homeowners, landowners, and small developers
+    understand flood risk, drainage behaviour, slope, and terrain response
+    before committing to costly work.
   </p>
+
   <p>
-    Using LiDAR data, terrain modelling, and visual analysis, each report reveals
-    how your land actually behaves — not just how it appears on a plan.
+    Using LiDAR data, terrain modelling, and mapped visual analysis,
+    each report reveals how your land actually behaves — not just how it appears on a plan.
   </p>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
+<section id="services" class="services">
   <h2>Services</h2>
 
   <div class="service-grid">
 
     <div class="service-card">
       <h3>Terrain Snapshot</h3>
-      <div class="price">£120</div>
+      <p class="price">£120</p>
       <p>
-        A concise terrain report showing slope, flow direction, and key risk areas.
+        A concise terrain report showing slope, surface flow direction,
+        and key areas of concern.
       </p>
       <ul>
         <li>Terrain overview</li>
@@ -163,27 +41,29 @@ ul {
     </div>
 
     <div class="service-card">
-      <h3>Land Risk & Drainage Analysis</h3>
-      <div class="price">From £300</div>
+      <h3>Land Risk &amp; Drainage Analysis</h3>
+      <p class="price">From £300</p>
       <p>
-        A deeper look at water behaviour and drainage across your site with clear guidance.
+        A deeper analysis of water behaviour across your site,
+        with practical drainage insight and recommendations.
       </p>
       <ul>
-        <li>Flood & pooling analysis</li>
-        <li>Drainage insights</li>
-        <li>Terrain behaviour</li>
-        <li>Practical recommendations</li>
+        <li>Flood and pooling analysis</li>
+        <li>Drainage observations</li>
+        <li>Terrain behaviour insight</li>
+        <li>Actionable recommendations</li>
       </ul>
     </div>
 
     <div class="service-card">
       <h3>Full Site Intelligence Report</h3>
-      <div class="price">From £750</div>
+      <p class="price">From £750</p>
       <p>
-        A comprehensive terrain and site behaviour report for more complex projects.
+        A comprehensive terrain and site behaviour report
+        for more complex or high-value projects.
       </p>
       <ul>
-        <li>Detailed mapping</li>
+        <li>Detailed mapped analysis</li>
         <li>Hydrology insight</li>
         <li>Strategic site guidance</li>
         <li>Visual outputs</li>
@@ -193,8 +73,7 @@ ul {
   </div>
 </section>
 
-<!-- AUDIENCE -->
-<section>
+<section class="audience">
   <h2>Who this is for</h2>
 
   <div class="audience-grid">
@@ -203,23 +82,12 @@ ul {
     <div class="audience-card">Small developers</div>
     <div class="audience-card">Projects needing clearer terrain insight</div>
   </div>
-
 </section>
 
-<!-- CLOSING -->
-<section>
+<section class="closing-message">
   <h2>Make informed decisions before spending thousands</h2>
   <p>
-    Understanding terrain early can prevent costly mistakes, improve drainage,
-    and support better long-term outcomes. Oddscape provides clear, visual insight
-    to help you move forward with confidence.
+    Understanding terrain early can prevent costly mistakes,
+    improve drainage, and support better long-term outcomes.
   </p>
 </section>
-
-<!-- FOOTER -->
-<div class="footer">
-  © Oddscape — Terrain Intelligence
-</div>
-
-</body>
-</html>
