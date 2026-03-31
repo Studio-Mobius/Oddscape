@@ -62,6 +62,8 @@ h1 {
     display: block;
     pointer-events: none;
     user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
 }
 
 /* TAGLINE BELOW IMAGE */
@@ -152,6 +154,7 @@ section p {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.10);
     border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
 }
 
 .contact-gate-title {
@@ -159,6 +162,8 @@ section p {
     margin: 0 0 10px 0;
     color: #e0c27a;
     text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .contact-gate-subtitle {
@@ -166,6 +171,7 @@ section p {
     color: #c8cdd2;
     text-align: center;
     margin: 0 0 22px 0;
+    line-height: 1.5;
 }
 
 .contact-form {
@@ -177,43 +183,97 @@ section p {
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 13px;
+    box-sizing: border-box;
+    padding: 13px 14px;
     font-size: 16px;
+    font-family: inherit;
     color: #f2f2f2;
     background: rgba(0,0,0,0.22);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: rgba(224,194,122,0.7);
+    background: rgba(0,0,0,0.30);
 }
 
 .contact-form textarea {
     min-height: 140px;
+    resize: vertical;
 }
 
 .contact-form button {
-    padding: 16px;
+    padding: 16px 18px;
     font-size: 18px;
+    font-family: inherit;
     font-weight: 700;
     color: #1b2530;
     background: #e0c27a;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.contact-form button:hover {
+    background: #ebcf8b;
+}
+
+.contact-form button:active {
+    transform: translateY(1px);
+}
+
+.contact-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #aeb7bf;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.form-success {
+    max-width: 460px;
+    margin: 0 auto;
+    padding-top: 6px;
+    text-align: center;
 }
 
 footer {
     text-align: center;
     padding: 40px 20px 60px;
     color: #c8cdd2;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 40px;
 }
 
 /* MOBILE */
 @media (max-width: 700px) {
+    header {
+        padding: 24px 16px 10px;
+    }
+
     h1 {
         font-size: 31px;
     }
 
     .hero-image {
         height: 32vh;
+        min-height: 180px;
+        max-height: 300px;
+        margin-top: 6px;
+    }
+
+    .hero-image img {
+        object-position: center;
+    }
+
+    .tagline {
+        margin: 14px auto 4px;
+        padding: 0 16px;
     }
 
     .tagline-line-1 {
@@ -222,10 +282,38 @@ footer {
 
     .tagline-line-2 {
         font-size: 16px;
+        line-height: 1.35;
     }
 
-    section {
+    section,
+    .contact-section {
         padding: 34px 16px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 22px;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 1.55;
+    }
+
+    .project strong {
+        font-size: 22px;
+    }
+
+    .contact-gate {
+        padding: 20px;
+    }
+
+    .contact-gate-title {
+        font-size: 24px;
+    }
+
+    .contact-gate-subtitle {
+        font-size: 15px;
     }
 }
 </style>
@@ -238,7 +326,7 @@ footer {
 </header>
 
 <div class="hero-image">
-    <img src="./images/alde-map.png" alt="Alde Estuary Terrain Study">
+    <img src="./images/alde-map.png" alt="Alde Estuary Terrain Study" draggable="false">
 </div>
 
 <div class="tagline">
@@ -252,7 +340,9 @@ footer {
     <h2>About</h2>
     <p>
         Studio Oddscape provides terrain analysis, LiDAR interpretation, and landscape intelligence for sites where landform, water behaviour, and long-term change matter.
+        Working across estates, coastal zones, and complex landholdings, Oddscape reveals patterns in elevation, drainage, erosion, and terrain structure that are not immediately visible on the ground.
     </p>
+
     <p>
         The result is a clearer understanding of how land behaves — supporting <span class="accent">informed decisions, reduced risk, and better use of terrain</span>.
     </p>
@@ -260,42 +350,116 @@ footer {
 
 <section>
     <h2>Site Insight Options</h2>
+    <p>
+        A structured understanding of land before design, construction, or investment begins.
+        Each level of insight is aligned to the scale, complexity, and strategic importance of the site.
+    </p>
+
     <div class="projects">
         <div class="project">
-            <strong>£95 — Starter Insight</strong>
+            <strong>£95 — Starter Insight</strong><br>
+            A concise LiDAR-based terrain overview with a clear plain-English reading of the land.<br><br>
+            Suitable for initial site understanding and early-stage feasibility.
         </div>
+
         <div class="project">
-            <strong>£150–£300 — Site Insight Report</strong>
+            <strong>£150–£300 — Site Insight Report</strong><br>
+            Detailed terrain analysis including elevation modelling, slope behaviour, and drainage interpretation,
+            with site-specific commentary.<br><br>
+            Supports planning thinking, design direction, and early decision-making.
         </div>
+
         <div class="project">
-            <strong>£500+ — Advanced Terrain Analysis</strong>
+            <strong>£500+ — Advanced Terrain Analysis</strong><br>
+            Comprehensive site intelligence with layered mapping, terrain interpretation, and analysis of underlying landscape processes.<br><br>
+            Designed for larger land areas, estates, and more complex environmental conditions.
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Example Study Areas</h2>
+
+    <div class="projects">
+        <div class="project">
+            <strong>Thorpeness</strong><br>
+            Coastal terrain study and shoreline evolution.
+        </div>
+
+        <div class="project">
+            <strong>Shingle Street</strong><br>
+            Landscape dynamics and coastal instability.
+        </div>
+
+        <div class="project">
+            <strong>Alde Estuary</strong><br>
+            Terrain interpretation and estuarine form.
         </div>
     </div>
 </section>
 
 <section class="contact-section">
     <h2>Contact</h2>
+
     <div class="contact-gate">
+        <div class="contact-gate-title">Start Your Project</div>
+        <div class="contact-gate-subtitle">
+            Tell Oddscape about your site, project, or idea and the most suitable next step can be identified.
+        </div>
 
         <form class="contact-form" id="contact-form" action="https://formspree.io/f/xpqykkye" method="POST">
+            <input type="hidden" name="_subject" value="Oddscape Enquiry">
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="_replyto" placeholder="Your email" required>
-            <textarea name="message" placeholder="Tell me about your site." required></textarea>
+            <textarea name="message" placeholder="Tell me a little about your project, site, or idea." required></textarea>
             <button type="submit">Send Enquiry</button>
         </form>
 
+        <div id="form-success" class="form-success" style="display:none;">
+            <div class="contact-gate-title">Message Received</div>
+            <div class="contact-gate-subtitle">
+                Thank you for your enquiry.<br><br>
+                If relevant, a response will follow.
+            </div>
+        </div>
+
+        <div class="contact-note">
+            Email address not publicly displayed. Relevant enquiries only.
+        </div>
     </div>
 </section>
+
+<footer>
+    Studio Oddscape<br>
+    oddscape.co.uk<br><br>
+    Terrain Insight • Landscape Design • UK
+</footer>
 
 <script>
 document.getElementById("contact-form").addEventListener("submit", async function(e) {
     e.preventDefault();
+
     const form = e.target;
     const data = new FormData(form);
-    const response = await fetch(form.action, { method: form.method, body: data });
-    if (response.ok) {
-        form.reset();
-        alert("Message sent");
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+            form.reset();
+            form.style.display = "none";
+            document.getElementById("form-success").style.display = "block";
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    } catch (error) {
+        alert("Network error. Please try again.");
     }
 });
 </script>
