@@ -19,6 +19,42 @@
         padding: 40px 20px;
     }
 
+    /* HERO IMAGE */
+    .hero {
+        position: relative;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .hero img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(100%) contrast(110%);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+        padding: 20px;
+    }
+
     h1 {
         font-size: 3rem;
         color: #e0c27a;
@@ -35,15 +71,8 @@
         color: #bfc7cf;
     }
 
-    .hero {
-        text-align: center;
-        padding: 100px 20px 60px;
-    }
-
     .hero p {
         font-size: 1.2rem;
-        max-width: 700px;
-        margin: auto;
     }
 
     .subtle {
@@ -83,10 +112,12 @@
 
 <body>
 
-<div class="container">
+<!-- HERO -->
+<section class="hero">
+    <!-- 🔁 Replace with your image -->
+    <img src="Grey-OcreAlde.png" alt="Terrain">
 
-    <!-- HERO -->
-    <section class="hero">
+    <div class="hero-content">
         <h1>Oddscape</h1>
 
         <p>
@@ -97,12 +128,15 @@
         <p class="subtle">
             From raw elevation to refined form — analysis, modelling, and spatial storytelling.
         </p>
-    </section>
+    </div>
+</section>
 
 
-    <!-- WHAT YOU DO -->
+<div class="container">
+
+    <!-- WHAT ODDSCAPE DOES -->
     <section>
-        <h2>What I Do</h2>
+        <h2>What Oddscape Does</h2>
 
         <div class="grid">
             <div class="card">
@@ -115,14 +149,14 @@
             <div class="card">
                 <h3>Coastal Analysis</h3>
                 <p>
-                    Reading landscape change through elevation, erosion patterns, and time-based spatial data.
+                    Coastal landscapes interpreted through elevation, erosion patterns, and time-based spatial data.
                 </p>
             </div>
 
             <div class="card">
                 <h3>Visual Outputs</h3>
                 <p>
-                    Blender-based renders and map outputs that communicate terrain clearly — for both technical and public audiences.
+                    Blender-based renders and mapped outputs that communicate terrain clearly — for both technical and public audiences.
                 </p>
             </div>
         </div>
@@ -135,17 +169,17 @@
 
         <p>
             Landscapes are not static — they shift, erode, settle, and reform over time.  
-            Most data captures a moment. Oddscape explores the movement behind it.
+            Most datasets capture a moment. Oddscape explores the movement behind it.
         </p>
 
         <p>
-            By translating terrain into readable form, complex environments become 
-            <span class="accent">understandable, visible, and usable</span>.
+            Through translation into readable form, complex terrain becomes 
+            <span class="accent">visible, understandable, and usable</span>.
         </p>
     </section>
 
 
-    <!-- PROJECT / PROOF -->
+    <!-- PROJECT -->
     <section>
         <h2>Current Study</h2>
 
@@ -161,18 +195,18 @@
     </section>
 
 
-    <!-- YOUR EDGE -->
+    <!-- APPROACH -->
     <section>
         <h2>Approach</h2>
 
         <p>
-            Oddscape sits between analysis and interpretation — not just processing terrain, 
+            Oddscape operates between analysis and interpretation — not just processing terrain, 
             but revealing the character of place through form, data, and time.
         </p>
 
         <p>
-            It is both a working tool and an ongoing exploration of how landscapes are understood, 
-            represented, and experienced.
+            It functions as both a working tool and an evolving exploration of how landscapes are 
+            understood, represented, and experienced.
         </p>
     </section>
 
