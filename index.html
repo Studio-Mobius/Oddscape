@@ -17,7 +17,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: radial-gradient(circle at top, #36424f 0%, #263442 55%, #1b2530 100%);
     color: #e6e6e6;
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: center;
 }
 
@@ -106,10 +106,12 @@ h2 {
 p {
     font-size: 20px;
     color: #e6e6e6;
+    line-height: 1.7;
 }
 
 section p {
     max-width: 780px;
+    margin-bottom: 22px;
 }
 
 .projects {
@@ -250,6 +252,28 @@ footer {
     margin-top: 40px;
 }
 
+footer a {
+    color: #aeb7bf;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.privacy-badge {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 6px 10px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #9fd66f;
+    border: 1px solid rgba(159,214,111,0.35);
+    border-radius: 999px;
+    background: rgba(159,214,111,0.06);
+}
+
 /* MOBILE */
 @media (max-width: 700px) {
     header {
@@ -332,7 +356,7 @@ footer {
 <div class="tagline">
     <div class="tagline-line-1">Terrain intelligence.</div>
     <div class="tagline-line-2">
-        For land, coast, and estate-scaled excisions</span> 
+        For <span class="accent">land, coast, and estate-scale</span> decisions
     </div>
 </div>
 
@@ -348,27 +372,133 @@ footer {
     </p>
 
     <p>
-        This enables informed decisions, reduces risk, and supports more effective use of land before intervention begins.
+        This provides the basis for <span class="accent">informed decisions</span>, reduces risk, and supports more effective use of land before intervention begins.
     </p>
 </section>
 
 <section>
-    <h2>Site Insight Options</h2>
+    <h2>Terrain Intelligence Options</h2>
 
     <p>
-        Terrain intelligence is scaled to match the complexity, size, and strategic importance of the land.
-        Each level provides a different depth of analysis — from initial understanding through to detailed site interpretation.
+        A structured understanding of land before design, construction, or investment begins.
+        Each level of analysis is aligned to the scale, complexity, and strategic importance of the site.
     </p>
-    
+
     <p style="opacity:0.85;">
-    For most sites, a detailed analysis provides the clearest basis for decision-making.
+        For most sites, a detailed analysis provides the clearest basis for decision-making.
     </p>
-    
+
+    <div class="projects">
+
+        <div class="project">
+            <strong>£95 — Initial Site Review</strong><br>
+            A focused LiDAR-based review of landform, highlighting key terrain characteristics such as slope, elevation, and surface behaviour.<br><br>
+            Suitable for early-stage site understanding and feasibility thinking.
+        </div>
+
+        <div class="project">
+            <strong>£150–£300 — Site Analysis Report</strong><br>
+            Structured terrain analysis including elevation modelling, drainage patterns, and slope behaviour, supported by clear interpretation.<br><br>
+            Designed to inform planning direction, design strategy, and early-stage decision-making.
+        </div>
+
+        <div class="project">
+            <strong>£500+ — Strategic Terrain Analysis</strong><br>
+            Detailed site intelligence with layered mapping and interpretation of underlying landscape processes, including water movement and long-term change.<br><br>
+            Commissioned for estates, larger land areas, and projects where terrain understanding directly informs planning, design, or financial decisions.
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>Example Study Areas</h2>
+
+    <div class="projects">
+        <div class="project">
+            <strong>Thorpeness</strong><br>
+            Coastal terrain study and shoreline evolution.
+        </div>
+
+        <div class="project">
+            <strong>Shingle Street</strong><br>
+            Landscape dynamics and coastal instability.
+        </div>
+
+        <div class="project">
+            <strong>Alde Estuary</strong><br>
+            Terrain interpretation and estuarine form.
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <h2>Contact</h2>
+
+    <div class="contact-gate">
+        <div class="contact-gate-title">Start Your Project</div>
+        <div class="contact-gate-subtitle">
+            Submit a brief outline of your site and requirements.
+        </div>
+
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xpqykkye" method="POST">
+            <input type="hidden" name="_subject" value="Oddscape Enquiry">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="_replyto" placeholder="Your email" required>
+            <textarea name="message" placeholder="Outline site conditions, context, and any specific concerns." required></textarea>
+            <button type="submit">Send Enquiry</button>
+        </form>
+
+        <div id="form-success" class="form-success" style="display:none;">
+            <div class="contact-gate-title">Message Received</div>
+            <div class="contact-gate-subtitle">
+                Thank you for your enquiry.<br><br>
+                If relevant, a response will follow.
+            </div>
+        </div>
+
+        <div class="contact-note">
+            Email address not publicly displayed. Relevant enquiries only.
+        </div>
+    </div>
+</section>
+
 <footer>
     Studio Oddscape<br>
     oddscape.co.uk<br><br>
-    Terrain Insight • Landscape Design • UK
+    Terrain Intelligence • Landscape Design • UK<br><br>
+    <a href="privacy.html">Privacy</a><br>
+    <div class="privacy-badge">LINUX · NO COOKIES</div>
 </footer>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+            form.reset();
+            form.style.display = "none";
+            document.getElementById("form-success").style.display = "block";
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    } catch (error) {
+        alert("Network error. Please try again.");
+    }
+});
+</script>
 
 </body>
 </html>
