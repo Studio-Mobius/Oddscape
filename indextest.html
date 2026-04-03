@@ -17,7 +17,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: radial-gradient(circle at top, #36424f 0%, #263442 55%, #1b2530 100%);
     color: #e6e6e6;
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: center;
 }
 
@@ -106,10 +106,12 @@ h2 {
 p {
     font-size: 20px;
     color: #e6e6e6;
+    line-height: 1.7;
 }
 
 section p {
     max-width: 780px;
+    margin-bottom: 22px;
 }
 
 .projects {
@@ -242,100 +244,34 @@ section p {
     text-align: center;
 }
 
-/* footer base */
-.site-footer {
-  margin-top: 60px;
-  padding: 18px 20px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0),
-    rgba(0,0,0,0.25)
-  );
-  backdrop-filter: blur(6px);
-}
-
-/* layout */
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* left (LI badge) */
-.footer-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: #bfc7cd;
-  letter-spacing: 0.3px;
-}
-
-.footer-left img {
-  height: 22px;
-  filter: grayscale(100%) brightness(1.15);
-  opacity: 0.85;
-  transition: 0.3s ease;
-}
-
-.footer-left:hover img {
-  filter: grayscale(0%) brightness(1.1);
-  opacity: 1;
-}
-
-/* right (links) */
-.footer-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 13px;
-}
-
-/* links */
-.footer-right a {
-  color: #8fbf6a;
-  text-decoration: none;
-  position: relative;
-}
-
-/* subtle underline animation */
-.footer-right a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 1px;
-  background: #a8e07a;
-  transition: width 0.25s ease;
-}
-
-.footer-right a:hover::after {
-  width: 100%;
-}
-
-/* separators */
-.sep {
-  color: rgba(143,191,106,0.5);
-}
-
-/* linux badge tone */
-.linux {
-  opacity: 0.8;
-  font-style: italic;
-}
-
-/* mobile stack */
-@media (max-width: 600px) {
-  .footer-inner {
-    flex-direction: column;
-    gap: 10px;
+footer {
     text-align: center;
-  }
+    padding: 40px 20px 60px;
+    color: #c8cdd2;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 40px;
+}
+
+footer a {
+    color: #aeb7bf;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.privacy-badge {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 6px 10px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #9fd66f;
+    border: 1px solid rgba(159,214,111,0.35);
+    border-radius: 999px;
+    background: rgba(159,214,111,0.06);
 }
 
 /* MOBILE */
@@ -420,7 +356,7 @@ section p {
 <div class="tagline">
     <div class="tagline-line-1">Terrain intelligence.</div>
     <div class="tagline-line-2">
-        For land, coast, and estate-scaled excisions</span> 
+        For <span class="accent">land, coast, and estate-scale</span> decisions
     </div>
 </div>
 
@@ -436,27 +372,28 @@ section p {
     </p>
 
     <p>
-        This enables informed decisions, reduces risk, and supports more effective use of land before intervention begins.
+        This provides the basis for <span class="accent">informed decisions</span>, reduces risk, and supports more effective use of land before intervention begins.
     </p>
 </section>
 
 <section>
-    <h2>Site Insight Options</h2>
+    <h2>Terrain Intelligence Options</h2>
 
     <p>
-        Terrain intelligence is scaled to match the complexity, size, and strategic importance of the land.
-        Each level provides a different depth of analysis — from initial understanding through to detailed site interpretation.
+        A structured understanding of land before design, construction, or investment begins.
+        Each level of analysis is aligned to the scale, complexity, and strategic importance of the site.
     </p>
-    
+
     <p style="opacity:0.85;">
-    For most sites, a detailed analysis provides the clearest basis for decision-making.
+        For most sites, a detailed analysis provides the clearest basis for decision-making.
     </p>
-    
+
     <div class="projects">
 
         <div class="project">
             <strong>£95 — Initial Site Review</strong><br>
-            A focused LiDAR-based review of landform, highlighting key terrain characteristics such as slope, elevation, and surface behaviour.
+            A focused LiDAR-based review of landform, highlighting key terrain characteristics such as slope, elevation, and surface behaviour.<br><br>
+            Suitable for early-stage site understanding and feasibility thinking.
         </div>
 
         <div class="project">
@@ -467,6 +404,7 @@ section p {
 
         <div class="project">
             <strong>£500+ — Strategic Terrain Analysis</strong><br>
+            Detailed site intelligence with layered mapping and interpretation of underlying landscape processes, including water movement and long-term change.<br><br>
             Commissioned for estates, larger land areas, and projects where terrain understanding directly informs planning, design, or financial decisions.
         </div>
 
@@ -500,8 +438,7 @@ section p {
     <div class="contact-gate">
         <div class="contact-gate-title">Start Your Project</div>
         <div class="contact-gate-subtitle">
-            Outline site conditions, context, and any specific concerns.
-
+            Submit a brief outline of your site and requirements.
         </div>
 
         <form class="contact-form" id="contact-form" action="https://formspree.io/f/xpqykkye" method="POST">
@@ -526,23 +463,12 @@ section p {
     </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <div class="footer-left">
-      <img src="images/li-member-badge.png" alt="Landscape Institute Member">
-      <span>LI Member · Since 2014</span>
-    </div>
-
-    <div class="footer-right">
-      <a href="/privacy.html">Privacy</a>
-      <span class="sep">·</span>
-      <span>No Cookies</span>
-      <span class="sep">·</span>
-      <span class="linux">Powered by Linux</span>
-    </div>
-
-  </div>
+<footer>
+    Studio Oddscape<br>
+    oddscape.co.uk<br><br>
+    Terrain Intelligence • Landscape Design • UK<br><br>
+    <a href="privacy.html">Privacy</a><br>
+    <div class="privacy-badge">LINUX · NO COOKIES</div>
 </footer>
 
 <script>
@@ -573,8 +499,6 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     }
 });
 </script>
-<p style="margin-top:10px; font-size:13px;">
-<a href="privacy.html" style="color:#aeb7bf; text-decoration:none;">Privacy</a>
-</p>
+
 </body>
 </html>
