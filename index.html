@@ -38,3 +38,186 @@ h1 {
 
 /* HERO IMAGE */
 .hero-image {
+    width: 100vw;
+    height: 50vh;
+    min-height: 260px;
+    max-height: 560px;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 8px;
+    background: #1b2530;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* TAGLINE */
+.tagline {
+    max-width: 900px;
+    margin: 18px auto 8px;
+    padding: 0 20px;
+    color: #dfe5ea;
+}
+
+.tagline-line-1 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.tagline-line-2 {
+    font-size: 20px;
+    color: #cfd7de;
+}
+
+/* CONTENT */
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 48px 20px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 44px;
+    margin: 0 0 28px 0;
+    color: #e0c27a;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding-bottom: 14px;
+}
+
+p {
+    font-size: 20px;
+}
+
+/* BUTTON */
+.cta {
+    display:inline-block;
+    padding:14px 22px;
+    background:#e0c27a;
+    color:#1b2530;
+    font-weight:600;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 20px 60px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 40px;
+    font-size: 0.92em;
+    line-height: 1.5;
+    color: #c8cdd2;
+}
+
+.footer-services {
+    font-size: 0.9em;
+    white-space: nowrap;
+    margin: 10px 0;
+}
+
+footer a {
+    color: #aeb7bf;
+    text-decoration: none;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 26px; }
+    p { font-size: 16px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Studio Oddscape</h1>
+</header>
+
+<div class="hero-image">
+    <img src="./images/alde-map.png" alt="Alde Estuary Terrain Study">
+</div>
+
+<div class="tagline">
+    <div class="tagline-line-1">Terrain intelligence.</div>
+    <div class="tagline-line-2">
+        For land, coast and estate decisions.
+    </div>
+</div>
+
+<section>
+    <h2>About</h2>
+
+    <p>
+        Studio Oddscape provides terrain analysis, LiDAR interpretation, and landscape intelligence for sites where landform, water behaviour, and long-term change are critical to decision-making.
+    </p>
+
+    <p>
+        Working across estates, coastal environments, and complex landholdings, Oddscape reveals underlying terrain structure — identifying patterns in elevation, drainage, and erosion that are not immediately visible on the ground.
+    </p>
+
+    <p>
+        The result is a clear, evidence-led understanding of terrain — reducing uncertainty, identifying risk early, and supporting confident decisions before intervention.
+    </p>
+
+    <p style="margin-top:28px; font-size:18px; opacity:0.85;">
+        <strong>Professional Context</strong><br>
+        Member of the Landscape Institute (since 2014)<br>
+        PGDip Landscape Architecture (Level 7)<br>
+        10+ years independent coastal terrain observation and mapping
+    </p>
+</section>
+
+<section>
+    <h2>Terrain Intelligence</h2>
+
+    <p>
+        Terrain Intelligence is a structured approach to understanding land before design, construction, or investment — combining LiDAR data, terrain modelling, and visual analysis to reveal how a site actually behaves.
+    </p>
+
+    <p>
+        Each level of analysis is aligned to the scale, complexity, and strategic importance of the site.
+    </p>
+
+    <p style="opacity:0.85;">
+        Detailed analysis reveals risk, opportunity, and constraint before intervention.
+    </p>
+
+    <p style="text-align:center; margin-top:20px; opacity:0.8;">
+        Independent analysis. No design bias. No assumptions.
+    </p>
+
+    <div style="text-align:center; margin-top:35px;">
+        <a href="mailto:studio@oddscape.co.uk" class="cta">
+            Start a project
+        </a>
+    </div>
+</section>
+
+<footer>
+    Studio Oddscape<br>
+    oddscape.co.uk<br>
+
+    <div class="footer-services">
+    Terrain Intelligence • Land & Coastal Analysis • UK
+    </div>
+
+    Powered by Linux · Independent Systems<br><br>
+
+    <a href="privacy.html">Privacy</a>
+</footer>
+
+</body>
+</html>
