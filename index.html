@@ -1,216 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Studio Oddscape</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-:root {
-    --bg-top: #36424f;
-    --bg-mid: #263442;
-    --bg-bottom: #1b2530;
-    --text: #e7e7e7;
-    --muted: #cfd5db;
-    --gold: #e0c27a;
-    --line: rgba(255,255,255,0.10);
-    --button-text: #1b2530;
-}
+  <title>Studio Oddscape | Terrain Intelligence for Land, Coast and Estate Decisions</title>
+  <meta name="description" content="Studio Oddscape provides terrain intelligence, LiDAR interpretation, terrain modelling, and land analysis for estates, coastal environments, and complex sites across the UK." />
+  <meta name="keywords" content="terrain intelligence, LiDAR analysis, terrain modelling, coastal analysis, estate mapping, land analysis, erosion mapping, topographic analysis, Studio Oddscape, landscape intelligence, UK" />
+  <meta name="author" content="Studio Oddscape" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#263442" />
 
-* {
-    box-sizing: border-box;
-}
+  <!-- Open Graph -->
+  <meta property="og:title" content="Studio Oddscape | Terrain Intelligence" />
+  <meta property="og:description" content="Terrain intelligence for land, coast and estate decisions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oddscape.co.uk/" />
+  <meta property="og:image" content="https://oddscape.co.uk/alde-map.png" />
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Studio Oddscape | Terrain Intelligence" />
+  <meta name="twitter:description" content="Terrain intelligence for land, coast and estate decisions." />
+  <meta name="twitter:image" content="https://oddscape.co.uk/alde-map.png" />
 
-html {
-    scroll-behavior: smooth;
-}
+  <link rel="canonical" href="https://oddscape.co.uk/" />
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: radial-gradient(circle at top, var(--bg-top) 0%, var(--bg-mid) 55%, var(--bg-bottom) 100%);
-    color: var(--text);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Studio Oddscape",
+    "url": "https://oddscape.co.uk/",
+    "image": "https://oddscape.co.uk/alde-map.png",
+    "description": "Studio Oddscape provides terrain intelligence, LiDAR interpretation, terrain modelling, and land analysis for estates, coastal environments, and complex sites across the UK.",
+    "areaServed": "UK",
+    "serviceType": [
+      "Terrain intelligence",
+      "LiDAR interpretation",
+      "Terrain modelling",
+      "Coastal analysis",
+      "Land analysis"
+    ]
+  }
+  </script>
 
-img {
-    max-width: 100%;
-    display: block;
-}
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at top, #36424f 0%, #263442 55%, #1b2530 100%);
+      color: #e6e6e6;
+      line-height: 1.7;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-header {
-    padding: 34px 20px 18px;
-    text-align: center;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-h1 {
-    margin: 0;
-    font-size: clamp(44px, 8vw, 72px);
-    font-weight: 700;
-    letter-spacing: -1.5px;
-    line-height: 1.05;
-    color: var(--gold);
-    text-shadow: 0 2px 10px rgba(0,0,0,0.28);
-}
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      -webkit-user-drag: none;
+      user-select: none;
+      pointer-events: none;
+    }
 
-.hero-image-wrap {
-    width: 100%;
-    overflow: hidden;
-    background: #111;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-}
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-.hero-image {
-    width: 100%;
-    height: auto;
-    pointer-events: none;
-    -webkit-user-drag: none;
-    user-drag: none;
-}
-
-.hero {
-    text-align: center;
-    padding: 42px 20px 56px;
-}
-
-.hero h2 {
-    margin: 0 0 12px;
-    font-size: clamp(34px, 8vw, 64px);
-    line-height: 1.08;
-    letter-spacing: -1px;
-    font-weight: 700;
-    color: #f2f2f2;
-}
-
-.hero p {
-    margin: 0;
-    font-size: clamp(20px, 4.2vw, 34px);
-    color: var(--muted);
-    line-height: 1.35;
-    font-weight: 400;
-}
-
-.section {
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 0 42px 48px;
-}
-
-.section h3 {
-    margin: 0 0 18px;
-    font-size: clamp(32px, 7vw, 56px);
-    line-height: 1.1;
-    letter-spacing: -1px;
-    color: var(--gold);
-    font-weight: 700;
-}
-
-.rule {
-    width: 100%;
-    height: 1px;
-    background: var(--line);
-    margin: 0 0 34px;
-}
-
-.section p {
-    margin: 0 0 28px;
-    font-size: clamp(20px, 4.3vw, 30px);
-    color: #e4e7ea;
-    line-height: 1.65;
-    font-weight: 400;
-}
-
-.context-title {
-    margin-top: 14px;
-    margin-bottom: 10px;
-    font-size: clamp(20px, 4.3vw, 30px);
-    font-weight: 700;
-    color: #f1f1f1;
-}
-
-.terrain-section {
-    padding-top: 8px;
-}
-
-.terrain-section .lead {
-    margin-bottom: 28px;
-}
-
-.terrain-lines {
-    margin: 28px 0 38px;
-}
-
-.terrain-lines p {
-    margin: 0 0 18px;
-}
-
-.cta-wrap {
-    text-align: center;
-    padding: 10px 0 8px;
-}
-
-.cta-button {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--button-text);
-    font-size: clamp(22px, 4.6vw, 32px);
-    font-weight: 700;
-    padding: 20px 34px;
-    border-radius: 18px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
-    transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
-}
-
-.cta-button:hover,
-.cta-button:focus {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 26px rgba(0,0,0,0.22);
-    opacity: 0.98;
-}
-
-footer {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 26px 42px 60px;
-    text-align: center;
-    color: var(--muted);
-}
-
-.footer-rule {
-    width: 100%;
-    height: 1px;
-    background: var(--line);
-    margin: 0 0 34px;
-}
-
-.footer-brand {
-    font-size: clamp(20px, 4.3vw, 30px);
-    line-height: 1.45;
-    margin-bottom: 18px;
-}
-
-.footer-meta {
-    font-size: clamp(16px, 3.6vw, 24px);
-    line-height: 1.7;
-    color: rgba(231,231,231,0.86);
-}
-
-@media (max-width: 640px) {
     header {
-        padding:
+      padding: 34px 20px 18px;
+    }
+
+    h1 {
+      font-size: clamp(46px, 8vw, 72px);
+      margin: 0;
+      color: #e0c27a;
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.05;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.22);
+    }
+
+    .hero-image-wrap {
+      width: 100%;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-text {
+      padding: 54px 22px 34px;
+    }
+
+    .hero-text h2 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 7vw, 58px);
+      line-height: 1.1;
+      font-weight: 650;
+      color: #f0f0f0;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-text p {
+      margin: 0;
+      font-size: clamp(21px, 4.2vw, 34px);
+      color: #e0e0e0;
+      line-height: 1.35;
+      font-weight: 400;
+    }
+
+    section {
+      padding: 34px 22px 50px;
+      text-align: left;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 7vw, 54px);
+      color: #e0c27a;
+      margin: 0 0 18px;
+      line-height: 1.05;
+      letter-spacing: -0.5px;
+      font-weight: 700;
+    }
+
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      margin: 0 0 30px;
+    }
+
+    .section-copy {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .section-copy p {
+      font-size: clamp(21px, 4.6vw, 31px);
+      line-height: 1.7;
+      margin: 0 0 28px;
+      color: #e6e6e6;
+      font-weight: 400;
+    }
+
+    .mini-heading {
+      font-size: clamp(20px, 4.5vw, 28px);
+      font-weight: 700;
+      color: #f0f0f0;
+      margin: 8px 0 8px;
+    }
+
+    .statement-lines {
+      margin-top: 8px;
+    }
+
+    .statement-lines p {
+      margin: 0 0 8px;
+    }
+
+    .cta-wrap {
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #d9bf78;
+      color: #1f2a35;
+      padding: 18px 34px;
+      border-radius: 16px;
+      font-size: clamp(22px, 4.3vw, 30px);
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      pointer-events: auto;
+    }
+
+    .cta-button:hover,
+    .cta-button:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.24);
+      background: #e2c983;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 36px 22px 60px;
+      text-align: center;
+    }
+
+    .footer-title {
+      font-size: clamp(22px, 4.6vw, 34px);
+      margin: 0 0 6px;
+      color: #e6e6e6;
+      font-weight: 500;
+    }
+
+    .footer-link {
+      font-size: clamp(20px, 4.2vw, 30px);
+      margin: 0 0 22px;
+      color: #e6e6e6;
+      opacity: 0.95;
+    }
+
+    .footer-copy {
+      font-size: clamp(17px, 3.6vw, 23px);
+      line-height: 1.8;
+      color: rgba(230,230,230,0.92);
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        padding-top: 44px;
+      }
+
+      .hero-text {
+        padding-top: 70px;
+        padding-bottom: 46px;
+      }
+
+      section {
+        padding-top: 46px;
+        padding-bottom: 66px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Studio Oddscape</h1>
+    </header>
+
+    <div class="hero-image-wrap">
+      <img
+        src="alde-map.png"
+        alt="Terrain map visualisation showing coastal and landform analysis"
+        class="hero-image"
+        draggable="false"
+      />
+    </div>
+
+    <div class="hero-text">
+      <h2>Terrain intelligence.</h2>
+      <p>For land, coast and estate decisions.</p>
+    </div>
+
+    <main>
+
+      <section id="about">
+        <h2 class="section-title">About</h2>
+        <div class="section-rule"></div>
+
+        <div class="section-copy">
+          <p>Studio Oddscape works beneath the surface of land.</p>
+
+          <p>Using LiDAR, terrain modelling, and visual analysis, it reveals how landscapes actually behave — how water moves, where pressure builds, and how change unfolds over time.</p>
+
+          <p>Across estates, coastlines, and complex landholdings, the focus is on what isn’t immediately visible — the hidden structure that shapes risk, opportunity, and long-term stability.</p>
+
+          <p>The outcome is clear, grounded understanding.</p>
+
+          <div class="statement-lines">
+            <p>Less assumption.</p>
+            <p>More certainty.</p>
+            <p>Better decisions before intervention.</p>
+          </div>
+
+          <h3 class="mini-heading">Professional Context</h3>
+          <p>Member of the Landscape Institute since 2014.</p>
+          <p>Over a decade of independent coastal observation, mapping, and terrain analysis.</p>
+        </div>
+      </section>
+
+      <section id="terrain-intelligence">
+        <h2 class="section-title">Terrain Intelligence</h2>
+        <div class="section-rule"></div>
+
+        <div class="section-copy">
+          <p>Terrain Intelligence is a way of seeing land properly before anything is done to it.</p>
+
+          <p>It combines LiDAR data, terrain modelling, and visual analysis to understand how a site truly behaves — not how it appears on plans.</p>
+
+          <p>Analysis scales to the site — from broad landscape patterns to detailed terrain behaviour — revealing risk, constraint, and opportunity early.</p>
+
+          <p>No design bias.<br>No assumptions.<br>Just the land, understood clearly.</p>
+
+          <div class="cta-wrap">
+            <a href="mailto:hello@oddscape.co.uk?subject=Studio%20Oddscape%20Project%20Enquiry" class="cta-button">Start a project</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p class="footer-title">Studio Oddscape</p>
+      <p class="footer-link">oddscape.co.uk</p>
+      <p class="footer-copy">Terrain Intelligence • Land &amp; Coastal Analysis • UK</p>
+      <p class="footer-copy">Powered by Linux • Independent Systems</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
