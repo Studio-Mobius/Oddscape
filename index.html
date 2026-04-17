@@ -126,8 +126,54 @@ h2 {
     padding-bottom: 14px;
 }
 
+h3 {
+    font-size: 28px;
+    margin: 0 0 14px 0;
+    color: #e6e6e6;
+}
+
 p {
     font-size: 20px;
+}
+
+.project-lead {
+    font-size: 22px;
+    color: #dfe5ea;
+    margin-bottom: 20px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    align-items: start;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+}
+
+.project-meta {
+    margin-top: 18px;
+}
+
+.project-meta p {
+    margin: 0 0 16px 0;
+}
+
+.project-meta ul {
+    margin: 0 0 20px 22px;
+    padding: 0;
+    font-size: 19px;
+    color: #d7dde2;
+}
+
+.project-meta li {
+    margin-bottom: 10px;
 }
 
 .cta {
@@ -164,9 +210,12 @@ footer a {
 @media (max-width: 700px) {
     h1 { font-size: 28px; }
     h2 { font-size: 26px; }
+    h3 { font-size: 22px; }
     p { font-size: 16px; }
     .tagline-line-1 { font-size: 24px; }
     .tagline-line-2 { font-size: 17px; }
+    .project-lead { font-size: 18px; }
+    .project-meta ul { font-size: 16px; }
 }
 </style>
 </head>
@@ -182,7 +231,7 @@ footer a {
 </div>
 
 <div class="tagline">
-    <div class="tagline-line-1">Terrain intelligence.</div>
+    <div class="tagline-line-1">Terrain intelligence for land, coast, and estate-scale decision-making.</div>
     <div class="tagline-line-2">
         Elevating coastal, rural and estate decisions.
     </div>
@@ -205,6 +254,39 @@ footer a {
     <p>
         This provides a clear, evidence-based foundation for informed decisions, reducing risk and supporting more effective, responsible use of land before intervention.
     </p>
+</section>
+
+<section>
+    <h2>Selected Work</h2>
+
+    <div class="project-grid">
+        <div class="project-image">
+            <img src="./images/alde-map.png" alt="Thorpeness coastal terrain analysis showing estuary form, elevation structure and surrounding contour patterns">
+        </div>
+
+        <div class="project-meta">
+            <h3>Thorpeness Coastal Terrain Analysis</h3>
+
+            <p class="project-lead">
+                LiDAR-based terrain modelling of a dynamic Suffolk coastline.
+            </p>
+
+            <p>
+                Using Environment Agency LiDAR data, this study explores elevation, drainage behaviour, and potential flood pathways across the Thorpeness landscape.
+            </p>
+
+            <ul>
+                <li>High-resolution terrain modelling (1m DTM)</li>
+                <li>Contour extraction and elevation mapping</li>
+                <li>Surface flow interpretation</li>
+                <li>Visualisation for decision support</li>
+            </ul>
+
+            <p>
+                The outcome is a clearer visual understanding of terrain behaviour to support coastal management, estate planning, and long-term resilience strategies.
+            </p>
+        </div>
+    </div>
 </section>
 
 <section>
