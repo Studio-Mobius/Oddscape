@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Terrain Intelligence & LiDAR Analysis UK | Studio Oddscape</title>
+
+<meta name="description" content="Terrain intelligence, LiDAR analysis, and landscape-led land assessment for coastal, rural and estate sites across the UK. Supporting informed, sustainable land decisions.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Studio Oddscape">
+
+<link rel="canonical" href="https://oddscape.co.uk/">
+
+<meta property="og:title" content="Studio Oddscape | Terrain Intelligence UK">
+<meta property="og:description" content="LiDAR analysis, terrain intelligence, and landscape-led land assessment for estates and rural environments.">
+<meta property="og:image" content="https://oddscape.co.uk/images/alde-map.png">
+<meta property="og:url" content="https://oddscape.co.uk/">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Studio Oddscape | Terrain Intelligence">
+<meta name="twitter:description" content="LiDAR analysis and terrain intelligence supporting landscape and land-use decisions.">
+<meta name="twitter:image" content="https://oddscape.co.uk/images/alde-map.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Studio Oddscape",
+  "url": "https://oddscape.co.uk/",
+  "image": "https://oddscape.co.uk/images/alde-map.png",
+  "description": "Terrain intelligence and LiDAR analysis supporting landscape-led decision making across coastal, rural and estate environments.",
+  "areaServed": "UK",
+  "serviceType": [
+    "Terrain Intelligence",
+    "LiDAR Analysis",
+    "Landscape Assessment",
+    "Coastal Land Analysis",
+    "Estate Terrain Assessment"
+  ]
+}
+</script>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: radial-gradient(circle at top, #36424f 0%, #263442 55%, #1b2530 100%);
+    color: #e6e6e6;
+    line-height: 1.7;
+    text-align: center;
+}
+
+header {
+    padding: 34px 20px 14px;
+}
+
+h1 {
+    font-size: 56px;
+    margin: 0;
+    color: #e0c27a;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.05;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+}
+
+.hero-image {
+    width: 100%;
+    margin-top: 8px;
+    background: #1b2530;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.tagline {
+    max-width: 900px;
+    margin: 18px auto 8px;
+    padding: 0 20px;
+    color: #dfe5ea;
+}
+
+.tagline-line-1 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.tagline-line-2 {
+    font-size: 20px;
+    color: #cfd7de;
+}
+
+.tagline-line-3 {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #aeb7bf;
+}
+
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 48px 20px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 44px;
+    margin: 0 0 28px 0;
+    color: #e0c27a;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding-bottom: 14px;
+}
+
+h3 {
+    font-size: 28px;
+    margin: 0 0 14px 0;
+    color: #e6e6e6;
+}
+
+p {
+    font-size: 20px;
+}
+
+.project-lead {
+    font-size: 22px;
+    color: #dfe5ea;
+    margin-bottom: 20px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    align-items: start;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+}
+
+.project-meta {
+    margin-top: 18px;
+}
+
+.project-meta p {
+    margin: 0 0 16px 0;
+}
+
+.project-meta ul {
+    margin: 0 0 20px 22px;
+    padding: 0;
+    font-size: 19px;
+    color: #d7dde2;
+}
+
+.project-meta li {
+    margin-bottom: 10px;
+}
+
+.cta {
+    display:inline-block;
+    padding:14px 22px;
+    background:#e0c27a;
+    color:#1b2530;
+    font-weight:600;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px 60px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 40px;
+    font-size: 0.92em;
+    line-height: 1.5;
+    color: #c8cdd2;
+}
+
+.footer-services {
+    font-size: 0.9em;
+    white-space: nowrap;
+    margin: 10px 0;
+}
+
+footer a {
+    color: #aeb7bf;
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 26px; }
+    h3 { font-size: 22px; }
+    p { font-size: 16px; }
+    .tagline-line-1 { font-size: 24px; }
+    .tagline-line-2 { font-size: 17px; }
+    .project-lead { font-size: 18px; }
+    .project-meta ul { font-size: 16px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Studio Oddscape</h1>
+</header>
+
+<div class="hero-image">
+    <img src="./images/alde-map.png" alt="Alde Estuary terrain analysis showing elevation and coastal structure">
+</div>
+
+<div class="tagline">
+    <div class="tagline-line-1">Terrain intelligence for land, coast, and estate-scale decision-making.</div>
+    <div class="tagline-line-2">
+        Elevating coastal, rural and estate decisions.
+    </div>
+    <div class="tagline-line-3">
+        Supporting evidence-based landscape decisions aligned with environmental stewardship and long-term resilience.
+    </div>
+</div>
+
+<section>
+    <h2>About</h2>
+
+    <p>
+        <strong>Founded by a Landscape Institute member</strong>, Studio Oddscape provides terrain analysis and LiDAR-based landscape intelligence to support understanding of landform, water behaviour, and long-term environmental change.
+    </p>
+
+    <p>
+        Working across estates, coastal environments, and complex landholdings, Oddscape interprets landscape character and terrain processes — identifying patterns in elevation, drainage, and erosion that are not immediately visible on the ground.
+    </p>
+
+    <p>
+        This provides a clear, evidence-based foundation for informed decisions, reducing risk and supporting more effective, responsible use of land before intervention.
+    </p>
+</section>
+
+<section>
+    <h2>Selected Work</h2>
+
+    <div class="project-grid">
+        <div class="project-image">
+            <img src="./images/alde-map.png" alt="Thorpeness coastal terrain analysis showing estuary form, elevation structure and surrounding contour patterns">
+        </div>
+
+        <div class="project-meta">
+            <h3>Thorpeness Coastal Terrain Analysis</h3>
+
+            <p class="project-lead">
+                LiDAR-based terrain modelling of a dynamic Suffolk coastline.
+            </p>
+
+            <p>
+                Using Environment Agency LiDAR data, this study explores elevation, drainage behaviour, and potential flood pathways across the Thorpeness landscape.
+            </p>
+
+            <ul>
+                <li>High-resolution terrain modelling (1m DTM)</li>
+                <li>Contour extraction and elevation mapping</li>
+                <li>Surface flow interpretation</li>
+                <li>Visualisation for decision support</li>
+            </ul>
+
+            <p>
+                The outcome is a clearer visual understanding of terrain behaviour to support coastal management, estate planning, and long-term resilience strategies.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Terrain Intelligence</h2>
+
+    <p>
+        A structured understanding of land before design, construction, or investment — aligned to the scale, complexity, and strategic importance of each site.
+    </p>
+
+    <p style="opacity:0.85;">
+        Most land risks are not visible at first glance. Detailed terrain analysis reveals how a site actually behaves.
+    </p>
+</section>
+
+<section>
+    <h2>Professional Approach</h2>
+
+    <p>
+        Studio Oddscape applies data-led analysis to support landscape planning, design, and land management.
+    </p>
+
+    <p>
+        Work is grounded in landscape character, environmental sensitivity, and long-term change — ensuring decisions respond to both physical processes and place-based context.
+    </p>
+
+    <p>
+        The aim is simple: work with the land, not against it.
+    </p>
+
+    <div style="text-align:center; margin-top:35px;">
+        <a href="mailto:studio@oddscape.co.uk" class="cta">
+            Start a project
+        </a>
+    </div>
+</section>
+
+<footer>
+    Studio Oddscape<br>
+    oddscape.co.uk<br>
+
+    <div class="footer-services">
+        Terrain Analysis • LiDAR Interpretation<br>Coastal &amp; Estate Intelligence • UK
+    </div>
+
+    <div style="margin-top:12px; opacity:0.8;">
+        Member of the Landscape Institute since 2014<br><br>
+    </div>
+
+    <a href="privacy.html">Privacy</a>
+</footer>
+
+</body>
+</html>
