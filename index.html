@@ -30,7 +30,12 @@
   "@type": "ProfessionalService",
   "name": "Studio Oddscape",
   "url": "https://oddscape.co.uk/",
-  "image": "https://oddscape.co.uk/images/alde-map.png",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://oddscape.co.uk/images/alde-map.png",
+    "caption": "River Alde terrain visualisation derived from Environment Agency LiDAR data.",
+    "creditText": "© Environment Agency copyright and/or database right 2022. All rights reserved."
+  },
   "description": "Terrain intelligence, LiDAR analysis, immersive terrain visualisation, and landscape-led spatial interpretation for coastal, rural, estate, and heritage environments.",
   "areaServed": "UK",
   "serviceType": [
@@ -42,6 +47,29 @@
     "Immersive Terrain Visualisation",
     "AR Landscape Interpretation",
     "Heritage Landscape Interpretation"
+  ],
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "name": "River Alde Coastal Terrain Analysis",
+      "image": "https://oddscape.co.uk/images/alde-map.png",
+      "description": "Terrain visualisation derived from Environment Agency LiDAR data.",
+      "creditText": "© Environment Agency copyright and/or database right 2022. All rights reserved.",
+      "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "River Deben Interactive Model",
+      "image": "https://oddscape.co.uk/images/deben_preview.png",
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://oddscape.co.uk/images/Deben.usdz",
+        "encodingFormat": "model/vnd.usdz+zip"
+      },
+      "description": "Interactive terrain model derived from Environment Agency LiDAR data.",
+      "creditText": "© Environment Agency copyright and/or database right 2022. All rights reserved.",
+      "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+    }
   ]
 }
 </script>
@@ -89,6 +117,15 @@ h1 {
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
+}
+
+.caption {
+    max-width: 900px;
+    margin: 8px auto 0;
+    padding: 0 20px;
+    font-size: 13px;
+    color: #9ea8b1;
+    text-align: center;
 }
 
 .tagline {
@@ -187,6 +224,12 @@ p {
     margin-bottom: 6px;
 }
 
+.credit {
+    font-size: 13px;
+    color: #9ea8b1;
+    margin-top: 10px;
+}
+
 .cta {
     display: inline-block;
     padding: 14px 22px;
@@ -213,6 +256,14 @@ footer {
     margin: 10px 0;
 }
 
+.footer-credit {
+    max-width: 780px;
+    margin: 18px auto 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #8f99a2;
+}
+
 footer a {
     color: #aeb7bf;
     text-decoration: none;
@@ -227,6 +278,7 @@ footer a {
     .tagline-line-2 { font-size: 17px; }
     .project-lead { font-size: 18px; }
     .project-meta ul { font-size: 16px; }
+    .footer-services { white-space: normal; }
 }
 </style>
 </head>
@@ -238,7 +290,10 @@ footer a {
 </header>
 
 <div class="hero-image">
-    <img src="./images/alde-map.png" alt="Alde Estuary terrain analysis showing elevation and coastal structure">
+    <img src="./images/alde-map.png" alt="River Alde terrain visualisation derived from Environment Agency LiDAR data, showing estuary form and coastal structure">
+</div>
+<div class="caption">
+    River Alde terrain visualisation. Derived from Environment Agency LiDAR data.
 </div>
 
 <div class="tagline">
@@ -278,7 +333,8 @@ footer a {
 
     <div class="project-grid">
         <div class="project-image">
-            <img src="./images/alde-map.png" alt="Thorpeness coastal terrain analysis showing estuary form, elevation structure and surrounding contour patterns">
+            <img src="./images/alde-map.png" alt="River Alde and Thorpeness coastal terrain analysis derived from Environment Agency LiDAR data, showing elevation structure and estuarine form">
+            <p class="credit">Data source: Environment Agency LiDAR. Visualisation by Studio Oddscape.</p>
         </div>
 
         <div class="project-meta">
@@ -315,7 +371,8 @@ footer a {
     <div class="project-grid">
 
         <div class="project-image">
-            <img src="./images/deben_preview.png" alt="River Deben terrain model">
+            <img src="./images/deben_preview.png" alt="River Deben interactive terrain model preview derived from Environment Agency LiDAR data">
+            <p class="credit">Data source: Environment Agency LiDAR. AR terrain model by Studio Oddscape.</p>
         </div>
 
         <div class="project-meta">
@@ -388,6 +445,10 @@ footer a {
     </div>
 
     <a href="privacy.html">Privacy</a>
+
+    <div class="footer-credit">
+        Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets, including Environment Agency LiDAR data where stated. Environment Agency LiDAR attribution: © Environment Agency copyright and/or database right 2022. All rights reserved. Licensed under the Open Government Licence v3.0.
+    </div>
 </footer>
 
 </body>
