@@ -250,6 +250,55 @@ footer a {
     .project-meta ul { font-size: 16px; }
     .footer-services { white-space: normal; }
 }
+
+.ar-cube {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+
+    margin-top: 24px;
+
+    border-radius: 12px;
+
+    background: rgba(10,18,24,0.18);
+
+    border: 1px solid rgba(224,194,122,0.10);
+
+    backdrop-filter: blur(4px);
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.ar-cube svg {
+    width: 28px;
+    height: 28px;
+
+    stroke: rgba(224,194,122,0.88);
+    stroke-width: 1.5;
+    fill: none;
+
+    animation: cubeSpin 8s linear infinite;
+}
+
+.ar-cube:hover {
+    background: rgba(10,18,24,0.32);
+    transform: translateY(-2px);
+}
+
+@keyframes cubeSpin {
+    from {
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+    to {
+        transform: rotateY(360deg) rotateX(360deg);
+    }
+}
+
 </style>
 </head>
 
@@ -343,9 +392,15 @@ footer a {
             </p>
 
             <div style="margin-top:24px;">
-                <a rel="ar" href="./images/Tinto.usdz" class="cta">
-                    View in AR
-                </a>
+                <a rel="ar" href="./images/Tinto.usdz" class="ar-cube">
+
+<svg viewBox="0 0 24 24">
+    <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
+    <path d="M12 22V12"/>
+    <path d="M20 6L12 12L4 6"/>
+</svg>
+
+</a>
             </div>
 
         </div>
@@ -384,9 +439,18 @@ footer a {
             </p>
 
             <div style="margin-top:24px;">
-                <a rel="ar" href="./images/Deben.usdz" class="cta">
-                    View in AR
-                </a>
+                <a rel="ar" href="./images/Deben.usdz" class="ar-cube">
+
+<svg viewBox="0 0 24 24">
+    <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
+    <path d="M12 22V12"/>
+    <path d="M20 6L12 12L4 6"/>
+</svg>
+
+</a>
+                
+                
+                
             </div>
 
         </div>
