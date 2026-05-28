@@ -139,11 +139,11 @@ p {
     align-items: start;
 }
 
-.project-image {
+.image-wrap {
     position: relative;
 }
 
-.project-image img {
+.image-wrap img {
     width: 100%;
     height: auto;
     display: block;
@@ -153,9 +153,10 @@ p {
 
 .image-ngr {
     position: absolute;
-    bottom: 40px;
+    bottom: 14px;
     left: 14px;
-    background: rgba(0,0,0,0.45);
+    z-index: 2;
+    background: rgba(0,0,0,0.55);
     color: #d7dde2;
     padding: 6px 10px;
     font-size: 11px;
@@ -272,44 +273,23 @@ footer a {
 </div>
 
 <section>
-    <h2>The Oddscape Terrain Engine™</h2>
-
-    <p>
-        A terrain visualisation system developed by Studio Oddscape. Built on geospatial workflows, LiDAR data, and landscape-led interpretation, the engine transforms elevation data into clear visual and spatial understanding across coastlines, uplands, estates, heritage sites, and large-scale environments.
-    </p>
-
-    <ul style="margin-top: 20px; padding-left: 20px; color: #aeb6bf; line-height: 1.6; font-size: 19px;">
-        <li>3D terrain models, visual studies, and AR-ready landscape experiences</li>
-        <li>Estuaries, coastlines, uplands, mountains, heritage landscapes, and estate-scale sites</li>
-        <li>Complex terrain data translated into accessible visual and spatial understanding</li>
-    </ul>
-</section>
-
-<section>
-    <h2>About</h2>
-
-    <p>
-        Studio Oddscape works with terrain as both data and experience — interpreting landform, elevation, drainage, structure, and movement through LiDAR-derived visualisation and immersive spatial models.
-    </p>
-
-    <p>
-        The work supports design, interpretation, planning, education, heritage engagement, and land management by making landscape form easier to see, explore, and communicate.
-    </p>
-</section>
-
-<section>
     <h2>Selected Work</h2>
 
     <div class="project-grid">
 
         <div class="project-image">
-            <img src="./images/alde-map.png" alt="River Alde coastal terrain analysis">
-            <div class="image-ngr">
-                NGR: TM 46 55 approx.
+
+            <div class="image-wrap">
+                <img src="./images/alde-map.png" alt="River Alde coastal terrain analysis">
+                <div class="image-ngr">
+                    NGR: TM 46 55 approx.
+                </div>
             </div>
+
             <p class="credit">
                 Terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
             </p>
+
         </div>
 
         <div class="project-meta">
@@ -326,13 +306,6 @@ footer a {
                 Using Environment Agency LiDAR data, this study explores elevation, drainage behaviour, estuarine structure, and potential flood pathways across the Thorpeness landscape.
             </p>
 
-            <ul>
-                <li>High-resolution terrain modelling</li>
-                <li>Contour extraction and elevation mapping</li>
-                <li>Surface flow and landform interpretation</li>
-                <li>Visualisation for landscape decision support</li>
-            </ul>
-
         </div>
 
     </div>
@@ -344,13 +317,18 @@ footer a {
     <div class="project-grid">
 
         <div class="project-image">
-            <img src="./images/Tinto.png" alt="Tinto Hill upland terrain model">
-            <div class="image-ngr">
-                NGR: NS 953 343
+
+            <div class="image-wrap">
+                <img src="./images/Tinto.png" alt="Tinto Hill upland terrain model">
+                <div class="image-ngr">
+                    NGR: NS 953 343
+                </div>
             </div>
+
             <p class="credit">
                 Upland terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Scottish Remote Sensing Portal LiDAR.
             </p>
+
         </div>
 
         <div class="project-meta">
@@ -361,14 +339,6 @@ footer a {
 
             <p class="project-lead">
                 Upland terrain visualisation exploring elevation, slope, and landform structure.
-            </p>
-
-            <p>
-                A terrain study of Tinto Hill developed using LiDAR-derived elevation data and the Oddscape Terrain Engine™.
-            </p>
-
-            <p>
-                The model reveals terrain form, ridge structure, and spatial relationships across the upland landscape.
             </p>
 
             <div style="margin-top:24px;">
@@ -388,13 +358,18 @@ footer a {
     <div class="project-grid">
 
         <div class="project-image">
-            <img src="./images/deben_preview.png" alt="River Deben interactive terrain model">
-            <div class="image-ngr">
-                NGR: TM 29 57 approx.
+
+            <div class="image-wrap">
+                <img src="./images/deben_preview.png" alt="River Deben interactive terrain model">
+                <div class="image-ngr">
+                    NGR: TM 29 57 approx.
+                </div>
             </div>
+
             <p class="credit">
                 Interactive terrain model developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
             </p>
+
         </div>
 
         <div class="project-meta">
@@ -405,10 +380,6 @@ footer a {
 
             <p class="project-lead">
                 LiDAR-derived estuarine terrain visualisation for immersive spatial exploration.
-            </p>
-
-            <p>
-                An interactive terrain model of the River Deben landscape designed for augmented reality viewing on supported devices.
             </p>
 
             <div style="margin-top:24px;">
