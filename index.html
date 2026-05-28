@@ -251,24 +251,46 @@ p {
 .cta {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
 
     padding: 7px 12px;
 
     background: rgba(10,18,24,0.15);
+
     backdrop-filter: blur(.25px);
 
     color: rgba(230,230,230,0.9);
 
     font-size: 11px;
+
     letter-spacing: 2.2px;
+
     text-transform: uppercase;
+
     font-weight: 500;
 
     border-radius: 3px;
+
     border: 1px solid rgba(224,194,122,0.22);
 
     text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.cta:hover {
+    background: rgba(10,18,24,0.24);
+}
+
+.cta svg {
+    width: 14px;
+    height: 14px;
+
+    stroke: rgba(224,194,122,0.9);
+
+    stroke-width: 1.5;
+
+    fill: none;
 }
 
 footer {
@@ -481,7 +503,16 @@ footer a {
     </p>
 
     <div style="text-align:center; margin-top:26px;">
-        <a href="mailto:studio@oddscape.co.uk" class="cta">Start Project</a>
+        <a href="mailto:studio@oddscape.co.uk" class="cta">
+
+    <span>Start Project</span>
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="8"/>
+        <path d="M10 8L15 12L10 16"/>
+    </svg>
+
+</a>
     </div>
 </section>
 
