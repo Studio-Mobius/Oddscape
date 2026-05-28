@@ -251,9 +251,39 @@ footer a {
     .footer-services { white-space: normal; }
 }
 
+.ar-cube {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 62px;
+    height: 62px;
+
+    margin-top: 24px;
+
+    border-radius: 14px;
+
+    background: rgba(10,18,24,0.14);
+
+    border: 1px solid rgba(224,194,122,0.06);
+
+    backdrop-filter: blur(1px);
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    animation: deployPulse 4s ease-in-out infinite;
+}
+
+.ar-cube:hover {
+    background: rgba(10,18,24,0.22);
+}
+
 .ar-cube svg {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
+
     stroke-width: 1.5;
     fill: none;
 }
@@ -267,20 +297,35 @@ footer a {
 }
 
 @keyframes shellPulse {
+
     0%, 100% {
-        stroke: rgba(224,194,122,0.9);
+        stroke: rgba(224,194,122,1);
     }
+
     50% {
-        stroke: rgba(230,230,230,0.42);
+        stroke: rgba(230,230,230,0.30);
     }
 }
 
 @keyframes innerPulse {
+
     0%, 100% {
-        stroke: rgba(230,230,230,0.42);
+        stroke: rgba(230,230,230,0.28);
     }
+
     50% {
         stroke: rgba(224,194,122,1);
+    }
+}
+
+@keyframes deployPulse {
+
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(224,194,122,0);
+    }
+
+    50% {
+        box-shadow: 0 0 16px rgba(224,194,122,0.10);
     }
 }
 
