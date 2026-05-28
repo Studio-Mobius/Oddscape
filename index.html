@@ -3,27 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Terrain Intelligence, LiDAR & AR Landscape Interpretation UK | Studio Oddscape</title>
-
-<meta name="description" content="Studio Oddscape provides terrain intelligence, LiDAR analysis, immersive terrain visualisation, and landscape-led spatial interpretation for coastal, rural, estate, and heritage environments across the UK.">
-
+<title>Immersive Terrain Visualisation, LiDAR & AR Landscape Interpretation UK | Studio Oddscape</title>
+<meta name="description" content="Studio Oddscape provides immersive terrain visualisation, LiDAR analysis, AR terrain models, and landscape-led spatial interpretation for coastlines, uplands, mountains, estates, heritage sites, and large-scale environments.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Studio Oddscape">
-
 <link rel="canonical" href="https://oddscape.co.uk/">
-
-<meta property="og:title" content="Studio Oddscape | Terrain Intelligence & Immersive Landscape Interpretation">
-<meta property="og:description" content="LiDAR analysis, terrain intelligence, AR terrain models, and landscape-led spatial interpretation for coastal, rural, estate, and heritage environments.">
+<meta property="og:title" content="Studio Oddscape | Immersive Terrain Visualisation">
+<meta property="og:description" content="LiDAR analysis, AR terrain models, and landscape-led spatial interpretation for coastlines, uplands, mountains, estates, and heritage environments.">
 <meta property="og:image" content="https://oddscape.co.uk/images/alde-map.png">
 <meta property="og:url" content="https://oddscape.co.uk/">
 <meta property="og:type" content="website">
-
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Studio Oddscape | Terrain Intelligence">
-<meta name="twitter:description" content="LiDAR analysis, terrain intelligence, and immersive terrain visualisation for landscape and land-use decisions.">
+<meta name="twitter:title" content="Studio Oddscape | Immersive Terrain Visualisation">
+<meta name="twitter:description" content="LiDAR analysis, terrain modelling, and immersive landscape interpretation.">
 <meta name="twitter:image" content="https://oddscape.co.uk/images/alde-map.png">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,13 +29,15 @@
     "caption": "River Alde terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.",
     "creditText": "© Environment Agency copyright and/or database right 2022. All rights reserved."
   },
-  "description": "Terrain intelligence, LiDAR analysis, immersive terrain visualisation, and landscape-led spatial interpretation for coastal, rural, estate, and heritage environments.",
+  "description": "Immersive terrain visualisation, LiDAR analysis, AR terrain models, and landscape-led spatial interpretation for coastlines, uplands, mountains, estates, heritage sites, and large-scale environments.",
   "areaServed": "UK",
   "serviceType": [
+    "Terrain Visualisation",
     "Terrain Intelligence",
     "LiDAR Analysis",
     "Landscape Assessment",
-    "Coastal Land Analysis",
+    "Coastal Terrain Analysis",
+    "Upland Terrain Analysis",
     "Estate Terrain Assessment",
     "Immersive Terrain Visualisation",
     "AR Landscape Interpretation",
@@ -56,6 +51,13 @@
       "description": "Terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.",
       "creditText": "© Environment Agency copyright and/or database right 2022. All rights reserved.",
       "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Tinto Hill Terrain Study",
+      "image": "https://oddscape.co.uk/images/Tinto.png",
+      "description": "Upland terrain visualisation developed using the Oddscape Terrain Engine™.",
+      "creditText": "Terrain visualisation by Studio Oddscape. Source data: Scottish Remote Sensing Portal LiDAR."
     },
     {
       "@type": "CreativeWork",
@@ -73,7 +75,6 @@
   ]
 }
 </script>
-
 <style>
 html, body {
     margin: 0;
@@ -81,7 +82,6 @@ html, body {
     width: 100%;
     overflow-x: hidden;
 }
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: radial-gradient(circle at top, #36424f 0%, #263442 55%, #1b2530 100%);
@@ -89,11 +89,9 @@ body {
     line-height: 1.7;
     text-align: center;
 }
-
 header {
     padding: 34px 20px 14px;
 }
-
 h1 {
     font-size: 56px;
     margin: 0;
@@ -103,13 +101,11 @@ h1 {
     line-height: 1.05;
     text-shadow: 0 2px 6px rgba(0,0,0,0.45);
 }
-
 .hero-image {
     width: 100%;
     margin-top: 8px;
     background: #1b2530;
 }
-
 .hero-image img {
     width: 100%;
     height: auto;
@@ -118,7 +114,6 @@ h1 {
     user-select: none;
     -webkit-user-drag: none;
 }
-
 .caption {
     max-width: 900px;
     margin: 8px auto 0;
@@ -127,37 +122,31 @@ h1 {
     color: #9ea8b1;
     text-align: center;
 }
-
 .tagline {
     max-width: 900px;
     margin: 18px auto 8px;
     padding: 0 20px;
     color: #dfe5ea;
 }
-
 .tagline-line-1 {
     font-size: 30px;
     font-weight: 600;
 }
-
 .tagline-line-2 {
     font-size: 20px;
     color: #cfd7de;
 }
-
 .tagline-line-3 {
     font-size: 16px;
     margin-top: 10px;
     color: #aeb7bf;
 }
-
 section {
     max-width: 900px;
     margin: auto;
     padding: 48px 20px;
     text-align: left;
 }
-
 h2 {
     font-size: 44px;
     margin: 0 0 28px 0;
@@ -165,30 +154,25 @@ h2 {
     border-bottom: 1px solid rgba(255,255,255,0.12);
     padding-bottom: 14px;
 }
-
 h3 {
     font-size: 28px;
     margin: 0 0 14px 0;
     color: #e6e6e6;
 }
-
 p {
     font-size: 20px;
 }
-
 .project-lead {
     font-size: 22px;
     color: #dfe5ea;
     margin-bottom: 20px;
 }
-
 .project-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 26px;
     align-items: start;
 }
-
 .project-image img {
     width: 100%;
     height: auto;
@@ -196,26 +180,21 @@ p {
     border-radius: 10px;
     box-shadow: 0 10px 28px rgba(0,0,0,0.28);
 }
-
 .project-meta {
     margin-top: 18px;
 }
-
 .project-meta p {
     margin: 0 0 16px 0;
 }
-
 .project-meta ul {
     margin: 0 0 20px 22px;
     padding: 0;
     font-size: 19px;
     color: #d7dde2;
 }
-
 .project-meta li {
     margin-bottom: 10px;
 }
-
 .eyebrow {
     font-size: 14px;
     opacity: 0.6;
@@ -223,13 +202,11 @@ p {
     text-transform: uppercase;
     margin-bottom: 6px;
 }
-
 .credit {
     font-size: 13px;
     color: #9ea8b1;
     margin-top: 10px;
 }
-
 .cta {
     display: inline-block;
     padding: 14px 22px;
@@ -239,7 +216,6 @@ p {
     border-radius: 8px;
     text-decoration: none;
 }
-
 footer {
     text-align: center;
     padding: 40px 20px 60px;
@@ -249,13 +225,11 @@ footer {
     line-height: 1.5;
     color: #c8cdd2;
 }
-
 .footer-services {
     font-size: 0.9em;
     white-space: nowrap;
     margin: 10px 0;
 }
-
 .footer-credit {
     max-width: 780px;
     margin: 18px auto 0;
@@ -263,12 +237,10 @@ footer {
     line-height: 1.5;
     color: #8f99a2;
 }
-
 footer a {
     color: #aeb7bf;
     text-decoration: none;
 }
-
 @media (max-width: 700px) {
     h1 { font-size: 28px; }
     h2 { font-size: 26px; }
@@ -282,162 +254,145 @@ footer a {
 }
 </style>
 </head>
-
 <body>
-
 <header>
     <h1>Studio Oddscape</h1>
 </header>
-
 <div class="hero-image">
     <img src="./images/alde-map.png" alt="River Alde terrain visualisation developed using the Oddscape Terrain Engine, showing estuary form and coastal structure from Environment Agency LiDAR data">
 </div>
 <div class="caption">
     River Alde terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
 </div>
-
 <div class="tagline">
-    <div class="tagline-line-1">Terrain intelligence for land, coast, heritage, and estate-scale decision-making.</div>
-    <div class="tagline-line-2">LiDAR analysis, immersive terrain visualisation, and spatial interpretation.</div>
-    <div class="tagline-line-3">Helping landscapes become easier to read, understand, and communicate.</div>
+    <div class="tagline-line-1">Immersive terrain visualisation for coastlines, mountains, heritage, and large-scale landscapes.</div>
+    <div class="tagline-line-2">LiDAR analysis, 3D terrain modelling, AR viewing, and spatial interpretation.</div>
+    <div class="tagline-line-3">Making landscapes easier to see, explore, and understand.</div>
 </div>
-
 <section>
     <h2>The Oddscape Terrain Engine™</h2>
-
     <p>
-        A terrain intelligence system developed by Studio Oddscape. Built on geospatial workflows, LiDAR data, and landscape-led interpretation, the engine transforms elevation data into clear visual and spatial understanding — revealing patterns, movement, risk, and opportunity across land and coastal environments.
+        A terrain visualisation system developed by Studio Oddscape. Built on geospatial workflows, LiDAR data, and landscape-led interpretation, the engine transforms elevation data into clear visual and spatial understanding — revealing landform, movement, risk, and opportunity across coastlines, uplands, estates, heritage sites, and large-scale environments.
     </p>
-
     <ul style="margin-top: 20px; padding-left: 20px; color: #aeb6bf; line-height: 1.6; font-size: 19px;">
-        <li>Reveals hidden terrain behaviour, including drainage, micro-topography, and erosion patterns</li>
-        <li>Scales from single sites to estate, coastal, and heritage landscapes</li>
-        <li>Transforms complex terrain data into accessible visual and immersive spatial understanding</li>
+        <li>Transforms elevation data into 3D terrain models, visual studies, and AR-ready landscape experiences</li>
+        <li>Works across estuaries, coastlines, uplands, mountains, heritage landscapes, and estate-scale sites</li>
+        <li>Turns complex terrain data into accessible visual and immersive spatial understanding</li>
     </ul>
 </section>
-
 <section>
     <h2>About</h2>
-
     <p>
-        Working across coastal environments, estates, rural sites, and heritage landscapes, Oddscape interprets terrain character and landscape processes — identifying patterns in elevation, drainage, landform, and movement that are not immediately visible on the ground.
+        Working across coastlines, uplands, estates, rural terrain, and heritage landscapes, Oddscape interprets landform and landscape processes — identifying patterns in elevation, drainage, terrain structure, and movement that are not immediately visible on the ground.
     </p>
-
     <p>
-        The work provides a clear, evidence-based foundation for design, interpretation, planning, education, and land management — helping people understand how landscapes behave before intervention.
+        The work provides a visual and evidence-based foundation for design, interpretation, planning, education, heritage engagement, and land management — helping people understand how landscapes behave before intervention.
     </p>
 </section>
-
 <section>
     <h2>Selected Work</h2>
-
     <div class="project-grid">
         <div class="project-image">
             <img src="./images/alde-map.png" alt="River Alde and Thorpeness coastal terrain analysis developed using the Oddscape Terrain Engine from Environment Agency LiDAR data">
             <p class="credit">Terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.</p>
         </div>
-
         <div class="project-meta">
             <p class="eyebrow">Example output from the Oddscape Terrain Engine™</p>
-            <p class="eyebrow">Coastal Case Study</p>
-
+            <p class="eyebrow">Coastal Terrain Study</p>
             <h3>River Alde Coastal Terrain Analysis</h3>
-
             <p class="project-lead">
                 LiDAR-based terrain modelling of a dynamic Suffolk coastline.
             </p>
-
             <p>
                 Using Environment Agency LiDAR data, this study explores elevation, drainage behaviour, estuarine structure, and potential flood pathways across the Thorpeness landscape.
             </p>
-
             <ul>
                 <li>High-resolution terrain modelling</li>
                 <li>Contour extraction and elevation mapping</li>
                 <li>Surface flow and landform interpretation</li>
                 <li>Visualisation for landscape decision support</li>
             </ul>
-
             <p>
                 The result is a clearer visual understanding of terrain behaviour — revealing patterns of elevation and potential movement that are difficult to read from the ground alone.
             </p>
         </div>
     </div>
 </section>
-
+<section>
+    <h2>Upland Terrain</h2>
+    <div class="project-grid">
+        <div class="project-image">
+            <img src="./images/Tinto.png" alt="Tinto Hill upland terrain model developed using the Oddscape Terrain Engine">
+            <p class="credit">Upland terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Scottish Remote Sensing Portal LiDAR.</p>
+        </div>
+        <div class="project-meta">
+            <p class="eyebrow">Upland Terrain Study</p>
+            <h3>Tinto Hill Terrain Model</h3>
+            <p class="project-lead">
+                Mountain and upland terrain visualisation for landform exploration.
+            </p>
+            <p>
+                Tinto demonstrates how the Oddscape workflow extends beyond estuaries and coastlines into upland and mountain terrain — making elevation, slope, form, and spatial structure easier to read.
+            </p>
+            <p>
+                This expands the studio’s terrain language from tidal landscapes to wider landform systems, including hills, ridges, uplands, and future large-scale terrain studies.
+            </p>
+        </div>
+    </div>
+</section>
 <section>
     <h2>Interactive Terrain</h2>
-
     <div class="project-grid">
-
         <div class="project-image">
             <img src="./images/deben_preview.png" alt="River Deben interactive terrain model preview developed using the Oddscape Terrain Engine from Environment Agency LiDAR data">
             <p class="credit">Interactive terrain model developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.</p>
         </div>
-
         <div class="project-meta">
-
             <p class="eyebrow">AR Terrain Study</p>
-
             <h3>River Deben Interactive Model</h3>
-
             <p class="project-lead">
                 LiDAR-derived estuarine terrain visualisation for immersive spatial exploration.
             </p>
-
             <p>
                 An interactive terrain model of the River Deben landscape, developed to explore how terrain, estuary form, and landscape structure can be experienced directly through augmented reality.
             </p>
-
             <p>
                 This approach supports new ways of communicating landscape character, heritage context, environmental change, and spatial relationships beyond flat mapping alone.
             </p>
-
             <div style="margin-top:24px;">
                 <a rel="ar" href="./images/Deben.usdz" class="cta">
                     View in AR
                 </a>
             </div>
-
         </div>
-
     </div>
 </section>
-
 <section>
     <h2>Professional Approach</h2>
-
     <p>
         Studio Oddscape applies data-led analysis and landscape-led interpretation to support planning, design, education, heritage engagement, and land management.
     </p>
-
     <p>
-        Work is grounded in landscape character, environmental sensitivity, and long-term change — ensuring decisions respond to both physical processes and place-based context.
+        Work is grounded in landform, environmental sensitivity, and long-term change — ensuring decisions respond to both physical processes and place-based context.
     </p>
-
     <p>
-        The aim is simple: make terrain easier to read, communicate, and understand.
+        The aim is simple: make terrain easier to see, explore, communicate, and understand.
     </p>
-
     <div style="text-align:center; margin-top:26px;">
         <a href="mailto:studio@oddscape.co.uk" class="cta">Start a project</a>
     </div>
 </section>
-
 <footer>
     Studio Oddscape<br>
     oddscape.co.uk<br>
-
     <div class="footer-services">
-        Terrain Intelligence • LiDAR Analysis<br>Immersive Landscape Interpretation • UK
+        Terrain Visualisation • LiDAR Analysis<br>3D Terrain Modelling • Immersive Landscape Interpretation • UK
     </div>
-
     <a href="privacy.html">Privacy</a>
-
     <div class="footer-credit">
-        Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets, including Environment Agency LiDAR data where stated. Environment Agency LiDAR attribution: © Environment Agency copyright and/or database right 2022. All rights reserved. Licensed under the Open Government Licence v3.0.
+        Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets, including Environment Agency LiDAR data where stated. Environment Agency LiDAR attribution: © Environment Agency copyright and/or database right 2022. All rights reserved. Licensed under the Open Government Licence v3.0.<br><br>
+        Additional upland terrain data may include publicly available Scottish Remote Sensing Portal LiDAR datasets where stated.
     </div>
 </footer>
-
 </body>
 </html>
