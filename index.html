@@ -7,10 +7,8 @@
 <title>Immersive Terrain Visualisation, LiDAR & AR Landscape Interpretation UK | Studio Oddscape</title>
 
 <meta name="description" content="Studio Oddscape creates immersive terrain visualisations, LiDAR analysis, AR terrain models, and landscape-led spatial interpretation for coastlines, uplands, mountains, estates, heritage sites, and large-scale environments.">
-
 <meta name="robots" content="index, follow">
 <meta name="author" content="Studio Oddscape">
-
 <link rel="canonical" href="https://oddscape.co.uk/">
 
 <meta property="og:title" content="Studio Oddscape | Immersive Terrain Visualisation">
@@ -156,15 +154,65 @@ p {
     bottom: 10px;
     left: 10px;
     z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
     background: rgba(10,18,24,0.15);
     backdrop-filter: blur(.25px);
+
     color: rgba(230,230,230,0.9);
+
     padding: 4px 8px;
     font-size: 10px;
     letter-spacing: 2.2px;
     text-transform: uppercase;
+
     border-radius: 3px;
     border: 1px solid rgba(224,194,122,0.22);
+}
+
+.ngr-cube {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    text-decoration: none;
+}
+
+.ngr-cube svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 1.5;
+    fill: none;
+}
+
+.cube-shell {
+    animation: shellPulse 3s ease-in-out infinite;
+}
+
+.cube-inner {
+    animation: innerPulse 3s ease-in-out infinite;
+}
+
+@keyframes shellPulse {
+    0%, 100% {
+        stroke: rgba(224,194,122,1);
+    }
+    50% {
+        stroke: rgba(230,230,230,0.28);
+    }
+}
+
+@keyframes innerPulse {
+    0%, 100% {
+        stroke: rgba(230,230,230,0.28);
+    }
+    50% {
+        stroke: rgba(224,194,122,1);
+    }
 }
 
 .project-meta {
@@ -250,85 +298,6 @@ footer a {
     .project-meta ul { font-size: 16px; }
     .footer-services { white-space: normal; }
 }
-
-.ar-cube {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 62px;
-    height: 62px;
-
-    margin-top: 24px;
-
-    border-radius: 14px;
-
-    background: rgba(10,18,24,0.14);
-
-    border: 1px solid rgba(224,194,122,0.06);
-
-    backdrop-filter: blur(1px);
-
-    text-decoration: none;
-
-    transition: all 0.3s ease;
-
-    animation: deployPulse 4s ease-in-out infinite;
-}
-
-.ar-cube:hover {
-    background: rgba(10,18,24,0.22);
-}
-
-.ar-cube svg {
-    width: 30px;
-    height: 30px;
-
-    stroke-width: 1.5;
-    fill: none;
-}
-
-.cube-shell {
-    animation: shellPulse 3s ease-in-out infinite;
-}
-
-.cube-inner {
-    animation: innerPulse 3s ease-in-out infinite;
-}
-
-@keyframes shellPulse {
-
-    0%, 100% {
-        stroke: rgba(224,194,122,1);
-    }
-
-    50% {
-        stroke: rgba(230,230,230,0.30);
-    }
-}
-
-@keyframes innerPulse {
-
-    0%, 100% {
-        stroke: rgba(230,230,230,0.28);
-    }
-
-    50% {
-        stroke: rgba(224,194,122,1);
-    }
-}
-
-@keyframes deployPulse {
-
-    0%, 100% {
-        box-shadow: 0 0 0 rgba(224,194,122,0);
-    }
-
-    50% {
-        box-shadow: 0 0 16px rgba(224,194,122,0.10);
-    }
-}
-
 </style>
 </head>
 
@@ -358,22 +327,19 @@ footer a {
     <div class="project-grid">
 
         <div class="project-image">
-
             <div class="image-wrap">
                 <img src="./images/alde-map.png" alt="River Alde coastal terrain analysis">
                 <div class="image-ngr">
-                    NGR: TM 46 55 approx.
+                    <span>NGR: TM 46 55 approx.</span>
                 </div>
             </div>
 
             <p class="credit">
                 Terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
             </p>
-
         </div>
 
         <div class="project-meta">
-
             <p class="eyebrow">Coastal Terrain Study</p>
 
             <h3>River Alde Coastal Terrain Analysis</h3>
@@ -386,6 +352,7 @@ footer a {
                 Using Environment Agency LiDAR data, this study explores elevation, drainage behaviour, estuarine structure, and potential flood pathways across the Thorpeness landscape.
             </p>
         </div>
+
     </div>
 </section>
 
@@ -395,22 +362,32 @@ footer a {
     <div class="project-grid">
 
         <div class="project-image">
-
             <div class="image-wrap">
                 <img src="./images/Tinto.png" alt="Tinto Hill upland terrain model">
                 <div class="image-ngr">
-                    NGR: NS 953 343
+                    <span>NGR: NS 953 343</span>
+
+                    <a rel="ar"
+                       href="./images/Tinto.usdz"
+                       class="ngr-cube"
+                       aria-label="Deploy Tinto terrain model in AR">
+                        <svg viewBox="0 0 24 24">
+                            <path class="cube-shell" d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
+                            <g class="cube-inner">
+                                <path d="M12 22V12"/>
+                                <path d="M20 6L12 12L4 6"/>
+                            </g>
+                        </svg>
+                    </a>
                 </div>
             </div>
 
             <p class="credit">
                 Upland terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Scottish Remote Sensing Portal LiDAR.
             </p>
-
         </div>
 
         <div class="project-meta">
-
             <p class="eyebrow">Upland Terrain Study</p>
 
             <h3>Tinto Hill Terrain Model</h3>
@@ -418,19 +395,8 @@ footer a {
             <p class="project-lead">
                 Upland terrain visualisation exploring elevation, slope, and landform structure.
             </p>
-
-            <div style="margin-top:24px;">
-                <a rel="ar" href="./images/Tinto.usdz" class="ar-cube" aria-label="View Tinto terrain model in AR">
-    <svg viewBox="0 0 24 24">
-        <path class="cube-shell" d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
-        <g class="cube-inner">
-            <path d="M12 22V12"/>
-            <path d="M20 6L12 12L4 6"/>
-        </g>
-    </svg>
-</a>
-            </div>
         </div>
+
     </div>
 </section>
 
@@ -440,22 +406,32 @@ footer a {
     <div class="project-grid">
 
         <div class="project-image">
-
             <div class="image-wrap">
                 <img src="./images/deben_preview.png" alt="River Deben interactive terrain model">
                 <div class="image-ngr">
-                    NGR: TM 29 57 approx.
+                    <span>NGR: TM 29 57 approx.</span>
+
+                    <a rel="ar"
+                       href="./images/Deben.usdz"
+                       class="ngr-cube"
+                       aria-label="Deploy River Deben terrain model in AR">
+                        <svg viewBox="0 0 24 24">
+                            <path class="cube-shell" d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
+                            <g class="cube-inner">
+                                <path d="M12 22V12"/>
+                                <path d="M20 6L12 12L4 6"/>
+                            </g>
+                        </svg>
+                    </a>
                 </div>
             </div>
 
             <p class="credit">
                 Interactive terrain model developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
             </p>
-
         </div>
 
         <div class="project-meta">
-
             <p class="eyebrow">AR Terrain Study</p>
 
             <h3>River Deben Interactive Model</h3>
@@ -463,25 +439,18 @@ footer a {
             <p class="project-lead">
                 LiDAR-derived estuarine terrain visualisation for immersive spatial exploration.
             </p>
+        </div>
 
-            <div style="margin-top:24px;">
-                <a rel="ar" href="./images/Deben.usdz" class="ar-cube" aria-label="View Tinto terrain model in AR">
-    <svg viewBox="0 0 24 24">
-        <path class="cube-shell" d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
-        <g class="cube-inner">
-            <path d="M12 22V12"/>
-            <path d="M20 6L12 12L4 6"/>
-        </g>
-    </svg>
-</a>
-
+    </div>
 </section>
 
 <section>
     <h2>Professional Approach</h2>
+
     <p>
         Studio Oddscape applies data-led analysis and landscape-led interpretation to support planning, design, education, heritage engagement, and land management.
     </p>
+
     <p>
         The aim is simple: make terrain easier to see, explore, communicate, and understand.
     </p>
@@ -489,11 +458,9 @@ footer a {
     <div style="text-align:center; margin-top:26px;">
         <a href="mailto:studio@oddscape.co.uk" class="cta">Start a project</a>
     </div>
-
 </section>
 
 <footer>
-
     Studio Oddscape<br>
     oddscape.co.uk<br>
 
@@ -507,7 +474,6 @@ footer a {
     <div class="footer-credit">
         Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets including Environment Agency LiDAR data and Scottish Remote Sensing Portal LiDAR datasets where stated.
     </div>
-
 </footer>
 
 </body>
