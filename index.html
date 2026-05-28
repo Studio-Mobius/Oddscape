@@ -265,13 +265,18 @@ footer a {
 
     background: rgba(10,18,24,0.18);
 
-    border: 1px solid rgba(224,194,122,0.10);
+    border: 1px solid rgba(224,194,122,0.08);
 
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(2px);
 
     text-decoration: none;
 
     transition: all 0.3s ease;
+}
+
+.ar-cube:hover {
+    background: rgba(10,18,24,0.28);
+    transform: translateY(-2px);
 }
 
 .ar-cube svg {
@@ -281,21 +286,36 @@ footer a {
     stroke: rgba(224,194,122,0.88);
     stroke-width: 1.5;
     fill: none;
-
-    animation: cubeSpin 8s linear infinite;
 }
 
-.ar-cube:hover {
-    background: rgba(10,18,24,0.32);
-    transform: translateY(-2px);
+.cube-shell {
+    transform-origin: center;
 }
 
-@keyframes cubeSpin {
-    from {
-        transform: rotateY(0deg) rotateX(0deg);
+.cube-inner {
+    transform-origin: 12px 12px;
+    animation: cubeTumble 2.8s ease-in-out infinite;
+}
+
+@keyframes cubeTumble {
+    0% {
+        transform: scaleY(1);
+        opacity: 1;
     }
-    to {
-        transform: rotateY(360deg) rotateX(360deg);
+
+    45% {
+        transform: scaleY(0.08);
+        opacity: 0.45;
+    }
+
+    55% {
+        transform: scaleY(-0.08);
+        opacity: 0.45;
+    }
+
+    100% {
+        transform: scaleY(-1);
+        opacity: 1;
     }
 }
 
