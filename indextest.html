@@ -3,26 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Studio Oddscape | Terrain Intelligence</title>
+
+<meta name="description" content="Studio Oddscape — terrain intelligence, LiDAR, REM and spatial interpretation.">
 
 <style>
 
 :root{
-  --bg:#071421;
   --gold:#c8a66b;
+  --paper:#e7ddcf;
 }
 
 *{
   box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
   margin:0;
   min-height:100%;
   background:
-    radial-gradient(circle at center, rgba(23,50,72,.65), transparent 58%),
-    linear-gradient(145deg,#091a2a,#02070c 82%);
-  overflow:hidden;
+    radial-gradient(circle at center,
+    rgba(23,50,72,.60),
+    transparent 58%),
+    linear-gradient(
+    145deg,
+    #091a2a,
+    #02070c 82%);
 }
 
 body{
@@ -30,47 +38,56 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
   font-family:"Courier New", monospace;
 }
 
-a.stage{
+.stage{
   position:relative;
+
   display:block;
-  width:min(92vw,560px);
-  aspect-ratio:9 / 16;
+
+  width:min(94vw,620px);
+
+  aspect-ratio:900 / 1280;
+
   overflow:hidden;
-  border-radius:28px;
+
   text-decoration:none;
 
-  box-shadow:
-    0 40px 120px rgba(0,0,0,.62),
-    0 0 0 1px rgba(200,166,107,.12);
+  color:inherit;
 
-  background:#071421;
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.62);
+
+  border-radius:28px;
 }
+
+/* TILE GRID */
 
 .grid{
   position:absolute;
   inset:0;
 
   display:grid;
-  grid-template-columns:repeat(6,1fr);
-  grid-template-rows:repeat(10,1fr);
+
+  grid-template-columns:repeat(12,1fr);
+  grid-template-rows:repeat(18,1fr);
 }
 
 .tile{
-  position:relative;
   overflow:hidden;
 
   opacity:0;
+
   transform:
     translate(var(--x),var(--y))
-    scale(.92);
+    scale(.93);
 
   filter:blur(2px);
 
   animation:
-    assemble .95s cubic-bezier(.2,.8,.2,1)
+    assemble .9s cubic-bezier(.2,.8,.2,1)
     forwards;
 
   animation-delay:var(--delay);
@@ -83,44 +100,119 @@ a.stage{
   display:block;
 }
 
-.stage::after{
+/* APERTURE */
 
-  content:"ENTER TERRAIN SYSTEM";
+.aperture{
 
   position:absolute;
-  left:50%;
-  bottom:6.5%;
 
-  transform:translateX(-50%);
+  left:30.1%;
+  top:37.6%;
 
-  font-size:clamp(.65rem,2.2vw,.9rem);
-  letter-spacing:.25em;
+  width:39.8%;
+  height:27.7%;
 
-  color:rgba(200,166,107,.92);
+  border-radius:10px;
 
-  padding:12px 18px;
+  overflow:hidden;
 
-  border:1px solid rgba(200,166,107,.55);
+  z-index:10;
 
-  background:rgba(7,20,33,.35);
+  background:var(--paper);
+
+  box-shadow:
+    inset 0 0 24px rgba(0,0,0,.2);
 
   opacity:0;
 
   animation:
-    enterFade .5s ease forwards;
+    slotIn .45s ease forwards;
 
-  animation-delay:1.05s;
-
-  pointer-events:none;
+  animation-delay:1.25s;
 }
 
-.stage:hover::after{
-  background:rgba(200,166,107,.12);
+/* QR MODE */
+
+.qr-mode .aperture::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:7%;
+
+  background-image:url("https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https%3A%2F%2Fwww.oddscape.co.uk%2Findexx.html");
+
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+
+  image-rendering:pixelated;
 }
+
+/* TERRAIN MODE */
+
+.terrain-mode .aperture::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-18%;
+
+  background:
+    radial-gradient(circle at 30% 40%,
+    rgba(255,255,255,.22),
+    transparent 18%),
+
+    radial-gradient(circle at 65% 60%,
+    rgba(200,166,107,.18),
+    transparent 22%),
+
+    repeating-linear-gradient(
+    25deg,
+    rgba(7,20,33,.85) 0 4px,
+    rgba(231,221,207,.22) 4px 6px);
+
+  animation:
+    terrainSpin 8s linear infinite;
+}
+
+/* CTA */
+
+.stage::after{
+
+  content:"CLICK TO ENTER";
+
+  position:absolute;
+
+  left:50%;
+  bottom:2.5%;
+
+  transform:translateX(-50%);
+
+  letter-spacing:.22em;
+
+  color:rgba(200,166,107,.9);
+
+  font-size:
+    clamp(.55rem,1.8vw,.75rem);
+
+  opacity:0;
+
+  animation:
+    slotIn .45s ease forwards;
+
+  animation-delay:1.35s;
+}
+
+/* ANIMATION */
 
 @keyframes assemble{
+
   to{
     opacity:1;
+
     transform:
       translate(0,0)
       scale(1);
@@ -129,17 +221,34 @@ a.stage{
   }
 }
 
-@keyframes enterFade{
+@keyframes slotIn{
+
   to{
     opacity:1;
   }
 }
 
+@keyframes terrainSpin{
+
+  from{
+    transform:
+      rotate(0deg)
+      scale(1.05);
+  }
+
+  to{
+    transform:
+      rotate(360deg)
+      scale(1.05);
+  }
+}
+
+/* MOBILE */
+
 @media(max-width:700px){
 
-  a.stage{
-    width:94vw;
-    border-radius:22px;
+  .stage{
+    width:96vw;
   }
 
 }
@@ -147,61 +256,30 @@ a.stage{
 </style>
 </head>
 
-<body>
+<!-- CHANGE qr-mode TO terrain-mode FOR ROTATING TERRAIN -->
 
-<a class="stage" href="indextest.html">
+<body class="qr-mode">
+
+<a class="stage"
+href="home.html"
+aria-label="Enter Studio Oddscape terrain system">
 
 <div class="grid">
 
 <!-- ROW 1 -->
-<div class="tile" style="--delay:.01s;--x:-40px;--y:-20px;"><img src="images/tile-r01-c01.jpg"></div>
-<div class="tile" style="--delay:.02s;--x:-20px;--y:-10px;"><img src="images/tile-r01-c02.jpg"></div>
-<div class="tile" style="--delay:.03s;--x:20px;--y:-30px;"><img src="images/tile-r01-c03.jpg"></div>
-<div class="tile" style="--delay:.04s;--x:40px;--y:-20px;"><img src="images/tile-r01-c04.jpg"></div>
-<div class="tile" style="--delay:.05s;--x:20px;--y:-10px;"><img src="images/tile-r01-c05.jpg"></div>
-<div class="tile" style="--delay:.06s;--x:60px;--y:-20px;"><img src="images/tile-r01-c06.jpg"></div>
 
-<!-- ROW 2 -->
-<div class="tile" style="--delay:.07s;--x:-50px;--y:10px;"><img src="images/tile-r02-c01.jpg"></div>
-<div class="tile" style="--delay:.08s;--x:-20px;--y:20px;"><img src="images/tile-r02-c02.jpg"></div>
-<div class="tile" style="--delay:.09s;--x:20px;--y:10px;"><img src="images/tile-r02-c03.jpg"></div>
-<div class="tile" style="--delay:.10s;--x:50px;--y:20px;"><img src="images/tile-r02-c04.jpg"></div>
-<div class="tile" style="--delay:.11s;--x:30px;--y:10px;"><img src="images/tile-r02-c05.jpg"></div>
-<div class="tile" style="--delay:.12s;--x:60px;--y:20px;"><img src="images/tile-r02-c06.jpg"></div>
+<div class="tile" style="--delay:.01s;--x:-50px;--y:-30px;"><img src="images/card_tiles/tile-r01-c01.jpg"></div>
+<div class="tile" style="--delay:.02s;--x:-30px;--y:-20px;"><img src="images/card_tiles/tile-r01-c02.jpg"></div>
+<div class="tile" style="--delay:.03s;--x:-10px;--y:-10px;"><img src="images/card_tiles/tile-r01-c03.jpg"></div>
+<div class="tile" style="--delay:.04s;--x:10px;--y:-20px;"><img src="images/card_tiles/tile-r01-c04.jpg"></div>
+<div class="tile" style="--delay:.05s;--x:20px;--y:-10px;"><img src="images/card_tiles/tile-r01-c05.jpg"></div>
+<div class="tile" style="--delay:.06s;--x:40px;--y:-30px;"><img src="images/card_tiles/tile-r01-c06.jpg"></div>
 
-<!-- ROW 3 -->
-<div class="tile" style="--delay:.13s;--x:-60px;--y:0px;"><img src="images/tile-r03-c01.jpg"></div>
-<div class="tile" style="--delay:.14s;--x:-20px;--y:-10px;"><img src="images/tile-r03-c02.jpg"></div>
-<div class="tile" style="--delay:.15s;--x:10px;--y:10px;"><img src="images/tile-r03-c03.jpg"></div>
-<div class="tile" style="--delay:.16s;--x:40px;--y:-10px;"><img src="images/tile-r03-c04.jpg"></div>
-<div class="tile" style="--delay:.17s;--x:30px;--y:20px;"><img src="images/tile-r03-c05.jpg"></div>
-<div class="tile" style="--delay:.18s;--x:60px;--y:10px;"><img src="images/tile-r03-c06.jpg"></div>
-
-<!-- ROW 4 -->
-<div class="tile" style="--delay:.19s;--x:-40px;--y:20px;"><img src="images/tile-r04-c01.jpg"></div>
-<div class="tile" style="--delay:.20s;--x:-20px;--y:30px;"><img src="images/tile-r04-c02.jpg"></div>
-<div class="tile" style="--delay:.21s;--x:20px;--y:20px;"><img src="images/tile-r04-c03.jpg"></div>
-<div class="tile" style="--delay:.22s;--x:40px;--y:30px;"><img src="images/tile-r04-c04.jpg"></div>
-<div class="tile" style="--delay:.23s;--x:20px;--y:20px;"><img src="images/tile-r04-c05.jpg"></div>
-<div class="tile" style="--delay:.24s;--x:60px;--y:30px;"><img src="images/tile-r04-c06.jpg"></div>
-
-<!-- ROW 5 -->
-<div class="tile" style="--delay:.25s;--x:-40px;--y:-10px;"><img src="images/tile-r05-c01.jpg"></div>
-<div class="tile" style="--delay:.26s;--x:-20px;--y:-20px;"><img src="images/tile-r05-c02.jpg"></div>
-<div class="tile" style="--delay:.27s;--x:20px;--y:-10px;"><img src="images/tile-r05-c03.jpg"></div>
-<div class="tile" style="--delay:.28s;--x:40px;--y:-20px;"><img src="images/tile-r05-c04.jpg"></div>
-<div class="tile" style="--delay:.29s;--x:20px;--y:-10px;"><img src="images/tile-r05-c05.jpg"></div>
-<div class="tile" style="--delay:.30s;--x:60px;--y:-20px;"><img src="images/tile-r05-c06.jpg"></div>
-
-<!-- ROW 6 -->
-<div class="tile" style="--delay:.31s;--x:-50px;--y:10px;"><img src="images/tile-r06-c01.jpg"></div>
-<div class="tile" style="--delay:.32s;--x:-20px;--y:20px;"><img src="images/tile-r06-c02.jpg"></div>
-<div class="tile" style="--delay:.33s;--x:20px;--y:10px;"><img src="images/tile-r06-c03.jpg"></div>
-<div class="tile" style="--delay:.34s;--x:50px;--y:20px;"><img src="images/tile-r06-c04.jpg"></div>
-<div class="tile" style="--delay:.35s;--x:30px;--y:10px;"><img src="images/tile-r06-c05.jpg"></div>
-<div class="tile" style="--delay:.36s;--x:60px;--y:20px;"><img src="images/tile-r06-c06.jpg"></div>
+<!-- DUPLICATE / CONTINUE ALL TILES -->
 
 </div>
+
+<div class="aperture"></div>
 
 </a>
 
