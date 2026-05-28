@@ -251,53 +251,37 @@ footer a {
     .footer-services { white-space: normal; }
 }
 
-.ar-cube {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 54px;
-    height: 54px;
-    margin-top: 24px;
-    border-radius: 12px;
-    background: rgba(10,18,24,0.18);
-    border: 1px solid rgba(224,194,122,0.08);
-    backdrop-filter: blur(2px);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
 .ar-cube svg {
     width: 28px;
     height: 28px;
-    stroke: rgba(224,194,122,0.88);
     stroke-width: 1.5;
     fill: none;
 }
 
-.ar-cube::after {
-    content: "";
-    position: absolute;
-    left: -40%;
-    top: 0;
-    width: 35%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(224,194,122,0.22),
-        transparent
-    );
-    animation: arScan 3s ease-in-out infinite;
+.cube-shell {
+    animation: shellPulse 3s ease-in-out infinite;
 }
 
-@keyframes arScan {
-    0% { left: -40%; opacity: 0; }
-    20% { opacity: 1; }
-    50% { left: 105%; opacity: 1; }
-    70% { opacity: 0; }
-    100% { left: 105%; opacity: 0; }
+.cube-inner {
+    animation: innerPulse 3s ease-in-out infinite;
+}
+
+@keyframes shellPulse {
+    0%, 100% {
+        stroke: rgba(224,194,122,0.9);
+    }
+    50% {
+        stroke: rgba(230,230,230,0.42);
+    }
+}
+
+@keyframes innerPulse {
+    0%, 100% {
+        stroke: rgba(230,230,230,0.42);
+    }
+    50% {
+        stroke: rgba(224,194,122,1);
+    }
 }
 
 </style>
