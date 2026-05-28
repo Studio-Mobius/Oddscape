@@ -24,72 +24,6 @@
 <meta name="twitter:description" content="LiDAR analysis, 3D terrain modelling, AR viewing, and spatial interpretation.">
 <meta name="twitter:image" content="https://oddscape.co.uk/images/alde-map.png">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Studio Oddscape",
-  "url": "https://oddscape.co.uk/",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://oddscape.co.uk/images/alde-map.png",
-    "caption": "River Alde terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.",
-    "creditText": "© Environment Agency copyright and/or database right 2022. All rights reserved."
-  },
-  "description": "Immersive terrain visualisation, LiDAR analysis, AR terrain models, and landscape-led spatial interpretation for coastlines, uplands, mountains, estates, heritage sites, and large-scale environments.",
-  "areaServed": "UK",
-  "serviceType": [
-    "Terrain Visualisation",
-    "LiDAR Analysis",
-    "3D Terrain Modelling",
-    "Coastal Terrain Analysis",
-    "Upland Terrain Analysis",
-    "Estate Terrain Assessment",
-    "Immersive Terrain Visualisation",
-    "AR Landscape Interpretation",
-    "Heritage Landscape Interpretation"
-  ],
-  "hasPart": [
-    {
-      "@type": "CreativeWork",
-      "name": "River Alde Coastal Terrain Analysis",
-      "image": "https://oddscape.co.uk/images/alde-map.png",
-      "description": "Terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.",
-      "spatialCoverage": "River Alde / Suffolk Coast",
-      "creditText": "© Environment Agency copyright and/or database right 2022. All rights reserved.",
-      "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "Tinto Hill Terrain Model",
-      "image": "https://oddscape.co.uk/images/Tinto.png",
-      "spatialCoverage": "Tinto Hill, South Lanarkshire, NS 953 343",
-      "encoding": {
-        "@type": "MediaObject",
-        "contentUrl": "https://oddscape.co.uk/images/Tinto.usdz",
-        "encodingFormat": "model/vnd.usdz+zip"
-      },
-      "description": "Upland terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Scottish Remote Sensing Portal LiDAR.",
-      "creditText": "Terrain visualisation by Studio Oddscape. Source data: Scottish Remote Sensing Portal LiDAR."
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "River Deben Interactive Model",
-      "image": "https://oddscape.co.uk/images/deben_preview.png",
-      "spatialCoverage": "River Deben, Suffolk",
-      "encoding": {
-        "@type": "MediaObject",
-        "contentUrl": "https://oddscape.co.uk/images/Deben.usdz",
-        "encodingFormat": "model/vnd.usdz+zip"
-      },
-      "description": "Interactive terrain model developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.",
-      "creditText": "© Environment Agency copyright and/or database right 2022. All rights reserved.",
-      "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
-    }
-  ]
-}
-</script>
-
 <style>
 html, body {
     margin: 0;
@@ -142,14 +76,6 @@ h1 {
     font-size: 13px;
     color: #9ea8b1;
     text-align: center;
-}
-
-.grid-ref {
-    font-size: 12px;
-    color: #7f8992;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    margin-top: 6px;
 }
 
 .tagline {
@@ -213,12 +139,30 @@ p {
     align-items: start;
 }
 
+.project-image {
+    position: relative;
+}
+
 .project-image img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 10px;
     box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+}
+
+.image-ngr {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(0,0,0,0.45);
+    color: #d7dde2;
+    padding: 6px 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
 }
 
 .project-meta {
@@ -314,12 +258,11 @@ footer a {
 </header>
 
 <div class="hero-image">
-    <img src="./images/alde-map.png" alt="River Alde terrain visualisation developed using the Oddscape Terrain Engine, showing estuary form and coastal structure from Environment Agency LiDAR data">
+    <img src="./images/alde-map.png" alt="River Alde terrain visualisation developed using the Oddscape Terrain Engine">
 </div>
 
 <div class="caption">
-    River Alde terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
-    <div class="grid-ref">Study area: River Alde / Suffolk Coast · NGR: TM 46 55 approx.</div>
+    River Alde terrain visualisation developed using the Oddscape Terrain Engine™.
 </div>
 
 <div class="tagline">
@@ -358,13 +301,19 @@ footer a {
     <h2>Selected Work</h2>
 
     <div class="project-grid">
+
         <div class="project-image">
-            <img src="./images/alde-map.png" alt="River Alde and Thorpeness coastal terrain analysis developed using the Oddscape Terrain Engine from Environment Agency LiDAR data">
-            <p class="grid-ref">Study area: River Alde / Suffolk Coast · NGR: TM 46 55 approx.</p>
-            <p class="credit">Terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.</p>
+            <img src="./images/alde-map.png" alt="River Alde coastal terrain analysis">
+            <div class="image-ngr">
+                NGR: TM 46 55 approx.
+            </div>
+            <p class="credit">
+                Terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
+            </p>
         </div>
 
         <div class="project-meta">
+
             <p class="eyebrow">Coastal Terrain Study</p>
 
             <h3>River Alde Coastal Terrain Analysis</h3>
@@ -384,10 +333,8 @@ footer a {
                 <li>Visualisation for landscape decision support</li>
             </ul>
 
-            <p>
-                The result is a clearer visual understanding of terrain behaviour — revealing patterns of elevation and movement that are difficult to read from the ground alone.
-            </p>
         </div>
+
     </div>
 </section>
 
@@ -395,13 +342,19 @@ footer a {
     <h2>Upland Terrain</h2>
 
     <div class="project-grid">
+
         <div class="project-image">
-            <img src="./images/Tinto.png" alt="Tinto Hill upland terrain model developed using the Oddscape Terrain Engine">
-            <p class="grid-ref">Tinto Hill · South Lanarkshire · NGR: NS 953 343</p>
-            <p class="credit">Upland terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Scottish Remote Sensing Portal LiDAR.</p>
+            <img src="./images/Tinto.png" alt="Tinto Hill upland terrain model">
+            <div class="image-ngr">
+                NGR: NS 953 343
+            </div>
+            <p class="credit">
+                Upland terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Scottish Remote Sensing Portal LiDAR.
+            </p>
         </div>
 
         <div class="project-meta">
+
             <p class="eyebrow">Upland Terrain Study</p>
 
             <h3>Tinto Hill Terrain Model</h3>
@@ -415,7 +368,7 @@ footer a {
             </p>
 
             <p>
-                The model reveals terrain form, ridge structure, and spatial relationships across the upland landscape — translating complex elevation data into a clearer visual understanding of the land.
+                The model reveals terrain form, ridge structure, and spatial relationships across the upland landscape.
             </p>
 
             <div style="margin-top:24px;">
@@ -423,7 +376,9 @@ footer a {
                     View in AR
                 </a>
             </div>
+
         </div>
+
     </div>
 </section>
 
@@ -433,9 +388,13 @@ footer a {
     <div class="project-grid">
 
         <div class="project-image">
-            <img src="./images/deben_preview.png" alt="River Deben interactive terrain model preview developed using the Oddscape Terrain Engine from Environment Agency LiDAR data">
-            <p class="grid-ref">Study area: River Deben · Suffolk · NGR: TM 29 57 approx.</p>
-            <p class="credit">Interactive terrain model developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.</p>
+            <img src="./images/deben_preview.png" alt="River Deben interactive terrain model">
+            <div class="image-ngr">
+                NGR: TM 29 57 approx.
+            </div>
+            <p class="credit">
+                Interactive terrain model developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
+            </p>
         </div>
 
         <div class="project-meta">
@@ -449,11 +408,7 @@ footer a {
             </p>
 
             <p>
-                An interactive terrain model of the River Deben landscape, developed to explore how terrain, estuary form, and landscape structure can be experienced directly through augmented reality.
-            </p>
-
-            <p>
-                This approach supports new ways of communicating landscape character, heritage context, environmental change, and spatial relationships beyond flat mapping alone.
+                An interactive terrain model of the River Deben landscape designed for augmented reality viewing on supported devices.
             </p>
 
             <div style="margin-top:24px;">
@@ -475,32 +430,31 @@ footer a {
     </p>
 
     <p>
-        Work is grounded in landform, environmental sensitivity, and long-term change — ensuring decisions respond to both physical processes and place-based context.
-    </p>
-
-    <p>
         The aim is simple: make terrain easier to see, explore, communicate, and understand.
     </p>
 
     <div style="text-align:center; margin-top:26px;">
         <a href="mailto:studio@oddscape.co.uk" class="cta">Start a project</a>
     </div>
+
 </section>
 
 <footer>
+
     Studio Oddscape<br>
     oddscape.co.uk<br>
 
     <div class="footer-services">
-        Terrain Visualisation • LiDAR Analysis<br>3D Terrain Modelling • Immersive Landscape Interpretation • UK
+        Terrain Visualisation • LiDAR Analysis<br>
+        3D Terrain Modelling • Immersive Landscape Interpretation • UK
     </div>
 
     <a href="privacy.html">Privacy</a>
 
     <div class="footer-credit">
-        Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets, including Environment Agency LiDAR data where stated. Environment Agency LiDAR attribution: © Environment Agency copyright and/or database right 2022. All rights reserved. Licensed under the Open Government Licence v3.0.<br><br>
-        Additional upland terrain data may include publicly available Scottish Remote Sensing Portal LiDAR datasets where stated.
+        Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets including Environment Agency LiDAR data and Scottish Remote Sensing Portal LiDAR datasets where stated.
     </div>
+
 </footer>
 
 </body>
