@@ -4,11 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Studio Oddscape | Terrain Archive, LiDAR, Bathymetry & AR Landscape Visualisation</title>
+<title>Studio Oddscape | Terrain Archive & Commissioned Visualisation</title>
 
-<meta name="description" content="Studio Oddscape creates terrain archive packages, LiDAR and bathymetry visualisations, AR terrain models, commissioned landscape visualisation, and licensed terrain interpretation packages.">
+<meta name="description" content="Studio Oddscape creates terrain archive packages, LiDAR, DEM, REM, bathymetry, AR terrain models and commissioned landscape visualisation.">
 
 <style>
+:root {
+    --bg1: #14232d;
+    --bg2: #0b151d;
+    --gold: #d6ad57;
+    --gold-soft: rgba(214,173,87,0.55);
+    --text: #dfe5ea;
+    --muted: #98a4ad;
+    --line: rgba(214,173,87,0.22);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -18,233 +32,266 @@ html, body {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: radial-gradient(circle at top, #34424d 0%, #24313b 55%, #16222b 100%);
-    color: #e6e6e6;
+    background:
+        radial-gradient(circle at top, #243642 0%, var(--bg1) 42%, var(--bg2) 100%);
+    color: var(--text);
     line-height: 1.7;
-    text-align: center;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.35;
 }
 
 header {
-    padding: 46px 20px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    padding: 50px 20px 28px;
 }
 
 .logo {
     margin: 0;
-    font-size: 82px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: rgba(224,194,122,0.08);
-    -webkit-text-stroke: 1.2px rgba(224,194,122,0.95);
+    font-size: clamp(64px, 12vw, 150px);
+    font-weight: 300;
+    letter-spacing: -3px;
+    line-height: 0.95;
+    color: rgba(214,173,87,0.05);
+    -webkit-text-stroke: 1.25px rgba(214,173,87,0.92);
     text-shadow: none;
 }
 
 .subtitle {
-    margin-top: 12px;
-    color: rgba(230,230,230,0.82);
-    font-size: 14px;
-    letter-spacing: 5px;
-    text-transform: none;
+    margin-top: 24px;
+    font-size: clamp(13px, 2vw, 21px);
+    letter-spacing: 7px;
+    color: rgba(223,229,234,0.78);
 }
 
 .hud-line {
-    width: 280px;
+    width: min(640px, 70vw);
     height: 1px;
-    background: rgba(224,194,122,0.35);
-    margin: 22px auto 0;
+    background: var(--line);
+    margin: 28px auto 0;
+    position: relative;
+}
+
+.hud-line::after {
+    content: "⊕";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -52%);
+    color: var(--gold);
+    font-size: 18px;
+    background: var(--bg1);
+    padding: 0 8px;
 }
 
 nav {
-    margin-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
 }
 
-.nav-link, .cta, .footer-hud-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-    padding: 8px 13px;
-    background: rgba(10,18,24,0.15);
-    backdrop-filter: blur(.25px);
-    color: rgba(230,230,230,0.88);
-    font-size: 10px;
-    letter-spacing: 2.2px;
-    text-transform: uppercase;
-    border-radius: 3px;
-    border: 1px solid rgba(224,194,122,0.18);
+nav a {
+    display: inline-block;
+    padding: 20px 40px;
+    color: var(--text);
     text-decoration: none;
-    transition: all 0.25s ease;
+    font-size: 18px;
+    border-right: 1px solid var(--line);
 }
 
-.nav-link:hover, .cta:hover, .footer-hud-link:hover {
-    background: rgba(10,18,24,0.28);
+nav a:first-child {
+    color: var(--gold);
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+nav a:hover {
+    background: rgba(214,173,87,0.08);
 }
 
 .hero {
-    position: relative;
     min-height: 560px;
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 24px;
-    align-items: center;
-    max-width: 1180px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background:
+        linear-gradient(90deg, rgba(11,21,29,0.98) 0%, rgba(11,21,29,0.86) 42%, rgba(11,21,29,0.20) 100%),
+        url("./images/Tinto.png");
+    background-size: cover;
+    background-position: right center;
+}
+
+.hero-inner {
+    max-width: 1160px;
     margin: auto;
-    padding: 60px 20px;
-    text-align: left;
+    padding: 100px 24px;
 }
 
 .hero-text {
-    z-index: 2;
-}
-
-.hero h1 {
-    font-size: 58px;
-    font-weight: 300;
-    color: #e0c27a;
-    margin: 0 0 18px;
-    line-height: 1.1;
-    letter-spacing: -1px;
-}
-
-.hero p {
-    font-size: 22px;
-    color: #cfd7de;
     max-width: 520px;
 }
 
-.hero-art {
-    min-height: 360px;
-    border-radius: 12px;
-    background:
-        linear-gradient(90deg, rgba(22,34,43,0.1), rgba(22,34,43,0.95)),
-        url("./images/Tinto.png");
-    background-size: cover;
-    background-position: center;
-    box-shadow: inset 0 0 80px rgba(0,0,0,0.65);
-    border: 1px solid rgba(224,194,122,0.12);
+.hero h1 {
+    font-size: clamp(48px, 8vw, 78px);
+    font-weight: 200;
+    line-height: 1.1;
+    color: rgba(214,173,87,0.08);
+    -webkit-text-stroke: 1px rgba(214,173,87,0.95);
+    margin: 0 0 26px;
 }
 
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 46px 20px;
-    text-align: left;
-    border-top: 1px solid rgba(255,255,255,0.08);
+.hero-rule {
+    width: 310px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold-soft), transparent);
+    margin-bottom: 34px;
 }
 
-h2 {
-    font-size: 42px;
-    font-weight: 500;
-    margin: 0 0 18px;
-    color: #e0c27a;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    padding-bottom: 14px;
+.hero p {
+    font-size: clamp(20px, 3vw, 30px);
+    color: rgba(223,229,234,0.88);
+    margin: 0 0 36px;
 }
 
-p {
-    font-size: 18px;
-}
-
-.feature-grid, .route-grid, .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.cta {
+    display: inline-flex;
+    align-items: center;
     gap: 18px;
+    padding: 14px 28px;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 600;
+    border: 1px solid rgba(214,173,87,0.55);
+    background: rgba(10,18,24,0.22);
 }
 
-.feature, .route-card, .gallery-card {
-    background: rgba(10,18,24,0.16);
-    border: 1px solid rgba(224,194,122,0.18);
-    border-radius: 10px;
-    padding: 22px;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.16);
+.cta:hover {
+    background: rgba(214,173,87,0.08);
+}
+
+.features {
+    max-width: 1220px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.feature {
+    padding: 48px 28px;
+    text-align: center;
+    border-right: 1px solid rgba(214,173,87,0.18);
+}
+
+.feature:last-child {
+    border-right: none;
 }
 
 .icon {
-    font-size: 34px;
-    color: #e0c27a;
-    margin-bottom: 10px;
+    margin: 0 auto 24px;
+    width: 58px;
+    height: 58px;
+    color: var(--gold);
 }
 
-h3 {
-    font-size: 22px;
-    margin: 0 0 10px;
-    color: #e6e6e6;
+.icon svg {
+    width: 58px;
+    height: 58px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
 }
 
-.small {
+.feature h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 12px;
+    color: var(--text);
+}
+
+.mini-line {
+    width: 38px;
+    height: 1px;
+    background: var(--gold-soft);
+    margin: 0 auto 18px;
+}
+
+.feature p {
     font-size: 15px;
-    color: #9ea8b1;
-}
-
-.gallery-card img {
-    width: 100%;
-    display: block;
-    border-radius: 8px;
-    margin-bottom: 12px;
+    color: var(--muted);
+    margin: 0;
 }
 
 footer {
+    max-width: 1220px;
+    margin: auto;
+    padding: 24px 28px 32px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+footer div:nth-child(2) {
     text-align: center;
-    padding: 40px 20px 60px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    margin-top: 40px;
-    font-size: 0.92em;
-    line-height: 1.5;
-    color: #c8cdd2;
 }
 
-.footer-services {
-    font-size: 0.9em;
-    white-space: nowrap;
-    margin: 10px 0;
+footer div:nth-child(3) {
+    text-align: right;
 }
 
-.footer-credit {
-    max-width: 780px;
-    margin: 18px auto 0;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #8f99a2;
+footer span {
+    color: var(--gold);
+    padding: 0 10px;
 }
 
-@media (max-width: 800px) {
-    .logo {
-        font-size: 54px;
-        letter-spacing: 1px;
-    }
-
-    .subtitle {
-        font-size: 11px;
-        letter-spacing: 3px;
+@media (max-width: 900px) {
+    nav a {
+        padding: 12px 14px;
+        font-size: 13px;
+        border-right: none;
     }
 
     .hero {
+        background:
+            linear-gradient(180deg, rgba(11,21,29,0.96), rgba(11,21,29,0.72)),
+            url("./images/Tinto.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-inner {
+        padding: 64px 24px;
+    }
+
+    .features {
         grid-template-columns: 1fr;
-        padding-top: 42px;
     }
 
-    .hero h1 {
-        font-size: 42px;
+    .feature {
+        border-right: none;
+        border-bottom: 1px solid rgba(214,173,87,0.18);
     }
 
-    .hero p {
-        font-size: 18px;
+    footer {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
-    .hero-art {
-        min-height: 260px;
-    }
-
-    h2 {
-        font-size: 30px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    .footer-services {
-        white-space: normal;
+    footer div:nth-child(3) {
+        text-align: center;
     }
 }
 </style>
@@ -256,170 +303,120 @@ footer {
     <div class="logo">Oddscape</div>
     <div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
     <div class="hud-line"></div>
-
-    <nav>
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="acquire.html#archive" class="nav-link">Terrain Archive</a>
-        <a href="acquire.html#commissions" class="nav-link">Commissions</a>
-        <a href="acquire.html#licences" class="nav-link">Acquire Terrain</a>
-        <a href="#gallery" class="nav-link">Gallery</a>
-        <a href="mailto:studio@oddscape.co.uk" class="nav-link">Contact</a>
-    </nav>
 </header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="acquire.html#archive">Terrain Archive</a>
+    <a href="acquire.html#commissions">Commissions</a>
+    <a href="acquire.html#licences">Acquire Terrain</a>
+    <a href="mailto:studio@oddscape.co.uk">Contact</a>
+</nav>
 
 <main>
 
 <section class="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <h1>Terrain Archive</h1>
+            <div class="hero-rule"></div>
 
-    <div class="hero-text">
-        <h1>Terrain Archive</h1>
-
-        <p>
-            Ready-to-download terrain interpretation packages for project,
-            presentation, education, and landscape analysis.
-        </p>
-
-        <a href="acquire.html#archive" class="cta">Browse Archive →</a>
-    </div>
-
-    <div class="hero-art" aria-label="Oddscape terrain visualisation artwork"></div>
-
-</section>
-
-<section>
-    <h2>What Oddscape Creates</h2>
-
-    <div class="feature-grid">
-
-        <div class="feature">
-            <div class="icon">◇</div>
-            <h3>3D Terrain Models</h3>
-            <p class="small">
-                High-resolution terrain models for visualisation, analysis, AR, and spatial storytelling.
+            <p>
+                Ready-to-download terrain interpretation packages for project,
+                presentation, education, and landscape analysis.
             </p>
-        </div>
 
-        <div class="feature">
-            <div class="icon">▱</div>
-            <h3>AR & Immersive</h3>
-            <p class="small">
-                Explore landscapes through augmented reality on compatible devices.
-            </p>
+            <a href="acquire.html#archive" class="cta">Browse Archive <span>→</span></a>
         </div>
-
-        <div class="feature">
-            <div class="icon">≋</div>
-            <h3>Terrain + Bathymetry</h3>
-            <p class="small">
-                Integrated landform and seabed modelling for coastal, estuarine and heritage landscapes.
-            </p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">◎</div>
-            <h3>LiDAR DEM + REM</h3>
-            <p class="small">
-                Digital elevation models, relative elevation models, hillshade studies, and terrain interpretation.
-            </p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">□</div>
-            <h3>Licensed for Use</h3>
-            <p class="small">
-                Clear, project-based licences for commercial, educational, heritage, and presentation use.
-            </p>
-        </div>
-
     </div>
 </section>
 
-<section>
-    <h2>Explore Oddscape</h2>
+<section class="features">
 
-    <div class="route-grid">
-
-        <div class="route-card">
-            <h3>Terrain Archive</h3>
-            <p class="small">
-                Browse ready-made archive packages including Orford Ness, River Deben, NS93 and future terrain studies.
-            </p>
-            <a href="acquire.html#archive" class="cta">View Archive</a>
+    <div class="feature">
+        <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
+                <path d="M12 22V12"/>
+                <path d="M20 6L12 12L4 6"/>
+            </svg>
         </div>
-
-        <div class="route-card">
-            <h3>Commissioned Work</h3>
-            <p class="small">
-                Request a custom terrain visualisation, AR model, landscape interpretation package, or education resource.
-            </p>
-            <a href="acquire.html#commissions" class="cta">Request Commission</a>
-        </div>
-
-        <div class="route-card">
-            <h3>Acquire Terrain</h3>
-            <p class="small">
-                Licence existing terrain packages or start a project using invoice, bank transfer, Stripe, PayPal or purchase order.
-            </p>
-            <a href="acquire.html#licences" class="cta">Acquire Terrain</a>
-        </div>
-
+        <h2>3D Terrain Models</h2>
+        <div class="mini-line"></div>
+        <p>High-resolution terrain models for visualisation, analysis and AR.</p>
     </div>
-</section>
 
-<section id="gallery">
-    <h2>Gallery & Prints</h2>
-
-    <p>
-        Terrain studies, visual experiments, cartographic artwork and future print editions.
-    </p>
-
-    <div class="gallery-grid">
-
-        <div class="gallery-card">
-            <img src="./images/alde-map.png" alt="River Alde terrain visualisation">
-            <h3>River Alde</h3>
-            <p class="small">
-                Terrain visualisation developed using the Oddscape Terrain Engine™.
-            </p>
+    <div class="feature">
+        <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <rect x="4" y="5" width="16" height="14"/>
+                <circle cx="8" cy="9" r="1.5"/>
+                <path d="M5 18L10 12L14 16L17 11L20 18"/>
+            </svg>
         </div>
-
-        <div class="gallery-card">
-            <img src="./images/orfordness.png" alt="Orford Ness terrain visualisation">
-            <h3>Orford Ness</h3>
-            <p class="small">
-                Shingle landscape, coastal process and terrain archive study.
-            </p>
-        </div>
-
-        <div class="gallery-card">
-            <img src="./images/deben_preview.png" alt="River Deben terrain visualisation">
-            <h3>River Deben</h3>
-            <p class="small">
-                Estuarine terrain and interactive AR landscape model.
-            </p>
-        </div>
-
+        <h2>AR & Immersive</h2>
+        <div class="mini-line"></div>
+        <p>Explore landscapes in augmented reality on iOS and visionOS.</p>
     </div>
+
+    <div class="feature">
+        <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 3V21"/>
+                <path d="M3 12H21"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="12" cy="12" r="8"/>
+            </svg>
+        </div>
+        <h2>LiDAR DEM + REM</h2>
+        <div class="mini-line"></div>
+        <p>Digital Elevation Models and Relative Elevation Models for terrain analysis.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 3L4 7L12 11L20 7L12 3Z"/>
+                <path d="M4 12L12 16L20 12"/>
+                <path d="M4 17L12 21L20 17"/>
+            </svg>
+        </div>
+        <h2>Terrain + Bathymetry</h2>
+        <div class="mini-line"></div>
+        <p>Integrated landform and seabed modelling for coastal and estuarine landscapes.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M6 3H15L20 8V21H6V3Z"/>
+                <path d="M15 3V8H20"/>
+                <path d="M9 13H16"/>
+                <path d="M9 17H15"/>
+            </svg>
+        </div>
+        <h2>Licensed for Use</h2>
+        <div class="mini-line"></div>
+        <p>Clear project-based licences for commercial, education and heritage use.</p>
+    </div>
+
 </section>
 
 </main>
 
 <footer>
-    Studio Oddscape<br>
-    oddscape.co.uk<br>
-
-    <div class="footer-services">
-        Terrain Visualisation • LiDAR Analysis • REM • Bathymetry<br>
-        3D Terrain Modelling • Immersive Landscape Interpretation • UK
+    <div>Studio Oddscape</div>
+    <div>
+        Terrain Visualisation <span>•</span> LiDAR Analysis <span>•</span>
+        3D Modelling <span>•</span> Immersive Interpretation
     </div>
+    <div>UK <span>|</span> Worldwide</div>
+</footer>
 
-    <a href="privacy.html" class="footer-hud-link">Privacy</a>
-
-    <div class="footer-credit">
-        Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets including Environment Agency LiDAR data and Scottish Remote Sensing Portal LiDAR datasets where stated.
-        <br><br>
-        © Studio Oddscape MMXXVI — All Rights Reserved
-    </div>
+<footer style="padding-top:0; opacity:0.7;">
+    <div></div>
+    <div>© Studio Oddscape MMXXVI — All Rights Reserved</div>
+    <div></div>
 </footer>
 
 </body>
