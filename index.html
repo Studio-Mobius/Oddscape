@@ -89,39 +89,36 @@ nav a:last-child { border-right: none; }
 nav a:hover { color: var(--gold); }
 
 .hero {
-  height: 430px;
   position: relative;
   border-bottom: 1px solid rgba(255,255,255,.07);
-}
-
-.hero-text {
-  position: absolute;
-  left: 72px;
-  top: 105px;
-  width: 380px;
-  z-index: 2;
+  padding: 64px 72px 0;
 }
 
 .hero h1 {
   color: var(--gold);
+  font-size: 34px;
+  margin: 0;
 }
 
 .hero-rule {
   width: 285px;
   height: 1px;
   background: linear-gradient(90deg, rgba(217,188,130,.55), transparent);
-  margin: 22px 0 32px;
+  margin: 22px 0 28px;
 }
 
 .hero p {
+  width: 430px;
   font-size: 20px;
   line-height: 1.7;
   color: rgba(220,226,230,.85);
+  margin: 0;
 }
 
 .cta {
   display: inline-block;
-  margin-top: 24px;
+  margin-top: 28px;
+  margin-bottom: 34px;
   padding: 13px 28px;
   border: 1px solid rgba(217,188,130,.75);
   color: var(--gold);
@@ -136,13 +133,17 @@ nav a:hover { color: var(--gold); }
   background: rgba(217,188,130,.08);
 }
 
-.mountain {
-  position: absolute;
-  right: -35px;
-  top: 42px;
-  width: 660px;
-  height: 450px;
-  opacity: .82;
+.hero-map {
+  width: calc(100% + 144px);
+  margin-left: -72px;
+  margin-top: 0;
+  display: block;
+}
+
+.hero-map img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .features {
@@ -259,32 +260,19 @@ nav a:hover { color: var(--gold); }
 
 <section class="hero">
 
-  <div class="hero-text">
-    <h1>Terrain Archive</h1>
-    <div class="hero-rule"></div>
+  <h1>Terrain Archive</h1>
+  <div class="hero-rule"></div>
 
-    <p>
-      Ready-to-download terrain interpretation packages for project,
-      presentation, education, and landscape analysis.
-    </p>
+  <p>
+    Ready-to-download terrain interpretation packages for project,
+    presentation, education, and landscape analysis.
+  </p>
 
-    <a href="archive.html" class="cta">Browse Archive →</a>
-  </div>
+  <a href="archive.html" class="cta">Browse Archive →</a>
 
-  <svg class="mountain" viewBox="0 0 900 620" aria-hidden="true">
-    <g fill="none" stroke="#d9bc82" stroke-width="1" opacity=".78">
-      <path d="M50 430 C160 330 230 270 335 260 C435 250 490 120 590 105 C700 90 775 190 860 250"/>
-      <path d="M70 455 C170 360 250 295 350 285 C450 275 505 155 600 135 C705 112 785 210 875 275"/>
-      <path d="M90 480 C190 390 275 325 370 315 C470 305 520 190 615 165 C715 140 800 235 890 305"/>
-      <path d="M110 505 C210 420 300 355 390 345 C490 335 535 225 630 195 C730 170 815 260 900 335"/>
-      <path d="M130 530 C230 450 325 385 410 375 C510 365 550 260 645 225 C745 200 830 285 910 365"/>
-      <path d="M150 555 C250 480 350 415 430 405 C530 395 565 295 660 255 C760 230 845 310 920 395"/>
-      <path d="M250 500 C330 420 385 350 440 310 C500 265 545 210 610 160 C650 130 695 165 735 205"/>
-      <path d="M300 530 C370 455 425 375 470 330 C525 275 570 230 630 185 C670 155 710 190 760 235"/>
-      <path d="M350 560 C410 490 465 410 505 360 C555 300 595 260 650 215 C690 185 730 220 785 265"/>
-      <path d="M420 585 C470 520 520 445 550 390 C590 325 625 290 675 245 C715 215 755 250 810 300"/>
-    </g>
-  </svg>
+  <a href="archive.html" class="hero-map">
+    <img src="images/alde-map.png" alt="River Alde terrain visualisation developed using the Oddscape Terrain Engine">
+  </a>
 
 </section>
 
