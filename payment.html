@@ -4,233 +4,252 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Oddscape // Terrain Licence Registry</title>
+<title>Terrain Licence Package | Studio Oddscape</title>
+
+<meta name="description" content="Acquire a licensed Oddscape terrain interpretation package, including AR-ready terrain models, preview imagery, and single project licence terms.">
 
 <style>
-:root {
-  --bg: #1e2529;
-  --panel: rgba(30, 37, 41, 0.88);
-  --panel2: rgba(38, 49, 54, 0.92);
-  --gold: #c8a96b;
-  --gold2: #d9bc82;
-  --text: #e7dfcf;
-  --muted: #8b9698;
-  --line: rgba(200,169,107,0.45);
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
-
-* { box-sizing: border-box; }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Georgia, "Times New Roman", serif;
-  color: var(--text);
-  background:
-    linear-gradient(rgba(30,37,41,0.88), rgba(30,37,41,0.94)),
-    url("images/alde-map.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-/* subtle contour / survey line feel */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(rgba(200,169,107,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,169,107,0.035) 1px, transparent 1px);
-  background-size: 60px 60px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: radial-gradient(circle at top, #36424f 0%, #263442 55%, #1b2530 100%);
+    color: #e6e6e6;
+    line-height: 1.7;
+    text-align: center;
 }
 
 header {
-  padding: 42px 28px 34px;
-  border-bottom: 1px solid var(--line);
-  background: rgba(20,26,29,0.7);
-}
-
-.logo {
-  letter-spacing: 8px;
-  font-size: 2.1rem;
-  color: var(--text);
-}
-
-.subtitle {
-  margin-top: 10px;
-  color: var(--gold2);
-  letter-spacing: 3px;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-}
-
-.status {
-  margin-top: 18px;
-  color: var(--muted);
-  font-family: "Courier New", monospace;
-  font-size: 0.82rem;
-}
-
-main {
-  max-width: 1180px;
-  margin: auto;
-  padding: 28px;
-}
-
-.registry {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 24px;
-}
-
-.panel {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-  padding: 24px;
-  position: relative;
-  backdrop-filter: blur(3px);
-}
-
-.panel::before {
-  content: "";
-  position: absolute;
-  inset: 9px;
-  border: 1px solid rgba(200,169,107,0.16);
-  pointer-events: none;
-}
-
-h1, h2 {
-  margin-top: 0;
-  font-weight: normal;
+    padding: 34px 20px 14px;
 }
 
 h1 {
-  letter-spacing: 5px;
-  font-size: 1.75rem;
+    font-size: 56px;
+    margin: 0;
+    color: #e0c27a;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.05;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+}
+
+.subtitle {
+    margin-top: 12px;
+    color: #cfd7de;
+    font-size: 18px;
+}
+
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px;
+    text-align: left;
 }
 
 h2 {
-  color: var(--gold2);
-  letter-spacing: 3px;
-  font-size: 1rem;
-  text-transform: uppercase;
+    font-size: 44px;
+    margin: 0 0 18px 0;
+    color: #e0c27a;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding-bottom: 14px;
 }
 
-.preview {
-  min-height: 360px;
-  border: 1px dashed rgba(200,169,107,0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--muted);
-  margin-bottom: 20px;
-  background:
-    linear-gradient(rgba(30,37,41,0.35), rgba(30,37,41,0.55)),
-    url("images/orford-ness.jpg");
-  background-size: cover;
-  background-position: center;
-  font-family: "Courier New", monospace;
+h3 {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    color: #e6e6e6;
 }
 
-.data-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+p {
+    font-size: 20px;
 }
 
-.data {
-  border-top: 1px solid rgba(200,169,107,0.35);
-  padding-top: 10px;
-  color: var(--muted);
-  font-family: "Courier New", monospace;
-  font-size: 0.82rem;
+.project-lead {
+    font-size: 22px;
+    color: #dfe5ea;
+    margin-bottom: 10px;
 }
 
-.data strong {
-  display: block;
-  color: var(--text);
-  margin-top: 5px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1rem;
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.image-wrap {
+    position: relative;
+}
+
+.image-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+}
+
+.image-ngr {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+    background: rgba(10,18,24,0.15);
+    backdrop-filter: blur(.25px);
+    color: rgba(230,230,230,0.9);
+    padding: 4px 8px;
+    font-size: 10px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: 1px solid rgba(224,194,122,0.22);
+}
+
+.credit {
+    font-size: 13px;
+    color: #9ea8b1;
+    margin-top: 8px;
+}
+
+.eyebrow {
+    font-size: 14px;
+    opacity: 0.6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.licence-card {
+    background: rgba(10,18,24,0.18);
+    border: 1px solid rgba(224,194,122,0.22);
+    border-radius: 10px;
+    padding: 22px;
+    margin-top: 20px;
 }
 
 .price {
-  font-size: 2.4rem;
-  color: var(--gold2);
-  margin: 18px 0;
+    font-size: 42px;
+    color: #e0c27a;
+    margin: 12px 0 18px;
+    font-weight: 700;
 }
 
 ul {
-  padding-left: 20px;
-  line-height: 1.8;
-  color: var(--text);
+    padding-left: 22px;
+    font-size: 18px;
+}
+
+li {
+    margin-bottom: 8px;
 }
 
 label {
-  display: block;
-  margin-top: 14px;
-  color: var(--muted);
-  font-family: "Courier New", monospace;
-  font-size: 0.8rem;
+    display: block;
+    margin-top: 16px;
+    font-size: 12px;
+    color: #9ea8b1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 input, textarea, select {
-  width: 100%;
-  margin-top: 6px;
-  padding: 12px;
-  background: rgba(10,14,16,0.8);
-  border: 1px solid rgba(200,169,107,0.4);
-  color: var(--text);
-  font-family: "Courier New", monospace;
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    background: rgba(10,18,24,0.38);
+    color: #e6e6e6;
+    border: 1px solid rgba(224,194,122,0.22);
+    border-radius: 4px;
+    font-size: 16px;
 }
 
-button {
-  width: 100%;
-  margin-top: 22px;
-  padding: 15px;
-  background: transparent;
-  color: var(--gold2);
-  border: 1px solid var(--gold2);
-  font-family: "Courier New", monospace;
-  letter-spacing: 2px;
-  cursor: pointer;
+button, .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px 16px;
+    background: rgba(10,18,24,0.15);
+    backdrop-filter: blur(.25px);
+    color: rgba(230,230,230,0.9);
+    font-size: 11px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 3px;
+    border: 1px solid rgba(224,194,122,0.22);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
 }
 
-button:hover {
-  background: rgba(200,169,107,0.12);
+button:hover, .cta:hover {
+    background: rgba(10,18,24,0.24);
 }
 
 .note {
-  margin-top: 16px;
-  font-size: 0.86rem;
-  line-height: 1.6;
-  color: var(--muted);
+    font-size: 15px;
+    color: #9ea8b1;
+    margin-top: 14px;
 }
 
 footer {
-  text-align: center;
-  padding: 32px 20px;
-  color: var(--muted);
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+    text-align: center;
+    padding: 40px 20px 60px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 40px;
+    font-size: 0.92em;
+    line-height: 1.5;
+    color: #c8cdd2;
 }
 
-@media (max-width: 800px) {
-  .registry {
-    grid-template-columns: 1fr;
-  }
+.footer-services {
+    font-size: 0.9em;
+    white-space: nowrap;
+    margin: 10px 0;
+}
 
-  .logo {
-    font-size: 1.6rem;
-    letter-spacing: 5px;
-  }
+.footer-credit {
+    max-width: 780px;
+    margin: 18px auto 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #8f99a2;
+}
 
-  h1 {
-    font-size: 1.35rem;
-  }
+.footer-hud-link {
+    display: inline-flex;
+    margin-top: 12px;
+    padding: 5px 10px;
+    background: rgba(10,18,24,0.15);
+    backdrop-filter: blur(.25px);
+    color: rgba(230,230,230,0.82);
+    font-size: 10px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: 1px solid rgba(224,194,122,0.18);
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 22px; }
+    p { font-size: 16px; }
+    ul { font-size: 16px; }
+    .project-lead { font-size: 18px; }
+    .footer-services { white-space: normal; }
 }
 </style>
 </head>
@@ -238,102 +257,138 @@ footer {
 <body>
 
 <header>
-  <div class="logo">ODDSCAPE</div>
-  <div class="subtitle">Terrain Licence Registry</div>
-  <div class="status">
-    STATUS: ONLINE · GRID: UK NATIONAL GRID · MODE: ARCHIVE TERRAIN PACKAGE
-  </div>
+    <h1>Studio Oddscape</h1>
+    <div class="subtitle">Terrain Licence Package</div>
 </header>
 
-<main>
+<section>
 
-<div class="registry">
+    <h2>Orford Ness Licence</h2>
 
-  <section class="panel">
-    <h1>ORFORD NESS</h1>
-    <h2>Terrain Study // Archive Package</h2>
+    <div class="project-grid">
 
-    <div class="preview">
-      TERRAIN PREVIEW SLOT<br>
-      Replace with terrain image, GLB viewer or USDZ link
+        <div class="image-wrap">
+            <img src="./images/orfordness.png" alt="Shingle Street to Orford Ness terrain model">
+
+            <div class="image-ngr">
+                <span>NGR: TM 47 45 approx.</span>
+            </div>
+        </div>
+
+        <p class="credit">
+            Coastal terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
+        </p>
+
+        <div>
+
+            <p class="eyebrow">Archive Terrain Package</p>
+
+            <h3>Shingle Street to Orford Ness</h3>
+
+            <p class="project-lead">
+                Licensed terrain interpretation package for project, presentation, education, or internal review use.
+            </p>
+
+            <p>
+                This package provides access to an Oddscape terrain study derived from open geospatial data and processed into visual, spatial, and AR-ready formats.
+            </p>
+
+        </div>
+
     </div>
 
-    <div class="data-grid">
-      <div class="data">PROJECT<strong>Orford Ness Coastal Study</strong></div>
-      <div class="data">GRID REF<strong>TM 44 / TM 45</strong></div>
-      <div class="data">DATASET<strong>LiDAR / REM / Hillshade</strong></div>
-      <div class="data">STATUS<strong>AVAILABLE</strong></div>
-    </div>
-  </section>
-
-  <section class="panel">
-    <h2>Acquire Licence</h2>
-
-    <div class="price">£75</div>
-
-    <ul>
-      <li>Apple AR USDZ model</li>
-      <li>Android / Web GLB model</li>
-      <li>Terrain preview image</li>
-      <li>Single project licence</li>
-      <li>Licence certificate reference</li>
-    </ul>
-
-    <form action="mailto:hello@oddscape.co.uk" method="post" enctype="text/plain">
-
-      <label>CLIENT NAME</label>
-      <input type="text" name="client_name" required>
-
-      <label>ORGANISATION</label>
-      <input type="text" name="organisation">
-
-      <label>EMAIL</label>
-      <input type="email" name="email" required>
-
-      <label>PROJECT REFERENCE</label>
-      <input type="text" name="project_reference">
-
-      <label>LICENCE TYPE</label>
-      <select name="licence_type">
-        <option>Single Project Licence</option>
-        <option>Education / Teaching Licence</option>
-        <option>Commercial Presentation Licence</option>
-      </select>
-
-      <label>NOTES</label>
-      <textarea name="notes" rows="4"></textarea>
-
-      <button type="submit">[ ACQUIRE LICENCE ]</button>
-
-    </form>
-
-    <p class="note">
-      Licence ID generated after confirmation. QR access may be supplied,
-      but the licence is attached to the named client and project.
-    </p>
-  </section>
-
-</div>
-
-<section class="panel" style="margin-top:24px;">
-  <h2>Licence Conditions</h2>
-  <p class="note">
-    Oddscape terrain packages are licensed for named project use only.
-    Redistribution, resale, stock upload, public re-hosting or reuse on unrelated
-    projects is not permitted without written permission.
-  </p>
-  <p class="note">
-    Data attribution remains subject to original open data provider terms where
-    applicable. Oddscape supplies interpretation, processing, visualisation and
-    AR-ready terrain outputs.
-  </p>
 </section>
 
-</main>
+<section>
+
+    <h2>Acquire Licence</h2>
+
+    <div class="licence-card">
+
+        <p class="eyebrow">Single Project Licence</p>
+
+        <div class="price">£75</div>
+
+        <ul>
+            <li>Apple AR USDZ model</li>
+            <li>Android / Web GLB model</li>
+            <li>Terrain preview image</li>
+            <li>Single project licence</li>
+            <li>Licence certificate reference</li>
+        </ul>
+
+        <form action="mailto:studio@oddscape.co.uk" method="post" enctype="text/plain">
+
+            <label>Client Name</label>
+            <input type="text" name="client_name" required>
+
+            <label>Organisation</label>
+            <input type="text" name="organisation">
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Project Reference</label>
+            <input type="text" name="project_reference">
+
+            <label>Licence Type</label>
+            <select name="licence_type">
+                <option>Single Project Licence</option>
+                <option>Education / Teaching Licence</option>
+                <option>Commercial Presentation Licence</option>
+            </select>
+
+            <label>Notes</label>
+            <textarea name="notes" rows="4"></textarea>
+
+            <button type="submit">Acquire Licence</button>
+
+        </form>
+
+        <p class="note">
+            Licence ID generated after confirmation. QR access may be supplied, but the licence is attached to the named client and project.
+        </p>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2>Licence Conditions</h2>
+
+    <p>
+        Oddscape terrain packages are licensed for named project use only. Redistribution, resale, stock upload, public re-hosting or reuse on unrelated projects is not permitted without written permission.
+    </p>
+
+    <p>
+        Data attribution remains subject to original open data provider terms where applicable. Oddscape supplies interpretation, processing, visualisation and AR-ready terrain outputs.
+    </p>
+
+    <div style="text-align:center; margin-top:26px;">
+        <a href="index.html" class="cta">Return to Archive</a>
+    </div>
+
+</section>
 
 <footer>
-  STUDIO ODDSCAPE · TERRAIN INTERPRETATION · LiDAR · AR LANDSCAPE MODELS<br>
-  STERCORE PINGUINI AGITUR
+
+    Studio Oddscape<br>
+    oddscape.co.uk<br>
+
+    <div class="footer-services">
+        Terrain Visualisation • LiDAR Analysis<br>
+        3D Terrain Modelling • Immersive Landscape Interpretation • UK
+    </div>
+
+    <a href="privacy.html" class="footer-hud-link">Privacy</a>
+
+    <div class="footer-credit">
+        Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets including Environment Agency LiDAR data and Scottish Remote Sensing Portal LiDAR datasets where stated.
+        <br><br>
+        © Studio Oddscape MMXXVI — All Rights Reserved
+    </div>
+
 </footer>
 
 </body>
