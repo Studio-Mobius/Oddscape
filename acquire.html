@@ -1,26 +1,341 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=960">
+
 <title>Acquire Terrain | Studio Oddscape</title>
 
 <style>
+
 :root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
+
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+
 .page{width:960px;margin:auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%)}
+
 header{text-align:center;padding:55px 40px 30px}
+
 .logo{font-size:74px;font-weight:800;color:var(--gold);line-height:.95}
+
 .subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
+
 .hud{width:520px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,rgba(217,188,130,.45),transparent)}
 
 nav{display:flex;justify-content:center;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+
 nav a{text-decoration:none;color:#dce3e8;padding:16px 34px;font-size:14px;border-right:1px solid var(--line)}
+
 nav a:last-child{border-right:none}
+
 nav a:hover{color:var(--gold)}
 
 .content{padding:60px}
+
 .section-title{font-size:52px;font-weight:800;color:var(--gold);margin-bottom:20px}
+
 .section-rule{height:1px;background:var(--line);margin-bottom:35px}
-.intro{max-width:760px;font-size:20px;line-height:1.
+
+.intro{max-width:760px;font-size:20px;line-height:1.8;color:#cfd5d9;margin-bottom:42px}
+
+.panel{border:1px solid rgba(217,188,130,.18);background:rgba(10,18,24,.18);border-radius:16px;padding:32px;margin-bottom:32px}
+
+.panel h2{font-size:30px;color:var(--gold);margin-bottom:18px}
+
+.panel p{font-size:16px;line-height:1.75;color:#cfd5d9}
+
+.payment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+
+.payment-card{border:1px solid rgba(217,188,130,.16);background:rgba(10,18,24,.16);padding:20px;border-radius:12px}
+
+.payment-card h3{font-size:19px;color:var(--gold);margin-bottom:10px}
+
+.payment-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+label{display:block;margin-top:16px;font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+
+input,textarea,select{width:100%;margin-top:7px;padding:12px;background:rgba(10,18,24,.38);color:#e6e6e6;border:1px solid rgba(217,188,130,.22);border-radius:4px;font-size:15px}
+
+button{width:100%;margin-top:22px;padding:14px 18px;background:rgba(10,18,24,.18);color:var(--gold);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;border:1px solid rgba(217,188,130,.3);cursor:pointer}
+
+button:hover{background:rgba(217,188,130,.08)}
+
+.note{font-size:13px;color:var(--muted);line-height:1.7;margin-top:16px}
+
+.button-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+
+.button{text-decoration:none;padding:12px 22px;border:1px solid rgba(217,188,130,.3);color:var(--gold);letter-spacing:2px;font-size:11px;text-transform:uppercase}
+
+.button:hover{background:rgba(217,188,130,.08)}
+
+footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
+
+.footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
+
+.footer-text{margin-top:16px;font-size:14px;line-height:1.8;color:#cfd5d9}
+
+.footer-copy{margin-top:24px;font-size:11px;color:#8d98a0}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<header>
+
+<div class="logo">Studio Oddscape</div>
+
+<div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
+
+<div class="hud"></div>
+
+</header>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="archive.html">Terrain Archive</a>
+
+<a href="commissions.html">Commissions</a>
+
+<a href="acquire.html">Acquire Terrain</a>
+
+<a href="mailto:studio@oddscape.co.uk">Contact</a>
+
+</nav>
+
+<div class="content">
+
+<div class="section-title">Acquire Terrain</div>
+
+<div class="section-rule"></div>
+
+<div class="intro">
+
+Request a licence for an existing Oddscape terrain archive package, register interest in a coming release, or start the payment process for a commissioned terrain study.
+
+</div>
+
+<div class="panel">
+
+<h2>Payment Options</h2>
+
+<p>Studio Oddscape supports flexible payment routes for individuals, professional practices, education clients, heritage organisations and institutional procurement.</p>
+
+<div class="payment-grid">
+
+<div class="payment-card">
+
+<h3>Invoice</h3>
+
+<p>Best for landscape practices, organisations, schools, councils and heritage clients.</p>
+
+</div>
+
+<div class="payment-card">
+
+<h3>Bank Transfer</h3>
+
+<p>Payment details supplied after licence or commission confirmation.</p>
+
+</div>
+
+<div class="payment-card">
+
+<h3>Stripe / Card</h3>
+
+<p>Card, Apple Pay and Google Pay payment links can be issued when available.</p>
+
+</div>
+
+<div class="payment-card">
+
+<h3>PayPal</h3>
+
+<p>Useful for quick one-off purchases or clients who prefer PayPal.</p>
+
+</div>
+
+<div class="payment-card">
+
+<h3>Purchase Order</h3>
+
+<p>Available for education, heritage and organisational procurement.</p>
+
+</div>
+
+<div class="payment-card">
+
+<h3>Custom Quote</h3>
+
+<p>For larger sites, bathymetry, heritage packages or commissioned interpretation work.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<h2>Licence / Project Request</h2>
+
+<form action="mailto:studio@oddscape.co.uk" method="post" enctype="text/plain">
+
+<label>Select Package or Service</label>
+
+<select name="selected_package">
+
+<option>ODS-001 — Shingle Street to Orford Ness — £75</option>
+
+<option>ODS-002 — River Deben Interactive Model — £75</option>
+
+<option>ODS-003 — NS93 Terrain Study — £75</option>
+
+<option>ODS-004 — Norwich Basin — Register Interest</option>
+
+<option>ODS-005 — Crib Goch — Register Interest</option>
+
+<option>Custom Terrain Commission — Quote Required</option>
+
+<option>Education / Institution Licence — Quote Required</option>
+
+<option>Commercial Presentation Licence — Quote Required</option>
+
+</select>
+
+<label>Client Name</label>
+
+<input type="text" name="client_name" required>
+
+<label>Organisation</label>
+
+<input type="text" name="organisation">
+
+<label>Email</label>
+
+<input type="email" name="email" required>
+
+<label>Project Name / Reference</label>
+
+<input type="text" name="project_reference">
+
+<label>Location / Grid Reference</label>
+
+<input type="text" name="grid_reference" placeholder="e.g. TM 47 45, Orford Ness, estate name, postcode, or site boundary note">
+
+<label>Preferred Payment Method</label>
+
+<select name="preferred_payment_method">
+
+<option>Invoice + Bank Transfer</option>
+
+<option>Stripe Payment Link</option>
+
+<option>PayPal</option>
+
+<option>Card Payment</option>
+
+<option>Purchase Order / Organisation Procurement</option>
+
+<option>Not Sure Yet</option>
+
+</select>
+
+<label>Licence Type</label>
+
+<select name="licence_type">
+
+<option>Single Project Licence</option>
+
+<option>Education / Teaching Licence</option>
+
+<option>Commercial Presentation Licence</option>
+
+<option>Institution / Organisation Licence</option>
+
+</select>
+
+<label>Message</label>
+
+<textarea name="message" rows="6" placeholder="Tell me what you need, how the terrain will be used, or whether you need a custom area processed."></textarea>
+
+<button type="submit">Acquire Terrain / Request Commission</button>
+
+</form>
+
+<p class="note">
+
+Licence ID generated after confirmation. QR access may be supplied, but the licence is attached to the named client, organisation or project.
+
+</p>
+
+</div>
+
+<div class="panel">
+
+<h2>Licence Conditions</h2>
+
+<p>
+
+Oddscape terrain packages are licensed for named project use only. Redistribution, resale, stock upload, public re-hosting, or reuse on unrelated projects is not permitted without written permission.
+
+</p>
+
+<br>
+
+<p>
+
+Data attribution remains subject to original open data provider terms where applicable. Oddscape supplies interpretation, processing, visualisation and AR-ready terrain outputs.
+
+</p>
+
+<div class="button-row">
+
+<a class="button" href="archive.html">Browse Archive</a>
+
+<a class="button" href="commissions.html">View Commissions</a>
+
+<a class="button" href="mailto:studio@oddscape.co.uk">Email Studio Oddscape</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
+
+<div class="footer-text">
+
+Terrain Visualisation • LiDAR Analysis<br>
+
+3D Terrain Modelling • Immersive Landscape Interpretation • UK
+
+</div>
+
+<div class="footer-copy">
+
+© Studio Oddscape MMXXVI — All Rights Reserved
+
+</div>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>
