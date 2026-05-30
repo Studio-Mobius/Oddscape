@@ -4,16 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Oddscape // Licence Terminal</title>
+<title>Oddscape // Terrain Licence Registry</title>
 
 <style>
 :root {
-  --bg: #061014;
-  --panel: rgba(9, 25, 32, 0.88);
-  --line: #7de7ff;
-  --soft: #9fb8bf;
-  --text: #e9f7fa;
-  --muted: #6f8f98;
+  --bg: #1e2529;
+  --panel: rgba(30, 37, 41, 0.88);
+  --panel2: rgba(38, 49, 54, 0.92);
+  --gold: #c8a96b;
+  --gold2: #d9bc82;
+  --text: #e7dfcf;
+  --muted: #8b9698;
+  --line: rgba(200,169,107,0.45);
 }
 
 * { box-sizing: border-box; }
@@ -21,52 +23,62 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Courier New", monospace;
-  background:
-    linear-gradient(rgba(125,231,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(125,231,255,0.04) 1px, transparent 1px),
-    radial-gradient(circle at 50% 20%, #12313d 0%, var(--bg) 55%);
-  background-size: 40px 40px, 40px 40px, cover;
+  font-family: Georgia, "Times New Roman", serif;
   color: var(--text);
+  background:
+    linear-gradient(rgba(30,37,41,0.88), rgba(30,37,41,0.94)),
+    url("images/alde-map.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
+/* subtle contour / survey line feel */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.025),
-    rgba(255,255,255,0.025) 1px,
-    transparent 1px,
-    transparent 4px
-  );
+  background:
+    linear-gradient(rgba(200,169,107,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,169,107,0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
 header {
-  padding: 28px;
-  border-bottom: 1px solid rgba(125,231,255,0.35);
+  padding: 42px 28px 34px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(20,26,29,0.7);
 }
 
 .logo {
+  letter-spacing: 8px;
+  font-size: 2.1rem;
+  color: var(--text);
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: var(--gold2);
   letter-spacing: 3px;
-  font-size: 1.6rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
 }
 
 .status {
-  color: var(--line);
-  font-size: 0.85rem;
-  margin-top: 8px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 0.82rem;
 }
 
 main {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: auto;
   padding: 28px;
 }
 
-.terminal {
+.registry {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 24px;
@@ -74,85 +86,105 @@ main {
 
 .panel {
   background: var(--panel);
-  border: 1px solid rgba(125,231,255,0.45);
-  box-shadow: 0 0 35px rgba(125,231,255,0.08);
-  padding: 22px;
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  padding: 24px;
   position: relative;
+  backdrop-filter: blur(3px);
 }
 
 .panel::before {
   content: "";
   position: absolute;
-  inset: 8px;
-  border: 1px solid rgba(125,231,255,0.12);
+  inset: 9px;
+  border: 1px solid rgba(200,169,107,0.16);
   pointer-events: none;
 }
 
 h1, h2 {
   margin-top: 0;
   font-weight: normal;
-  letter-spacing: 2px;
 }
 
-h1 { font-size: 1.4rem; }
-h2 { font-size: 1rem; color: var(--line); }
+h1 {
+  letter-spacing: 5px;
+  font-size: 1.75rem;
+}
+
+h2 {
+  color: var(--gold2);
+  letter-spacing: 3px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
 
 .preview {
   min-height: 360px;
+  border: 1px dashed rgba(200,169,107,0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px dashed rgba(125,231,255,0.35);
-  color: var(--muted);
   text-align: center;
+  color: var(--muted);
   margin-bottom: 20px;
+  background:
+    linear-gradient(rgba(30,37,41,0.35), rgba(30,37,41,0.55)),
+    url("images/orford-ness.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Courier New", monospace;
 }
 
-.grid-data {
+.data-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
 
 .data {
-  border-top: 1px solid rgba(125,231,255,0.25);
+  border-top: 1px solid rgba(200,169,107,0.35);
   padding-top: 10px;
-  color: var(--soft);
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 0.82rem;
 }
 
 .data strong {
   display: block;
   color: var(--text);
-  margin-top: 4px;
+  margin-top: 5px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
 }
 
 .price {
-  font-size: 2.2rem;
-  color: var(--line);
-  margin: 20px 0;
+  font-size: 2.4rem;
+  color: var(--gold2);
+  margin: 18px 0;
 }
 
 ul {
-  padding-left: 18px;
+  padding-left: 20px;
   line-height: 1.8;
-  color: var(--soft);
+  color: var(--text);
 }
 
 label {
   display: block;
   margin-top: 14px;
-  color: var(--soft);
-  font-size: 0.85rem;
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
 }
 
 input, textarea, select {
   width: 100%;
   margin-top: 6px;
   padding: 12px;
-  background: #03090c;
-  border: 1px solid rgba(125,231,255,0.35);
+  background: rgba(10,14,16,0.8);
+  border: 1px solid rgba(200,169,107,0.4);
   color: var(--text);
-  font-family: inherit;
+  font-family: "Courier New", monospace;
 }
 
 button {
@@ -160,34 +192,44 @@ button {
   margin-top: 22px;
   padding: 15px;
   background: transparent;
-  color: var(--line);
-  border: 1px solid var(--line);
-  font-family: inherit;
+  color: var(--gold2);
+  border: 1px solid var(--gold2);
+  font-family: "Courier New", monospace;
   letter-spacing: 2px;
   cursor: pointer;
 }
 
 button:hover {
-  background: rgba(125,231,255,0.12);
+  background: rgba(200,169,107,0.12);
 }
 
 .note {
   margin-top: 16px;
-  font-size: 0.8rem;
+  font-size: 0.86rem;
+  line-height: 1.6;
   color: var(--muted);
-  line-height: 1.5;
 }
 
 footer {
   text-align: center;
-  padding: 28px;
+  padding: 32px 20px;
   color: var(--muted);
   font-size: 0.8rem;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 800px) {
-  .terminal {
+  .registry {
     grid-template-columns: 1fr;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    letter-spacing: 5px;
+  }
+
+  h1 {
+    font-size: 1.35rem;
   }
 }
 </style>
@@ -196,23 +238,27 @@ footer {
 <body>
 
 <header>
-  <div class="logo">ODDSCAPE // LICENCE TERMINAL</div>
-  <div class="status">STATUS: ONLINE · GRID: UK NATIONAL GRID · MODE: ARCHIVE TERRAIN PACKAGE</div>
+  <div class="logo">ODDSCAPE</div>
+  <div class="subtitle">Terrain Licence Registry</div>
+  <div class="status">
+    STATUS: ONLINE · GRID: UK NATIONAL GRID · MODE: ARCHIVE TERRAIN PACKAGE
+  </div>
 </header>
 
 <main>
 
-<div class="terminal">
+<div class="registry">
 
   <section class="panel">
-    <h1>ORFORD NESS // TERRAIN STUDY</h1>
+    <h1>ORFORD NESS</h1>
+    <h2>Terrain Study // Archive Package</h2>
 
     <div class="preview">
       TERRAIN PREVIEW SLOT<br>
-      Replace this with image, video, GLB viewer or USDZ link
+      Replace with terrain image, GLB viewer or USDZ link
     </div>
 
-    <div class="grid-data">
+    <div class="data-grid">
       <div class="data">PROJECT<strong>Orford Ness Coastal Study</strong></div>
       <div class="data">GRID REF<strong>TM 44 / TM 45</strong></div>
       <div class="data">DATASET<strong>LiDAR / REM / Hillshade</strong></div>
@@ -221,13 +267,13 @@ footer {
   </section>
 
   <section class="panel">
-    <h2>ARCHIVE TERRAIN PACKAGE</h2>
+    <h2>Acquire Licence</h2>
 
     <div class="price">£75</div>
 
     <ul>
       <li>Apple AR USDZ model</li>
-      <li>Android/Web GLB model</li>
+      <li>Android / Web GLB model</li>
       <li>Terrain preview image</li>
       <li>Single project licence</li>
       <li>Licence certificate reference</li>
@@ -262,7 +308,7 @@ footer {
     </form>
 
     <p class="note">
-      Licence ID generated after confirmation. QR code may be supplied for access,
+      Licence ID generated after confirmation. QR access may be supplied,
       but the licence is attached to the named client and project.
     </p>
   </section>
@@ -270,16 +316,16 @@ footer {
 </div>
 
 <section class="panel" style="margin-top:24px;">
-  <h2>LICENCE CONDITIONS</h2>
+  <h2>Licence Conditions</h2>
   <p class="note">
     Oddscape terrain packages are licensed for named project use only.
     Redistribution, resale, stock upload, public re-hosting or reuse on unrelated
     projects is not permitted without written permission.
   </p>
   <p class="note">
-    Data attribution remains subject to the original open data provider terms
-    where applicable. Oddscape supplies interpretation, processing, visualisation
-    and AR-ready terrain outputs.
+    Data attribution remains subject to original open data provider terms where
+    applicable. Oddscape supplies interpretation, processing, visualisation and
+    AR-ready terrain outputs.
   </p>
 </section>
 
