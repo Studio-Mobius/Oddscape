@@ -6,293 +6,306 @@
 
 <title>Studio Oddscape | Terrain Archive & Commissioned Visualisation</title>
 
-<meta name="description" content="Studio Oddscape creates terrain archive packages, LiDAR, DEM, REM, bathymetry, AR terrain models and commissioned landscape visualisation.">
-
 <style>
-:root {
-    --bg1: #14232d;
-    --bg2: #0b151d;
-    --gold: #d6ad57;
-    --gold-soft: rgba(214,173,87,0.55);
-    --text: #dfe5ea;
-    --muted: #98a4ad;
-    --line: rgba(214,173,87,0.22);
+:root{
+  --bg:#0b1820;
+  --bg2:#142632;
+  --gold:#c99b46;
+  --gold-soft:rgba(201,155,70,.55);
+  --text:#dfe6ea;
+  --muted:#9ba6ad;
+  --line:rgba(201,155,70,.22);
 }
 
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  overflow-x:hidden;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:
+    radial-gradient(circle at top,#213541 0%,#10222d 48%,#071119 100%);
+  color:var(--text);
+  line-height:1.7;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+header{
+  text-align:center;
+  padding:50px 20px 28px;
+}
+
+.logo{
+  font-size:clamp(72px,13vw,160px);
+  font-weight:200;
+  line-height:.9;
+  letter-spacing:-4px;
+  color:transparent;
+  -webkit-text-stroke:1.15px rgba(201,155,70,.75);
+  text-stroke:1.15px rgba(201,155,70,.75);
+}
+
+.subtitle{
+  margin-top:26px;
+  font-size:clamp(13px,2vw,22px);
+  letter-spacing:7px;
+  color:rgba(223,230,234,.78);
+}
+
+.hud-line{
+  width:min(640px,70vw);
+  height:1px;
+  margin:28px auto 0;
+  background:linear-gradient(90deg,transparent,var(--gold-soft),transparent);
+  position:relative;
+}
+
+.hud-line:after{
+  content:"⊕";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-53%);
+  color:var(--gold);
+  background:#10222d;
+  padding:0 8px;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  padding:20px 42px;
+  font-size:18px;
+  border-right:1px solid var(--line);
+}
+
+nav a:first-child{color:var(--gold)}
+nav a:last-child{border-right:0}
+nav a:hover{background:rgba(201,155,70,.08)}
+
+.hero{
+  min-height:560px;
+  position:relative;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(7,17,25,.98) 0%,rgba(7,17,25,.9) 36%,rgba(7,17,25,.18) 100%),
+    radial-gradient(circle at 78% 40%,rgba(201,155,70,.18),transparent 30%);
+  z-index:1;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  right:-4%;
+  top:5%;
+  width:70%;
+  height:100%;
+  opacity:.75;
+  background-image:url("data:image/svg+xml,%3Csvg width='900' height='620' viewBox='0 0 900 620' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c99b46' stroke-width='1' opacity='.75'%3E%3Cpath d='M55 430 C160 330 230 270 335 260 C435 250 490 120 590 105 C700 90 775 190 860 250'/%3E%3Cpath d='M70 455 C170 360 250 295 350 285 C450 275 505 155 600 135 C705 112 785 210 875 275'/%3E%3Cpath d='M90 480 C190 390 275 325 370 315 C470 305 520 190 615 165 C715 140 800 235 890 305'/%3E%3Cpath d='M110 505 C210 420 300 355 390 345 C490 335 535 225 630 195 C730 170 815 260 900 335'/%3E%3Cpath d='M130 530 C230 450 325 385 410 375 C510 365 550 260 645 225 C745 200 830 285 910 365'/%3E%3Cpath d='M150 555 C250 480 350 415 430 405 C530 395 565 295 660 255 C760 230 845 310 920 395'/%3E%3Cpath d='M250 500 C330 420 385 350 440 310 C500 265 545 210 610 160 C650 130 695 165 735 205'/%3E%3Cpath d='M300 530 C370 455 425 375 470 330 C525 275 570 230 630 185 C670 155 710 190 760 235'/%3E%3Cpath d='M350 560 C410 490 465 410 505 360 C555 300 595 260 650 215 C690 185 730 220 785 265'/%3E%3Cpath d='M420 585 C470 520 520 445 550 390 C590 325 625 290 675 245 C715 215 755 250 810 300'/%3E%3Cpath d='M520 590 C555 530 590 465 610 410 C640 340 660 310 700 270 C740 240 780 275 835 330'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:right center;
+  z-index:0;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:1160px;
+  margin:auto;
+  padding:96px 24px;
+}
+
+.hero-text{
+  max-width:520px;
+}
+
+.hero h1{
+  font-size:clamp(52px,8vw,86px);
+  font-weight:200;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(201,155,70,.82);
+  margin:0 0 22px;
+  line-height:1.05;
+}
+
+.hero-rule{
+  width:320px;
+  height:1px;
+  background:linear-gradient(90deg,var(--gold-soft),transparent);
+  margin:0 0 36px;
+}
+
+.hero p{
+  font-size:clamp(20px,3vw,30px);
+  color:rgba(223,230,234,.88);
+  margin:0 0 40px;
+}
+
+.cta{
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  padding:14px 30px;
+  border:1px solid rgba(201,155,70,.7);
+  color:var(--gold);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:14px;
+  font-weight:600;
+  background:rgba(10,18,24,.24);
+}
+
+.cta:hover{background:rgba(201,155,70,.08)}
+
+.features{
+  max-width:1220px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.feature{
+  text-align:center;
+  padding:48px 26px;
+  border-right:1px solid rgba(201,155,70,.18);
+}
+
+.feature:last-child{border-right:0}
+
+.icon{
+  width:58px;
+  height:58px;
+  margin:0 auto 24px;
+  color:var(--gold);
+}
+
+.icon svg{
+  width:58px;
+  height:58px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.35;
+}
+
+.feature h2{
+  margin:0 0 12px;
+  font-size:20px;
+  font-weight:400;
+  color:var(--text);
+}
+
+.mini-line{
+  width:38px;
+  height:1px;
+  background:var(--gold-soft);
+  margin:0 auto 18px;
+}
+
+.feature p{
+  margin:0;
+  font-size:15px;
+  color:var(--muted);
+}
+
+footer{
+  max-width:1220px;
+  margin:auto;
+  padding:24px 28px 32px;
+  display:grid;
+  grid-template-columns:1fr 2fr 1fr;
+  gap:20px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+footer div:nth-child(2){text-align:center}
+footer div:nth-child(3){text-align:right}
+footer span{color:var(--gold);padding:0 10px}
+
+.copyright{
+  text-align:center;
+  color:rgba(155,166,173,.65);
+  font-size:13px;
+  padding-bottom:28px;
+}
+
+@media(max-width:900px){
+  header{padding-top:38px}
+
+  .logo{
+    font-size:clamp(62px,18vw,92px);
+    letter-spacing:-2px;
+  }
+
+  .subtitle{
+    font-size:12px;
+    letter-spacing:4px;
+  }
+
+  nav a{
+    padding:12px 14px;
+    font-size:13px;
+    border-right:0;
+  }
+
+  .hero{
+    min-height:620px;
+  }
+
+  .hero:before{
     background:
-        radial-gradient(circle at top, #243642 0%, var(--bg1) 42%, var(--bg2) 100%);
-    color: var(--text);
-    line-height: 1.7;
-}
+      linear-gradient(180deg,rgba(7,17,25,.96),rgba(7,17,25,.72)),
+      radial-gradient(circle at 65% 34%,rgba(201,155,70,.2),transparent 35%);
+  }
 
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 80px 80px;
-    opacity: 0.35;
-}
+  .hero:after{
+    width:115%;
+    right:-35%;
+    top:18%;
+    opacity:.55;
+  }
 
-header {
-    text-align: center;
-    padding: 50px 20px 28px;
-}
+  .hero-inner{
+    padding:70px 28px;
+  }
 
-.logo {
-    margin: 0;
-    font-size: clamp(64px, 12vw, 150px);
-    font-weight: 300;
-    letter-spacing: -3px;
-    line-height: 0.95;
-    color: rgba(214,173,87,0.05);
-    -webkit-text-stroke: 1.25px rgba(214,173,87,0.92);
-    text-shadow: none;
-}
+  .features{
+    grid-template-columns:1fr;
+  }
 
-.subtitle {
-    margin-top: 24px;
-    font-size: clamp(13px, 2vw, 21px);
-    letter-spacing: 7px;
-    color: rgba(223,229,234,0.78);
-}
+  .feature{
+    border-right:0;
+    border-bottom:1px solid rgba(201,155,70,.18);
+  }
 
-.hud-line {
-    width: min(640px, 70vw);
-    height: 1px;
-    background: var(--line);
-    margin: 28px auto 0;
-    position: relative;
-}
+  footer{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
 
-.hud-line::after {
-    content: "⊕";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -52%);
-    color: var(--gold);
-    font-size: 18px;
-    background: var(--bg1);
-    padding: 0 8px;
-}
-
-nav {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
-}
-
-nav a {
-    display: inline-block;
-    padding: 20px 40px;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 18px;
-    border-right: 1px solid var(--line);
-}
-
-nav a:first-child {
-    color: var(--gold);
-}
-
-nav a:last-child {
-    border-right: none;
-}
-
-nav a:hover {
-    background: rgba(214,173,87,0.08);
-}
-
-.hero {
-    min-height: 560px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    background:
-        linear-gradient(90deg, rgba(11,21,29,0.98) 0%, rgba(11,21,29,0.86) 42%, rgba(11,21,29,0.20) 100%),
-        url("./images/Tinto.png");
-    background-size: cover;
-    background-position: right center;
-}
-
-.hero-inner {
-    max-width: 1160px;
-    margin: auto;
-    padding: 100px 24px;
-}
-
-.hero-text {
-    max-width: 520px;
-}
-
-.hero h1 {
-    font-size: clamp(48px, 8vw, 78px);
-    font-weight: 200;
-    line-height: 1.1;
-    color: rgba(214,173,87,0.08);
-    -webkit-text-stroke: 1px rgba(214,173,87,0.95);
-    margin: 0 0 26px;
-}
-
-.hero-rule {
-    width: 310px;
-    height: 1px;
-    background: linear-gradient(90deg, var(--gold-soft), transparent);
-    margin-bottom: 34px;
-}
-
-.hero p {
-    font-size: clamp(20px, 3vw, 30px);
-    color: rgba(223,229,234,0.88);
-    margin: 0 0 36px;
-}
-
-.cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 18px;
-    padding: 14px 28px;
-    color: var(--gold);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-weight: 600;
-    border: 1px solid rgba(214,173,87,0.55);
-    background: rgba(10,18,24,0.22);
-}
-
-.cta:hover {
-    background: rgba(214,173,87,0.08);
-}
-
-.features {
-    max-width: 1220px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.feature {
-    padding: 48px 28px;
-    text-align: center;
-    border-right: 1px solid rgba(214,173,87,0.18);
-}
-
-.feature:last-child {
-    border-right: none;
-}
-
-.icon {
-    margin: 0 auto 24px;
-    width: 58px;
-    height: 58px;
-    color: var(--gold);
-}
-
-.icon svg {
-    width: 58px;
-    height: 58px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.4;
-}
-
-.feature h2 {
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0 0 12px;
-    color: var(--text);
-}
-
-.mini-line {
-    width: 38px;
-    height: 1px;
-    background: var(--gold-soft);
-    margin: 0 auto 18px;
-}
-
-.feature p {
-    font-size: 15px;
-    color: var(--muted);
-    margin: 0;
-}
-
-footer {
-    max-width: 1220px;
-    margin: auto;
-    padding: 24px 28px 32px;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 20px;
-    color: var(--muted);
-    font-size: 14px;
-}
-
-footer div:nth-child(2) {
-    text-align: center;
-}
-
-footer div:nth-child(3) {
-    text-align: right;
-}
-
-footer span {
-    color: var(--gold);
-    padding: 0 10px;
-}
-
-@media (max-width: 900px) {
-    nav a {
-        padding: 12px 14px;
-        font-size: 13px;
-        border-right: none;
-    }
-
-    .hero {
-        background:
-            linear-gradient(180deg, rgba(11,21,29,0.96), rgba(11,21,29,0.72)),
-            url("./images/Tinto.png");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .hero-inner {
-        padding: 64px 24px;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-    .feature {
-        border-right: none;
-        border-bottom: 1px solid rgba(214,173,87,0.18);
-    }
-
-    footer {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    footer div:nth-child(3) {
-        text-align: center;
-    }
+  footer div:nth-child(3){text-align:center}
 }
 </style>
 </head>
@@ -300,124 +313,122 @@ footer span {
 <body>
 
 <header>
-    <div class="logo">Oddscape</div>
-    <div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
-    <div class="hud-line"></div>
+  <div class="logo">Oddscape</div>
+  <div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
+  <div class="hud-line"></div>
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="acquire.html#archive">Terrain Archive</a>
-    <a href="acquire.html#commissions">Commissions</a>
-    <a href="acquire.html#licences">Acquire Terrain</a>
-    <a href="mailto:studio@oddscape.co.uk">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="acquire.html#archive">Terrain Archive</a>
+  <a href="acquire.html#commissions">Commissions</a>
+  <a href="acquire.html#licences">Acquire Terrain</a>
+  <a href="mailto:studio@oddscape.co.uk">Contact</a>
 </nav>
 
 <main>
 
 <section class="hero">
-    <div class="hero-inner">
-        <div class="hero-text">
-            <h1>Terrain Archive</h1>
-            <div class="hero-rule"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Terrain Archive</h1>
+      <div class="hero-rule"></div>
 
-            <p>
-                Ready-to-download terrain interpretation packages for project,
-                presentation, education, and landscape analysis.
-            </p>
+      <p>
+        Ready-to-download terrain interpretation packages for project,
+        presentation, education, and landscape analysis.
+      </p>
 
-            <a href="acquire.html#archive" class="cta">Browse Archive <span>→</span></a>
-        </div>
+      <a href="acquire.html#archive" class="cta">Browse Archive <span>→</span></a>
     </div>
+  </div>
 </section>
 
 <section class="features">
 
-    <div class="feature">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
-                <path d="M12 22V12"/>
-                <path d="M20 6L12 12L4 6"/>
-            </svg>
-        </div>
-        <h2>3D Terrain Models</h2>
-        <div class="mini-line"></div>
-        <p>High-resolution terrain models for visualisation, analysis and AR.</p>
+  <div class="feature">
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
+        <path d="M12 22V12"/>
+        <path d="M20 6L12 12L4 6"/>
+      </svg>
     </div>
+    <h2>3D Terrain Models</h2>
+    <div class="mini-line"></div>
+    <p>High-resolution terrain models for visualisation, analysis and AR.</p>
+  </div>
 
-    <div class="feature">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <rect x="4" y="5" width="16" height="14"/>
-                <circle cx="8" cy="9" r="1.5"/>
-                <path d="M5 18L10 12L14 16L17 11L20 18"/>
-            </svg>
-        </div>
-        <h2>AR & Immersive</h2>
-        <div class="mini-line"></div>
-        <p>Explore landscapes in augmented reality on iOS and visionOS.</p>
+  <div class="feature">
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="14"/>
+        <circle cx="8" cy="9" r="1.5"/>
+        <path d="M5 18L10 12L14 16L17 11L20 18"/>
+      </svg>
     </div>
+    <h2>AR & Immersive</h2>
+    <div class="mini-line"></div>
+    <p>Explore landscapes in augmented reality on iOS and visionOS.</p>
+  </div>
 
-    <div class="feature">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 3V21"/>
-                <path d="M3 12H21"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="12" cy="12" r="8"/>
-            </svg>
-        </div>
-        <h2>LiDAR DEM + REM</h2>
-        <div class="mini-line"></div>
-        <p>Digital Elevation Models and Relative Elevation Models for terrain analysis.</p>
+  <div class="feature">
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3V21"/>
+        <path d="M3 12H21"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="12" cy="12" r="8"/>
+      </svg>
     </div>
+    <h2>LiDAR DEM + REM</h2>
+    <div class="mini-line"></div>
+    <p>Digital Elevation Models and Relative Elevation Models for precise analysis.</p>
+  </div>
 
-    <div class="feature">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 3L4 7L12 11L20 7L12 3Z"/>
-                <path d="M4 12L12 16L20 12"/>
-                <path d="M4 17L12 21L20 17"/>
-            </svg>
-        </div>
-        <h2>Terrain + Bathymetry</h2>
-        <div class="mini-line"></div>
-        <p>Integrated landform and seabed modelling for coastal and estuarine landscapes.</p>
+  <div class="feature">
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3L4 7L12 11L20 7L12 3Z"/>
+        <path d="M4 12L12 16L20 12"/>
+        <path d="M4 17L12 21L20 17"/>
+      </svg>
     </div>
+    <h2>Terrain + Bathymetry</h2>
+    <div class="mini-line"></div>
+    <p>Integrated landform and seabed modelling for coastal and estuarine landscapes.</p>
+  </div>
 
-    <div class="feature">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <path d="M6 3H15L20 8V21H6V3Z"/>
-                <path d="M15 3V8H20"/>
-                <path d="M9 13H16"/>
-                <path d="M9 17H15"/>
-            </svg>
-        </div>
-        <h2>Licensed for Use</h2>
-        <div class="mini-line"></div>
-        <p>Clear project-based licences for commercial, education and heritage use.</p>
+  <div class="feature">
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M6 3H15L20 8V21H6V3Z"/>
+        <path d="M15 3V8H20"/>
+        <path d="M9 13H16"/>
+        <path d="M9 17H15"/>
+      </svg>
     </div>
+    <h2>Licensed for Use</h2>
+    <div class="mini-line"></div>
+    <p>Clear, project-based licences for commercial, education and heritage use.</p>
+  </div>
 
 </section>
 
 </main>
 
 <footer>
-    <div>Studio Oddscape</div>
-    <div>
-        Terrain Visualisation <span>•</span> LiDAR Analysis <span>•</span>
-        3D Modelling <span>•</span> Immersive Interpretation
-    </div>
-    <div>UK <span>|</span> Worldwide</div>
+  <div>Studio Oddscape</div>
+  <div>
+    Terrain Visualisation <span>•</span> LiDAR Analysis <span>•</span>
+    3D Modelling <span>•</span> Immersive Interpretation
+  </div>
+  <div>UK <span>|</span> Worldwide</div>
 </footer>
 
-<footer style="padding-top:0; opacity:0.7;">
-    <div></div>
-    <div>© Studio Oddscape MMXXVI — All Rights Reserved</div>
-    <div></div>
-</footer>
+<div class="copyright">
+  © Studio Oddscape MMXXVI — All Rights Reserved
+</div>
 
 </body>
 </html>
