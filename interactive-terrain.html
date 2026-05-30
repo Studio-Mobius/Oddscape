@@ -1,9 +1,77 @@
-<div class="section-title">Interactive Terrain</div>
-<img src="images/Deben.jpg" alt="River Deben Interactive Terrain">
-<div class="project-tag">AR Terrain Study</div>
-<div class="project-title">River Deben Interactive Model</div>
-<div class="text">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=960">
+<title>Interactive Terrain | Studio Oddscape</title>
 
+<style>
+:root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+.page{width:960px;margin:auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%)}
+header{text-align:center;padding:55px 40px 30px}
+.logo{font-size:74px;font-weight:800;color:var(--gold);line-height:.95}
+.subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
+.hud{width:520px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,rgba(217,188,130,.45),transparent)}
+nav{display:flex;justify-content:center;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+nav a{text-decoration:none;color:#dce3e8;padding:16px 36px;font-size:14px;border-right:1px solid var(--line)}
+nav a:last-child{border-right:none}
+nav a:hover{color:var(--gold)}
+.content{padding:60px}
+.section-title{font-size:52px;font-weight:800;color:var(--gold);margin-bottom:20px}
+.section-rule{height:1px;background:var(--line);margin-bottom:40px}
+.hero{border-radius:18px;overflow:hidden;box-shadow:0 0 50px rgba(0,0,0,.35)}
+.hero img{display:block;width:100%}
+.caption{margin-top:18px;font-size:15px;line-height:1.8;color:var(--muted)}
+.project-tag{margin-top:55px;font-size:18px;letter-spacing:4px;color:var(--muted);text-transform:uppercase}
+.project-title{margin-top:18px;font-size:48px;font-weight:700;line-height:1.2}
+.text{margin-top:28px;max-width:760px;font-size:21px;line-height:1.9}
+.button-row{margin-top:45px;display:flex;gap:20px;flex-wrap:wrap}
+.button{text-decoration:none;padding:14px 28px;border:1px solid rgba(217,188,130,.3);color:var(--gold);letter-spacing:3px;font-size:12px;text-transform:uppercase}
+.button:hover{background:rgba(217,188,130,.08)}
+footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
+.footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
+.footer-text{margin-top:16px;font-size:14px;line-height:1.8;color:#cfd5d9}
+.footer-copy{margin-top:24px;font-size:11px;color:#8d98a0}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<header>
+<div class="logo">Studio Oddscape</div>
+<div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
+<div class="hud"></div>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shifting-landscapes.html">Shifting Landscapes</a>
+<a href="upland-terrain.html">Upland Terrain</a>
+<a href="interactive-terrain.html">Interactive Terrain</a>
+<a href="acquire.html">Acquire Terrain</a>
+</nav>
+
+<div class="content">
+
+<div class="section-title">Interactive Terrain</div>
+<div class="section-rule"></div>
+
+<div class="hero">
+<img src="images/deben_preview.png" alt="River Deben interactive terrain model">
+</div>
+
+<div class="caption">
+Interactive terrain model developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
+</div>
+
+<div class="project-tag">AR Terrain Study</div>
+
+<div class="project-title">River Deben Interactive Model</div>
+
+<div class="text">
 <p>
 The River Deben is one of Suffolk's most distinctive estuarine landscapes, shaped by tidal movement, coastal processes, saltmarsh evolution and human settlement.
 </p>
@@ -25,20 +93,25 @@ The model is designed for exploration through augmented reality, allowing terrai
 <p>
 Applications include landscape interpretation, education, heritage engagement, visitor experience and spatial analysis.
 </p>
-
 </div>
+
 <div class="button-row">
-
-<a class="button" href="acquire.html">
-Acquire Terrain
-</a>
-
-<a class="button" rel="ar" href="images/Deben.usdz">
-Launch AR
-</a>
-
-<a class="button" href="index.html">
-Return Home
-</a>
+<a class="button" href="acquire.html">Acquire Terrain</a>
+<a class="button" rel="ar" href="images/Deben.usdz">Launch AR</a>
+<a class="button" href="index.html">Return Home</a>
+</div>
 
 </div>
+
+<footer>
+<div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
+<div class="footer-text">
+Terrain Visualisation • LiDAR Analysis<br>
+3D Terrain Modelling • Immersive Landscape Interpretation • UK
+</div>
+<div class="footer-copy">© Studio Oddscape MMXXVI — All Rights Reserved</div>
+</footer>
+
+</div>
+</body>
+</html>
