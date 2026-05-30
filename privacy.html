@@ -2,111 +2,181 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=960">
 
 <title>Privacy | Studio Oddscape</title>
 
 <style>
-
-:root{
-    --gold:#d9bc82;
-    --text:#d7dde2;
-    --muted:#8f99a2;
+:root {
+  --gold: #d9bc82;
+  --text: #d9e0e4;
+  --muted: #9aa5ac;
+  --line: rgba(217,188,130,.18);
 }
 
-html,body{
-    margin:0;
-    padding:0;
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
 }
 
-body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    background:radial-gradient(circle at top,#1a3145 0%,#102131 50%,#081521 100%);
-    color:var(--text);
-    line-height:1.6;
+.page {
+  width: 960px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #243743 0%, #10212b 45%, #08131a 100%);
 }
 
-.container{
-    max-width:700px;
-    margin:auto;
-    padding:28px 20px;
+header {
+  text-align: center;
+  padding: 46px 40px 22px;
 }
 
-h1{
-    color:var(--gold);
-    font-size:26px;
-    font-weight:600;
-    margin:0 0 6px 0;
+.logo {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: .95;
+  color: var(--gold);
 }
 
-.subtitle{
-    color:var(--muted);
-    margin-bottom:24px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    font-size:9px;
+.subtitle {
+  margin-top: 18px;
+  letter-spacing: 6px;
+  font-size: 13px;
+  color: rgba(220,226,230,.72);
 }
 
-h2{
-    color:var(--gold);
-    font-size:15px;
-    font-weight:600;
-    margin-top:24px;
-    margin-bottom:8px;
+.hud-line {
+  width: 520px;
+  height: 1px;
+  margin: 22px auto 0;
+  background: linear-gradient(90deg, transparent, rgba(217,188,130,.45), transparent);
+  position: relative;
 }
 
-p{
-    font-size:13px;
-    color:var(--text);
-    margin-bottom:14px;
+.hud-line::after {
+  content: "⊕";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-52%);
+  color: var(--gold);
+  background: #10212b;
+  padding: 0 9px;
 }
 
-a{
-    color:var(--gold);
-    text-decoration:none;
+nav {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(255,255,255,.07);
+  border-bottom: 1px solid rgba(255,255,255,.07);
 }
 
-a:hover{
-    text-decoration:underline;
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 16px 42px;
+  font-size: 14px;
+  border-right: 1px solid var(--line);
 }
 
-.back-link{
-    display:inline-block;
-    margin-top:18px;
-    border:1px solid rgba(217,188,130,.25);
-    padding:7px 12px;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-    font-size:9px;
-    transition:.2s ease;
+nav a:first-child { color: var(--gold); }
+nav a:last-child { border-right: none; }
+
+.content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 44px 24px 54px;
 }
 
-.back-link:hover{
-    background:rgba(217,188,130,.08);
-    text-decoration:none;
+h1 {
+  color: var(--gold);
+  font-size: 24px;
+  margin: 0 0 22px;
 }
 
-.footer{
-    margin-top:40px;
-    padding-top:18px;
-    border-top:1px solid rgba(217,188,130,.12);
-    color:var(--muted);
-    font-size:10px;
-    text-align:center;
+h2 {
+  color: var(--gold);
+  font-size: 14px;
+  margin: 26px 0 8px;
 }
 
+p {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 7px 12px;
+  border: 1px solid rgba(217,188,130,.25);
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+footer {
+  text-align: center;
+  padding: 26px 20px 40px;
+  border-top: 1px solid rgba(217,188,130,.12);
+}
+
+.footer-brand {
+  color: var(--gold);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.footer-services {
+  color: #c8cdd2;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.footer-credit {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
+
+<header>
+  <div class="logo">Studio Oddscape</div>
+  <div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
+  <div class="hud-line"></div>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="acquire.html#archive">Terrain Archive</a>
+  <a href="acquire.html#commissions">Commissions</a>
+  <a href="acquire.html#licences">Acquire Terrain</a>
+  <a href="mailto:studio@oddscape.co.uk">Contact</a>
+</nav>
+
+<main class="content">
 
 <h1>Privacy</h1>
-
-<div class="subtitle">
-Studio Oddscape
-</div>
 
 <p>
 Studio Oddscape respects your privacy and collects only the information necessary to respond to enquiries, process purchases, and provide requested services.
@@ -158,13 +228,25 @@ You may request access to, correction of, or removal of personal information pre
 <a href="mailto:studio@oddscape.co.uk">studio@oddscape.co.uk</a>
 </p>
 
-<a href="index.html" class="back-link">
-Return to Main Site
-</a>
+<a href="index.html" class="back-link">Return to Main Site</a>
 
-<div class="footer">
-© Studio Oddscape MMXXVI — All Rights Reserved
-</div>
+</main>
+
+<footer>
+  <div class="footer-brand">
+    Studio Oddscape<br>
+    oddscape.co.uk
+  </div>
+
+  <div class="footer-services">
+    Terrain Visualisation • LiDAR Analysis<br>
+    3D Terrain Modelling • Immersive Landscape Interpretation • UK
+  </div>
+
+  <div class="footer-credit">
+    © Studio Oddscape MMXXVI — All Rights Reserved
+  </div>
+</footer>
 
 </div>
 
