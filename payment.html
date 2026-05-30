@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oddscape // Licence Terminal</title>
+
+<style>
+:root {
+  --bg: #061014;
+  --panel: rgba(9, 25, 32, 0.88);
+  --line: #7de7ff;
+  --soft: #9fb8bf;
+  --text: #e9f7fa;
+  --muted: #6f8f98;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Courier New", monospace;
+  background:
+    linear-gradient(rgba(125,231,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125,231,255,0.04) 1px, transparent 1px),
+    radial-gradient(circle at 50% 20%, #12313d 0%, var(--bg) 55%);
+  background-size: 40px 40px, 40px 40px, cover;
+  color: var(--text);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.025),
+    rgba(255,255,255,0.025) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+header {
+  padding: 28px;
+  border-bottom: 1px solid rgba(125,231,255,0.35);
+}
+
+.logo {
+  letter-spacing: 3px;
+  font-size: 1.6rem;
+}
+
+.status {
+  color: var(--line);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px;
+}
+
+.terminal {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(125,231,255,0.45);
+  box-shadow: 0 0 35px rgba(125,231,255,0.08);
+  padding: 22px;
+  position: relative;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(125,231,255,0.12);
+  pointer-events: none;
+}
+
+h1, h2 {
+  margin-top: 0;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1rem; color: var(--line); }
+
+.preview {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(125,231,255,0.35);
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.grid-data {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.data {
+  border-top: 1px solid rgba(125,231,255,0.25);
+  padding-top: 10px;
+  color: var(--soft);
+}
+
+.data strong {
+  display: block;
+  color: var(--text);
+  margin-top: 4px;
+}
+
+.price {
+  font-size: 2.2rem;
+  color: var(--line);
+  margin: 20px 0;
+}
+
+ul {
+  padding-left: 18px;
+  line-height: 1.8;
+  color: var(--soft);
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  color: var(--soft);
+  font-size: 0.85rem;
+}
+
+input, textarea, select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px;
+  background: #03090c;
+  border: 1px solid rgba(125,231,255,0.35);
+  color: var(--text);
+  font-family: inherit;
+}
+
+button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 15px;
+  background: transparent;
+  color: var(--line);
+  border: 1px solid var(--line);
+  font-family: inherit;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgba(125,231,255,0.12);
+}
+
+.note {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  padding: 28px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 800px) {
+  .terminal {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ODDSCAPE // LICENCE TERMINAL</div>
+  <div class="status">STATUS: ONLINE · GRID: UK NATIONAL GRID · MODE: ARCHIVE TERRAIN PACKAGE</div>
+</header>
+
+<main>
+
+<div class="terminal">
+
+  <section class="panel">
+    <h1>ORFORD NESS // TERRAIN STUDY</h1>
+
+    <div class="preview">
+      TERRAIN PREVIEW SLOT<br>
+      Replace this with image, video, GLB viewer or USDZ link
+    </div>
+
+    <div class="grid-data">
+      <div class="data">PROJECT<strong>Orford Ness Coastal Study</strong></div>
+      <div class="data">GRID REF<strong>TM 44 / TM 45</strong></div>
+      <div class="data">DATASET<strong>LiDAR / REM / Hillshade</strong></div>
+      <div class="data">STATUS<strong>AVAILABLE</strong></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>ARCHIVE TERRAIN PACKAGE</h2>
+
+    <div class="price">£75</div>
+
+    <ul>
+      <li>Apple AR USDZ model</li>
+      <li>Android/Web GLB model</li>
+      <li>Terrain preview image</li>
+      <li>Single project licence</li>
+      <li>Licence certificate reference</li>
+    </ul>
+
+    <form action="mailto:hello@oddscape.co.uk" method="post" enctype="text/plain">
+
+      <label>CLIENT NAME</label>
+      <input type="text" name="client_name" required>
+
+      <label>ORGANISATION</label>
+      <input type="text" name="organisation">
+
+      <label>EMAIL</label>
+      <input type="email" name="email" required>
+
+      <label>PROJECT REFERENCE</label>
+      <input type="text" name="project_reference">
+
+      <label>LICENCE TYPE</label>
+      <select name="licence_type">
+        <option>Single Project Licence</option>
+        <option>Education / Teaching Licence</option>
+        <option>Commercial Presentation Licence</option>
+      </select>
+
+      <label>NOTES</label>
+      <textarea name="notes" rows="4"></textarea>
+
+      <button type="submit">[ ACQUIRE LICENCE ]</button>
+
+    </form>
+
+    <p class="note">
+      Licence ID generated after confirmation. QR code may be supplied for access,
+      but the licence is attached to the named client and project.
+    </p>
+  </section>
+
+</div>
+
+<section class="panel" style="margin-top:24px;">
+  <h2>LICENCE CONDITIONS</h2>
+  <p class="note">
+    Oddscape terrain packages are licensed for named project use only.
+    Redistribution, resale, stock upload, public re-hosting or reuse on unrelated
+    projects is not permitted without written permission.
+  </p>
+  <p class="note">
+    Data attribution remains subject to the original open data provider terms
+    where applicable. Oddscape supplies interpretation, processing, visualisation
+    and AR-ready terrain outputs.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  STUDIO ODDSCAPE · TERRAIN INTERPRETATION · LiDAR · AR LANDSCAPE MODELS<br>
+  STERCORE PINGUINI AGITUR
+</footer>
+
+</body>
+</html>
