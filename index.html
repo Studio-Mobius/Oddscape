@@ -11,7 +11,7 @@
   --gold: #d9bc82;
   --text: #d9e0e4;
   --muted: #9aa5ac;
-  --line: rgba(183,141,67,.25);
+  --line: rgba(217,188,130,.25);
 }
 
 * { box-sizing: border-box; }
@@ -36,11 +36,11 @@ header {
 }
 
 .logo {
-    font-size: 102px;
-    font-weight: 700;
-    color: #d9bc82;
-    letter-spacing: -3px;
-    text-shadow: 0 2px 12px rgba(0,0,0,.35);
+  font-size: 102px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -3px;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
 }
 
 .subtitle {
@@ -54,7 +54,7 @@ header {
   width: 610px;
   height: 1px;
   margin: 24px auto 0;
-  background: linear-gradient(90deg, transparent, rgba(183,141,67,.55), transparent);
+  background: linear-gradient(90deg, transparent, rgba(217,188,130,.55), transparent);
   position: relative;
 }
 
@@ -86,6 +86,7 @@ nav a {
 
 nav a:first-child { color: var(--gold); }
 nav a:last-child { border-right: none; }
+nav a:hover { color: var(--gold); }
 
 .hero {
   height: 430px;
@@ -102,13 +103,13 @@ nav a:last-child { border-right: none; }
 }
 
 .hero h1 {
-    color: #d9bc82;
+  color: var(--gold);
 }
 
 .hero-rule {
   width: 285px;
   height: 1px;
-  background: linear-gradient(90deg, rgba(183,141,67,.55), transparent);
+  background: linear-gradient(90deg, rgba(217,188,130,.55), transparent);
   margin: 22px 0 32px;
 }
 
@@ -122,13 +123,17 @@ nav a:last-child { border-right: none; }
   display: inline-block;
   margin-top: 24px;
   padding: 13px 28px;
-  border: 1px solid rgba(183,141,67,.75);
+  border: 1px solid rgba(217,188,130,.75);
   color: var(--gold);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 13px;
   font-weight: 600;
+}
+
+.cta:hover {
+  background: rgba(217,188,130,.08);
 }
 
 .mountain {
@@ -150,12 +155,16 @@ nav a:last-child { border-right: none; }
   min-height: 250px;
   text-align: center;
   padding: 42px 22px 34px;
-  border-right: 1px solid rgba(183,141,67,.18);
+  border-right: 1px solid rgba(217,188,130,.18);
   text-decoration: none;
   color: var(--text);
 }
 
 .feature:last-child { border-right: none; }
+
+.feature:hover {
+  background: rgba(217,188,130,.06);
+}
 
 .feature svg {
   width: 56px;
@@ -175,7 +184,7 @@ nav a:last-child { border-right: none; }
 .mini-line {
   width: 36px;
   height: 1px;
-  background: rgba(183,141,67,.65);
+  background: rgba(217,188,130,.65);
   margin: 14px auto 18px;
 }
 
@@ -195,7 +204,7 @@ nav a:last-child { border-right: none; }
 }
 
 .footer-brand {
-  color: #d9bc82;
+  color: var(--gold);
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 12px;
@@ -210,7 +219,7 @@ nav a:last-child { border-right: none; }
 
 .footer-hud-link {
   display: inline-block;
-  color: #d9bc82;
+  color: var(--gold);
   text-decoration: none;
   border: 1px solid rgba(217,188,130,.25);
   padding: 6px 14px;
@@ -242,9 +251,9 @@ nav a:last-child { border-right: none; }
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="acquire.html#archive">Terrain Archive</a>
-  <a href="acquire.html#commissions">Commissions</a>
-  <a href="acquire.html#licences">Acquire Terrain</a>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="acquire.html">Acquire Terrain</a>
   <a href="mailto:studio@oddscape.co.uk">Contact</a>
 </nav>
 
@@ -259,7 +268,7 @@ nav a:last-child { border-right: none; }
       presentation, education, and landscape analysis.
     </p>
 
-    <a href="acquire.html#archive" class="cta">Browse Archive →</a>
+    <a href="archive.html" class="cta">Browse Archive →</a>
   </div>
 
   <svg class="mountain" viewBox="0 0 900 620" aria-hidden="true">
@@ -281,7 +290,7 @@ nav a:last-child { border-right: none; }
 
 <section class="features">
 
-  <a href="acquire.html#archive" class="feature">
+  <a href="archive.html" class="feature">
     <svg viewBox="0 0 24 24">
       <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
       <path d="M12 22V12"/>
@@ -292,7 +301,7 @@ nav a:last-child { border-right: none; }
     <p>High-resolution terrain models for visualisation, analysis and AR.</p>
   </a>
 
-  <a href="acquire.html#archive" class="feature">
+  <a href="archive.html" class="feature">
     <svg viewBox="0 0 24 24">
       <rect x="4" y="5" width="16" height="14"/>
       <circle cx="8" cy="9" r="1.5"/>
@@ -303,7 +312,7 @@ nav a:last-child { border-right: none; }
     <p>Explore landscapes in augmented reality on iOS and visionOS.</p>
   </a>
 
-  <a href="acquire.html#commissions" class="feature">
+  <a href="commissions.html" class="feature">
     <svg viewBox="0 0 24 24">
       <path d="M12 3V21"/>
       <path d="M3 12H21"/>
@@ -315,7 +324,7 @@ nav a:last-child { border-right: none; }
     <p>Digital Elevation Models and Relative Elevation Models for precise analysis.</p>
   </a>
 
-  <a href="acquire.html#commissions" class="feature">
+  <a href="commissions.html" class="feature">
     <svg viewBox="0 0 24 24">
       <path d="M12 3L4 7L12 11L20 7L12 3Z"/>
       <path d="M4 12L12 16L20 12"/>
@@ -326,7 +335,7 @@ nav a:last-child { border-right: none; }
     <p>Integrated landform and seabed modelling for coastal and estuarine landscapes.</p>
   </a>
 
-  <a href="acquire.html#licences" class="feature">
+  <a href="acquire.html" class="feature">
     <svg viewBox="0 0 24 24">
       <path d="M6 3H15L20 8V21H6V3Z"/>
       <path d="M15 3V8H20"/>
@@ -361,6 +370,7 @@ nav a:last-child { border-right: none; }
   </div>
 
 </footer>
+
 </div>
 
 </body>
