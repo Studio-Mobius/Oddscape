@@ -62,13 +62,9 @@ header {
   position: absolute;
   left: 0;
   top: 50%;
-  width: calc(50% - 22px);
+  width: calc(50% - 24px);
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(217,188,130,.55)
-  );
+  background: linear-gradient(90deg, transparent, rgba(217,188,130,.55));
 }
 
 .hud-line::after {
@@ -76,13 +72,23 @@ header {
   position: absolute;
   right: 0;
   top: 50%;
-  width: calc(50% - 22px);
+  width: calc(50% - 24px);
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(217,188,130,.55),
-    transparent
-  );
+  background: linear-gradient(90deg, rgba(217,188,130,.55), transparent);
+}
+
+.hud-marker {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d9bc82' stroke-width='1.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='7'/%3E%3Cpath d='M12 8v8M8 12h8'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: hudMarkerPulse 3.8s infinite;
 }
 
 @keyframes hudMarkerPulse {
@@ -93,25 +99,8 @@ header {
 
   50% {
     opacity: 1;
-    filter: drop-shadow(0 0 7px rgba(217,188,130,.85));
+    filter: drop-shadow(0 0 6px rgba(217,188,130,.75));
   }
-}
-
-.hud-marker{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:22px;
-  height:22px;
-  transform:translate(-50%,-50%);
-
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d9bc82' stroke-width='1.4'%3E%3Ccircle cx='12' cy='12' r='7'/%3E%3Cpath d='M12 8v8M8 12h8'/%3E%3C/g%3E%3C/svg%3E");
-
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-position:center;
-
-  animation:hudMarkerPulse 3.8s infinite;
 }
 
 nav {
@@ -194,24 +183,24 @@ nav a:hover { color: var(--gold); }
   height: auto;
 }
 
-.commission{
-  text-align:center;
-  padding:60px 20px;
+.commission {
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.pay-btn{
-  display:inline-block;
-  padding:14px 24px;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  text-decoration:none;
-  margin-top:15px;
-  transition:.3s;
+.pay-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  margin-top: 15px;
+  transition: .3s;
 }
 
-.pay-btn:hover{
-  background:var(--gold);
-  color:#111;
+.pay-btn:hover {
+  background: var(--gold);
+  color: #111;
 }
 
 .features {
@@ -372,7 +361,6 @@ nav a:hover { color: var(--gold); }
 <header>
   <div class="logo">Studio Oddscape</div>
   <div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
-
   <div class="hud-line">
     <span class="hud-marker"></span>
   </div>
