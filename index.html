@@ -260,6 +260,55 @@ nav a:hover { color: var(--gold); }
     background:var(--gold);
     color:#111;
 }
+@keyframes hudPulse {
+  0%, 100% {
+    opacity: .45;
+    filter: drop-shadow(0 0 0 rgba(217,188,130,0));
+  }
+
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(217,188,130,.85));
+  }
+}
+
+.feature svg path,
+.feature svg rect,
+.feature svg circle {
+  opacity: .55;
+}
+
+.feature svg path:nth-child(1),
+.feature svg rect:nth-child(1),
+.feature svg circle:nth-child(1) {
+  animation: hudPulse 3.6s infinite;
+}
+
+.feature svg path:nth-child(2),
+.feature svg rect:nth-child(2),
+.feature svg circle:nth-child(2) {
+  animation: hudPulse 3.6s infinite .45s;
+}
+
+.feature svg path:nth-child(3),
+.feature svg rect:nth-child(3),
+.feature svg circle:nth-child(3) {
+  animation: hudPulse 3.6s infinite .9s;
+}
+
+.feature svg path:nth-child(4),
+.feature svg rect:nth-child(4),
+.feature svg circle:nth-child(4) {
+  animation: hudPulse 3.6s infinite 1.35s;
+}
+
+.feature:hover svg path,
+.feature:hover svg rect,
+.feature:hover svg circle {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(217,188,130,.9));
+}
+
 </style>
 </head>
 
@@ -317,16 +366,11 @@ nav a:hover { color: var(--gold); }
 
 <section class="features">
 
-  <a href="archive.html" class="feature">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
-      <path d="M12 22V12"/>
-      <path d="M20 6L12 12L4 6"/>
-    </svg>
-    <h2>3D Terrain Models</h2>
-    <div class="mini-line"></div>
-    <p>High-resolution terrain models for visualisation, analysis and AR.</p>
-  </a>
+<svg viewBox="0 0 24 24" class="cube-icon">
+  <path class="cube-outer" d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
+  <path class="cube-inner" d="M12 22V12"/>
+  <path class="cube-inner" d="M20 6L12 12L4 6"/>
+</svg>
 
   <a href="archive.html" class="feature">
     <svg viewBox="0 0 24 24">
