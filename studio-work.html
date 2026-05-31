@@ -10,203 +10,206 @@
 
 <style>
 :root {
-  --gold: #d9bc82;
-  --text: #d9e0e4;
-  --muted: #9aa5ac;
-  --bg: #071014;
-  --panel: rgba(255,255,255,.045);
-  --line: rgba(217,188,130,.25);
+  --gold:#d9bc82;
+  --text:#d9e0e4;
+  --muted:#9aa5ac;
+  --bg:#071014;
+  --panel:#0b1b22;
+  --line:rgba(217,188,130,.25);
 }
 
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial, Helvetica, sans-serif;
+  line-height:1.6;
 }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+.header{
+  text-align:center;
+  padding:55px 20px 35px;
+  background:#0b1b22;
+  border-bottom:1px solid var(--line);
 }
 
-header {
-  padding: 28px 8vw;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header h1{
+  margin:0;
+  color:var(--gold);
+  font-size:clamp(3rem,8vw,6rem);
+  line-height:1;
 }
 
-.logo {
-  color: var(--gold);
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  font-size: .9rem;
+.header p{
+  letter-spacing:.35em;
+  color:var(--muted);
+  font-size:.8rem;
+  margin-top:20px;
 }
 
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  margin-left: 22px;
-  font-size: .9rem;
+nav{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  border-bottom:1px solid var(--line);
+  background:#10232c;
 }
 
-nav a:hover {
-  color: var(--gold);
+nav a{
+  color:var(--text);
+  text-align:center;
+  text-decoration:none;
+  padding:16px 8px;
+  border-right:1px solid var(--line);
+  font-size:.9rem;
 }
 
-.hero {
-  min-height: 70vh;
-  padding: 90px 8vw;
-  display: flex;
-  align-items: center;
+nav a:hover,
+nav a.active{
+  color:var(--gold);
+}
+
+.hero-img{
+  height:300px;
   background:
-    linear-gradient(rgba(7,16,20,.35), rgba(7,16,20,.9)),
-    url("images/alde-map.png") center / cover no-repeat;
+    linear-gradient(rgba(7,16,20,.05),rgba(7,16,20,.65)),
+    url("images/alde-map.png") center/cover no-repeat;
 }
 
-.hero-content {
-  max-width: 720px;
+.section{
+  padding:55px 7vw;
+  max-width:1200px;
+  margin:auto;
 }
 
-.hero h1 {
-  font-size: clamp(2.6rem, 6vw, 5.5rem);
-  line-height: 1;
-  margin: 0 0 24px;
-  color: var(--gold);
+.section h2{
+  color:var(--gold);
+  font-size:2rem;
+  margin:0 0 20px;
 }
 
-.hero p {
-  font-size: 1.15rem;
-  max-width: 620px;
-  color: var(--text);
+.intro{
+  max-width:800px;
+  color:var(--text);
+  font-size:1.05rem;
 }
 
-.section {
-  padding: 80px 8vw;
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
+  margin-top:35px;
 }
 
-.section h2 {
-  color: var(--gold);
-  font-size: 2rem;
-  margin-bottom: 18px;
+.card{
+  background:rgba(255,255,255,.035);
+  border:1px solid var(--line);
+  padding:18px;
 }
 
-.intro {
-  max-width: 850px;
+.card img{
+  width:100%;
+  display:block;
+  margin-bottom:18px;
+  border:1px solid rgba(255,255,255,.08);
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  margin-top: 40px;
+.card h3{
+  color:var(--gold);
+  margin:0 0 8px;
+  font-size:1.35rem;
 }
 
-.card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  padding: 18px;
+.card p{
+  color:var(--muted);
+  font-size:.95rem;
 }
 
-.card img {
-  width: 100%;
-  display: block;
-  border: 1px solid rgba(255,255,255,.08);
-  margin-bottom: 18px;
+.price{
+  margin:16px 0 8px;
+  color:var(--text);
+  font-weight:bold;
 }
 
-.card h3 {
-  color: var(--gold);
-  margin: 0 0 8px;
+.button{
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 20px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+  transition:.3s;
 }
 
-.card p {
-  color: var(--muted);
-  font-size: .95rem;
+.button:hover{
+  background:var(--gold);
+  color:#111;
 }
 
-.price {
-  color: var(--text);
-  margin-top: 14px;
-  font-weight: bold;
+.contact{
+  text-align:center;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#0b1b22;
 }
 
-.button {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 12px 20px;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  text-decoration: none;
-  transition: .3s;
+.contact a{
+  color:var(--gold);
 }
 
-.button:hover {
-  background: var(--gold);
-  color: #111;
+footer{
+  text-align:center;
+  color:var(--muted);
+  padding:40px 20px;
+  font-size:.85rem;
 }
 
-.note {
-  color: var(--muted);
-  font-size: .95rem;
-  max-width: 800px;
-}
+@media(max-width:700px){
+  nav{
+    grid-template-columns:1fr 1fr;
+  }
 
-.contact-box {
-  border: 1px solid var(--line);
-  padding: 32px;
-  background: var(--panel);
-  max-width: 780px;
-}
+  .hero-img{
+    height:220px;
+  }
 
-.contact-box a {
-  color: var(--gold);
-}
-
-footer {
-  padding: 40px 8vw;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: .85rem;
+  .section{
+    padding:42px 24px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Studio Oddscape</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="studio-work.html">Studio Work</a>
-    <a href="mailto:studio@oddscape.co.uk">Contact</a>
-  </nav>
+<header class="header">
+  <h1>Studio Oddscape</h1>
+  <p>Terrain Archive // Studio Work</p>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Studio Work</h1>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index.html#archive">Terrain Archive</a>
+  <a href="studio-work.html" class="active">Studio Work</a>
+  <a href="index.html#commissions">Commissions</a>
+  <a href="mailto:studio@oddscape.co.uk">Contact</a>
+</nav>
+
+<div class="hero-img"></div>
+
+<section class="section">
+  <h2>Studio Work</h2>
+
+  <div class="intro">
     <p>
       Terrain-derived prints, cartographic compositions and visual studies
       developed from LiDAR, elevation data, bathymetry and landscape interpretation.
     </p>
-  </div>
-</section>
 
-<section class="section">
-  <div class="intro">
-    <h2>Terrain as Image</h2>
     <p>
-      Studio Oddscape produces visual works that sit between mapping, landscape
-      architecture, data interpretation and fine art. These pieces are generated
-      from real terrain, then composed as atmospheric studies of place, form,
-      erosion, memory and movement.
-    </p>
-    <p class="note">
-      Prints are available as open editions unless otherwise stated. Limited editions,
-      framed works and bespoke site-based commissions can be discussed by email.
+      These works sit between mapping, landscape architecture, spatial analysis
+      and fine art — real terrain translated into atmospheric visual studies.
     </p>
   </div>
 
@@ -226,11 +229,11 @@ footer {
     </article>
 
     <article class="card">
-      <img src="images/shingle-street.png" alt="Shingle Street terrain print">
+      <img src="images/shingle-street.png" alt="Shingle Street and Orford Ness terrain print">
       <h3>Shingle Street / Orford Ness</h3>
       <p>
         A coastal terrain study exploring shingle movement, estuarine structure
-        and the fragile line between land, water and military memory.
+        and the fragile line between land, water and memory.
       </p>
       <div class="price">Coming soon</div>
       <a class="button" href="mailto:studio@oddscape.co.uk?subject=Shingle%20Street%20Print%20Enquiry">
@@ -242,8 +245,8 @@ footer {
       <img src="images/deben.png" alt="Deben terrain print">
       <h3>Deben Terrain Study</h3>
       <p>
-        A terrain-led interpretation of the River Deben, combining landscape
-        form, river morphology and digital elevation modelling.
+        A terrain-led interpretation of the River Deben, combining landform,
+        river morphology and digital elevation modelling.
       </p>
       <div class="price">Coming soon</div>
       <a class="button" href="mailto:studio@oddscape.co.uk?subject=Deben%20Terrain%20Print%20Enquiry">
@@ -254,26 +257,20 @@ footer {
   </div>
 </section>
 
-<section class="section">
-  <div class="contact-box">
-    <h2>Prints & Commissions</h2>
-    <p>
-      For print enquiries, bespoke terrain artwork, framed editions or
-      site-specific visual studies, contact Studio Oddscape.
-    </p>
-    <p>
-      <a href="mailto:studio@oddscape.co.uk">studio@oddscape.co.uk</a>
-    </p>
-  </div>
+<section class="section contact">
+  <h2>Prints & Commissions</h2>
+  <p>
+    For print enquiries, framed editions, bespoke terrain artwork or
+    site-specific visual studies:
+  </p>
+  <p>
+    <a href="mailto:studio@oddscape.co.uk">studio@oddscape.co.uk</a>
+  </p>
 </section>
 
 <footer>
-  <p>
-    Studio Oddscape · Terrain Visualisation · LiDAR Interpretation · Cartographic Art · UK
-  </p>
-  <p>
-    © Studio Oddscape
-  </p>
+  <p>Studio Oddscape · Terrain Visualisation · LiDAR Interpretation · Cartographic Art · UK</p>
+  <p>© Studio Oddscape MMXXVI — All Rights Reserved</p>
 </footer>
 
 </body>
