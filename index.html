@@ -52,27 +52,37 @@ header {
 
 .hud-line {
   width: 610px;
-  height: 1px;
+  height: 24px;
   margin: 24px auto 0;
-  background: linear-gradient(90deg, transparent, rgba(217,188,130,.55), transparent);
   position: relative;
+}
+
+.hud-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: calc(50% - 22px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(217,188,130,.55)
+  );
 }
 
 .hud-line::after {
   content: "";
   position: absolute;
-  left: 50%;
+  right: 0;
   top: 50%;
-  width: 26px;
-  height: 26px;
-  transform: translate(-50%, -50%);
-
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d9bc82' stroke-width='1.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='7'/%3E%3Cpath d='M12 8v8M8 12h8'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  animation: hudMarkerPulse 3.8s infinite;
+  width: calc(50% - 22px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(217,188,130,.55),
+    transparent
+  );
 }
 
 @keyframes hudMarkerPulse {
@@ -355,6 +365,10 @@ nav a:hover { color: var(--gold); }
   <a href="acquire.html">Acquire Terrain</a>
   <a href="mailto:studio@oddscape.co.uk">Contact</a>
 </nav>
+
+<div class="hud-line">
+  <span class="hud-marker"></span>
+</div>
 
 <section class="hero">
 
