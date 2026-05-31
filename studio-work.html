@@ -48,23 +48,29 @@ body{
 }
 
 nav{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-bottom:1px solid var(--line);
-  background:#10232c;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    background:#10232c;
+    border-top:1px solid rgba(217,188,130,.12);
+    border-bottom:1px solid rgba(217,188,130,.12);
 }
 
 nav a{
-  color:var(--text);
-  text-align:center;
-  text-decoration:none;
-  padding:16px 8px;
-  border-right:1px solid var(--line);
-  font-size:.9rem;
+    color:var(--text);
+    text-decoration:none;
+    text-align:center;
+    padding:10px 6px;
+    font-size:.8rem;
+    border-right:1px solid rgba(217,188,130,.12);
+    transition:.25s;
+}
+
+nav a:last-child{
+    border-right:none;
 }
 
 nav a:hover{
-  color:var(--gold);
+    color:var(--gold);
 }
 
 .hero-img{
@@ -184,9 +190,12 @@ footer{
     padding:12px 4px;
   }
 
-  .hero-img{
-    height:210px;
-  }
+.hero-img{
+    height:180px;
+    background:
+        linear-gradient(rgba(7,16,20,.05),rgba(7,16,20,.55)),
+        url("images/alde-map.png") center/cover no-repeat;
+}
 
   .section{
     padding:40px 24px;
@@ -199,7 +208,7 @@ footer{
 
 <header class="header">
   <h1>Studio Oddscape</h1>
-  <p>Terrain Archive // Studio Work</p>
+  <p>Terrain Editions // Cartographic Works</p>
 </header>
 
 <nav>
