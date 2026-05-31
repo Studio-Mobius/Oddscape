@@ -13,11 +13,47 @@ body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Rob
 header{text-align:center;padding:55px 40px 30px}
 .logo{font-size:74px;font-weight:800;color:var(--gold);line-height:.95}
 .subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
-.hud{width:520px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,rgba(217,188,130,.45),transparent)}
+
+.hud{width:520px;height:24px;margin:22px auto;position:relative}
+.hud::before{content:"";position:absolute;left:0;top:50%;width:calc(50% - 24px);height:1px;background:linear-gradient(90deg,transparent,rgba(217,188,130,.55))}
+.hud::after{content:"";position:absolute;right:0;top:50%;width:calc(50% - 24px);height:1px;background:linear-gradient(90deg,rgba(217,188,130,.55),transparent)}
+.hud-marker{position:absolute;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%)}
+.hud-marker svg{width:100%;height:100%;fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round}
+.hud-outer{animation:hudOuterPulse 3.8s infinite}
+.hud-inner-v{animation:hudInnerPulse 3.8s infinite .6s}
+.hud-inner-h{animation:hudInnerPulse 3.8s infinite 1.2s}
+
+@keyframes hudOuterPulse{
+0%,100%{opacity:.55;filter:drop-shadow(0 0 0 rgba(217,188,130,0))}
+50%{opacity:1;filter:drop-shadow(0 0 6px rgba(217,188,130,.85))}
+}
+@keyframes hudInnerPulse{
+0%,100%{opacity:.45;filter:drop-shadow(0 0 0 rgba(217,188,130,0))}
+50%{opacity:1;filter:drop-shadow(0 0 7px rgba(217,188,130,.95))}
+}
+
 nav{display:flex;justify-content:center;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
 nav a{text-decoration:none;color:#dce3e8;padding:16px 34px;font-size:14px;border-right:1px solid var(--line)}
 nav a:last-child{border-right:none}
 nav a:hover{color:var(--gold)}
+
+.nav-current{color:var(--gold)}
+.hud-frame{position:relative;display:inline-block;padding:5px 10px}
+.corner{position:absolute;width:9px;height:9px;opacity:.45}
+.tl{top:0;left:0;border-top:1px solid var(--gold);border-left:1px solid var(--gold);animation:hudCornerA 3.6s infinite}
+.br{bottom:0;right:0;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold);animation:hudCornerA 3.6s infinite}
+.tr{top:0;right:0;border-top:1px solid var(--gold);border-right:1px solid var(--gold);animation:hudCornerB 3.6s infinite}
+.bl{bottom:0;left:0;border-bottom:1px solid var(--gold);border-left:1px solid var(--gold);animation:hudCornerB 3.6s infinite}
+
+@keyframes hudCornerA{
+0%,100%{opacity:.35;filter:drop-shadow(0 0 0 rgba(217,188,130,0))}
+50%{opacity:1;filter:drop-shadow(0 0 7px rgba(217,188,130,.9))}
+}
+@keyframes hudCornerB{
+0%,100%{opacity:1;filter:drop-shadow(0 0 7px rgba(217,188,130,.9))}
+50%{opacity:.35;filter:drop-shadow(0 0 0 rgba(217,188,130,0))}
+}
+
 .content{padding:60px}
 .section-title{font-size:52px;font-weight:800;color:var(--gold);margin-bottom:20px}
 .section-rule{height:1px;background:var(--line);margin-bottom:35px}
@@ -49,12 +85,30 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
 <header>
 <div class="logo">Studio Oddscape</div>
 <div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
-<div class="hud"></div>
+<div class="hud">
+  <span class="hud-marker">
+    <svg viewBox="0 0 24 24">
+      <circle class="hud-outer" cx="12" cy="12" r="7"/>
+      <path class="hud-inner-v" d="M12 8v8"/>
+      <path class="hud-inner-h" d="M8 12h8"/>
+    </svg>
+  </span>
+</div>
 </header>
 
 <nav>
 <a href="index.html">Home</a>
-<a href="archive.html">Terrain Archive</a>
+
+<a href="archive.html" class="nav-current">
+  <span class="hud-frame">
+    <span class="corner tl"></span>
+    <span class="corner tr"></span>
+    <span class="corner bl"></span>
+    <span class="corner br"></span>
+    Terrain Archive
+  </span>
+</a>
+
 <a href="commissions.html">Commissions</a>
 <a href="acquire.html">Acquire Terrain</a>
 <a href="mailto:studio@oddscape.co.uk">Contact</a>
