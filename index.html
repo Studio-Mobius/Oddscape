@@ -149,6 +149,26 @@ nav a:hover { color: var(--gold); }
   height: auto;
 }
 
+.commission{
+  text-align:center;
+  padding:60px 20px;
+}
+
+.pay-btn{
+  display:inline-block;
+  padding:14px 24px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+  margin-top:15px;
+  transition:.3s;
+}
+
+.pay-btn:hover{
+  background:var(--gold);
+  color:#111;
+}
+
 .features {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -199,6 +219,63 @@ nav a:hover { color: var(--gold); }
   line-height: 1.55;
 }
 
+@keyframes hudPulse {
+  0%, 100% {
+    opacity: .45;
+    filter: drop-shadow(0 0 0 rgba(217,188,130,0));
+  }
+
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(217,188,130,.85));
+  }
+}
+
+.feature svg path,
+.feature svg rect,
+.feature svg circle {
+  opacity: .55;
+}
+
+.cube-icon .cube-outer {
+  animation: hudPulse 3.6s infinite;
+}
+
+.cube-icon .cube-inner {
+  animation: hudPulse 3.6s infinite .75s;
+}
+
+.feature svg:not(.cube-icon) path:nth-child(1),
+.feature svg:not(.cube-icon) rect:nth-child(1),
+.feature svg:not(.cube-icon) circle:nth-child(1) {
+  animation: hudPulse 3.6s infinite;
+}
+
+.feature svg:not(.cube-icon) path:nth-child(2),
+.feature svg:not(.cube-icon) rect:nth-child(2),
+.feature svg:not(.cube-icon) circle:nth-child(2) {
+  animation: hudPulse 3.6s infinite .45s;
+}
+
+.feature svg:not(.cube-icon) path:nth-child(3),
+.feature svg:not(.cube-icon) rect:nth-child(3),
+.feature svg:not(.cube-icon) circle:nth-child(3) {
+  animation: hudPulse 3.6s infinite .9s;
+}
+
+.feature svg:not(.cube-icon) path:nth-child(4),
+.feature svg:not(.cube-icon) rect:nth-child(4),
+.feature svg:not(.cube-icon) circle:nth-child(4) {
+  animation: hudPulse 3.6s infinite 1.35s;
+}
+
+.feature:hover svg path,
+.feature:hover svg rect,
+.feature:hover svg circle {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(217,188,130,.9));
+}
+
 .site-footer {
   display: block;
   padding: 24px 70px 28px;
@@ -240,75 +317,6 @@ nav a:hover { color: var(--gold); }
   font-size: 11px;
   line-height: 1.5;
 }
-
-.commission{
-    text-align:center;
-    padding:60px 20px;
-}
-
-.pay-btn{
-    display:inline-block;
-    padding:14px 24px;
-    border:1px solid var(--gold);
-    color:var(--gold);
-    text-decoration:none;
-    margin-top:15px;
-    transition:.3s;
-}
-
-.pay-btn:hover{
-    background:var(--gold);
-    color:#111;
-}
-@keyframes hudPulse {
-  0%, 100% {
-    opacity: .45;
-    filter: drop-shadow(0 0 0 rgba(217,188,130,0));
-  }
-
-  50% {
-    opacity: 1;
-    filter: drop-shadow(0 0 6px rgba(217,188,130,.85));
-  }
-}
-
-.feature svg path,
-.feature svg rect,
-.feature svg circle {
-  opacity: .55;
-}
-
-.feature svg path:nth-child(1),
-.feature svg rect:nth-child(1),
-.feature svg circle:nth-child(1) {
-  animation: hudPulse 3.6s infinite;
-}
-
-.feature svg path:nth-child(2),
-.feature svg rect:nth-child(2),
-.feature svg circle:nth-child(2) {
-  animation: hudPulse 3.6s infinite .45s;
-}
-
-.feature svg path:nth-child(3),
-.feature svg rect:nth-child(3),
-.feature svg circle:nth-child(3) {
-  animation: hudPulse 3.6s infinite .9s;
-}
-
-.feature svg path:nth-child(4),
-.feature svg rect:nth-child(4),
-.feature svg circle:nth-child(4) {
-  animation: hudPulse 3.6s infinite 1.35s;
-}
-
-.feature:hover svg path,
-.feature:hover svg rect,
-.feature:hover svg circle {
-  opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(217,188,130,.9));
-}
-
 </style>
 </head>
 
@@ -349,28 +357,32 @@ nav a:hover { color: var(--gold); }
 </section>
 
 <section class="commission">
-    <h2>Commission a Terrain Study</h2>
+  <h2>Commission a Terrain Study</h2>
 
-    <p>
-        Digital terrain visualisation, LiDAR interpretation,
-        REM analysis, contour mapping and 3D terrain model generation.
-    </p>
+  <p>
+    Digital terrain visualisation, LiDAR interpretation,
+    REM analysis, contour mapping and 3D terrain model generation.
+  </p>
 
-    <a class="pay-btn"
-       href="https://www.paypal.com/ncp/payment/57QA8ULEMDVJW"
-       target="_blank">
-       Commission your study from (£195)
-    </a>
-    
+  <a class="pay-btn"
+     href="https://www.paypal.com/ncp/payment/57QA8ULEMDVJW"
+     target="_blank">
+     Commission your study from (£195)
+  </a>
 </section>
 
 <section class="features">
 
-<svg viewBox="0 0 24 24" class="cube-icon">
-  <path class="cube-outer" d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
-  <path class="cube-inner" d="M12 22V12"/>
-  <path class="cube-inner" d="M20 6L12 12L4 6"/>
-</svg>
+  <a href="archive.html" class="feature">
+    <svg viewBox="0 0 24 24" class="cube-icon">
+      <path class="cube-outer" d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
+      <path class="cube-inner" d="M12 22V12"/>
+      <path class="cube-inner" d="M20 6L12 12L4 6"/>
+    </svg>
+    <h2>3D Terrain Models</h2>
+    <div class="mini-line"></div>
+    <p>High-resolution terrain models for visualisation, analysis and AR.</p>
+  </a>
 
   <a href="archive.html" class="feature">
     <svg viewBox="0 0 24 24">
