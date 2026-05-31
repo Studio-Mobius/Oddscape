@@ -33,12 +33,13 @@ body{
   border-bottom:1px solid var(--line);
 }
 
-.header h1{
-  margin:0;
-  color:var(--gold);
-  font-size:clamp(3rem,8vw,6rem);
-  line-height:1;
-}
+<header class="header">
+  <div class="studio-imprint">The Studio @ Oddscape</div>
+
+  <h1>Studio Oddscape</h1>
+
+  <p>Terrain Editions // Cartographic Works</p>
+</header>
 
 .header p{
   letter-spacing:.35em;
@@ -201,11 +202,18 @@ footer{
     padding:40px 24px;
   }
 }
-
 .small-note{
   color:var(--muted);
   font-size:.82rem;
   margin-top:12px;
+}
+.studio-imprint{
+  color:var(--gold);
+  opacity:.75;
+  text-transform:uppercase;
+  letter-spacing:.35em;
+  font-size:.72rem;
+  margin-bottom:14px;
 }
 </style>
 </head>
