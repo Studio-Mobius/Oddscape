@@ -2,176 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=960">
 
 <title>Studio Work | Studio Oddscape</title>
 
 <style>
-:root{
-  --gold:#d9bc82;
-  --text:#d9e0e4;
-  --muted:#9aa5ac;
-  --bg:#071014;
-  --line:rgba(217,188,130,.25);
+:root {
+  --gold: #d9bc82;
+  --text: #d9e0e4;
+  --muted: #9aa5ac;
+  --line: rgba(217,188,130,.25);
 }
 
-*{box-sizing:border-box}
+* { box-sizing: border-box; }
 
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial, Helvetica, sans-serif;
-  line-height:1.6;
+body {
+  margin: 0;
+  background: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
 }
 
-.header{
-    text-align:center;
-    padding:40px 20px 28px;
-    background:#0b1b22;
-    border-bottom:1px solid var(--line);
-}
-
-.studio-imprint{
-  color:var(--gold);
-  opacity:.7;
-  text-transform:uppercase;
-  letter-spacing:.35em;
-  font-size:.68rem;
-  margin-bottom:12px;
-}
-
-.header h1{
-    margin:0;
-    color:var(--gold);
-    font-size:clamp(2.6rem,6vw,4.5rem);
-    line-height:.95;
-}
-
-.header p{
-  letter-spacing:.32em;
-  color:var(--muted);
-  font-size:.8rem;
-  margin-top:18px;
-}
-
-nav{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  background:#10232c;
-  border-top:1px solid rgba(217,188,130,.12);
-  border-bottom:1px solid rgba(217,188,130,.12);
-}
-
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  text-align:center;
-  padding:10px 6px;
-  font-size:.8rem;
-  border-right:1px solid rgba(217,188,130,.12);
-}
-
-nav a:last-child{border-right:none}
-nav a:hover{color:var(--gold)}
-
-.hero-img{
-  height:220px;
-  background:
-    linear-gradient(rgba(7,16,20,.05),rgba(7,16,20,.55)),
-    url("images/alde-map.png") center/cover no-repeat;
-}
-
-.section{
-  padding:50px 7vw;
-  max-width:1200px;
-  margin:auto;
-}
-
-.section h2{
-  color:var(--gold);
-  font-size:2rem;
-  margin:0 0 18px;
-}
-
-.intro{
-  max-width:820px;
-  font-size:1.05rem;
-}
-
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:28px;
-  margin-top:35px;
-}
-
-.card{
-  background:rgba(255,255,255,.035);
-  border:1px solid var(--line);
-  padding:18px;
-}
-
-.card img{
-  width:100%;
-  display:block;
-  margin-bottom:18px;
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.card h3{
-  color:var(--gold);
-  margin:0 0 8px;
-  font-size:1.35rem;
-}
-
-.card p{
-  color:var(--muted);
-  font-size:.95rem;
-}
-
-.price{
-  margin:16px 0 8px;
-  color:var(--text);
-  font-weight:bold;
-}
-
-.button{
-  display:inline-block;
-  margin-top:12px;
-  padding:12px 20px;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  text-decoration:none;
-}
-
-.button:hover{
-  background:var(--gold);
-  color:#111;
-}
-
-.small-note{
-  color:var(--muted);
-  font-size:.82rem;
-  margin-top:12px;
-}
-
-.contact{
-  text-align:center;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  background:#0b1b22;
-}
-
-.contact a{
-  color:var(--gold);
-}
-
-footer{
-  text-align:center;
-  color:var(--muted);
-  padding:40px 20px;
-  font-size:.85rem;
+.page {
+  width: 960px;
+  margin: 0 auto;
+  background: radial-gradient(circle at top, #243743 0%, #10212b 45%, #08131a 100%);
+  overflow: hidden;
 }
 
 header {
@@ -179,13 +35,13 @@ header {
   padding: 34px 40px 18px;
 }
 
-.studio-imprint{
-  color:var(--gold);
-  opacity:.65;
-  text-transform:uppercase;
-  letter-spacing:5px;
-  font-size:12px;
-  margin-bottom:12px;
+.studio-imprint {
+  color: var(--gold);
+  opacity: .65;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 12px;
+  margin-bottom: 12px;
 }
 
 .logo {
@@ -207,12 +63,7 @@ header {
   width: 610px;
   height: 1px;
   margin: 24px auto 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(217,188,130,.55),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(217,188,130,.55), transparent);
   position: relative;
 }
 
@@ -227,51 +78,142 @@ header {
   padding: 0 9px;
 }
 
-  .studio-imprint{
-    font-size:.58rem;
-    letter-spacing:.26em;
-  }
+nav {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(255,255,255,.07);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
 
-  nav a{
-    font-size:.7rem;
-    padding:12px 4px;
-  }
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 18px 42px;
+  font-size: 16px;
+  border-right: 1px solid var(--line);
+}
 
-  .hero-img{
-    height:180px;
-  }
+nav a:last-child { border-right: none; }
+nav a:hover { color: var(--gold); }
 
-  .section{
-    padding:40px 24px;
-  }
+.hero-img {
+  height: 300px;
+  background:
+    linear-gradient(rgba(7,16,20,.05), rgba(7,16,20,.55)),
+    url("images/alde-map.png") center/cover no-repeat;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.section {
+  padding: 55px 70px;
+}
+
+.section h2 {
+  color: var(--gold);
+  font-size: 42px;
+  margin: 0 0 24px;
+}
+
+.intro {
+  max-width: 760px;
+  font-size: 21px;
+  line-height: 1.7;
+  color: rgba(220,226,230,.88);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 42px;
+}
+
+.card {
+  background: rgba(255,255,255,.035);
+  border: 1px solid var(--line);
+  padding: 22px;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.card h3 {
+  color: var(--gold);
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.price {
+  margin: 18px 0 10px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 20px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 14px;
+}
+
+.contact {
+  text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,.025);
+}
+
+.contact a {
+  color: var(--gold);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px 70px;
+  font-size: 15px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="page">
+
 <header>
-
-  <div class="studio-imprint">
-    THE STUDIO @ ODDSCAPE
-  </div>
-
-  <div class="logo">
-    Studio Oddscape
-  </div>
-
-  <div class="subtitle">
-    Terrain Editions // Cartographic Works
-  </div>
-
+  <div class="studio-imprint">THE STUDIO @ ODDSCAPE</div>
+  <div class="logo">Studio Oddscape</div>
+  <div class="subtitle">Terrain Editions // Cartographic Works</div>
   <div class="hud-line"></div>
-
 </header>
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="index.html#archive">Terrain Archive</a>
-  <a href="index.html#commissions">Commissions</a>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
   <a href="mailto:studio@oddscape.co.uk">Contact</a>
 </nav>
 
@@ -296,22 +238,15 @@ header {
 
     <article class="card">
       <img src="images/alde-map.png" alt="Alde Estuary terrain print">
-
       <h3>Alde Estuary No. 1</h3>
-
       <p>
         A LiDAR-derived terrain composition of the Alde Estuary, Suffolk.
         A monochrome study of tidal form, coastal edge and shifting landscape.
       </p>
-
       <div class="price">A3 Open Edition Print — £75</div>
-
-      <a class="button"
-         href="https://www.paypal.com/ncp/payment/K6AGV56V2LQBW"
-         target="_blank">
-         Acquire Print (£75)
+      <a class="button" href="https://www.paypal.com/ncp/payment/K6AGV56V2LQBW" target="_blank">
+        Acquire Print (£75)
       </a>
-
       <p class="small-note">
         Printed to order. Terrain-derived cartographic artwork of the Alde Estuary,
         Suffolk. Created from LiDAR elevation data, bathymetry and landscape interpretation.
@@ -320,37 +255,27 @@ header {
 
     <article class="card">
       <img src="images/shingle-street.png" alt="Shingle Street and Orford Ness terrain print">
-
       <h3>Shingle Street / Orford Ness</h3>
-
       <p>
         A coastal terrain study exploring shingle movement, estuarine structure
         and the fragile line between land, water and memory.
       </p>
-
       <div class="price">In development</div>
-
-      <a class="button"
-         href="mailto:studio@oddscape.co.uk?subject=Shingle%20Street%20Print%20Enquiry">
-         Register Interest
+      <a class="button" href="mailto:studio@oddscape.co.uk?subject=Shingle%20Street%20Print%20Enquiry">
+        Register Interest
       </a>
     </article>
 
     <article class="card">
       <img src="images/deben.png" alt="Deben terrain print">
-
       <h3>Deben Terrain Study</h3>
-
       <p>
         A terrain-led interpretation of the River Deben, combining landform,
         river morphology and digital elevation modelling.
       </p>
-
       <div class="price">In development</div>
-
-      <a class="button"
-         href="mailto:studio@oddscape.co.uk?subject=Deben%20Terrain%20Print%20Enquiry">
-         Register Interest
+      <a class="button" href="mailto:studio@oddscape.co.uk?subject=Deben%20Terrain%20Print%20Enquiry">
+        Register Interest
       </a>
     </article>
 
@@ -359,24 +284,17 @@ header {
 
 <section class="section contact">
   <h2>Studio Editions</h2>
-
-  <p>
-    Enquiries regarding editions, commissions and licensing.
-  </p>
-
-  <p>
-    New terrain editions released periodically.
-  </p>
-
-  <p>
-    <a href="mailto:studio@oddscape.co.uk">studio@oddscape.co.uk</a>
-  </p>
+  <p>Enquiries regarding editions, commissions and licensing.</p>
+  <p>New terrain editions released periodically.</p>
+  <p><a href="mailto:studio@oddscape.co.uk">studio@oddscape.co.uk</a></p>
 </section>
 
 <footer>
   <p>Studio Oddscape · Terrain Visualisation · LiDAR Interpretation · Cartographic Art · UK</p>
   <p>© Studio Oddscape MMXXVI — All Rights Reserved</p>
 </footer>
+
+</div>
 
 </body>
 </html>
