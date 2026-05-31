@@ -59,14 +59,34 @@ header {
 }
 
 .hud-line::after {
-  content: "⊕";
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-52%);
-  color: var(--gold);
+  width: 26px;
+  height: 26px;
+  transform: translate(-50%, -50%);
   background: #10212b;
-  padding: 0 9px;
+  border-radius: 2px;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d9bc82' stroke-width='1.4' stroke-linecap='round'%3E%3Ccircle class='outer' cx='12' cy='12' r='7'/%3E%3Cpath class='inner' d='M12 8v8M8 12h8'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  animation: hudMarkerPulse 3.8s infinite;
+}
+
+@keyframes hudMarkerPulse {
+  0%, 100% {
+    opacity: .55;
+    filter: drop-shadow(0 0 0 rgba(217,188,130,0));
+  }
+
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 7px rgba(217,188,130,.85));
+  }
 }
 
 nav {
