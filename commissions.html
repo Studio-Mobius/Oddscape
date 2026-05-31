@@ -4,162 +4,158 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=960">
 <title>Commissions | Studio Oddscape</title>
+
 <style>
-:root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
-.page{width:960px;margin:auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%)}
-header{text-align:center;padding:55px 40px 30px}
-.logo{font-size:74px;font-weight:800;color:var(--gold);line-height:.95}
-.subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
-.hud{width:520px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,rgba(217,188,130,.45),transparent)}
+:root{
+  --gold:#d9bc82;
+  --text:#dce3e8;
+  --muted:#9aa5ac;
+  --line:rgba(217,188,130,.15);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#000;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);
+}
+
+.page{
+  width:960px;
+  margin:auto;
+  background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);
+}
+
+header{
+  text-align:center;
+  padding:55px 40px 30px;
+}
+
+.logo{
+  font-size:74px;
+  font-weight:800;
+  color:var(--gold);
+  line-height:.95;
+}
+
+.subtitle{
+  margin-top:18px;
+  font-size:13px;
+  letter-spacing:6px;
+  color:rgba(220,226,230,.75);
+}
+
+/* Top HUD line + animated centre marker */
+.hud{
+  width:520px;
+  height:24px;
+  margin:22px auto;
+  position:relative;
+}
+
+.hud::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  width:calc(50% - 24px);
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(217,188,130,.55));
+}
+
+.hud::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:50%;
+  width:calc(50% - 24px);
+  height:1px;
+  background:linear-gradient(90deg,rgba(217,188,130,.55),transparent);
+}
+
+.hud-marker{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:22px;
+  height:22px;
+  transform:translate(-50%,-50%);
+}
+
+.hud-marker svg{
+  width:100%;
+  height:100%;
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:1.4;
+  stroke-linecap:round;
+}
+
+.hud-outer{
+  animation:hudOuterPulse 3.8s infinite;
+}
+
+.hud-inner-v{
+  animation:hudInnerPulse 3.8s infinite .6s;
+}
+
+.hud-inner-h{
+  animation:hudInnerPulse 3.8s infinite 1.2s;
+}
+
+@keyframes hudOuterPulse{
+  0%,100%{
+    opacity:.55;
+    filter:drop-shadow(0 0 0 rgba(217,188,130,0));
+  }
+
+  50%{
+    opacity:1;
+    filter:drop-shadow(0 0 6px rgba(217,188,130,.85));
+  }
+}
+
+@keyframes hudInnerPulse{
+  0%,100%{
+    opacity:.45;
+    filter:drop-shadow(0 0 0 rgba(217,188,130,0));
+  }
+
+  50%{
+    opacity:1;
+    filter:drop-shadow(0 0 7px rgba(217,188,130,.95));
+  }
+}
+
 nav{
-display:flex;
-justify-content:center;
-border-top:1px solid rgba(255,255,255,.06);
-border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;
+  justify-content:center;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
+
 nav a{
-text-decoration:none;
-color:#dce3e8;
-padding:16px 34px;
-font-size:14px;
-border-right:1px solid var(--line);
+  text-decoration:none;
+  color:#dce3e8;
+  padding:16px 34px;
+  font-size:14px;
+  border-right:1px solid var(--line);
 }
+
 nav a:last-child{
-border-right:none;
+  border-right:none;
 }
+
 nav a:hover{
-color:var(--gold);
+  color:var(--gold);
 }
-.content{
-padding:60px;
-}
-.section-title{
-font-size:52px;
-font-weight:800;
-color:var(--gold);
-margin-bottom:20px;
-}
-.section-rule{
-height:1px;
-background:var(--line);
-margin-bottom:40px;
-}
-.intro{
-max-width:780px;
-font-size:21px;
-line-height:1.9;
-color:#dce3e8;
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:22px;
-margin-top:48px;
-}
-.card{
-border:1px solid rgba(217,188,130,.18);
-background:rgba(10,18,24,.18);
-border-radius:14px;
-padding:28px;
-}
-.card-tag{
-font-size:12px;
-letter-spacing:3px;
-text-transform:uppercase;
-color:var(--muted);
-margin-bottom:12px;
-}
-.card h2{
-font-size:28px;
-color:var(--gold);
-margin-bottom:14px;
-}
-.card p{
-font-size:17px;
-line-height:1.75;
-color:#cfd5d9;
-}
-.price{
-margin-top:18px;
-color:var(--gold);
-font-size:16px;
-letter-spacing:2px;
-text-transform:uppercase;
-}
-.process{
-margin-top:58px;
-border-top:1px solid var(--line);
-padding-top:38px;
-}
-.process h2{
-font-size:36px;
-color:var(--gold);
-margin-bottom:22px;
-}
-.steps{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px;
-}
-.step{
-border:1px solid rgba(217,188,130,.15);
-padding:20px;
-text-align:center;
-background:rgba(10,18,24,.14);
-}
-.step-number{
-font-size:13px;
-color:var(--gold);
-letter-spacing:2px;
-margin-bottom:10px;
-}
-.step p{
-font-size:14px;
-line-height:1.6;
-color:var(--muted);
-}
-.button-row{
-margin-top:45px;
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-.button{
-text-decoration:none;
-padding:14px 28px;
-border:1px solid rgba(217,188,130,.3);
-color:var(--gold);
-letter-spacing:3px;
-font-size:12px;
-text-transform:uppercase;
-}
-.button:hover{
-background:rgba(217,188,130,.08);
-}
-footer{
-text-align:center;
-padding:60px 40px;
-margin-top:60px;
-border-top:1px solid rgba(217,188,130,.12);
-}
-.footer-brand{
-color:var(--gold);
-font-size:18px;
-line-height:1.6;
-}
-.footer-text{
-margin-top:16px;
-font-size:14px;
-line-height:1.8;
-color:#cfd5d9;
-}
-.footer-copy{
-margin-top:24px;
-font-size:11px;
-color:#8d98a0;
-}
+
+/* Active nav HUD corner frame */
 .nav-current{
   color:var(--gold);
 }
@@ -233,199 +229,300 @@ color:#8d98a0;
   }
 }
 
-.hud{
-  width:520px;
-  height:24px;
-  margin:22px auto;
-  position:relative;
+.content{
+  padding:60px;
 }
 
-.hud::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:50%;
-  width:calc(50% - 24px);
+.section-title{
+  font-size:52px;
+  font-weight:800;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+
+.section-rule{
   height:1px;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(217,188,130,.55)
-  );
+  background:var(--line);
+  margin-bottom:40px;
 }
 
-.hud::after{
-  content:"";
-  position:absolute;
-  right:0;
-  top:50%;
-  width:calc(50% - 24px);
-  height:1px;
-  background:linear-gradient(
-    90deg,
-    rgba(217,188,130,.55),
-    transparent
-  );
+.intro{
+  max-width:780px;
+  font-size:21px;
+  line-height:1.9;
+  color:#dce3e8;
 }
 
-.hud-marker{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:22px;
-  height:22px;
-  transform:translate(-50%,-50%);
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin-top:48px;
 }
 
-.hud-marker svg{
-  width:100%;
-  height:100%;
-  fill:none;
-  stroke:var(--gold);
-  stroke-width:1.4;
-  stroke-linecap:round;
+.card{
+  border:1px solid rgba(217,188,130,.18);
+  background:rgba(10,18,24,.18);
+  border-radius:14px;
+  padding:28px;
 }
 
-.hud-outer{
-  animation:hudOuterPulse 3.8s infinite;
+.card-tag{
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:12px;
 }
 
-.hud-inner-v{
-  animation:hudInnerPulse 3.8s infinite .6s;
+.card h2{
+  font-size:28px;
+  color:var(--gold);
+  margin-bottom:14px;
 }
 
-.hud-inner-h{
-  animation:hudInnerPulse 3.8s infinite 1.2s;
+.card p{
+  font-size:17px;
+  line-height:1.75;
+  color:#cfd5d9;
 }
 
-@keyframes hudOuterPulse{
-  0%,100%{
-    opacity:.55;
-    filter:drop-shadow(0 0 0 rgba(217,188,130,0));
-  }
-
-  50%{
-    opacity:1;
-    filter:drop-shadow(0 0 6px rgba(217,188,130,.85));
-  }
+.price{
+  margin-top:18px;
+  color:var(--gold);
+  font-size:16px;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
-@keyframes hudInnerPulse{
-  0%,100%{
-    opacity:.45;
-    filter:drop-shadow(0 0 0 rgba(217,188,130,0));
-  }
-
-  50%{
-    opacity:1;
-    filter:drop-shadow(0 0 7px rgba(217,188,130,.95));
-  }
+.process{
+  margin-top:58px;
+  border-top:1px solid var(--line);
+  padding-top:38px;
 }
 
+.process h2{
+  font-size:36px;
+  color:var(--gold);
+  margin-bottom:22px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.step{
+  border:1px solid rgba(217,188,130,.15);
+  padding:20px;
+  text-align:center;
+  background:rgba(10,18,24,.14);
+}
+
+.step-number{
+  font-size:13px;
+  color:var(--gold);
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+.step p{
+  font-size:14px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+.button-row{
+  margin-top:45px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.button{
+  text-decoration:none;
+  padding:14px 28px;
+  border:1px solid rgba(217,188,130,.3);
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.button:hover{
+  background:rgba(217,188,130,.08);
+}
+
+footer{
+  text-align:center;
+  padding:60px 40px;
+  margin-top:60px;
+  border-top:1px solid rgba(217,188,130,.12);
+}
+
+.footer-brand{
+  color:var(--gold);
+  font-size:18px;
+  line-height:1.6;
+}
+
+.footer-text{
+  margin-top:16px;
+  font-size:14px;
+  line-height:1.8;
+  color:#cfd5d9;
+}
+
+.footer-copy{
+  margin-top:24px;
+  font-size:11px;
+  color:#8d98a0;
+}
 </style>
 </head>
+
 <body>
+
 <div class="page">
+
 <header>
-<div class="logo">Studio Oddscape</div>
-<div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
-<div class="hud"></div>
+  <div class="logo">Studio Oddscape</div>
+  <div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
+
+  <div class="hud">
+    <span class="hud-marker">
+      <svg viewBox="0 0 24 24">
+        <circle class="hud-outer" cx="12" cy="12" r="7"/>
+        <path class="hud-inner-v" d="M12 8v8"/>
+        <path class="hud-inner-h" d="M8 12h8"/>
+      </svg>
+    </span>
+  </div>
 </header>
+
 <nav>
-<a href="index.html">Home</a>
-<a href="archive.html">Terrain Archive</a>
-<a href="commissions.html" class="nav-current">
-  <span class="hud-frame">
-    <span class="corner tl"></span>
-    <span class="corner tr"></span>
-    <span class="corner bl"></span>
-    <span class="corner br"></span>
-    Commissions
-  </span>
-</a>
-<a href="acquire.html">Acquire Terrain</a>
-<a href="mailto:studio@oddscape.co.uk">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="archive.html">Terrain Archive</a>
+
+  <a href="commissions.html" class="nav-current">
+    <span class="hud-frame">
+      <span class="corner tl"></span>
+      <span class="corner tr"></span>
+      <span class="corner bl"></span>
+      <span class="corner br"></span>
+      Commissions
+    </span>
+  </a>
+
+  <a href="acquire.html">Acquire Terrain</a>
+  <a href="mailto:studio@oddscape.co.uk">Contact</a>
 </nav>
+
 <div class="content">
-<div class="section-title">Commissions</div>
-<div class="section-rule"></div>
-<div class="intro">
-Studio Oddscape creates commissioned terrain visualisations for landscape practices, heritage sites, educational projects, estates, coastal studies, environmental interpretation and immersive landscape communication.
+
+  <div class="section-title">Commissions</div>
+  <div class="section-rule"></div>
+
+  <div class="intro">
+    Studio Oddscape creates commissioned terrain visualisations for landscape practices, heritage sites, educational projects, estates, coastal studies, environmental interpretation and immersive landscape communication.
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-tag">Service</div>
+      <h2>Terrain Visualisation</h2>
+      <p>High-quality terrain imagery for planning, presentation, analysis and interpretation.</p>
+      <div class="price">From £250</div>
+    </div>
+
+    <div class="card">
+      <div class="card-tag">Service</div>
+      <h2>AR Terrain Models</h2>
+      <p>Interactive USDZ and GLB terrain models for immersive exploration.</p>
+      <div class="price">From £250</div>
+    </div>
+
+    <div class="card">
+      <div class="card-tag">Service</div>
+      <h2>LiDAR DEM + REM</h2>
+      <p>Digital elevation processing, hillshade studies and relative elevation modelling.</p>
+      <div class="price">From £350</div>
+    </div>
+
+    <div class="card">
+      <div class="card-tag">Service</div>
+      <h2>Terrain + Bathymetry</h2>
+      <p>Combined coastal, estuarine and seabed terrain visualisation.</p>
+      <div class="price">Quotation Required</div>
+    </div>
+
+    <div class="card">
+      <div class="card-tag">Service</div>
+      <h2>Heritage Interpretation</h2>
+      <p>Terrain-led visualisation for archaeology, heritage sites and visitor engagement.</p>
+      <div class="price">Quotation Required</div>
+    </div>
+
+    <div class="card">
+      <div class="card-tag">Service</div>
+      <h2>Education Packages</h2>
+      <p>Terrain resources and immersive models for schools, colleges and universities.</p>
+      <div class="price">Quotation Required</div>
+    </div>
+
+  </div>
+
+  <div class="process">
+    <h2>Commission Process</h2>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <p>Send location, NGR or project brief.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <p>Data availability and scope reviewed.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <p>Quotation and outputs agreed.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <p>Terrain package delivered.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="button-row">
+    <a class="button" href="acquire.html">Start a Project</a>
+    <a class="button" href="archive.html">Browse Archive</a>
+  </div>
+
 </div>
-<div class="grid">
-<div class="card">
-<div class="card-tag">Service</div>
-<h2>Terrain Visualisation</h2>
-<p>High-quality terrain imagery for planning, presentation, analysis and interpretation.</p>
-<div class="price">From £250</div>
-</div>
-<div class="card">
-<div class="card-tag">Service</div>
-<h2>AR Terrain Models</h2>
-<p>Interactive USDZ and GLB terrain models for immersive exploration.</p>
-<div class="price">From £250</div>
-</div>
-<div class="card">
-<div class="card-tag">Service</div>
-<h2>LiDAR DEM + REM</h2>
-<p>Digital elevation processing, hillshade studies and relative elevation modelling.</p>
-<div class="price">From £350</div>
-</div>
-<div class="card">
-<div class="card-tag">Service</div>
-<h2>Terrain + Bathymetry</h2>
-<p>Combined coastal, estuarine and seabed terrain visualisation.</p>
-<div class="price">Quotation Required</div>
-</div>
-<div class="card">
-<div class="card-tag">Service</div>
-<h2>Heritage Interpretation</h2>
-<p>Terrain-led visualisation for archaeology, heritage sites and visitor engagement.</p>
-<div class="price">Quotation Required</div>
-</div>
-<div class="card">
-<div class="card-tag">Service</div>
-<h2>Education Packages</h2>
-<p>Terrain resources and immersive models for schools, colleges and universities.</p>
-<div class="price">Quotation Required</div>
-</div>
-</div>
-<div class="process">
-<h2>Commission Process</h2>
-<div class="steps">
-<div class="step">
-<div class="step-number">01</div>
-<p>Send location, NGR or project brief.</p>
-</div>
-<div class="step">
-<div class="step-number">02</div>
-<p>Data availability and scope reviewed.</p>
-</div>
-<div class="step">
-<div class="step-number">03</div>
-<p>Quotation and outputs agreed.</p>
-</div>
-<div class="step">
-<div class="step-number">04</div>
-<p>Terrain package delivered.</p>
-</div>
-</div>
-</div>
-<div class="button-row">
-<a class="button" href="acquire.html">Start a Project</a>
-<a class="button" href="archive.html">Browse Archive</a>
-</div>
-</div>
+
 <footer>
-<div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
-<div class="footer-text">
-Terrain Visualisation • LiDAR Analysis<br>
-3D Terrain Modelling • Immersive Landscape Interpretation • UK
-</div>
-<div class="footer-copy">
-© Studio Oddscape MMXXVI — All Rights Reserved
-</div>
+  <div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
+
+  <div class="footer-text">
+    Terrain Visualisation • LiDAR Analysis<br>
+    3D Terrain Modelling • Immersive Landscape Interpretation • UK
+  </div>
+
+  <div class="footer-copy">
+    © Studio Oddscape MMXXVI — All Rights Reserved
+  </div>
 </footer>
+
 </div>
+
 </body>
 </html>
