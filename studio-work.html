@@ -174,18 +174,58 @@ footer{
   font-size:.85rem;
 }
 
-@media(max-width:700px){
-  .header{
-    padding:42px 20px 28px;
-  }
+header {
+  text-align: center;
+  padding: 34px 40px 18px;
+}
 
-  .header h1{
-    font-size:3.5rem;
-  }
+.studio-imprint{
+  color:var(--gold);
+  opacity:.65;
+  text-transform:uppercase;
+  letter-spacing:5px;
+  font-size:12px;
+  margin-bottom:12px;
+}
 
-  .header p{
-    letter-spacing:.22em;
-  }
+.logo {
+  font-size: 102px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -3px;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+
+.subtitle {
+  margin-top: 25px;
+  letter-spacing: 7px;
+  font-size: 18px;
+  color: rgba(220,226,230,.75);
+}
+
+.hud-line {
+  width: 610px;
+  height: 1px;
+  margin: 24px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(217,188,130,.55),
+    transparent
+  );
+  position: relative;
+}
+
+.hud-line::after {
+  content: "⊕";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-52%);
+  color: var(--gold);
+  background: #10212b;
+  padding: 0 9px;
+}
 
   .studio-imprint{
     font-size:.58rem;
@@ -210,10 +250,22 @@ footer{
 
 <body>
 
-<header class="header">
-  <div class="studio-imprint">The Studio @ Oddscape</div>
-  <h1>Studio Oddscape</h1>
-  <p>Terrain Editions // Cartographic Works</p>
+<header>
+
+  <div class="studio-imprint">
+    THE STUDIO @ ODDSCAPE
+  </div>
+
+  <div class="logo">
+    Studio Oddscape
+  </div>
+
+  <div class="subtitle">
+    Terrain Editions // Cartographic Works
+  </div>
+
+  <div class="hud-line"></div>
+
 </header>
 
 <nav>
