@@ -24,7 +24,7 @@ body {
 }
 
 .page {
-  width: 960px;
+  width: min(960px, 100%);
   margin: 0 auto;
   background: radial-gradient(circle at top, #243743 0%, #10212b 45%, #08131a 100%);
   overflow: hidden;
@@ -36,7 +36,7 @@ header {
 }
 
 .logo {
-  font-size: 102px;
+  font-size: clamp(42px, 8vw, 102px);
   font-weight: 700;
   color: var(--gold);
   letter-spacing: -3px;
@@ -379,6 +379,52 @@ nav a:hover { color: var(--gold); }
   color: #8f99a2;
   font-size: 11px;
   line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 26px 22px 14px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .hud-line {
+    width: 80%;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 20px 28px 0;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .hero-map {
+    width: calc(100% + 56px);
+    margin-left: -28px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    border-right: none;
+    border-bottom: 1px solid rgba(217,188,130,.18);
+  }
 }
 </style>
 </head>
