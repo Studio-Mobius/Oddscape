@@ -195,8 +195,19 @@ nav a:hover { color: var(--gold); }
   margin-bottom: -20px;
 }
 
-.cta:hover {
-  background: rgba(217,188,130,.08);
+.cta {
+  display: inline-block;
+  margin: 18px 0 0;
+  padding: 13px 28px;
+  border: 1px solid rgba(217,188,130,.75);
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  position: relative;
+  z-index: 10;
 }
 
 .hero-map {
@@ -464,11 +475,13 @@ nav a:hover { color: var(--gold); }
     presentation, education, and landscape analysis.
   </p>
 
-  <a href="studio-work.html" class="cta">Browse Studio Works →</a>
-
   <a href="archive.html" class="hero-map">
     <img src="images/alde-map.png" alt="River Alde terrain visualisation developed using the Oddscape Terrain Engine">
   </a>
+
+  <div class="hero-links">
+    <a href="studio-work.html" class="cta">Browse Studio Works →</a>
+  </div>
 
 </section>
 
