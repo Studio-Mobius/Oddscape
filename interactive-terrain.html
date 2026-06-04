@@ -25,9 +25,34 @@ nav a:hover{color:var(--gold)}
 .section-title{font-size:52px;font-weight:800;color:var(--gold);margin-bottom:20px}
 .section-rule{height:1px;background:var(--line);margin-bottom:40px}
 
-.hero-layout{display:grid;grid-template-columns:3fr 1fr;gap:20px;align-items:start}
-.hero-main img,.hero-side img{width:100%;display:block;border-radius:18px}
-.hero-side{display:flex;flex-direction:column;gap:20px}
+.terrain-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  align-items:start;
+}
+
+.terrain-row a{
+  display:block;
+}
+
+.terrain-row img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+  border-radius:18px;
+}
+
+@media(max-width:700px){
+  .terrain-row{
+    grid-template-columns:1fr;
+  }
+
+  .terrain-row img{
+    height:220px;
+  }
+}
 
 .caption{margin-top:18px;font-size:15px;line-height:1.8;color:var(--muted);text-align:center}
 
@@ -82,15 +107,20 @@ footer{text-align:center;padding:40px 40px;margin-top:20px;border-top:1px solid 
 <div class="section-title">Sutton Hoo Terrain Study</div>
 <div class="section-rule"></div>
 
-<div class="hero-layout">
-  <div class="hero-main">
-    <img src="images/s_hoo_preview.png" alt="Sutton Hoo terrain study">
-  </div>
+<div class="terrain-row">
 
-  <div class="hero-side">
+  <a href="images/s_hoo_preview.png">
+    <img src="images/s_hoo_preview.png" alt="Sutton Hoo terrain preview">
+  </a>
+
+  <a href="images/s_hoo_Hillshade.png">
     <img src="images/s_hoo_Hillshade.png" alt="Sutton Hoo hillshade">
+  </a>
+
+  <a href="images/s_hoo_REM.png">
     <img src="images/s_hoo_REM.png" alt="Sutton Hoo relative elevation model">
-  </div>
+  </a>
+
 </div>
 
 <div class="caption">
