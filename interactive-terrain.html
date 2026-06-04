@@ -23,6 +23,33 @@ nav a:hover{color:var(--gold)}
 .section-rule{height:1px;background:var(--line);margin-bottom:40px}
 .hero{border-radius:18px;overflow:hidden;box-shadow:0 0 50px rgba(0,0,0,.35)}
 .hero img{display:block;width:100%}
+.hero-layout{
+  display:grid;
+  grid-template-columns:3fr 1fr;
+  gap:20px;
+  align-items:start;
+}
+
+.hero-main img,
+.hero-side img{
+  width:100%;
+  display:block;
+  border-radius:18px;
+}
+
+.hero-side{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+@media(max-width:700px){
+
+.hero-layout{
+  grid-template-columns:1fr;
+}
+
+}
 .caption{margin-top:18px;font-size:15px;line-height:1.8;color:var(--muted)}
 .project-tag{margin-top:55px;font-size:18px;letter-spacing:4px;color:var(--muted);text-transform:uppercase}
 .project-title{margin-top:18px;font-size:48px;font-weight:700;line-height:1.2}
