@@ -71,6 +71,7 @@ nav a:hover{color:var(--gold)}
 .button-row{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
 .button{text-decoration:none;padding:10px 16px;border:1px solid rgba(217,188,130,.3);color:var(--gold);letter-spacing:2px;font-size:10px;text-transform:uppercase}
 .button:hover{background:rgba(217,188,130,.08)}
+.non-apple-device .apple-ar{display:none}
 .coming{min-height:250px;display:flex;align-items:center;justify-content:center;text-align:center;border-bottom:1px solid rgba(217,188,130,.12);color:var(--muted);letter-spacing:3px;text-transform:uppercase;background:rgba(10,18,24,.14)}
 footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
 .footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
@@ -137,7 +138,8 @@ A growing catalogue of terrain interpretation studies, AR-ready landscape models
 <div class="card-meta">NGR: TM 47 45 approx.<br>Outputs: Preview image · USDZ · GLB · Licence</div>
 <div class="button-row">
 <a class="button" href="shifting-landscapes.html">View Study</a>
-<a class="button" rel="ar" href="images/OrfordNess.usdz">Launch AR</a>
+<a class="button apple-ar" rel="ar" href="images/OrfordNess.usdz">Open AR / Preview</a>
+<a class="button" href="images/OrfordNess.usdz" download>Download Model</a>
 <a class="button" href="acquire.html">Acquire</a>
 </div>
 </div>
@@ -155,7 +157,8 @@ A growing catalogue of terrain interpretation studies, AR-ready landscape models
 <div class="card-meta">NGR: TM 29 57 approx.<br>Outputs: Preview image · USDZ · GLB · Licence</div>
 <div class="button-row">
 <a class="button" href="interactive-terrain.html">View Study</a>
-<a class="button" rel="ar" href="images/Deben.usdz">Launch AR</a>
+<a class="button apple-ar" rel="ar" href="images/Deben.usdz">Open AR / Preview</a>
+<a class="button" href="images/Deben.usdz" download>Download Model</a>
 <a class="button" href="acquire.html">Acquire</a>
 </div>
 </div>
@@ -173,7 +176,8 @@ A growing catalogue of terrain interpretation studies, AR-ready landscape models
 <div class="card-meta">NGR: NS 953 343<br>Outputs: Preview image · USDZ · GLB · Licence</div>
 <div class="button-row">
 <a class="button" href="upland-terrain.html">View Study</a>
-<a class="button" rel="ar" href="images/NS93_Terrain_Study.usdz">Launch AR</a>
+<a class="button apple-ar" rel="ar" href="images/NS93_Terrain_Study.usdz">Open AR / Preview</a>
+<a class="button" href="images/NS93_Terrain_Study.usdz" download>Download Model</a>
 <a class="button" href="acquire.html">Acquire</a>
 </div>
 </div>
@@ -219,5 +223,19 @@ Terrain Visualisation • LiDAR Analysis<br>
 </footer>
 
 </div>
+
+<script>
+(function () {
+  const ua = navigator.userAgent || "";
+  const platform = navigator.platform || "";
+
+  const isApple =
+    /iPad|iPhone|iPod|Macintosh/.test(ua) ||
+    /Mac/.test(platform);
+
+  document.body.classList.add(isApple ? "apple-device" : "non-apple-device");
+})();
+</script>
+
 </body>
 </html>
