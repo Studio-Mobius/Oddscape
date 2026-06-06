@@ -9,27 +9,27 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
 .page{width:min(960px,100%);margin:0 auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);overflow:hidden}
-header{text-align:center;padding:34px 40px 18px}
+header{text-align:center;padding:55px 40px 30px}
 .logo{
   display:block;
-  font-size:clamp(42px,8vw,102px);
-  font-weight:700;
+  font-size:clamp(42px,8vw,74px);
+  font-weight:800;
   color:var(--gold);
-  letter-spacing:-3px;
-  text-shadow:0 2px 12px rgba(0,0,0,.35);
+  line-height:.95;
   text-decoration:none;
 }
 .subtitle{
-  margin-top:25px;
-  letter-spacing:7px;
-  font-size:18px;
+  margin-top:18px;
+  font-size:13px;
+  letter-spacing:6px;
   color:rgba(220,226,230,.75);
 }
+}
 .hud{
-  width:610px;
+  width:520px;
   max-width:80%;
   height:24px;
-  margin:24px auto 0;
+  margin:22px auto;
   position:relative;
 }
 .hud::before,.hud::after{
@@ -114,9 +114,11 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
 <div class="page">
 <header>
 <a href="index.html" class="logo">Studio Oddscape</a>
+
 <div class="subtitle">
 Terrain Visualisation // Commissioned Landscape Interpretation
 </div>
+
 <div class="hud">
   <span class="hud-marker">
     <svg viewBox="0 0 24 24">
