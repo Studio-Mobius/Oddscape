@@ -23,129 +23,99 @@ body {
   color: var(--text);
 }
 
-.page {
-  width: min(960px, 100%);
-  margin: 0 auto;
-  background: radial-gradient(circle at top, #243743 0%, #10212b 45%, #08131a 100%);
-  overflow: hidden;
+.page{
+  width:min(960px,100%);
+  margin:0 auto;
+  background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);
+  overflow:hidden;
 }
 
-header {
-  text-align: center;
-  padding: 34px 40px 18px;
+header{
+  text-align:center;
+  padding:55px 40px 30px;
 }
 
-.logo {
-  font-size: clamp(42px, 8vw, 102px);
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: -3px;
-  text-shadow: 0 2px 12px rgba(0,0,0,.35);
-  text-decoration:none;
+.logo{
+  display:block;
+  font-size:clamp(42px,8vw,74px);
+  font-weight:800;
   color:var(--gold);
+  line-height:.95;
+  text-decoration:none;
 }
 
-.subtitle {
-  margin-top: 25px;
-  letter-spacing: 7px;
-  font-size: 18px;
-  color: rgba(220,226,230,.75);
+.subtitle{
+  margin-top:18px;
+  font-size:13px;
+  letter-spacing:6px;
+  color:rgba(220,226,230,.75);
 }
 
-.hud-line {
-  width: 610px;
-  height: 24px;
-  margin: 24px auto 0;
-  position: relative;
+.hud{
+  width:520px;
+  max-width:80%;
+  height:24px;
+  margin:22px auto;
+  position:relative;
 }
 
-.hud-line::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: calc(50% - 24px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(217,188,130,.55));
+.hud::before,
+.hud::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:calc(50% - 24px);
+  height:1px;
 }
 
-.hud-line::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: calc(50% - 24px);
-  height: 1px;
-  background: linear-gradient(90deg, rgba(217,188,130,.55), transparent);
+.hud::before{
+  left:0;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(217,188,130,.55)
+  );
 }
 
-.hud-marker {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 22px;
-  height: 22px;
-  transform: translate(-50%, -50%);
-  z-index: 5;
+.hud::after{
+  right:0;
+  background:linear-gradient(
+    90deg,
+    rgba(217,188,130,.55),
+    transparent
+  );
 }
 
-.hud-marker svg {
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 1.4;
-  stroke-linecap: round;
+.hud-marker{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:22px;
+  height:22px;
+  transform:translate(-50%,-50%);
 }
 
-.hud-outer {
-  animation: hudOuterPulse 3.8s infinite;
-}
-
-.hud-inner-v {
-  animation: hudInnerPulse 3.8s infinite .6s;
-}
-
-.hud-inner-h {
-  animation: hudInnerPulse 3.8s infinite 1.2s;
-}
-
-@keyframes hudOuterPulse {
-  0%, 100% {
-    opacity: .55;
-    filter: drop-shadow(0 0 0 rgba(217,188,130,0));
-  }
-
-  50% {
-    opacity: 1;
-    filter: drop-shadow(0 0 6px rgba(217,188,130,.85));
-  }
-}
-
-@keyframes hudInnerPulse {
-  0%, 100% {
-    opacity: .45;
-    filter: drop-shadow(0 0 0 rgba(217,188,130,0));
-  }
-
-  50% {
-    opacity: 1;
-    filter: drop-shadow(0 0 7px rgba(217,188,130,.95));
-  }
+.hud-marker svg{
+  width:100%;
+  height:100%;
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:1.4;
+  stroke-linecap:round;
 }
 
 nav{
   display:flex;
   justify-content:center;
-  border-top:1px solid rgba(255,255,255,.07);
-  border-bottom:1px solid rgba(255,255,255,.07);
   flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 nav a{
-  color:var(--text);
   text-decoration:none;
-  padding:16px 36px;
+  color:var(--text);
+  padding:16px 34px;
   font-size:14px;
   border-right:1px solid var(--line);
 }
@@ -512,23 +482,27 @@ nav a:hover{
 <div class="page">
 
 <header>
-  <a href="index.html" class="logo">Studio Oddscape</a>
-  <div class="subtitle">Terrain Analysis // Commissioned Visualisation</div>
-  <div class="hud-line">
-<span class="hud-marker">
-  <svg viewBox="0 0 24 24">
-    <circle class="hud-outer" cx="12" cy="12" r="7"/>
-    <path class="hud-inner-v" d="M12 8v8"/>
-    <path class="hud-inner-h" d="M8 12h8"/>
-  </svg>
-</span>
-  </div>
+<a href="index.html" class="logo">Studio Oddscape</a>
+
+<div class="subtitle">
+Terrain Visualisation // Commissioned Landscape Interpretation
+</div>
+
+<div class="hud">
+  <span class="hud-marker">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="7"/>
+      <path d="M12 8v8"/>
+      <path d="M8 12h8"/>
+    </svg>
+  </span>
+</div>
 </header>
 
 <nav>
   <a href="archive.html">Terrain Archive</a>
   <a href="commissions.html">Commissions</a>
-  <a href="acquire.html">Acquire Terrain</a>
+  <a href="acquire.html">Start a Project</a>
   <a href="faq.html">FAQ</a>
   <a href="commissions.html#start-project">Contact</a>
 </nav>
