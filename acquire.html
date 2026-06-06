@@ -4,58 +4,99 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Start a Project | Studio Oddscape</title>
-
 <style>
 :root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
 .page{width:min(960px,100%);margin:0 auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);overflow:hidden}
-
 header{text-align:center;padding:34px 40px 18px}
-.logo{display:block;font-size:clamp(42px,8vw,102px);font-weight:700;color:var(--gold);letter-spacing:-3px;text-shadow:0 2px 12px rgba(0,0,0,.35);text-decoration:none}
-.subtitle{margin-top:25px;letter-spacing:7px;font-size:18px;color:rgba(220,226,230,.75)}
-
-.hud{width:610px;max-width:80%;height:24px;margin:24px auto 0;position:relative}
-.hud::before,.hud::after{content:"";position:absolute;top:50%;width:calc(50% - 24px);height:1px}
+.logo{
+  display:block;
+  font-size:clamp(42px,8vw,102px);
+  font-weight:700;
+  color:var(--gold);
+  letter-spacing:-3px;
+  text-shadow:0 2px 12px rgba(0,0,0,.35);
+  text-decoration:none;
+}
+.subtitle{
+  margin-top:25px;
+  letter-spacing:7px;
+  font-size:18px;
+  color:rgba(220,226,230,.75);
+}
+.hud{
+  width:610px;
+  max-width:80%;
+  height:24px;
+  margin:24px auto 0;
+  position:relative;
+}
+.hud::before,.hud::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:calc(50% - 24px);
+  height:1px;
+}
 .hud::before{left:0;background:linear-gradient(90deg,transparent,rgba(217,188,130,.55))}
 .hud::after{right:0;background:linear-gradient(90deg,rgba(217,188,130,.55),transparent)}
-.hud-marker{position:absolute;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%);z-index:5}
-.hud-marker svg{width:100%;height:100%;fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round}
-
-nav{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
-nav a{color:var(--text);text-decoration:none;padding:18px 42px;font-size:16px;border-right:1px solid var(--line)}
+.hud-marker{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:22px;
+  height:22px;
+  transform:translate(-50%,-50%);
+  z-index:5;
+}
+.hud-marker svg{
+  width:100%;
+  height:100%;
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:1.4;
+  stroke-linecap:round;
+}
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.07);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  padding:18px 42px;
+  font-size:16px;
+  border-right:1px solid var(--line);
+}
 nav a:last-child{border-right:none}
 nav a:hover{color:var(--gold)}
-
 .content{padding:48px 60px 60px}
 .section-title{font-size:52px;font-weight:800;color:var(--gold);margin-bottom:20px}
 .section-rule{height:1px;background:var(--line);margin-bottom:35px}
 .intro{max-width:760px;font-size:20px;line-height:1.8;color:#cfd5d9;margin-bottom:45px}
-
 .panel{border:1px solid rgba(217,188,130,.18);background:rgba(10,18,24,.18);border-radius:16px;padding:32px;margin-bottom:32px}
 .panel h2{font-size:30px;color:var(--gold);margin-bottom:18px}
 .panel p{font-size:16px;line-height:1.75;color:#cfd5d9}
-
 .payment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
 .payment-card{border:1px solid rgba(217,188,130,.16);background:rgba(10,18,24,.16);padding:20px;border-radius:12px}
 .payment-card h3{font-size:19px;color:var(--gold);margin-bottom:10px}
 .payment-card p{font-size:13px;color:var(--muted);line-height:1.6}
-
 label{display:block;margin-top:16px;font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
 input,textarea,select{width:100%;margin-top:7px;padding:12px;background:rgba(10,18,24,.38);color:#e6e6e6;border:1px solid rgba(217,188,130,.22);border-radius:4px;font-size:15px}
 button{width:100%;margin-top:22px;padding:14px 18px;background:rgba(10,18,24,.18);color:var(--gold);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;border:1px solid rgba(217,188,130,.3);cursor:pointer}
 button:hover{background:rgba(217,188,130,.08)}
-
 .note{font-size:13px;color:var(--muted);line-height:1.7;margin-top:16px}
 .button-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
 .button{text-decoration:none;padding:12px 22px;border:1px solid rgba(217,188,130,.3);color:var(--gold);letter-spacing:2px;font-size:11px;text-transform:uppercase}
 .button:hover{background:rgba(217,188,130,.08)}
-
 footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
 .footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
 .footer-text{margin-top:16px;font-size:14px;line-height:1.8;color:#cfd5d9}
 .footer-copy{margin-top:24px;font-size:11px;color:#8d98a0}
-
 @media(max-width:700px){
   header{padding:26px 22px 14px}
   .subtitle{font-size:12px;letter-spacing:3px}
@@ -69,13 +110,13 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
 }
 </style>
 </head>
-
 <body>
 <div class="page">
-
 <header>
 <a href="index.html" class="logo">Studio Oddscape</a>
-<div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
+<div class="subtitle">
+Terrain Visualisation // Commissioned Landscape Interpretation
+</div>
 <div class="hud">
   <span class="hud-marker">
     <svg viewBox="0 0 24 24">
@@ -86,7 +127,6 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
   </span>
 </div>
 </header>
-
 <nav>
   <a href="archive.html">Terrain Archive</a>
   <a href="commissions.html">Commissions</a>
@@ -94,22 +134,17 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
   <a href="faq.html">FAQ</a>
   <a href="commissions.html#start-project">Contact</a>
 </nav>
-
 <div class="content">
-
 <div class="section-title">Start a Project</div>
 <div class="section-rule"></div>
-
 <div class="intro">
 Acquire an existing terrain study from the Oddscape Archive or commission a custom terrain model for your own site. Terrain packages can include high-resolution visualisations, LiDAR-derived terrain models, AR-ready USDZ files, hillshade studies, REM analysis and bespoke landscape interpretation.
 </div>
-
 <div class="panel">
 <h2>How It Works</h2>
 <p>
 Whether you need a terrain model for a planning presentation, heritage project, landscape study, educational resource or personal interest, the process is straightforward:
 </p>
-
 <div class="payment-grid">
 <div class="payment-card"><h3>Browse the Archive</h3><p>Choose from existing Oddscape terrain studies available for licensing.</p></div>
 <div class="payment-card"><h3>Request a Site</h3><p>Provide a location, grid reference or project boundary for a custom commission.</p></div>
@@ -119,14 +154,11 @@ Whether you need a terrain model for a planning presentation, heritage project, 
 <div class="payment-card"><h3>Use With Confidence</h3><p>Licences are issued for named projects, organisations or educational use as appropriate.</p></div>
 </div>
 </div>
-
 <div class="panel">
 <h2>Tell Me About Your Project</h2>
-
 <form action="mailto:studio@oddscape.co.uk" method="post" enctype="text/plain">
 
-<label>Project Type</label>
-<select name="selected_package">
+Project Type
 <option>ODS-001 — Shingle Street to Orford Ness</option>
 <option>ODS-002 — River Deben Interactive Model</option>
 <option>ODS-003 — NS93 Terrain Study</option>
@@ -137,23 +169,12 @@ Whether you need a terrain model for a planning presentation, heritage project, 
 <option>Commercial Presentation Licence — Quote Required</option>
 </select>
 
-<label>Client Name</label>
-<input type="text" name="client_name" required>
-
-<label>Organisation</label>
-<input type="text" name="organisation">
-
-<label>Email</label>
-<input type="email" name="email" required>
-
-<label>Project Name / Reference</label>
-<input type="text" name="project_reference">
-
-<label>Location / Grid Reference</label>
-<input type="text" name="grid_reference" placeholder="e.g. TM 47 45, Orford Ness, estate name, postcode, or site boundary note">
-
-<label>Preferred Payment Method</label>
-<select name="preferred_payment_method">
+Client Name
+Organisation
+Email
+Project Name / Reference
+Location / Grid Reference
+Preferred Payment Method
 <option>Invoice + Bank Transfer</option>
 <option>Stripe Payment Link</option>
 <option>PayPal</option>
@@ -162,48 +183,40 @@ Whether you need a terrain model for a planning presentation, heritage project, 
 <option>Not Sure Yet</option>
 </select>
 
-<label>Licence Type</label>
-<select name="licence_type">
+Licence Type
 <option>Single Project Licence</option>
 <option>Education / Teaching Licence</option>
 <option>Commercial Presentation Licence</option>
 <option>Institution / Organisation Licence</option>
 </select>
 
-<label>Tell Me About Your Project</label>
+Tell Me About Your Project
+
 <textarea name="message" rows="6" placeholder="Tell me what you need, how the terrain will be used, or whether you need a custom area processed."></textarea>
 
-<button type="submit">Start My Project</button>
+Start My Project
 
 </form>
-
 <p class="note">
 Licence ID generated after confirmation. QR access may be supplied, but the licence is attached to the named client, organisation or project.
 </p>
 </div>
-
 <div class="panel">
 <h2>Usage & Licensing</h2>
-
 <p>
 Oddscape terrain packages are licensed for named project use only. Redistribution, resale, stock upload, public re-hosting, or reuse on unrelated projects is not permitted without written permission.
 </p>
-
 <br>
-
 <p>
 Data attribution remains subject to original open data provider terms where applicable. Oddscape supplies interpretation, processing, visualisation and AR-ready terrain outputs.
 </p>
-
 <div class="button-row">
 <a class="button" href="archive.html">Browse Archive</a>
 <a class="button" href="commissions.html">View Commissions</a>
 <a class="button" href="mailto:studio@oddscape.co.uk">Email Studio Oddscape</a>
 </div>
 </div>
-
 </div>
-
 <footer>
 <div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
 <div class="footer-text">
@@ -212,7 +225,6 @@ Terrain Visualisation • LiDAR Analysis<br>
 </div>
 <div class="footer-copy">© Studio Oddscape MMXXVI — All Rights Reserved</div>
 </footer>
-
 </div>
 </body>
 </html>
