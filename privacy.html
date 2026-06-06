@@ -35,11 +35,13 @@ header {
   padding: 46px 40px 22px;
 }
 
-.logo {
-  font-size: 72px;
-  font-weight: 800;
-  line-height: .95;
-  color: var(--gold);
+.logo{
+  font-size:clamp(42px,8vw,102px);
+  font-weight:700;
+  color:var(--gold);
+  letter-spacing:-3px;
+  text-shadow:0 2px 12px rgba(0,0,0,.35);
+  text-decoration:none;
 }
 
 .subtitle {
@@ -162,17 +164,17 @@ footer {
 <div class="page">
 
 <header>
-  <div class="logo">Studio Oddscape</div>
+  <a href="index.html" class="logo">Studio Oddscape</a>
   <div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
   <div class="hud-line"></div>
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="acquire.html#archive">Terrain Archive</a>
-  <a href="acquire.html#commissions">Commissions</a>
-  <a href="acquire.html#licences">Acquire Terrain</a>
-  <a href="mailto:studio@oddscape.co.uk">Contact</a>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="acquire.html">Acquire Terrain</a>
+  <a href="faq.html">FAQ</a>
+  <a href="commissions.html#start-project">Contact</a>
 </nav>
 
 <main class="content">
