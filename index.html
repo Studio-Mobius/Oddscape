@@ -248,6 +248,21 @@ nav a:hover { color: var(--gold); }
   color: #111;
 }
 
+.faq-blink{
+  color:var(--gold);
+  font-weight:800;
+  animation:faqPulse 1.8s infinite;
+}
+
+@keyframes faqPulse{
+  0%,100%{
+    opacity:.25;
+  }
+  50%{
+    opacity:1;
+  }
+}
+
 .features {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -468,6 +483,7 @@ nav a:hover { color: var(--gold); }
   <a href="commissions.html">Commissions</a>
   <a href="acquire.html">Acquire Terrain</a>
   <a href="commissions.html#start-project">Contact</a>
+  <a href="faq.html">Terrain FAQ</a>
 </nav>
 
 <section class="hero">
