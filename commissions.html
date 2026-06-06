@@ -155,80 +155,6 @@ nav a:hover{
   color:var(--gold);
 }
 
-/* Active nav HUD corner frame */
-.nav-current{
-  color:var(--gold);
-}
-
-.hud-frame{
-  position:relative;
-  display:inline-block;
-  padding:5px 10px;
-}
-
-.corner{
-  position:absolute;
-  width:9px;
-  height:9px;
-  opacity:.45;
-}
-
-.tl{
-  top:0;
-  left:0;
-  border-top:1px solid var(--gold);
-  border-left:1px solid var(--gold);
-  animation:hudCornerA 3.6s infinite;
-}
-
-.br{
-  bottom:0;
-  right:0;
-  border-bottom:1px solid var(--gold);
-  border-right:1px solid var(--gold);
-  animation:hudCornerA 3.6s infinite;
-}
-
-.tr{
-  top:0;
-  right:0;
-  border-top:1px solid var(--gold);
-  border-right:1px solid var(--gold);
-  animation:hudCornerB 3.6s infinite;
-}
-
-.bl{
-  bottom:0;
-  left:0;
-  border-bottom:1px solid var(--gold);
-  border-left:1px solid var(--gold);
-  animation:hudCornerB 3.6s infinite;
-}
-
-@keyframes hudCornerA{
-  0%,100%{
-    opacity:.35;
-    filter:drop-shadow(0 0 0 rgba(217,188,130,0));
-  }
-
-  50%{
-    opacity:1;
-    filter:drop-shadow(0 0 7px rgba(217,188,130,.9));
-  }
-}
-
-@keyframes hudCornerB{
-  0%,100%{
-    opacity:1;
-    filter:drop-shadow(0 0 7px rgba(217,188,130,.9));
-  }
-
-  50%{
-    opacity:.35;
-    filter:drop-shadow(0 0 0 rgba(217,188,130,0));
-  }
-}
-
 .content{
   padding:60px;
 }
@@ -402,21 +328,10 @@ footer{
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
   <a href="archive.html">Terrain Archive</a>
-
-  <a href="commissions.html" class="nav-current">
-    <span class="hud-frame">
-      <span class="corner tl"></span>
-      <span class="corner tr"></span>
-      <span class="corner bl"></span>
-      <span class="corner br"></span>
-      Commissions
-    </span>
-  </a>
-
   <a href="acquire.html">Acquire Terrain</a>
-  <a href="mailto:studio@oddscape.co.uk">Contact</a>
+  <a href="commissions.html#start-project">Contact</a>
+  <a href="faq.html">FAQ</a>
 </nav>
 
 <div class="content">
