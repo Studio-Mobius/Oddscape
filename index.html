@@ -132,24 +132,29 @@ header {
   }
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid rgba(255,255,255,.07);
-  border-bottom: 1px solid rgba(255,255,255,.07);
+nav{
+  display:flex;
+  justify-content:center;
+  border-top:1px solid rgba(255,255,255,.07);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  flex-wrap:wrap;
 }
 
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  padding: 18px 42px;
-  font-size: 16px;
-  border-right: 1px solid var(--line);
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  padding:16px 36px;
+  font-size:14px;
+  border-right:1px solid var(--line);
 }
 
-nav a:first-child { color: var(--gold); }
-nav a:last-child { border-right: none; }
-nav a:hover { color: var(--gold); }
+nav a:last-child{
+  border-right:none;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
 
 .hero {
   position: relative;
