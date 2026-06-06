@@ -292,15 +292,27 @@ nav a:hover { color: var(--gold); }
   stroke-width: 1.35;
   margin-bottom: 22px;
 }
-.faq-mark {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 22px;
-  color: var(--gold);
-  font-size: 54px;
-  line-height: 56px;
-  font-weight: 300;
-  animation: faqPulse 1.8s infinite;
+.faq-mark{
+  color:var(--gold);
+  height:38px;
+  position:relative;
+  margin:8px auto 10px;
+  text-align:center;
+}
+
+.faq-hook{
+  display:block;
+  font-size:30px;
+  line-height:1;
+  animation:hudPulse 3.6s infinite .8s;
+}
+
+.faq-dot{
+  display:block;
+  font-size:18px;
+  line-height:1;
+  margin-top:-5px;
+  animation:hudPulse 3.6s infinite;
 }
 
 @keyframes faqPulse {
