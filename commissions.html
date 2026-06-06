@@ -37,10 +37,12 @@ header{
 }
 
 .logo{
-  font-size:74px;
-  font-weight:800;
+  font-size:clamp(42px,8vw,102px);
+  font-weight:700;
   color:var(--gold);
-  line-height:.95;
+  letter-spacing:-3px;
+  text-shadow:0 2px 12px rgba(0,0,0,.35);
+  text-decoration:none;
 }
 
 .subtitle{
@@ -313,7 +315,7 @@ footer{
 <div class="page">
 
 <header>
-  <div class="logo">Studio Oddscape</div>
+  <a href="index.html" class="logo">Studio Oddscape</a>
   <div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
 
   <div class="hud">
@@ -329,10 +331,10 @@ footer{
 
 <nav>
   <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
   <a href="acquire.html">Acquire Terrain</a>
-  <a href="commissions.html#start-project">Contact</a>
-  <a href="interactive-terrain.html">Interactive</a>
   <a href="faq.html">FAQ</a>
+  <a href="commissions.html#start-project">Contact</a>
 </nav>
 
 <div class="content">
