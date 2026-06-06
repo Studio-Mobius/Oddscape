@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Title | Studio Oddscape</title>
+<title>Terrain Archive | Studio Oddscape</title>
 
 <style>
 :root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
@@ -27,10 +27,26 @@ nav a{text-decoration:none;color:var(--text);padding:16px 34px;font-size:14px;bo
 nav a:last-child{border-right:none}
 nav a:hover{color:var(--gold)}
 
-.content{padding:48px 60px 60px;}
+.content{padding:48px 60px 60px}
 .section-title{font-size:52px;font-weight:800;color:var(--gold);margin-bottom:20px}
 .section-rule{height:1px;background:var(--line);margin-bottom:35px}
 .intro{max-width:760px;font-size:20px;line-height:1.8;color:#cfd5d9;margin-bottom:45px}
+
+.archive-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{border:1px solid rgba(217,188,130,.18);background:rgba(10,18,24,.18);border-radius:16px;overflow:hidden}
+.image-wrap{position:relative}
+.image-wrap img{display:block;width:100%}
+.badge{position:absolute;left:12px;bottom:12px;background:rgba(10,18,24,.28);border:1px solid rgba(217,188,130,.28);padding:6px 10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e6e6e6}
+.card-body{padding:24px}
+.card-tag{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.card h2{font-size:28px;color:var(--gold);margin-bottom:12px}
+.card p{font-size:16px;line-height:1.7;color:#cfd5d9}
+.card-meta{margin-top:16px;font-size:13px;color:var(--muted);line-height:1.7}
+.button-row{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+.button{text-decoration:none;padding:10px 16px;border:1px solid rgba(217,188,130,.3);color:var(--gold);letter-spacing:2px;font-size:10px;text-transform:uppercase}
+.button:hover{background:rgba(217,188,130,.08)}
+.non-apple-device .apple-ar{display:none}
+.coming{min-height:250px;display:flex;align-items:center;justify-content:center;text-align:center;border-bottom:1px solid rgba(217,188,130,.12);color:var(--muted);letter-spacing:3px;text-transform:uppercase;background:rgba(10,18,24,.14)}
 
 footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
 .footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
@@ -44,6 +60,7 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
   .content{padding:42px 28px}
   .section-title{font-size:38px}
   .intro{font-size:18px;line-height:1.7}
+  .archive-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -74,9 +91,101 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
 </nav>
 
 <div class="content">
-  <div class="section-title">Page Title</div>
-  <div class="section-rule"></div>
-  <div class="intro">Page intro text goes here.</div>
+
+<div class="section-title">Terrain Archive</div>
+<div class="section-rule"></div>
+
+<div class="intro">
+A growing catalogue of terrain interpretation studies, AR-ready landscape models and visual terrain packages developed through the Oddscape Terrain Engine™.
+</div>
+
+<div class="archive-grid">
+
+<div class="card">
+<div class="image-wrap">
+<img src="images/orfordness.png" alt="Orford Ness terrain study">
+<div class="badge">ODS-001 · Licence £75</div>
+</div>
+<div class="card-body">
+<div class="card-tag">Shifting Landscapes</div>
+<h2>Shingle Street to Orford Ness</h2>
+<p>Coastal terrain interpretation of one of Britain's most dynamic shingle landscapes.</p>
+<div class="card-meta">NGR: TM 47 45 approx.<br>Outputs: Preview image · USDZ · GLB · Licence</div>
+<div class="button-row">
+<a class="button" href="shifting-landscapes.html">View Study</a>
+<a class="button apple-ar" rel="ar" href="images/OrfordNess.usdz">Open AR / Preview</a>
+<a class="button" href="images/OrfordNess.usdz" download>Download Model</a>
+<a class="button" href="acquire.html">Acquire</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-wrap">
+<img src="images/deben_preview.png" alt="River Deben interactive terrain model">
+<div class="badge">ODS-002 · Licence £75</div>
+</div>
+<div class="card-body">
+<div class="card-tag">Interactive Terrain</div>
+<h2>River Deben Interactive Model</h2>
+<p>Estuarine terrain model for immersive spatial exploration and AR landscape viewing.</p>
+<div class="card-meta">NGR: TM 29 57 approx.<br>Outputs: Preview image · USDZ · GLB · Licence</div>
+<div class="button-row">
+<a class="button" href="interactive-terrain.html">View Study</a>
+<a class="button apple-ar" rel="ar" href="images/Deben.usdz">Open AR / Preview</a>
+<a class="button" href="images/Deben.usdz" download>Download Model</a>
+<a class="button" href="acquire.html">Acquire</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-wrap">
+<img src="images/Tinto.png" alt="NS93 upland terrain study">
+<div class="badge">ODS-003 · Licence £75</div>
+</div>
+<div class="card-body">
+<div class="card-tag">Upland Terrain</div>
+<h2>NS93 Terrain Study</h2>
+<p>LiDAR-derived upland terrain study exploring elevation, slope and landform structure.</p>
+<div class="card-meta">NGR: NS 953 343<br>Outputs: Preview image · USDZ · GLB · Licence</div>
+<div class="button-row">
+<a class="button" href="upland-terrain.html">View Study</a>
+<a class="button apple-ar" rel="ar" href="images/NS93_Terrain_Study.usdz">Open AR / Preview</a>
+<a class="button" href="images/NS93_Terrain_Study.usdz" download>Download Model</a>
+<a class="button" href="acquire.html">Acquire</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="coming">ODS-004<br>Norwich Basin<br>Coming Soon</div>
+<div class="card-body">
+<div class="card-tag">Urban Terrain</div>
+<h2>Norwich Basin</h2>
+<p>Urban terrain interpretation package currently in development.</p>
+<div class="card-meta">Outputs: REM · Hillshade · Terrain model · Licence</div>
+<div class="button-row">
+<a class="button" href="acquire.html">Register Interest</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="coming">ODS-005<br>Crib Goch<br>Coming Soon</div>
+<div class="card-body">
+<div class="card-tag">Mountain Terrain</div>
+<h2>Crib Goch</h2>
+<p>Mountain terrain interpretation package planned for archive release.</p>
+<div class="card-meta">Outputs: DEM · Terrain model · AR preview · Licence</div>
+<div class="button-row">
+<a class="button" href="acquire.html">Register Interest</a>
+</div>
+</div>
+</div>
+
+</div>
+
 </div>
 
 <footer>
@@ -89,5 +198,19 @@ Terrain Visualisation • LiDAR Analysis<br>
 </footer>
 
 </div>
+
+<script>
+(function () {
+  const ua = navigator.userAgent || "";
+  const platform = navigator.platform || "";
+
+  const isApple =
+    /iPad|iPhone|iPod|Macintosh/.test(ua) ||
+    /Mac/.test(platform);
+
+  document.body.classList.add(isApple ? "apple-device" : "non-apple-device");
+})();
+</script>
+
 </body>
 </html>
