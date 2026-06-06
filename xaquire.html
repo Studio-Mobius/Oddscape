@@ -85,23 +85,57 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
 <div class="intro">
 Request a licence for an existing Oddscape terrain archive package, register interest in a coming release, or start the payment process for a commissioned terrain study.
 </div>
+
 <div class="panel">
+
 <h2>Payment Options</h2>
+
 <p>Studio Oddscape supports flexible payment routes for individuals, professional practices, education clients, heritage organisations and institutional procurement.</p>
+
 <div class="payment-grid">
-<div class="payment-card"><h3>Invoice</h3><p>Best for landscape practices, organisations, schools, councils and heritage clients.</p></div>
-<div class="payment-card"><h3>Bank Transfer</h3><p>Payment details supplied after licence or commission confirmation.</p></div>
-<div class="payment-card"><h3>Stripe / Card</h3><p>Card, Apple Pay and Google Pay payment links can be issued when available.</p></div>
-<div class="payment-card"><h3>PayPal</h3><p>Useful for quick one-off purchases or clients who prefer PayPal.</p></div>
-<div class="payment-card"><h3>Purchase Order</h3><p>Available for education, heritage and organisational procurement.</p></div>
-<div class="payment-card"><h3>Custom Quote</h3><p>For larger sites, bathymetry, heritage packages or commissioned interpretation work.</p></div>
+
+<div class="payment-card">
+<h3>Invoice</h3>
+<p>Best for landscape practices, organisations, schools, councils and heritage clients.</p>
+</div>
+
+<div class="payment-card">
+<h3>Bank Transfer</h3>
+<p>Payment details supplied after licence or commission confirmation.</p>
+</div>
+
+<div class="payment-card">
+<h3>Stripe / Card</h3>
+<p>Card, Apple Pay and Google Pay payment links can be issued when available.</p>
+</div>
+
+<div class="payment-card">
+<h3>PayPal</h3>
+<p>Useful for quick one-off purchases or clients who prefer PayPal.</p>
+</div>
+
+<div class="payment-card">
+<h3>Purchase Order</h3>
+<p>Available for education, heritage and organisational procurement.</p>
+</div>
+
+<div class="payment-card">
+<h3>Custom Quote</h3>
+<p>For larger sites, bathymetry, heritage packages or commissioned interpretation work.</p>
+</div>
+
 </div>
 </div>
+
 <div class="panel">
+
 <h2>Licence / Project Request</h2>
+
 <form action="mailto:studio@oddscape.co.uk" method="post" enctype="text/plain">
 
-Select Package or Service
+<label>Select Package or Service</label>
+
+<select name="selected_package">
 <option>ODS-001 — Shingle Street to Orford Ness — £75</option>
 <option>ODS-002 — River Deben Interactive Model — £75</option>
 <option>ODS-003 — NS93 Terrain Study — £75</option>
@@ -112,12 +146,24 @@ Select Package or Service
 <option>Commercial Presentation Licence — Quote Required</option>
 </select>
 
-Client Name
-Organisation
-Email
-Project Name / Reference
-Location / Grid Reference
-Preferred Payment Method
+<label>Client Name</label>
+<input type="text" name="client_name" required>
+
+<label>Organisation</label>
+<input type="text" name="organisation">
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Project Name / Reference</label>
+<input type="text" name="project_reference">
+
+<label>Location / Grid Reference</label>
+<input type="text" name="grid_reference" placeholder="e.g. TM 47 45, Orford Ness, estate name, postcode, or site boundary note">
+
+<label>Preferred Payment Method</label>
+
+<select name="preferred_payment_method">
 <option>Invoice + Bank Transfer</option>
 <option>Stripe Payment Link</option>
 <option>PayPal</option>
@@ -126,33 +172,42 @@ Preferred Payment Method
 <option>Not Sure Yet</option>
 </select>
 
-Licence Type
+<label>Licence Type</label>
+
+<select name="licence_type">
 <option>Single Project Licence</option>
 <option>Education / Teaching Licence</option>
 <option>Commercial Presentation Licence</option>
 <option>Institution / Organisation Licence</option>
 </select>
 
-Message
-
+<label>Message</label>
 <textarea name="message" rows="6" placeholder="Tell me what you need, how the terrain will be used, or whether you need a custom area processed."></textarea>
 
-Acquire Terrain / Request Commission
+<button type="submit">Acquire Terrain / Request Commission</button>
 
 </form>
+
 <p class="note">
 Licence ID generated after confirmation. QR access may be supplied, but the licence is attached to the named client, organisation or project.
 </p>
+
 </div>
+
 <div class="panel">
+
 <h2>Licence Conditions</h2>
+
 <p>
 Oddscape terrain packages are licensed for named project use only. Redistribution, resale, stock upload, public re-hosting, or reuse on unrelated projects is not permitted without written permission.
 </p>
+
 <br>
+
 <p>
 Data attribution remains subject to original open data provider terms where applicable. Oddscape supplies interpretation, processing, visualisation and AR-ready terrain outputs.
 </p>
+
 <div class="button-row">
 <a class="button" href="archive.html">Browse Archive</a>
 <a class="button" href="commissions.html">View Commissions</a>
