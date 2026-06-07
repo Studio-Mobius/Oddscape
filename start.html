@@ -6,233 +6,68 @@
 <title>Start a Project | Studio Oddscape</title>
 
 <style>
-:root{
-  --gold:#d9bc82;
-  --text:#dce3e8;
-  --muted:#9aa5ac;
-  --line:rgba(217,188,130,.18);
-  --bg1:#203847;
-  --bg2:#10232f;
-  --bg3:#07131c;
-}
-
+:root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
 *{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+.page{width:min(960px,100%);margin:0 auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);overflow:hidden}
 
-body{
-  background:#000;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  color:var(--text);
-}
+header{text-align:center;padding:55px 40px 30px}
+.logo{display:block;font-size:clamp(42px,8vw,74px);font-weight:800;color:var(--gold);line-height:.95;text-decoration:none}
+.subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
 
-.page{
-  width:min(960px,100%);
-  margin:0 auto;
-  min-height:100vh;
-  background:radial-gradient(circle at top,var(--bg1) 0%,var(--bg2) 45%,var(--bg3) 100%);
-}
+.hud{width:520px;max-width:80%;height:24px;margin:22px auto;position:relative}
+.hud::before,.hud::after{content:"";position:absolute;top:50%;width:calc(50% - 24px);height:1px}
+.hud::before{left:0;background:linear-gradient(90deg,transparent,rgba(217,188,130,.55))}
+.hud::after{right:0;background:linear-gradient(90deg,rgba(217,188,130,.55),transparent)}
+.hud-marker{position:absolute;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%)}
+.hud-marker svg{width:100%;height:100%;fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round}
 
-.site-header{
-  text-align:center;
-  padding:82px 48px 70px;
-}
+nav{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+nav a{text-decoration:none;color:var(--text);padding:16px 34px;font-size:14px;border-right:1px solid var(--line)}
+nav a:last-child{border-right:none}
+nav a:hover{color:var(--gold)}
 
-.site-title{
-  font-size:clamp(48px,9vw,82px);
-  line-height:.95;
-  font-weight:800;
-  letter-spacing:-4px;
-  color:var(--gold);
-}
+.content{padding:48px 60px 60px}
+.section-title{font-size:52px;font-weight:800;color:var(--gold);margin-bottom:20px}
+.section-rule{height:1px;background:var(--line);margin-bottom:35px}
+.intro{max-width:780px;font-size:20px;line-height:1.8;color:#cfd5d9;margin-bottom:42px}
 
-.site-subtitle{
-  margin-top:34px;
-  font-size:clamp(15px,3vw,21px);
-  line-height:1.5;
-  letter-spacing:9px;
-  color:rgba(220,226,230,.72);
-}
+.panel{border:1px solid rgba(217,188,130,.18);background:rgba(10,18,24,.18);border-radius:16px;padding:32px;margin-bottom:32px}
+.panel h2{font-size:30px;color:var(--gold);margin-bottom:18px}
+.panel p{font-size:16px;line-height:1.75;color:#cfd5d9}
+.panel ul{margin-top:18px;padding-left:22px}
+.panel li{font-size:16px;line-height:1.75;color:#cfd5d9;margin-bottom:6px}
 
-.divider{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:38px;
-  margin:58px auto 0;
-  max-width:670px;
-}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.small-card{border:1px solid rgba(217,188,130,.16);background:rgba(10,18,24,.16);border-radius:12px;padding:20px}
+.small-card h3{font-size:19px;color:var(--gold);margin-bottom:10px}
+.small-card p{font-size:14px;color:var(--muted);line-height:1.6}
 
-.divider span{
-  height:1px;
-  flex:1;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  opacity:.55;
-}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:22px}
+.step{border:1px solid rgba(217,188,130,.15);background:rgba(10,18,24,.14);padding:18px;text-align:center}
+.step-number{font-size:13px;color:var(--gold);letter-spacing:2px;margin-bottom:10px}
+.step p{font-size:13px;line-height:1.5;color:var(--muted)}
 
-.divider b{
-  color:var(--gold);
-  font-size:28px;
-  font-weight:300;
-}
+.email-box{text-align:center;border:1px solid rgba(217,188,130,.22);background:rgba(0,0,0,.14);border-radius:16px;padding:34px;margin-top:34px}
+.email-box p{font-size:18px;line-height:1.7;color:#cfd5d9;margin-bottom:24px}
+.button{display:inline-block;text-decoration:none;padding:14px 28px;border:1px solid rgba(217,188,130,.45);color:var(--gold);letter-spacing:3px;font-size:12px;text-transform:uppercase}
+.button:hover{background:rgba(217,188,130,.08)}
 
-.site-nav{
-  border-top:1px solid rgba(255,255,255,.08);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-}
+footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
+.footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
+.footer-text{margin-top:16px;font-size:14px;line-height:1.8;color:#cfd5d9}
+.footer-copy{margin-top:24px;font-size:11px;color:#8d98a0}
 
-.site-nav a{
-  color:var(--text);
-  text-decoration:none;
-  font-size:23px;
-  padding:30px 46px;
-  border-right:1px solid rgba(255,255,255,.1);
-}
-
-.site-nav a:first-child{
-  border-left:1px solid rgba(255,255,255,.1);
-}
-
-.site-nav a:hover{
-  color:var(--gold);
-}
-
-main{
-  padding:70px 68px 90px;
-}
-
-h1{
-  color:var(--gold);
-  font-size:clamp(54px,8vw,78px);
-  line-height:1;
-  letter-spacing:-2px;
-  margin-bottom:34px;
-}
-
-.rule{
-  height:1px;
-  background:rgba(217,188,130,.22);
-  margin-bottom:58px;
-}
-
-.intro{
-  font-size:32px;
-  line-height:1.55;
-  color:rgba(220,226,230,.88);
-  max-width:790px;
-  margin-bottom:62px;
-}
-
-.card{
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:34px;
-  background:rgba(255,255,255,.025);
-  margin-bottom:28px;
-}
-
-.card h2{
-  color:var(--gold);
-  font-size:34px;
-  margin-bottom:14px;
-}
-
-.card p{
-  color:rgba(220,226,230,.84);
-  font-size:22px;
-  line-height:1.55;
-}
-
-.card ul{
-  margin-top:22px;
-  padding-left:24px;
-}
-
-.card li{
-  color:rgba(220,226,230,.84);
-  font-size:21px;
-  line-height:1.6;
-  margin-bottom:10px;
-}
-
-.email-box{
-  margin-top:54px;
-  padding:38px 34px;
-  border:1px solid var(--line);
-  border-radius:28px;
-  text-align:center;
-  background:rgba(0,0,0,.14);
-}
-
-.email-box p{
-  font-size:24px;
-  line-height:1.5;
-  color:rgba(220,226,230,.86);
-  margin-bottom:30px;
-}
-
-.button{
-  display:inline-block;
-  color:#07131c;
-  background:var(--gold);
-  text-decoration:none;
-  font-size:21px;
-  font-weight:700;
-  padding:18px 30px;
-  border-radius:999px;
-}
-
-.site-footer{
-  border-top:1px solid rgba(255,255,255,.08);
-  padding:42px 30px 55px;
-  text-align:center;
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.7;
-}
-
-.site-footer a{
-  color:var(--gold);
-  text-decoration:none;
-}
-
-@media(max-width:720px){
-  .site-header{
-    padding:62px 28px 52px;
-  }
-
-  .site-title{
-    font-size:52px;
-    letter-spacing:-3px;
-  }
-
-  .site-subtitle{
-    font-size:15px;
-    letter-spacing:6px;
-  }
-
-  .site-nav a{
-    font-size:20px;
-    padding:24px 32px;
-  }
-
-  main{
-    padding:58px 38px 80px;
-  }
-
-  .intro{
-    font-size:27px;
-  }
-
-  .card h2{
-    font-size:30px;
-  }
-
-  .card p,
-  .card li{
-    font-size:21px;
-  }
+@media(max-width:700px){
+  header{padding:36px 24px 22px}
+  .subtitle{font-size:11px;letter-spacing:3px}
+  nav a{padding:14px 18px;font-size:14px}
+  .content{padding:42px 28px}
+  .section-title{font-size:38px}
+  .intro{font-size:18px;line-height:1.7}
+  .grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .panel{padding:24px}
 }
 </style>
 </head>
@@ -240,83 +75,106 @@ h1{
 <body>
 <div class="page">
 
-<header class="site-header">
-  <div class="site-title">Studio Oddscape</div>
-  <div class="site-subtitle">
-    Terrain Visualisation // Commissioned<br>
-    Landscape Interpretation
-  </div>
+<header>
+<a href="index.html" class="logo">Studio Oddscape</a>
 
-  <div class="divider">
-    <span></span>
-    <b>⊕</b>
-    <span></span>
-  </div>
+<div class="subtitle">
+Terrain Visualisation // Commissioned Landscape Interpretation
+</div>
+
+<div class="hud">
+  <span class="hud-marker">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="7"/>
+      <path d="M12 8v8"/>
+      <path d="M8 12h8"/>
+    </svg>
+  </span>
+</div>
 </header>
 
-<nav class="site-nav">
+<nav>
   <a href="archive.html">Terrain Archive</a>
   <a href="commissions.html">Commissions</a>
   <a href="start.html">Start a Project</a>
   <a href="faq.html">FAQ</a>
 </nav>
 
-<main>
-  <h1>Start a Project</h1>
-  <div class="rule"></div>
+<div class="content">
 
-  <p class="intro">
-    Tell me where the site is, what you need to understand, and how the terrain
-    study will be used. I can then advise whether the available data is suitable
-    and what level of visualisation is appropriate.
-  </p>
+<div class="section-title">Start a Project</div>
+<div class="section-rule"></div>
 
-  <article class="card">
-    <h2>Useful starting details</h2>
-    <p>
-      You do not need a technical brief to begin. A location, a rough boundary
-      and a short description of what you are trying to show is enough to start
-      the conversation.
-    </p>
-    <ul>
-      <li>Site name or nearest place.</li>
-      <li>Approximate boundary, postcode, grid reference or map link.</li>
-      <li>Whether the site is coastal, upland, river, heritage or development related.</li>
-      <li>What you need the terrain study for: presentation, interpretation, planning, design, teaching or exploration.</li>
-      <li>Whether you need still images, AR preview, or production mesh export.</li>
-    </ul>
-  </article>
+<div class="intro">
+Tell me where the site is, what you need to understand, and how the terrain study will be used. A postcode, grid reference, map link or rough boundary is usually enough to begin.
+</div>
 
-  <article class="card">
-    <h2>What happens next</h2>
-    <p>
-      I will check the likely data availability, scale of the site and level of
-      processing required. If the project is suitable, I will confirm the most
-      appropriate commission type and provide a clear quote before work begins.
-    </p>
-  </article>
+<div class="panel">
+<h2>What to Send</h2>
+<p>You do not need a technical brief to start. Send the basics and I can advise what level of terrain visualisation is suitable.</p>
 
-  <article class="card">
-    <h2>Before you send</h2>
-    <p>
-      Production mesh exports are quoted separately. The AR model is a preview
-      terrain visualisation and is not a substitute for a cleaned production
-      model unless this is specifically commissioned.
-    </p>
-  </article>
+<div class="grid">
+<div class="small-card">
+<h3>Site Location</h3>
+<p>Postcode, grid reference, map link, site name, screenshot or rough boundary.</p>
+</div>
 
-  <section class="email-box">
-    <p>
-      Send your project details and any map links, screenshots or site notes.
-    </p>
-    <a class="button" href="mailto:studio@oddscape.co.uk?subject=Terrain%20Study%20Enquiry">Email Studio Oddscape</a>
-  </section>
-</main>
+<div class="small-card">
+<h3>Project Type</h3>
+<p>Landscape, heritage, coastal, river, upland, estate, development or teaching context.</p>
+</div>
 
-<footer class="site-footer">
-  Studio Oddscape © 2026<br>
-  Terrain visualisation, LiDAR interpretation and commissioned landscape studies.<br>
-  <a href="index.html">Home</a>
+<div class="small-card">
+<h3>Outputs Required</h3>
+<p>Still images, hillshade, REM, AR preview, OBJ, GLB, USDZ or production mesh export.</p>
+</div>
+</div>
+</div>
+
+<div class="panel">
+<h2>What Happens Next</h2>
+<p>I will check the likely data availability, scale of the site and level of processing required. If the project is suitable, I will confirm the most appropriate commission type and provide a clear quote before work begins.</p>
+
+<div class="steps">
+<div class="step"><div class="step-number">01</div><p>Send location or brief.</p></div>
+<div class="step"><div class="step-number">02</div><p>Data availability checked.</p></div>
+<div class="step"><div class="step-number">03</div><p>Outputs and quote agreed.</p></div>
+<div class="step"><div class="step-number">04</div><p>Terrain processed.</p></div>
+<div class="step"><div class="step-number">05</div><p>Package delivered.</p></div>
+</div>
+</div>
+
+<div class="panel">
+<h2>Before You Send</h2>
+<p>
+The AR model is a preview terrain visualisation. Production mesh exports are prepared separately and quoted according to area, resolution, cleanup and delivery format.
+</p>
+<br>
+<p>
+For larger sites, bathymetry, heritage interpretation or detailed production models, a custom quote may be required.
+</p>
+</div>
+
+<section class="email-box">
+<p>
+Send your project details and any map links, screenshots or site notes.
+</p>
+<a class="button" href="mailto:studio@oddscape.co.uk?subject=Terrain%20Study%20Enquiry">Email Studio Oddscape</a>
+</section>
+
+</div>
+
+<footer>
+<div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
+
+<div class="footer-text">
+Terrain Visualisation • LiDAR Analysis<br>
+3D Terrain Modelling • Immersive Landscape Interpretation • UK
+</div>
+
+<div class="footer-copy">
+© Studio Oddscape MMXXVI — All Rights Reserved
+</div>
 </footer>
 
 </div>
