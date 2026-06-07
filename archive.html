@@ -1,337 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terrain Archive | Studio Oddscape</title>
+Studio Oddscape
+Terrain Visualisation // Commissioned Landscape Interpretation
 
-<style>
-:root{
-  --gold:#d9bc82;
-  --text:#dce3e8;
-  --muted:#9aa5ac;
-  --line:rgba(217,188,130,.18);
-  --bg1:#203847;
-  --bg2:#10232f;
-  --bg3:#07131c;
-}
+Terrain Archive
+Commissions
+Start a Project
+FAQ
+Contact
+Terrain Archive
 
-*{margin:0;padding:0;box-sizing:border-box}
+A growing archive of Oddscape terrain studies: coastal systems, river corridors, uplands, heritage landscapes and immersive AR terrain previews developed from LiDAR, DEM, DTM, REM and bathymetric data.
+START A PROJECT →
+River Deben / Sutton Hoo
 
-body{
-  background:#000;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  color:var(--text);
-}
+Heritage terrain, river valley structure and immersive AR landscape context.
+River Alde / Orford Ness
 
-.page{
-  width:min(960px,100%);
-  margin:0 auto;
-  min-height:100vh;
-  background:radial-gradient(circle at top,var(--bg1) 0%,var(--bg2) 45%,var(--bg3) 100%);
-}
+Coastal terrain, estuary form, shingle systems and shifting edge conditions.
+Tinto / NS93
 
-/* FIXED HEADER */
-.site-header{
-  text-align:center;
-  padding:82px 48px 70px;
-}
+Upland massing, ridge structure, slope, elevation and sculptural landform.
+Skara Brae / Orkney
 
-.site-title{
-  font-size:clamp(48px,9vw,82px);
-  line-height:.95;
-  font-weight:800;
-  letter-spacing:-4px;
-  color:var(--gold);
-}
+Archaeological setting, ground form and landscape interpretation from elevation data.
+Commissioned Studies
 
-.site-subtitle{
-  margin-top:34px;
-  font-size:clamp(15px,3vw,21px);
-  line-height:1.5;
-  letter-spacing:9px;
-  color:rgba(220,226,230,.72);
-}
+Terrain analysis and visualisation for your own site, estate, coast or landscape project.
+?
+What can be modelled?
 
-.divider{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:38px;
-  margin:58px auto 0;
-  max-width:670px;
-}
+LiDAR, DEM, DTM, REM, bathymetry, hillshade and AR terrain outputs explained.
+Studio Oddscape
+oddscape.co.uk
+Terrain Visualisation • LiDAR Analysis
+3D Terrain Modelling • Immersive Landscape Interpretation • UK
+PRIVACY
+Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets including Environment Agency LiDAR data and Scottish Remote Sensing Portal LiDAR datasets where stated. 
 
-.divider span{
-  height:1px;
-  flex:1;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  opacity:.55;
-}
-
-.divider b{
-  color:var(--gold);
-  font-size:28px;
-  font-weight:300;
-}
-
-/* FIXED NAV */
-.site-nav{
-  border-top:1px solid rgba(255,255,255,.08);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.site-nav a{
-  color:var(--text);
-  text-decoration:none;
-  font-size:23px;
-  padding:30px 46px;
-  border-right:1px solid rgba(255,255,255,.1);
-}
-
-.site-nav a:first-child{
-  border-left:1px solid rgba(255,255,255,.1);
-}
-
-.site-nav a:hover{
-  color:var(--gold);
-}
-
-/* CHANGEABLE MAIN CONTENT */
-main{
-  padding:70px 68px 90px;
-}
-
-h1{
-  color:var(--gold);
-  font-size:clamp(54px,8vw,78px);
-  line-height:1;
-  letter-spacing:-2px;
-  margin-bottom:34px;
-}
-
-.rule{
-  height:1px;
-  background:rgba(217,188,130,.22);
-  margin-bottom:58px;
-}
-
-.intro{
-  font-size:32px;
-  line-height:1.55;
-  color:rgba(220,226,230,.88);
-  max-width:790px;
-  margin-bottom:62px;
-}
-
-.archive-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:28px;
-}
-
-.card{
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:34px;
-  background:rgba(255,255,255,.025);
-}
-
-.card h2{
-  color:var(--gold);
-  font-size:34px;
-  margin-bottom:14px;
-}
-
-.card p{
-  color:rgba(220,226,230,.84);
-  font-size:22px;
-  line-height:1.55;
-}
-
-.card small{
-  display:block;
-  margin-top:22px;
-  color:var(--muted);
-  font-size:15px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.cta{
-  margin-top:64px;
-  padding:34px;
-  border:1px solid var(--line);
-  border-radius:28px;
-  text-align:center;
-}
-
-.cta p{
-  font-size:24px;
-  line-height:1.5;
-  color:rgba(220,226,230,.86);
-  margin-bottom:28px;
-}
-
-.button{
-  display:inline-block;
-  color:#07131c;
-  background:var(--gold);
-  text-decoration:none;
-  font-size:21px;
-  font-weight:700;
-  padding:18px 30px;
-  border-radius:999px;
-}
-
-/* FIXED FOOTER */
-.site-footer{
-  border-top:1px solid rgba(255,255,255,.08);
-  padding:42px 30px 55px;
-  text-align:center;
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.7;
-}
-
-.site-footer a{
-  color:var(--gold);
-  text-decoration:none;
-}
-
-@media(max-width:720px){
-  .site-header{
-    padding:62px 28px 52px;
-  }
-
-  .site-title{
-    font-size:52px;
-    letter-spacing:-3px;
-  }
-
-  .site-subtitle{
-    font-size:15px;
-    letter-spacing:6px;
-  }
-
-  .site-nav a{
-    font-size:20px;
-    padding:24px 32px;
-  }
-
-  main{
-    padding:58px 38px 80px;
-  }
-
-  .intro{
-    font-size:27px;
-  }
-
-  .card h2{
-    font-size:30px;
-  }
-
-  .card p{
-    font-size:21px;
-  }
-}
-</style>
-</head>
-
-<body>
-<div class="page">
-
-<header class="site-header">
-  <div class="site-title">Studio Oddscape</div>
-  <div class="site-subtitle">
-    Terrain Visualisation // Commissioned<br>
-    Landscape Interpretation
-  </div>
-
-  <div class="divider">
-    <span></span>
-    <b>⊕</b>
-    <span></span>
-  </div>
-</header>
-
-<nav class="site-nav">
-  <a href="archive.html">Terrain Archive</a>
-  <a href="commissions.html">Commissions</a>
-  <a href="start.html">Start a Project</a>
-  <a href="faq.html">FAQ</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<main>
-  <h1>Terrain Archive</h1>
-  <div class="rule"></div>
-
-  <p class="intro">
-    Explore a growing archive of terrain studies created using the Oddscape
-    Terrain Engine™. Each project combines LiDAR analysis, terrain visualisation
-    and immersive AR models to reveal the structure, character and hidden
-    patterns of landscape.
-  </p>
-
-  <section class="archive-grid">
-
-    <article class="card">
-      <h2>River Alde / Orford Ness</h2>
-      <p>
-        Coastal terrain, estuary form, shingle systems and shifting edge
-        conditions interpreted through terrain modelling and visual study.
-      </p>
-      <small>Coastal / Estuary / AR Terrain</small>
-    </article>
-
-    <article class="card">
-      <h2>River Deben / Sutton Hoo</h2>
-      <p>
-        A landscape-led terrain study exploring river form, heritage setting,
-        elevation, movement and the wider spatial structure of the Deben valley.
-      </p>
-      <small>Heritage / River Landscape / LiDAR</small>
-    </article>
-
-    <article class="card">
-      <h2>Tinto / NS93 Terrain Study</h2>
-      <p>
-        Upland terrain visualisation examining mass, slope, ridge structure and
-        the sculptural reading of large-scale landform.
-      </p>
-      <small>Upland / Mountain / Terrain Form</small>
-    </article>
-
-    <article class="card">
-      <h2>Skara Brae / Orkney</h2>
-      <p>
-        Heritage terrain study using elevation data to support interpretation of
-        archaeological setting, ground conditions and landscape context.
-      </p>
-      <small>Heritage / Archaeology / Landscape Context</small>
-    </article>
-
-  </section>
-
-  <section class="cta">
-    <p>
-      Need a terrain study for your own site, estate, coastline, hillfort,
-      river valley or landscape project?
-    </p>
-    <a class="button" href="start.html">Start a Project</a>
-  </section>
-</main>
-
-<footer class="site-footer">
-  Studio Oddscape © 2026<br>
-  Terrain visualisation, LiDAR interpretation and commissioned landscape studies.<br>
-  <a href="index.html">Home</a>
-</footer>
-
-</div>
-</body>
-</html>
+© Studio Oddscape MMXXVI — All Rights Reserved
