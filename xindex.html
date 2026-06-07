@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Studio Oddscape | Landscape Analysis</title>
+
+<style>
+:root {
+  --gold: #d9bc82;
+  --text: #d9e0e4;
+  --muted: #9aa5ac;
+  --line: rgba(217,188,130,.25);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+}
+
+.page{
+  width:min(960px,100%);
+  margin:0 auto;
+  background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);
+  overflow:hidden;
+}
+
+header{
+  text-align:center;
+  padding:55px 40px 30px;
+}
+
+.logo{
+  display:block;
+  font-size:clamp(42px,8vw,74px);
+  font-weight:800;
+  color:var(--gold);
+  line-height:.95;
+  text-decoration:none;
+}
+
+.subtitle{
+  margin-top:18px;
+  font-size:13px;
+  letter-spacing:6px;
+  color:rgba(220,226,230,.75);
+}
+
+.hud{
+  width:520px;
+  max-width:80%;
+  height:24px;
+  margin:22px auto;
+  position:relative;
+}
+
+.hud::before,
+.hud::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:calc(50% - 24px);
+  height:1px;
+}
+
+.hud::before{
+  left:0;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(217,188,130,.55)
+  );
+}
+
+.hud::after{
+  right:0;
+  background:linear-gradient(
+    90deg,
+    rgba(217,188,130,.55),
+    transparent
+  );
+}
+
+.hud-marker{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:22px;
+  height:22px;
+  transform:translate(-50%,-50%);
+}
+
+.hud-marker svg{
+  width:100%;
+  height:100%;
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:1.4;
+  stroke-linecap:round;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  padding:16px 34px;
+  font-size:14px;
+  border-right:1px solid var(--line);
+}
+
+nav a:last-child{
+  border-right:none;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+.hero {
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  padding: 20px 72px 0;
+}
+
+.hero h1 {
+  color: var(--gold);
+  font-size: 34px;
+  margin: 0;
+}
+
+.hero-rule {
+  width: 285px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(217,188,130,.55), transparent);
+  margin: 12px 0 16px;
+}
+
+.hero p {
+  width: 760px;
+  max-width: 100%;
+  font-size: 20px;
+  line-height: 1.4;
+  color: rgba(220,226,230,.85);
+  margin: 0;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 13px 28px;
+  border: 1px solid rgba(217,188,130,.75);
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  position: relative;
+  z-index: 10;
+  margin-bottom: -20px;
+}
+
+.cta {
+  display: inline-block;
+  margin: 18px 0 0;
+  padding: 13px 28px;
+  border: 1px solid rgba(217,188,130,.75);
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-map {
+  width: calc(100% + 144px);
+  margin-left: -72px;
+  margin-top: 20px;
+  display: block;
+}
+
+.hero-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-links {
+  text-align: center;
+  padding: 18px 0 30px;
+}
+
+.commission {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.pay-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  margin-top: 15px;
+  transition: .3s;
+}
+
+.pay-btn:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+.faq-blink{
+  color:var(--gold);
+  font-weight:800;
+  animation:faqPulse 1.8s infinite;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.feature {
+  min-height: 220px;
+  text-align: center;
+  padding: 32px 22px 26px;
+  border-right: 1px solid rgba(217,188,130,.18);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.feature:last-child { border-right: none; }
+
+.feature:hover {
+  background: rgba(217,188,130,.06);
+}
+
+.feature svg {
+  width: 56px;
+  height: 56px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.35;
+  margin-bottom: 22px;
+}
+
+@keyframes faqPulse {
+  0%,100% {
+    opacity: .35;
+    filter: drop-shadow(0 0 0 rgba(217,188,130,0));
+  }
+
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(217,188,130,.9));
+  }
+}
+
+.feature h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.mini-line {
+  width: 36px;
+  height: 1px;
+  background: rgba(217,188,130,.65);
+  margin: 14px auto 18px;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+@keyframes hudPulse {
+  0%, 100% {
+    opacity: .45;
+    filter: drop-shadow(0 0 0 rgba(217,188,130,0));
+  }
+
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(217,188,130,.85));
+  }
+}
+
+.feature svg path,
+.feature svg rect,
+.feature svg circle {
+  opacity: .55;
+}
+
+.cube-icon .cube-outer {
+  animation: hudPulse 3.6s infinite;
+}
+
+.cube-icon .cube-inner {
+  animation: hudPulse 3.6s infinite .75s;
+}
+
+.feature svg:not(.cube-icon) path:nth-child(1),
+.feature svg:not(.cube-icon) rect:nth-child(1),
+.feature svg:not(.cube-icon) circle:nth-child(1) {
+  animation: hudPulse 3.6s infinite;
+}
+
+.feature svg:not(.cube-icon) path:nth-child(2),
+.feature svg:not(.cube-icon) rect:nth-child(2),
+.feature svg:not(.cube-icon) circle:nth-child(2) {
+  animation: hudPulse 3.6s infinite .45s;
+}
+
+.feature svg:not(.cube-icon) path:nth-child(3),
+.feature svg:not(.cube-icon) rect:nth-child(3),
+.feature svg:not(.cube-icon) circle:nth-child(3) {
+  animation: hudPulse 3.6s infinite .9s;
+}
+
+.feature svg:not(.cube-icon) path:nth-child(4),
+.feature svg:not(.cube-icon) rect:nth-child(4),
+.feature svg:not(.cube-icon) circle:nth-child(4) {
+  animation: hudPulse 3.6s infinite 1.35s;
+}
+
+.feature:hover svg path,
+.feature:hover svg rect,
+.feature:hover svg circle {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(217,188,130,.9));
+}
+
+.faq-panel{
+  text-align:center;
+  padding:40px 20px;
+  border-top:1px solid rgba(217,188,130,.12);
+}
+
+.faq-link{
+  display:inline-block;
+  text-decoration:none;
+  color:var(--text);
+}
+
+.faq-link:hover{
+  color:var(--gold);
+}
+
+.faq-symbol{
+  display:block;
+  font-size:52px;
+  color:var(--gold);
+  animation:hudPulse 3.6s infinite;
+}
+
+.faq-panel h3{
+  margin:12px 0 0;
+  font-size:22px;
+  font-weight:400;
+  color:var(--text);
+}
+
+.faq-panel p{
+  max-width:520px;
+  margin:18px auto 0;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.site-footer {
+  display: block;
+  padding: 24px 70px 28px;
+  border-top: 1px solid rgba(217,188,130,.12);
+  text-align: center;
+  color: #8f99a2;
+}
+
+.footer-brand {
+  color: var(--gold);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.footer-services {
+  color: #c8cdd2;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.footer-hud-link {
+  display: inline-block;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid rgba(217,188,130,.25);
+  padding: 6px 14px;
+  margin-bottom: 18px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer-credit {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #8f99a2;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 26px 22px 14px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .hud-line {
+    width: 80%;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 20px 28px 0;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .hero-map {
+    width: calc(100% + 56px);
+    margin-left: -28px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    border-right: none;
+    border-bottom: 1px solid rgba(217,188,130,.18);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<header>
+<a href="index.html" class="logo">Studio Oddscape</a>
+
+<div class="subtitle">
+Terrain Visualisation // Commissioned Landscape Interpretation
+</div>
+
+<div class="hud">
+  <span class="hud-marker">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="7"/>
+      <path d="M12 8v8"/>
+      <path d="M8 12h8"/>
+    </svg>
+  </span>
+</div>
+</header>
+
+<nav>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="start.html">Start a Project</a>
+  <a href="faq.html">FAQ</a>
+</nav>
+
+<section class="hero">
+
+  <h1>Landscape Analysis</h1>
+  <div class="hero-rule"></div>
+
+<p>
+Immersive terrain visualisation, LiDAR interpretation,
+terrain modelling, bathymetry and AR landscape models
+for heritage, coastal and large-scale landscapes.
+</p>
+
+  <a href="archive.html" class="hero-map">
+    <img src="images/alde-map.png" alt="River Alde terrain visualisation developed using the Oddscape Terrain Engine">
+  </a>
+
+  <div class="hero-links">
+    <a href="studio-work.html" class="cta">Browse Studio Works →</a>
+  </div>
+
+</section>
+
+<section class="commission">
+  <h2>Commission a Terrain Study</h2>
+
+  <p>
+    Digital terrain visualisation, LiDAR interpretation,
+    REM analysis, contour mapping and 3D terrain model generation.
+  </p>
+
+  <a class="pay-btn"
+     href="https://www.paypal.com/ncp/payment/57QA8ULEMDVJW"
+     target="_blank">
+     Commission your study from (£250)
+  </a>
+</section>
+
+<section class="features">
+
+  <a href="archive.html" class="feature">
+    <svg viewBox="0 0 24 24" class="cube-icon">
+      <path class="cube-outer" d="M12 2L4 6V18L12 22L20 18V6L12 2Z"/>
+      <path class="cube-inner" d="M12 22V12"/>
+      <path class="cube-inner" d="M20 6L12 12L4 6"/>
+    </svg>
+    <h2>3D Terrain Models</h2>
+    <div class="mini-line"></div>
+    <p>High-resolution terrain models for visualisation, analysis and AR.</p>
+  </a>
+
+<a href="interactive-terrain.html" class="feature">
+  <svg viewBox="0 0 24 24">
+    <rect x="4" y="5" width="16" height="14"/>
+    <circle cx="8" cy="9" r="1.5"/>
+    <path d="M5 18L10 12L14 16L17 11L20 18"/>
+  </svg>
+  <h2>AR & Immersive</h2>
+  <div class="mini-line"></div>
+  <p>Explore landscapes in augmented reality on iOS and visionOS.</p>
+</a>
+
+  <a href="commissions.html" class="feature">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3V21"/>
+      <path d="M3 12H21"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="12" cy="12" r="8"/>
+    </svg>
+    <h2>LiDAR DEM + REM</h2>
+    <div class="mini-line"></div>
+    <p>Digital Elevation Models and Relative Elevation Models for precise analysis.</p>
+  </a>
+
+  <a href="commissions.html" class="feature">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3L4 7L12 11L20 7L12 3Z"/>
+      <path d="M4 12L12 16L20 12"/>
+      <path d="M4 17L12 21L20 17"/>
+    </svg>
+    <h2>Terrain + Bathymetry</h2>
+    <div class="mini-line"></div>
+    <p>Integrated landform and seabed modelling for coastal and estuarine landscapes.</p>
+  </a>
+
+  <a href="acquire.html" class="feature">
+    <svg viewBox="0 0 24 24">
+      <path d="M6 3H15L20 8V21H6V3Z"/>
+      <path d="M15 3V8H20"/>
+      <path d="M9 13H16"/>
+      <path d="M9 17H15"/>
+    </svg>
+<h2>Licensed for Use</h2>
+
+<div class="mini-line"></div>
+
+<p>Clear, project-based licences for commercial, education and heritage use.</p>
+  </a>
+  
+</section>
+<section class="faq-panel">
+  <a href="faq.html" class="faq-link">
+
+    <span class="faq-symbol">?</span>
+
+    <h3>Terrain FAQ</h3>
+
+    <div class="mini-line"></div>
+
+    <p>
+      LiDAR, DEM, DTM, REM, Hillshade, Bathymetry and AR explained.
+    </p>
+
+  </a>
+</section>
+<footer class="site-footer">
+
+  <div class="footer-brand">
+    Studio Oddscape<br>
+    oddscape.co.uk
+  </div>
+
+  <div class="footer-services">
+    Terrain Visualisation • LiDAR Analysis<br>
+    3D Terrain Modelling • Immersive Landscape Interpretation • UK
+  </div>
+
+  <a href="privacy.html" class="footer-hud-link">Privacy</a>
+
+  <div class="footer-credit">
+    Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets including Environment Agency LiDAR data and Scottish Remote Sensing Portal LiDAR datasets where stated.
+    <br><br>
+    © Studio Oddscape MMXXVI — All Rights Reserved
+  </div>
+
+</footer>
+
+</div>
+
+</body>
+</html>
