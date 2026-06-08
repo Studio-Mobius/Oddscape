@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Licence a Terrain Study | Studio Oddscape</title>
+<style>
+:root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+.page{width:min(960px,100%);margin:0 auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);overflow:hidden}
+header{text-align:center;padding:55px 40px 30px}
+.logo{display:block;font-size:clamp(42px,8vw,74px);font-weight:800;color:var(--gold);line-height:.95;text-decoration:none}
+.subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
+.hud{width:520px;max-width:80%;height:24px;margin:22px auto;position:relative}
+.hud::before,.hud::after{content:"";position:absolute;top:50%;width:calc(50% - 24px);height:1px}
+.hud::before{left:0;background:linear-gradient(90deg,transparent,rgba(217,188,130,.55))}
+.hud::after{right:0;background:linear-gradient(90deg,rgba(217,188,130,.55),transparent)}
+.hud-marker{position:absolute;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%)}
+.hud-marker svg{width:100%;height:100%;fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round}
+nav{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+nav a{text-decoration:none;color:var(--text);padding:16px 34px;font-size:14px;border-right:1px solid var(--line)}
+nav a:last-child{border-right:none}
+nav a:hover{color:var(--gold)}
+.content{padding:48px 60px 60px}
+.section-title{font-size:52px;font-weight:800;color:var(--gold);margin-bottom:20px}
+.section-rule{height:1px;background:var(--line);margin-bottom:35px}
+.intro{max-width:760px;font-size:20px;line-height:1.8;color:#cfd5d9;margin-bottom:38px}
+.panel{border:1px solid rgba(217,188,130,.18);background:rgba(10,18,24,.18);border-radius:16px;padding:34px;margin-bottom:26px}
+.panel h2{font-size:32px;color:var(--gold);margin-bottom:16px}
+.panel p,.panel li{font-size:17px;line-height:1.8;color:#cfd5d9}
+.panel ul{margin-left:20px;margin-top:12px}
+.price{font-size:42px;font-weight:800;color:var(--gold);margin:12px 0}
+.button-row{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+.button{text-decoration:none;padding:13px 18px;border:1px solid rgba(217,188,130,.3);color:var(--gold);letter-spacing:2px;font-size:11px;text-transform:uppercase}
+.button:hover{background:rgba(217,188,130,.08)}
+.note{font-size:14px;line-height:1.7;color:var(--muted);margin-top:16px}
+footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
+.footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
+.footer-text{margin-top:16px;font-size:14px;line-height:1.8;color:#cfd5d9}
+.footer-copy{margin-top:24px;font-size:11px;color:#8d98a0}
+@media(max-width:700px){
+  header{padding:36px 24px 22px}
+  .subtitle{font-size:11px;letter-spacing:3px}
+  nav a{padding:14px 18px;font-size:14px}
+  .content{padding:42px 28px}
+  .section-title{font-size:38px}
+  .intro{font-size:18px;line-height:1.7}
+  .panel{padding:26px}
+  .panel h2{font-size:28px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+<a href="index.html" class="logo">Studio Oddscape</a>
+<div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div>
+<div class="hud">
+  <span class="hud-marker">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="7"/>
+      <path d="M12 8v8"/>
+      <path d="M8 12h8"/>
+    </svg>
+  </span>
+</div>
+</header>
+
+<nav>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="start.html">Start a Project</a>
+  <a href="faq.html">FAQ</a>
+</nav>
+
+<div class="content">
+
+<div class="section-title">Licence a Terrain Study</div>
+<div class="section-rule"></div>
+
+<div class="intro">
+Purchase a licence for an existing Oddscape terrain study from the archive. This is for clients who want to use an already prepared terrain visualisation, AR preview or model rather than commissioning a new site.
+</div>
+
+<div class="panel">
+<h2>Archive Licence</h2>
+<div class="price">£75</div>
+<p>
+The archive licence provides access to an existing Oddscape terrain study for reference, presentation, teaching, research, design discussion or internal project use.
+</p>
+
+<ul>
+<li>Existing terrain study from the Oddscape archive</li>
+<li>Preview image and study information</li>
+<li>AR preview where available</li>
+<li>Model file access where available</li>
+<li>Licence for agreed non-exclusive use</li>
+</ul>
+
+<div class="button-row">
+<a class="button" href="mailto:hello@oddscape.co.uk?subject=Oddscape%20Archive%20Licence%20Request">Request Licence</a>
+<a class="button" href="archive.html">Back to Archive</a>
+</div>
+
+<div class="note">
+Please include the study reference, for example ODS-001 Orford Ness, ODS-002 River Deben or ODS-003 NS93 / Tinto.
+</div>
+</div>
+
+<div class="panel">
+<h2>Need a New Site?</h2>
+<p>
+If the landscape you need is not already in the archive, use Start a Project instead. Oddscape can assess the available terrain data and recommend a commissioned terrain study.
+</p>
+
+<div class="button-row">
+<a class="button" href="start.html">Start a Project</a>
+</div>
+</div>
+
+</div>
+
+<footer>
+<div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
+<div class="footer-text">
+Terrain Visualisation • LiDAR Analysis<br>
+3D Terrain Modelling • Immersive Landscape Interpretation • UK
+</div>
+<div class="footer-copy">© Studio Oddscape MMXXVI — All Rights Reserved</div>
+</footer>
+
+</div>
+</body>
+</html>
