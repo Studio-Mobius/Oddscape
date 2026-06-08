@@ -9,28 +9,40 @@
 :root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
-.page{width:min(960px,100%);margin:auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%)}
+.page{width:min(960px,100%);margin:0 auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);overflow:hidden}
+
 header{text-align:center;padding:55px 40px 30px}
-.logo{display:block;font-size:74px;font-weight:800;color:var(--gold);line-height:.95;text-decoration:none}
+.logo{display:block;font-size:clamp(42px,8vw,74px);font-weight:800;color:var(--gold);line-height:.95;text-decoration:none}
 .subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
-.hud{width:520px;max-width:80%;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,rgba(217,188,130,.45),transparent)}
+.hud{width:520px;max-width:80%;height:24px;margin:22px auto;position:relative}
+.hud::before,.hud::after{content:"";position:absolute;top:50%;width:calc(50% - 24px);height:1px}
+.hud::before{left:0;background:linear-gradient(90deg,transparent,rgba(217,188,130,.55))}
+.hud::after{right:0;background:linear-gradient(90deg,rgba(217,188,130,.55),transparent)}
+.hud-marker{position:absolute;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%)}
+.hud-marker svg{width:100%;height:100%;fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round}
+
 nav{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
-nav a{text-decoration:none;color:#dce3e8;padding:16px 36px;font-size:14px;border-right:1px solid var(--line)}
+nav a{text-decoration:none;color:var(--text);padding:16px 34px;font-size:14px;border-right:1px solid var(--line)}
 nav a:last-child{border-right:none}
 nav a:hover{color:var(--gold)}
-.content{padding:60px}
-.section-title{font-size:52px;font-weight:800;color:var(--gold);margin-bottom:20px}
-.section-rule{height:1px;background:var(--line);margin-bottom:40px}
+
+.content{padding:34px 60px 60px}
+.section-title{font-size:52px;font-weight:800;color:var(--gold);margin-bottom:14px}
+.section-rule{height:1px;background:var(--line);margin-bottom:24px}
+
 .hero{border-radius:18px;overflow:hidden;box-shadow:0 0 50px rgba(0,0,0,.35)}
-.hero img{display:block;width:100%}
+.hero img{display:block;width:100%;height:auto}
+
 .caption{margin-top:18px;font-size:15px;line-height:1.8;color:var(--muted);text-align:center}
 .project-tag{margin-top:55px;font-size:18px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;text-align:center}
 .project-title{margin-top:18px;font-size:48px;font-weight:700;line-height:1.2;text-align:center}
 .text{margin:28px auto 0;max-width:760px;font-size:21px;line-height:1.9;text-align:center}
+
 .button-row{margin-top:45px;display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
 .button{text-decoration:none;padding:14px 28px;border:1px solid rgba(217,188,130,.3);color:var(--gold);letter-spacing:3px;font-size:12px;text-transform:uppercase}
 .button:hover{background:rgba(217,188,130,.08)}
 .non-apple-device .apple-ar{display:none}
+
 footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
 .footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
 .footer-text{margin-top:16px;font-size:14px;line-height:1.8;color:#cfd5d9}
@@ -38,15 +50,13 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
 
 @media(max-width:700px){
   header{padding:36px 24px 22px}
-  .logo{font-size:clamp(42px,12vw,74px);letter-spacing:-1px}
   .subtitle{font-size:11px;letter-spacing:3px}
-  nav a{padding:14px 18px;font-size:12px}
-  .content{padding:36px 28px}
-  .section-title{font-size:36px}
+  nav a{padding:14px 18px;font-size:14px}
+  .content{padding:32px 28px 50px}
+  .section-title{font-size:38px}
   .project-tag{font-size:13px}
   .project-title{font-size:34px}
   .text{font-size:18px;line-height:1.7}
-  .button-row{gap:14px}
   .button{font-size:10px;padding:12px 16px}
 }
 </style>
@@ -58,7 +68,15 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
 <header>
 <a href="index.html" class="logo">Studio Oddscape</a>
 <div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div>
-<div class="hud"></div>
+<div class="hud">
+  <span class="hud-marker">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="7"/>
+      <path d="M12 8v8"/>
+      <path d="M8 12h8"/>
+    </svg>
+  </span>
+</div>
 </header>
 
 <nav>
@@ -78,8 +96,7 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
 </div>
 
 <div class="caption">
-Upland terrain visualisation developed using the Oddscape Terrain Engine™.
-Source data: Scottish Remote Sensing Portal LiDAR.
+Upland terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Scottish Remote Sensing Portal LiDAR.
 </div>
 
 <div class="project-tag">LiDAR Terrain Study</div>
@@ -88,8 +105,7 @@ Source data: Scottish Remote Sensing Portal LiDAR.
 
 <div class="text">
 <p>
-Upland landscapes contain complex relationships between slope, drainage, exposure, access, settlement and land use.
-LiDAR-derived terrain models allow these relationships to be seen with unusual clarity.
+Upland landscapes contain complex relationships between slope, drainage, exposure, access, settlement and land use. LiDAR-derived terrain models allow these relationships to be seen with unusual clarity.
 </p>
 
 <br>
@@ -111,6 +127,10 @@ The result is both analytical and visual: a terrain interpretation that can supp
 <a class="button" href="archive.html">Back to Archive</a>
 </div>
 
+<div class="caption" style="max-width:760px;margin:24px auto 0;">
+The AR model is a preview terrain visualisation. Production mesh exports are prepared separately and quoted according to area, resolution, cleanup and delivery format.
+</div>
+
 </div>
 
 <footer>
@@ -128,14 +148,10 @@ Terrain Visualisation • LiDAR Analysis<br>
 (function () {
   const ua = navigator.userAgent || "";
   const platform = navigator.platform || "";
-
   const isApple =
     /iPad|iPhone|iPod|Macintosh/.test(ua) ||
     /Mac/.test(platform);
-
-  document.body.classList.add(
-    isApple ? "apple-device" : "non-apple-device"
-  );
+  document.body.classList.add(isApple ? "apple-device" : "non-apple-device");
 })();
 </script>
 
