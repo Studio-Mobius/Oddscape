@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=960">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Upland Terrain | Studio Oddscape</title>
 
 <style>
 :root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
-.page{width:960px;margin:auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%)}
+.page{width:min(960px,100%);margin:auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%)}
 header{text-align:center;padding:55px 40px 30px}
-.logo{font-size:74px;font-weight:800;color:var(--gold);line-height:.95}
+.logo{display:block;font-size:74px;font-weight:800;color:var(--gold);line-height:.95;text-decoration:none}
 .subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
-.hud{width:520px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,rgba(217,188,130,.45),transparent)}
-nav{display:flex;justify-content:center;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.hud{width:520px;max-width:80%;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,rgba(217,188,130,.45),transparent)}
+nav{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
 nav a{text-decoration:none;color:#dce3e8;padding:16px 36px;font-size:14px;border-right:1px solid var(--line)}
 nav a:last-child{border-right:none}
 nav a:hover{color:var(--gold)}
@@ -23,17 +23,32 @@ nav a:hover{color:var(--gold)}
 .section-rule{height:1px;background:var(--line);margin-bottom:40px}
 .hero{border-radius:18px;overflow:hidden;box-shadow:0 0 50px rgba(0,0,0,.35)}
 .hero img{display:block;width:100%}
-.caption{margin-top:18px;font-size:15px;line-height:1.8;color:var(--muted)}
-.project-tag{margin-top:55px;font-size:18px;letter-spacing:4px;color:var(--muted);text-transform:uppercase}
-.project-title{margin-top:18px;font-size:48px;font-weight:700;line-height:1.2}
-.text{margin-top:28px;max-width:760px;font-size:21px;line-height:1.9}
-.button-row{margin-top:45px;display:flex;gap:20px}
+.caption{margin-top:18px;font-size:15px;line-height:1.8;color:var(--muted);text-align:center}
+.project-tag{margin-top:55px;font-size:18px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;text-align:center}
+.project-title{margin-top:18px;font-size:48px;font-weight:700;line-height:1.2;text-align:center}
+.text{margin:28px auto 0;max-width:760px;font-size:21px;line-height:1.9;text-align:center}
+.button-row{margin-top:45px;display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
 .button{text-decoration:none;padding:14px 28px;border:1px solid rgba(217,188,130,.3);color:var(--gold);letter-spacing:3px;font-size:12px;text-transform:uppercase}
 .button:hover{background:rgba(217,188,130,.08)}
+.non-apple-device .apple-ar{display:none}
 footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
 .footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
 .footer-text{margin-top:16px;font-size:14px;line-height:1.8;color:#cfd5d9}
 .footer-copy{margin-top:24px;font-size:11px;color:#8d98a0}
+
+@media(max-width:700px){
+  header{padding:36px 24px 22px}
+  .logo{font-size:clamp(42px,12vw,74px);letter-spacing:-1px}
+  .subtitle{font-size:11px;letter-spacing:3px}
+  nav a{padding:14px 18px;font-size:12px}
+  .content{padding:36px 28px}
+  .section-title{font-size:36px}
+  .project-tag{font-size:13px}
+  .project-title{font-size:34px}
+  .text{font-size:18px;line-height:1.7}
+  .button-row{gap:14px}
+  .button{font-size:10px;padding:12px 16px}
+}
 </style>
 </head>
 
@@ -41,8 +56,8 @@ footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid 
 <div class="page">
 
 <header>
-<div class="logo">Studio Oddscape</div>
-<div class="subtitle">Terrain Archive // Commissioned Visualisation</div>
+<a href="index.html" class="logo">Studio Oddscape</a>
+<div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div>
 <div class="hud"></div>
 </header>
 
@@ -108,5 +123,21 @@ Terrain Visualisation • LiDAR Analysis<br>
 </footer>
 
 </div>
+
+<script>
+(function () {
+  const ua = navigator.userAgent || "";
+  const platform = navigator.platform || "";
+
+  const isApple =
+    /iPad|iPhone|iPod|Macintosh/.test(ua) ||
+    /Mac/.test(platform);
+
+  document.body.classList.add(
+    isApple ? "apple-device" : "non-apple-device"
+  );
+})();
+</script>
+
 </body>
 </html>
