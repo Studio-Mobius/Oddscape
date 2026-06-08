@@ -41,7 +41,7 @@ padding:55px 40px 30px;
 
 .logo{
 display:block;
-font-size:74px;
+font-size:clamp(42px,8vw,74px);
 font-weight:800;
 color:var(--gold);
 line-height:.95;
@@ -57,37 +57,54 @@ color:rgba(220,226,230,.75);
 
 .hud{
 width:520px;
-height:1px;
+max-width:80%;
+height:24px;
 margin:22px auto;
-background:linear-gradient(90deg,
-transparent,
-rgba(217,188,130,.45),
-transparent);
+position:relative;
 }
 
-nav{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-border-top:1px solid rgba(255,255,255,.06);
-border-bottom:1px solid rgba(255,255,255,.06);
+.hud::before,.hud::after{
+content:"";
+position:absolute;
+top:50%;
+width:calc(50% - 24px);
+height:1px;
 }
 
-nav a{
-text-decoration:none;
-color:#dce3e8;
-padding:16px 36px;
-font-size:14px;
-border-right:1px solid var(--line);
+.hud::before{
+left:0;
+background:linear-gradient(90deg,transparent,rgba(217,188,130,.55));
 }
 
-nav a:last-child{
-border-right:none;
+.hud::after{
+right:0;
+background:linear-gradient(90deg,rgba(217,188,130,.55),transparent);
 }
 
-nav a:hover{
-color:var(--gold);
+.hud-marker{
+position:absolute;
+left:50%;
+top:50%;
+width:22px;
+height:22px;
+transform:translate(-50%,-50%);
 }
+
+.hud-marker svg{
+width:100%;
+height:100%;
+fill:none;
+stroke:var(--gold);
+stroke-width:1.4;
+stroke-linecap:round;
+}
+
+<nav>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="start.html">Start a Project</a>
+  <a href="faq.html">FAQ</a>
+</nav>
 
 .content{
 padding:60px;
@@ -200,16 +217,9 @@ color:#8d98a0;
 
 @media(max-width:700px){
   header{padding:36px 24px 22px}
-  .logo{font-size:clamp(42px,12vw,74px);letter-spacing:-1px}
   .subtitle{font-size:11px;letter-spacing:3px}
-  nav a{padding:14px 18px;font-size:12px}
-  .content{padding:36px 28px}
-  .section-title{font-size:36px}
-  .project-tag{font-size:13px}
-  .project-title{font-size:34px}
-  .text{font-size:18px;line-height:1.7}
-  .button-row{gap:14px;flex-wrap:wrap}
-  .button{font-size:10px;padding:12px 16px}
+  nav a{padding:14px 18px;font-size:14px}
+  .content{padding:32px 28px 50px}
 }
 
 </style>
@@ -220,23 +230,46 @@ color:#8d98a0;
 <div class="page">
 
 <header>
-
 <a href="index.html" class="logo">Studio Oddscape</a>
 
 <div class="subtitle">
 Terrain Visualisation // Commissioned Landscape Interpretation
 </div>
 
-<div class="hud"></div>
-
+<div class="hud">
+  <span class="hud-marker">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="7"/>
+      <path d="M12 8v8"/>
+      <path d="M8 12h8"/>
+    </svg>
+  </span>
+</div>
 </header>
 
-<nav>
-<a href="archive.html">Terrain Archive</a>
-<a href="commissions.html">Commissions</a>
-<a href="start.html">Start a Project</a>
-<a href="faq.html">FAQ</a>
-</nav>
+nav{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+border-top:1px solid rgba(255,255,255,.06);
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+nav a{
+text-decoration:none;
+color:var(--text);
+padding:16px 34px;
+font-size:14px;
+border-right:1px solid var(--line);
+}
+
+nav a:last-child{
+border-right:none;
+}
+
+nav a:hover{
+color:var(--gold);
+}
 
 <div class="content">
 
