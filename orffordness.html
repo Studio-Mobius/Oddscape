@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shifting Landscapes | Studio Oddscape</title>
+
+<style>
+:root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+.page{width:min(960px,100%);margin:0 auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);overflow:hidden}
+
+header{text-align:center;padding:55px 40px 30px}
+.logo{display:block;font-size:clamp(42px,8vw,74px);font-weight:800;color:var(--gold);line-height:.95;text-decoration:none}
+.subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
+.hud{width:520px;max-width:80%;height:24px;margin:22px auto;position:relative}
+.hud::before,.hud::after{content:"";position:absolute;top:50%;width:calc(50% - 24px);height:1px}
+.hud::before{left:0;background:linear-gradient(90deg,transparent,rgba(217,188,130,.55))}
+.hud::after{right:0;background:linear-gradient(90deg,rgba(217,188,130,.55),transparent)}
+.hud-marker{position:absolute;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%)}
+.hud-marker svg{width:100%;height:100%;fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round}
+
+nav{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+nav a{text-decoration:none;color:var(--text);padding:16px 34px;font-size:14px;border-right:1px solid var(--line)}
+nav a:last-child{border-right:none}
+nav a:hover{color:var(--gold)}
+
+.content{padding:34px 60px 60px}
+.section-title{font-size:48px;font-weight:800;color:var(--gold);margin-bottom:14px}
+.section-rule{height:1px;background:var(--line);margin-bottom:24px}
+
+.hero{border-radius:18px;overflow:hidden;box-shadow:0 0 50px rgba(0,0,0,.35)}
+.hero img{display:block;width:100%;height:auto}
+
+.caption{margin-top:18px;font-size:15px;line-height:1.8;color:var(--muted);text-align:center}
+.project-tag{margin-top:55px;font-size:18px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;text-align:center}
+.project-title{margin-top:18px;font-size:48px;font-weight:700;line-height:1.2;text-align:center}
+.text{margin:28px auto 0;max-width:760px;font-size:21px;line-height:1.9;text-align:center}
+
+.button-row{margin-top:45px;display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.button{text-decoration:none;padding:14px 28px;border:1px solid rgba(217,188,130,.3);color:var(--gold);letter-spacing:3px;font-size:12px;text-transform:uppercase}
+.button:hover{background:rgba(217,188,130,.08)}
+
+footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
+.footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
+.footer-text{margin-top:16px;font-size:14px;line-height:1.8;color:#cfd5d9}
+.footer-copy{margin-top:24px;font-size:11px;color:#8d98a0}
+
+@media(max-width:700px){
+  header{padding:36px 24px 22px}
+  .subtitle{font-size:11px;letter-spacing:3px}
+  nav a{padding:14px 18px;font-size:14px}
+  .content{padding:32px 28px 50px}
+  .section-title{font-size:30px}
+  .project-tag{font-size:13px}
+  .project-title{font-size:34px}
+  .text{font-size:18px;line-height:1.7}
+  .button{font-size:10px;padding:12px 16px}
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<header>
+<a href="index.html" class="logo">Studio Oddscape</a>
+<div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div>
+<div class="hud">
+  <span class="hud-marker">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="7"/>
+      <path d="M12 8v8"/>
+      <path d="M8 12h8"/>
+    </svg>
+  </span>
+</div>
+</header>
+
+<nav>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="start.html">Start a Project</a>
+  <a href="faq.html">FAQ</a>
+</nav>
+
+<div class="content">
+
+<div class="hero">
+<img src="images/orfordness.png" alt="Orford Ness terrain study">
+</div>
+
+<div class="caption">
+Coastal terrain visualisation developed using the Oddscape Terrain Engine™. Source data: Environment Agency LiDAR.
+</div>
+
+<div class="project-tag">Coastal Terrain Study</div>
+
+<div class="project-title">Orford Ness & The Suffolk Shingle Coast</div>
+
+<div class="text">
+<p>
+The Suffolk coast is one of Britain's most dynamic landscapes. Shingle ridges migrate, estuaries evolve and coastal processes continually reshape the relationship between land and sea.
+</p>
+
+<br>
+
+<p>
+Using high-resolution Environment Agency LiDAR data, this terrain model reveals subtle landform structures often invisible from ground level. Drainage routes, flood pathways, historic coastal features and geomorphological patterns become immediately visible.
+</p>
+
+<br>
+
+<p>
+The study demonstrates the shifting landscape and how terrain visualisation can support interpretation, education, landscape planning, heritage investigation and environmental understanding.
+</p>
+</div>
+
+<div class="button-row">
+<a class="button" href="licence.html">Request Licence</a>
+<a class="button apple-ar" rel="ar" href="images/OrfordNess.usdz">Open in AR</a>
+<a class="button" href="archive.html">Back to Archive</a>
+</div>
+
+</div>
+
+<footer>
+<div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
+<div class="footer-text">
+Terrain Visualisation • LiDAR Analysis<br>
+3D Terrain Modelling • Immersive Landscape Interpretation • UK
+</div>
+<div class="footer-copy">© Studio Oddscape MMXXVI — All Rights Reserved</div>
+</footer>
+
+</div>
+</body>
+</html>
