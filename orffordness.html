@@ -145,5 +145,19 @@ Terrain Visualisation • LiDAR Analysis<br>
 </footer>
 
 </div>
+<script>
+(function () {
+  const ua = navigator.userAgent || "";
+  const platform = navigator.platform || "";
+
+  const isApple =
+    /iPad|iPhone|iPod|Macintosh/.test(ua) ||
+    /Mac/.test(platform);
+
+  document.body.classList.add(
+    isApple ? "apple-device" : "non-apple-device"
+  );
+})();
+</script>
 </body>
 </html>
