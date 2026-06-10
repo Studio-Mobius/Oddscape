@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Norwich Central Terrain Study | Studio Oddscape</title>
 
+<style>
+:root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+.page{width:min(960px,100%);margin:0 auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);overflow:hidden}
+
+header{text-align:center;padding:55px 40px 30px}
+.logo{
+  font-size:clamp(42px,8vw,102px);
+  font-weight:700;
+  color:var(--gold);
+  letter-spacing:-3px;
+  text-shadow:0 2px 12px rgba(0,0,0,.35);
+  text-decoration:none;
+}
+.subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
+.hud{width:520px;max-width:80%;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,rgba(217,188,130,.45),transparent)}
+
+nav{display:flex;justify-content:center;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+nav a{text-decoration:none;color:#dce3e8;padding:16px 36px;font-size:14px;border-right:1px solid var(--line)}
+nav a:last-child{border-right:none}
+nav a:hover{color:var(--gold)}
+
+.content{padding:60px}
+.section-title{font-size:48px;font-weight:800;color:var(--gold);margin-bottom:20px}
+.section-rule{height:1px;background:var(--line);margin-bottom:40px}
+
+.terrain-row{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  max-width:520px;
+  margin:0 auto;
