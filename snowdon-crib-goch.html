@@ -26,12 +26,10 @@ nav a:hover{color:var(--gold)}
 .panel{border:1px solid var(--line);background:rgba(0,0,0,.22);padding:28px;margin:28px 0}
 .panel h2{font-size:24px;color:var(--gold);margin-bottom:14px}
 .panel p{font-size:16px;line-height:1.65;color:var(--text);margin-bottom:14px}
-.grid,.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
-.card,.stat{border:1px solid var(--line);background:rgba(0,0,0,.2);padding:22px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
+.card{border:1px solid var(--line);background:rgba(0,0,0,.2);padding:22px}
 .card h3{font-size:18px;color:var(--gold);margin-bottom:10px}
 .card p{font-size:15px;line-height:1.6;color:var(--muted)}
-.stat span{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.stat strong{display:block;font-size:20px;color:var(--gold)}
 .gallery{display:grid;grid-template-columns:1fr;gap:22px;margin:30px 0}
 .gallery figure{border:1px solid var(--line);background:#000}
 .gallery img{display:block;width:100%;height:auto}
@@ -43,7 +41,7 @@ nav a:hover{color:var(--gold)}
 footer{text-align:center;padding:32px 20px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.6}
 @media(max-width:700px){
 .content{padding:36px 24px 50px}
-.grid,.stats{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr}
 nav{gap:16px}
 .subtitle{letter-spacing:3px}
 }
@@ -72,74 +70,55 @@ nav{gap:16px}
 <div class="section-rule"></div>
 
 <a href="images/crib_goch/hillshade_preview.png" class="hero-image">
-<img src="images/crib_goch/hillshade_preview.png" alt="Oddscape hillshade terrain visualisation of Snowdon, Crib Goch and Llyn Llydaw">
+<img src="images/crib_goch/hillshade_preview.png" alt="Hillshade terrain visualisation of Snowdon, Crib Goch and Llyn Llydaw">
 </a>
 
 <div class="caption">
-Snowdon & Crib Goch Terrain Study. Hillshade terrain visualisation generated from Welsh Government 1m LiDAR DTM data.
+Snowdon & Crib Goch Terrain Study. Welsh Government 1m LiDAR DTM interpreted through the Oddscape Terrain Engine™.
 </div>
 
 <div class="intro">
-A high-resolution terrain study of the Snowdon massif, centred on Crib Goch, Llyn Llydaw, Glaslyn and the upper slopes of Yr Wyddfa.
+A terrain study of the Snowdon massif, centred on Crib Goch, Llyn Llydaw, Glaslyn and the upper slopes of Yr Wyddfa.
 </div>
 
 <div class="panel">
-<h2>Llyn Llydaw and the Snowdon Massif</h2>
+<h2>Llyn Llydaw and the Mountain Ridge</h2>
 <p>
-The landscape is one of Britain's most dramatic mountain environments. Glacial erosion has carved steep ridges, cirques and lake basins into the volcanic bedrock, creating a terrain that remains legible at every scale, from the broad mountain profile to the narrow knife-edge of Crib Goch itself.
+Crib Goch forms one of Britain’s most recognisable mountain ridges. This study explores the relationship between ridge, lake and valley across the eastern flank of Yr Wyddfa.
 </p>
 <p>
-Bare-earth LiDAR data reveals the underlying structure of the landscape beneath vegetation and modern infrastructure. Seen from above, the relationship between ridge, valley and water becomes immediately apparent.
+The hillshade reveals the underlying shape of the landscape: steep glacial basins, sharp arêtes, upland slopes and the dark linear presence of Llyn Llydaw.
 </p>
-<p>
-Llyn Llydaw forms a visual centre to the study area, while Crib Goch traces a sharp arc across the mountain system, separating neighbouring glacial landforms.
-</p>
-</div>
-
-<div class="stats">
-<div class="stat"><span>Study Area</span><strong>5 km × 3 km</strong></div>
-<div class="stat"><span>Terrain Cells</span><strong>15,000,000</strong></div>
-<div class="stat"><span>Elevation Range</span><strong>87.5 m – 1085.7 m</strong></div>
-<div class="stat"><span>QA Status</span><strong>PASS</strong></div>
-<div class="stat"><span>Void Cells</span><strong>0</strong></div>
-<div class="stat"><span>Spikes Detected</span><strong>0</strong></div>
 </div>
 
 <div class="grid">
 <div class="card">
-<h3>Landscape Character</h3>
+<h3>Landscape</h3>
 <p>
-The Snowdon massif is defined by steep volcanic terrain shaped by successive glaciations. Ridges, corries, tarns and hanging valleys combine to create one of the most recognisable mountain landscapes in Wales.
+A compact upland study area containing Crib Goch, Llyn Llydaw, Glaslyn and surrounding mountain landforms.
 </p>
 </div>
 
 <div class="card">
 <h3>Terrain Source</h3>
 <p>
-Generated from Welsh Government 1m LiDAR DTM data. The digital terrain model represents the underlying landform, removing vegetation and surface clutter to reveal the bare-earth structure of the landscape.
+Welsh Government 1m LiDAR DTM, showing the bare-earth structure of the mountain landscape.
 </p>
 </div>
 
 <div class="card">
-<h3>Visual Interpretation</h3>
+<h3>Outputs</h3>
 <p>
-Hillshade, terrain rendering and elevation modelling highlight the physical relationships between mountain ridges, glacial basins and water bodies.
+Hillshade visualisation, terrain preview, colour relief model and Apple Quick Look AR terrain model.
 </p>
 </div>
 
 <div class="card">
-<h3>Applications</h3>
+<h3>Use</h3>
 <p>
-Suitable for landscape interpretation, heritage projects, education, environmental studies, visitor engagement, terrain visualisation and digital landscape presentation.
+Suitable for landscape interpretation, upland studies, visitor engagement, education and digital terrain presentation.
 </p>
 </div>
-</div>
-
-<div class="panel">
-<h2>Terrain Outputs</h2>
-<p>
-The terrain model allows the massif to be explored as a continuous sculptural landscape. Features often experienced individually on the ground can instead be understood as part of a larger geological and topographic whole.
-</p>
 </div>
 
 <div class="gallery">
@@ -150,12 +129,12 @@ The terrain model allows the massif to be explored as a continuous sculptural la
 </figure>
 
 <figure>
-<img src="images/crib_goch/Terrain_Preview.png" alt="Terrain preview of Snowdon and Crib Goch generated by Oddscape">
+<img src="images/crib_goch/Terrain_Preview.png" alt="Three-dimensional terrain preview of Snowdon and Crib Goch">
 <figcaption>Three-dimensional terrain preview generated from the 1m DTM surface.</figcaption>
 </figure>
 
 <figure>
-<img src="images/crib_goch/colour_rem_preview.png" alt="Colour relief model of Snowdon and Crib Goch terrain">
+<img src="images/crib_goch/colour_rem_preview.png" alt="Colour relief model of Snowdon and Crib Goch">
 <figcaption>Colour relief model showing elevation transitions across the Snowdon massif.</figcaption>
 </figure>
 
@@ -178,12 +157,9 @@ For iPhone and iPad users, the USDZ file should open in Apple Quick Look.
 </div>
 
 <div class="panel">
-<h2>Technical Summary</h2>
+<h2>Technical Note</h2>
 <p>
-This terrain study covers the central Snowdon massif, including Crib Goch, Llyn Llydaw, Glaslyn and surrounding upland landforms. Generated from 1m resolution LiDAR terrain data, the model captures the geological structure and glacial morphology of one of Wales' most celebrated mountain landscapes.
-</p>
-<p>
-The study demonstrates how high-resolution terrain visualisation can reveal patterns and relationships that are often difficult to appreciate from ground level alone. Ridges, lake basins, escarpments and mountain slopes emerge as connected elements within a single landscape system.
+The model was generated from a 1m DTM covering approximately 5 km × 3 km of upland terrain. The cleaned terrain passed Oddscape QA with no detected void cells or spike artefacts.
 </p>
 <p class="credit">
 Terrain source: Welsh Government LiDAR DTM, 1m resolution.<br>
