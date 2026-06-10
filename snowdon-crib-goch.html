@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Snowdon & Crib Goch | Studio Oddscape</title>
+
+<style>
+:root{
+  --gold:#d9bc82;
+  --text:#dce3e8;
+  --muted:#9aa5ac;
+  --line:rgba(217,188,130,.15);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#000;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);
+}
+
+.page{
+  width:min(960px,100%);
+  margin:0 auto;
+  background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);
+  overflow:hidden;
+}
+
+header{
+  text-align:center;
+  padding:55px 40px 30px;
+}
+
+.logo{
+  display:block;
+  font-size:clamp(42px,8vw,74px);
+  font-weight:800;
+  color:var(--gold);
+  line-height:.95;
+  text-decoration:none;
+}
+
+.subtitle{
+  margin-top:18px;
+  font-size:13px;
+  letter-spacing:6px;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  gap:26px;
+  flex-wrap:wrap;
+  padding:22px 20px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+.content{
+  padding:46px 40px 60px;
+}
+
+.section-title{
+  font-size:clamp(36px,7vw,56px);
+  font-weight:800;
+  color:var(--gold);
+  line-height:1;
+  margin-bottom:18px;
+}
+
+.section-rule{
+  width:90px;
+  height:2px;
+  background:var(--gold);
+  margin-bottom:28px;
+}
+
+.hero-image{
+  display:block;
+  margin:0 0 14px;
+  border:1px solid var(--line);
+  background:#000;
+}
+
+.hero-image img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.caption{
+  font-size:12px;
+  line-height:1.5;
+  color:var(--muted);
+  margin-bottom:34px;
+}
+
+.intro{
+  font-size:21px;
+  line-height:1.45;
+  color:#eef3f5;
+  margin-bottom:34px;
+  max-width:820px;
+}
+
+.panel{
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.22);
+  padding:28px;
+  margin:28px 0;
+}
+
+.panel h2{
+  font-size:24px;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+
+.panel p{
+  font-size:16px;
+  line-height:1.65;
+  color:var(--text);
+  margin-bottom:14px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:30px;
+}
+
+.card{
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.2);
+  padding:22px;
+}
+
+.card h3{
+  font-size:18px;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.card p{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:20px;
+}
+
+.stat{
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.25);
+  padding:16px;
+}
+
+.stat span{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:6px;
+}
+
+.stat strong{
+  display:block;
+  font-size:20px;
+  color:var(--gold);
+  font-weight:700;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:22px;
+  margin:30px 0;
+}
+
+.gallery figure{
+  border:1px solid var(--line);
+  background:#000;
+}
+
+.gallery img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.gallery figcaption{
+  font-size:12px;
+  line-height:1.5;
+  color:var(--muted);
+  padding:12px 14px;
+  border-top:1px solid var(--line);
+}
+
+.button-row{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.button{
+  display:inline-block;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+  padding:13px 18px;
+  font-size:13px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.button:hover{
+  background:rgba(217,188,130,.1);
+}
+
+.credit{
+  font-size:12px;
+  line-height:1.6;
+  color:var(--muted);
+  margin-top:18px;
+}
+
+footer{
+  text-align:center;
+  padding:32px 20px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
+
+@media(max-width:700px){
+  .content{
+    padding:36px 24px 50px;
+  }
+
+  .grid,
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  nav{
+    gap:16px;
+  }
+
+  .subtitle{
+    letter-spacing:3px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<header>
+<a class="logo" href="index.html">Studio Oddscape</a>
+<div class="subtitle">Terrain Visualisation // Landscape Interpretation</div>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="archive.html">Terrain Archive</a>
+<a href="commissions.html">Commissions</a>
+<a href="acquire.html">Acquire Terrain</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<main class="content">
+
+<div class="section-title">Snowdon & Crib Goch</div>
+<div class="section-rule"></div>
+
+<a href="images/snowdon-crib-goch-hillshade.png" class="hero-image">
+<img src="images/snowdon-crib-goch-hillshade.png" alt="Oddscape hillshade terrain visualisation of Snowdon, Crib Goch and Llyn Llydaw">
+</a>
+
+<div class="caption">
+Snowdon & Crib Goch Terrain Study. Hillshade terrain visualisation generated using the Oddscape Terrain Engine™ from Welsh Government 1m LiDAR DTM data.
+</div>
+
+<div class="intro">
+A high-resolution upland terrain study of the Snowdon massif, including Crib Goch, Llyn Llydaw, Glaslyn, Garnedd Ugain and the upper slopes of Yr Wyddfa.
+</div>
+
+<div class="panel">
+<h2>Llyn Llydaw and the Snowdon Massif</h2>
+<p>
+Crib Goch is one of the most recognisable mountain ridges in Britain. This study uses bare-earth LiDAR terrain data to reveal the relationship between ridge, lake basin, glacial form and upland slope.
+</p>
+<p>
+Unlike coastal or lowland terrain studies, the Snowdon massif gives the Oddscape workflow a strongly vertical landscape to interpret. The resulting model exposes cirques, arêtes, tarn basins, steep escarpments and the sculptural structure of the mountain terrain.
+</p>
+</div>
+
+<div class="stats">
+<div class="stat">
+<span>Study Area</span>
+<strong>5 km × 3 km</strong>
+</div>
+
+<div class="stat">
+<span>Terrain Cells</span>
+<strong>15,000,000</strong>
+</div>
+
+<div class="stat">
+<span>Elevation Range</span>
+<strong>87.5 m – 1085.7 m</strong>
+</div>
+
+<div class="stat">
+<span>QA Status</span>
+<strong>PASS</strong>
+</div>
+
+<div class="stat">
+<span>Void Cells</span>
+<strong>0</strong>
+</div>
+
+<div class="stat">
+<span>Spikes Detected</span>
+<strong>0</strong>
+</div>
+</div>
+
+<div class="grid">
+<div class="card">
+<h3>Landscape Context</h3>
+<p>
+The study captures a compact but highly legible section of the Snowdon massif, with Llyn Llydaw acting as a visual anchor and Crib Goch forming a sharp ridge line across the upland terrain.
+</p>
+</div>
+
+<div class="card">
+<h3>Data Source</h3>
+<p>
+Generated from Welsh Government 1m LiDAR DTM data. DTM data represents bare-earth terrain, removing vegetation and surface clutter to reveal the underlying landform.
+</p>
+</div>
+
+<div class="card">
+<h3>Oddscape Outputs</h3>
+<p>
+The engine produces terrain previews, hillshade interpretation, REM analysis, AR terrain models, OBJ mesh export and client-ready QA documentation.
+</p>
+</div>
+
+<div class="card">
+<h3>Use Potential</h3>
+<p>
+Suitable for upland landscape interpretation, education, mountain route context, heritage landscape study, environmental analysis and interactive public engagement.
+</p>
+</div>
+</div>
+
+<div class="panel">
+<h2>Terrain Outputs</h2>
+<p>
+The hillshade output reveals the physical structure of the Snowdon massif, while the colour relief model provides an additional elevation-led interpretation of the same terrain.
+</p>
+</div>
+
+<div class="gallery">
+
+<figure>
+<img src="images/snowdon-crib-goch-hillshade.png" alt="Hillshade visualisation of Snowdon and Crib Goch">
+<figcaption>
+Hillshade visualisation showing Crib Goch, Llyn Llydaw, Glaslyn and surrounding upland terrain.
+</figcaption>
+</figure>
+
+<figure>
+<img src="images/snowdon-crib-goch-terrain-preview.png" alt="Terrain preview of Snowdon and Crib Goch generated by Oddscape">
+<figcaption>
+Terrain preview generated through the Oddscape Terrain Engine™.
+</figcaption>
+</figure>
+
+<figure>
+<img src="images/snowdon-crib-goch-rem.png" alt="Colour relief model of Snowdon and Crib Goch terrain">
+<figcaption>
+Colour relief model showing elevation transitions across the Snowdon massif.
+</figcaption>
+</figure>
+
+</div>
+
+<div class="panel">
+<h2>AR Terrain Model</h2>
+<p>
+The AR model is a preview terrain visualisation. Production mesh exports are prepared separately and quoted according to area, resolution, cleanup and delivery format.
+</p>
+
+<a class="button" href="models/terrain_delivery_pro_v2_16.usdz">Open AR Model</a>
+
+<p class="credit">
+For iPhone and iPad users, the USDZ file should open in Apple Quick Look for object and AR viewing.
+</p>
+</div>
+
+<div class="panel">
+<h2>Technical Summary</h2>
+<p>
+The Snowdon and Crib Goch terrain model passed Oddscape QA with no detected void cells and no detected spike artefacts. The model was exported from a 1m DTM raster covering approximately 5 km by 3 km of upland terrain.
+</p>
+<p>
+The study demonstrates the use of the Oddscape Terrain Engine™ for mountain landscapes, expanding the archive beyond coastal, estuarine, urban and heritage terrain studies.
+</p>
+
+<p class="credit">
+Terrain source: Welsh Government LiDAR DTM, 1m resolution.<br>
+Visualisation and model generation: Oddscape Terrain Engine Professional v2.17.<br>
+Project: Oddscape_Snowdon_Crib_Goch.
+</p>
+</div>
+
+<div class="button-row">
+<a class="button" href="archive.html">← Back to Terrain Archive</a>
+<a class="button" href="commissions.html">Commission a Terrain Study</a>
+</div>
+
+</main>
+
+<footer>
+Studio Oddscape © 2026<br>
+Terrain visualisation, LiDAR interpretation, AR landscape models and commissioned landscape studies.
+</footer>
+
+</div>
+</body>
+</html>
