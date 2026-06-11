@@ -31,6 +31,7 @@ nav a:hover{color:var(--gold)}
 .content{padding:60px}
 .section-title{font-size:48px;font-weight:800;color:var(--gold);margin-bottom:20px}
 .section-rule{height:1px;background:var(--line);margin-bottom:40px}
+
 .terrain-row{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -106,60 +107,108 @@ footer{text-align:center;padding:40px 40px;margin-top:20px;border-top:1px solid 
 <div class="page">
 
 <header>
-<a class="logo" href="index.html">Studio Oddscape</a>
-<div class="subtitle">Terrain Visualisation // Commissioned<br>Landscape Interpretation</div>
+<a href="index.html" class="logo">Studio Oddscape</a>
+<div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div>
+<div class="hud"></div>
 </header>
 
 <nav>
-<a href="archive.html">Terrain Archive</a>
-<a href="commissions.html">Commissions</a>
-<a href="contact.html">Start a Project</a>
-<a href="faq.html">FAQ</a>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="start.html">Start a Project</a>
+  <a href="faq.html">FAQ</a>
 </nav>
 
-<main class="content">
+<div class="content">
 
-<div class="image-grid">
-<img src="images/crib_goch/hillshade_preview.png" alt="Hillshade terrain visualisation of Snowdon and Crib Goch">
-<img src="images/crib_goch/Terrain_Preview.png" alt="3D terrain preview of Snowdon and Crib Goch">
-<img src="images/crib_goch/colour_rem_preview.png" alt="Colour relief model of Snowdon and Crib Goch">
-<img src="images/crib_goch/engine_preview_pro_v2_16.png" alt="Oddscape terrain engine preview of Snowdon and Crib Goch">
+<div class="terrain-row">
+
+  <a href="images/crib_goch/Terrain_Preview.png">
+    <img src="images/crib_goch/Terrain_Preview.png" alt="Llyn Llydaw and Crib Goch terrain preview">
+  </a>
+
+  <a href="images/crib_goch/hillshade_preview.png">
+    <img src="images/crib_goch/hillshade_preview.png" alt="Llyn Llydaw and Crib Goch hillshade">
+  </a>
+
+  <a href="images/crib_goch/colour_rem_preview.png">
+    <img src="images/crib_goch/colour_rem_preview.png" alt="Llyn Llydaw and Crib Goch colour relief model">
+  </a>
+
+  <a href="images/crib_goch/engine_preview_pro_v2_16.png">
+    <img src="images/crib_goch/engine_preview_pro_v2_16.png" alt="Llyn Llydaw and Crib Goch engine preview">
+  </a>
+
 </div>
 
-<p class="caption">
+<div class="caption">
 Llyn Llydaw and the Crib Goch Ridge terrain study developed using the Oddscape Terrain Engine™. Source data: Welsh Government 1m LiDAR DTM.
-</p>
-
-<div class="panel">
-<h2>Llyn Llydaw and the Crib Goch Ridge</h2>
-<p>
-A compact upland terrain study centred on Crib Goch, Llyn Llydaw, Glaslyn and the upper slopes of Yr Wyddfa.
-</p>
-<p>
-The model reveals the relationship between ridge, lake and valley across one of Wales’ most recognisable mountain landscapes.
-</p>
-
-<div class="meta">
-<div><span>Landscape</span><strong>Snowdon Massif</strong></div>
-<div><span>Resolution</span><strong>1m DTM</strong></div>
-<div><span>Coverage</span><strong>5 km × 3 km</strong></div>
-<div><span>QA Status</span><strong>Pass</strong></div>
 </div>
+
+<div class="project-tag">Mountain Landscape</div>
+
+<div class="project-title">Llyn Llydaw and the Crib Goch Ridge</div>
+
+<div class="text">
+<p>
+This upland terrain study explores the relationship between Crib Goch, Llyn Llydaw, Glaslyn and the upper slopes of Yr Wyddfa.
+</p>
+
+<br>
+
+<p>
+The model reveals one of Wales’ most recognisable mountain landscapes as a connected terrain system of ridge, lake, valley and glacial basin.
+</p>
+
+<br>
+
+<p>
+Developed from LiDAR-derived elevation data, the study creates an immersive three-dimensional representation of the Snowdon massif for interpretation and spatial understanding.
+</p>
+
+<br>
+
+<p>
+Applications include landscape interpretation, education, upland heritage engagement, visitor experience and spatial analysis.
+</p>
 </div>
 
 <div class="button-row">
-<a class="button" href="images/crib_goch/terrain_delivery_pro_v2_16.usdz">Open AR Model</a>
+<a class="button" href="licence.html">Request Licence</a>
+<a class="button apple-ar" rel="ar" href="images/crib_goch/terrain_delivery_pro_v2_16.usdz">View AR</a>
 <a class="button" href="archive.html">Back to Archive</a>
-<a class="button" href="contact.html">Start a Project</a>
+</div>
+<div class="caption" style="max-width:760px;margin:24px auto 0;">
+The AR model is a preview terrain visualisation. Production mesh exports are prepared separately and quoted according to area, resolution, cleanup and delivery format.
 </div>
 
-</main>
+</div>
 
 <footer>
-Studio Oddscape © 2026<br>
-Terrain visualisation, LiDAR interpretation, AR landscape models and commissioned landscape studies.
+<div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
+<div class="footer-text">
+Terrain Visualisation • LiDAR Analysis<br>
+3D Terrain Modelling • Immersive Landscape Interpretation • UK
+</div>
+<div class="footer-copy">© Studio Oddscape MMXXVI — All Rights Reserved</div>
 </footer>
 
 </div>
+
+<script>
+(function () {
+  const ua = navigator.userAgent || "";
+  const platform = navigator.platform || "";
+
+  const isApple =
+    /iPad|iPhone|iPod|Macintosh/.test(ua) ||
+    /Mac/.test(platform);
+
+  document.body.classList.add(
+    isApple ? "apple-device" : "non-apple-device"
+  );
+})();
+</script>
+
 </body>
 </html>
