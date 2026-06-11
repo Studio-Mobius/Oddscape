@@ -153,40 +153,50 @@ footer{text-align:center;padding:40px 40px;margin-top:20px;border-top:1px solid 
 </div>
 
 <div class="caption">
-Skara Brae and the Orkney Archipelago study developed using the Oddscape Terrain Engine™.<br>
-Source data: Scottish Government 1m LiDAR DTM.
+Skara Brae and the surrounding Orkney coastal landscape visualised using the Oddscape Terrain Engine™.<br>
+Source data: Orkney 50cm DTM and Scottish LiDAR elevation datasets.
 </div>
 
 <div class="project-tag">Coastal Heritage Landscape</div>
 
-<div class="project-title">Skara Brae</div>
+<div class="project-title">Skara Brae Terrain Study</div>
 
 <div class="text">
+
 <p>
-Located within Eryri, one of Cymru's (Wales) most recognisable mountain landscapes, this study explores the relationship between Crib Goch, Llyn Llydaw, Glaslyn and the upper slopes of Yr Wyddfa.
+Situated on the western coast of Mainland Orkney, Skara Brae is one of Europe's best-preserved Neolithic settlements and forms part of the Heart of Neolithic Orkney UNESCO World Heritage Site.
 </p>
 
 <br>
 
 <p>
-The terrain model reveals how ridge, lake, valley and glacial basin combine to form a single mountain landscape shaped by geology, ice and time.
+This terrain study explores the relationship between Skara Brae, Skaill Bay, the surrounding coastal platform and the wider landscape of the Orkney archipelago.
 </p>
 
 <br>
 
 <p>
-Viewed in three dimensions, the landscape can be explored as a connected system of form, elevation and glacial structure rather than as a collection of individual features.
-</p>
-
-<p>
-Developed from LiDAR-derived elevation data, the study creates an immersive three-dimensional representation of the Eryri (Snowdonia) massif for interpretation and spatial understanding.
+The terrain model reveals how settlement, shoreline, topography and exposure to the North Atlantic combine to create a distinctive coastal landscape shaped by geology, climate and more than five thousand years of human occupation.
 </p>
 
 <br>
 
 <p>
-Applications include landscape interpretation, education, upland heritage engagement, visitor experience and spatial analysis.
+Viewed in three dimensions, the landscape can be understood as an interconnected system of landform, coastline and archaeological setting rather than as an isolated archaeological site.
 </p>
+
+<br>
+
+<p>
+Derived from high-resolution elevation data, the study provides an immersive representation of the terrain surrounding Skara Brae, allowing subtle changes in relief, coastal form and landscape context to be explored from new perspectives.
+</p>
+
+<br>
+
+<p>
+Applications include heritage interpretation, archaeological visualisation, education, visitor engagement, landscape analysis and the communication of complex spatial relationships within historic environments.
+</p>
+
 </div>
 
 <div class="button-row">
