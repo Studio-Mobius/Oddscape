@@ -134,8 +134,8 @@ footer{text-align:center;padding:40px 40px;margin-top:20px;border-top:1px solid 
 
 <div class="terrain-row">
 
-  <a href="images/crib_goch/Terrain_Preview.png">
-    <img src="images/crib_goch/Terrain_Preview.png" alt="Llyn Llydaw and Crib Goch terrain preview">
+  <a href="images/skara_brae/Skara_Brae_Terrain_Preview.png">
+    <img src="images/skara_brae/Skara_Brae_Terrain_Preview.png" alt="Skara Brae terrain preview">
   </a>
 
   <a href="images/crib_goch/hillshade_preview.png">
@@ -176,25 +176,8 @@ This terrain study explores the relationship between Skara Brae, Skaill Bay, the
 <br>
 
 <p>
-The terrain model reveals how settlement, shoreline, topography and exposure to the North Atlantic combine to create a distinctive coastal landscape shaped by geology, climate and more than five thousand years of human occupation.
-</p>
-
-<br>
-
-<p>
-Viewed in three dimensions, the landscape can be understood as an interconnected system of landform, coastline and archaeological setting rather than as an isolated archaeological site.
-</p>
-
-<br>
-
-<p>
-Derived from high-resolution elevation data, the study provides an immersive representation of the terrain surrounding Skara Brae, allowing subtle changes in relief, coastal form and landscape context to be explored from new perspectives.
-</p>
-
-<br>
-
-<p>
-Applications include heritage interpretation, archaeological visualisation, education, visitor engagement, landscape analysis and the communication of complex spatial relationships within historic environments.
+Skara Brae Terrain Study
+Neolithic settlement, coastal cliffs and archaeological landscape around Skaill Bay, Orkney. Derived from 50 cm DTM and 2023 LiDAR datasets using the Oddscape Terrain Engine.
 </p>
 
 </div>
