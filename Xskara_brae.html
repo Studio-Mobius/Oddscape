@@ -119,6 +119,7 @@ footer{text-align:center;padding:40px 40px;margin-top:20px;border-top:1px solid 
 /* ===== Oddscape Licence Overlay ===== */
 
 #licence-overlay{
+    display:none;
     position:fixed;
     inset:0;
     background:rgba(0,0,0,.94);
@@ -189,9 +190,9 @@ footer{text-align:center;padding:40px 40px;margin-top:20px;border-top:1px solid 
         By continuing, you acknowledge and accept these terms.
         </p>
 
-        <button class="licence-btn" onclick="acceptLicence()">
-            Continue to Terrain Model
-        </button>
+<button class="licence-btn" onclick="acceptLicence()">
+  Continue to Terrain Model
+</button>
 
     </div>
 
@@ -266,7 +267,9 @@ Neolithic settlement, coastal cliffs and archaeological landscape around Skaill 
 
 <div class="button-row">
 <a class="button" href="licence.html">Request Licence</a>
-<a class="button apple-ar" rel="ar" href="images/skara_brae/Skara_Brae.usdz">View AR</a>
+<a class="button apple-ar" href="#" onclick="openModelLicence(event)">
+  View AR
+</a>
 <a class="button" href="archive.html">Back to Archive</a>
 </div>
 <div class="caption" style="max-width:760px;margin:24px auto 0;">
@@ -302,8 +305,16 @@ Terrain Visualisation • LiDAR Analysis<br>
 </script>
 
 <script>
+const modelUrl = "images/skara_brae/Skara_Brae.usdz";
+
+function openModelLicence(event) {
+  event.preventDefault();
+  document.getElementById('licence-overlay').style.display = 'flex';
+}
+
 function acceptLicence() {
-    document.getElementById('licence-overlay').style.display = 'none';
+  document.getElementById('licence-overlay').style.display = 'none';
+  window.location.href = modelUrl;
 }
 </script>
 
