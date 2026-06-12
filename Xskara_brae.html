@@ -270,6 +270,14 @@ Neolithic settlement, coastal cliffs and archaeological landscape around Skaill 
 <a class="button apple-ar" href="#" onclick="openModelLicence(event)">
   View AR
 </a>
+
+<a id="arLink"
+   rel="ar"
+   href="images/skara_brae/Skara_Brae.usdz"
+   style="display:none;">
+</a>
+  View AR
+</a>
 <a class="button" href="archive.html">Back to Archive</a>
 </div>
 <div class="caption" style="max-width:760px;margin:24px auto 0;">
@@ -305,16 +313,14 @@ Terrain Visualisation • LiDAR Analysis<br>
 </script>
 
 <script>
-const modelUrl = "images/skara_brae/Skara_Brae.usdz";
-
-function openModelLicence(event) {
-  event.preventDefault();
-  document.getElementById('licence-overlay').style.display = 'flex';
+function openModelLicence(event){
+    event.preventDefault();
+    document.getElementById('licence-overlay').style.display='flex';
 }
 
-function acceptLicence() {
-  document.getElementById('licence-overlay').style.display = 'none';
-  window.location.href = modelUrl;
+function acceptLicence(){
+    document.getElementById('licence-overlay').style.display='none';
+    document.getElementById('arLink').click();
 }
 </script>
 
