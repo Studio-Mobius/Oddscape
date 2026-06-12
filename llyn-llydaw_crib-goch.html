@@ -111,10 +111,87 @@ footer{text-align:center;padding:40px 40px;margin-top:20px;border-top:1px solid 
   .text{font-size:18px;line-height:1.7}
   .button{font-size:10px;padding:12px 16px}
 }
+
+/* ===== Oddscape Licence Overlay ===== */
+
+#licence-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.20);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    z-index:9999;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.licence-panel{
+    width:min(700px,100%);
+    background:rgba(16,33,44,.25);
+    border:1px solid rgba(217,188,130,.4);
+    border-radius:18px;
+    padding:32px;
+    text-align:center;
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+}
+
+.licence-panel h2{
+    color:var(--gold);
+    margin-bottom:20px;
+}
+
+.licence-panel p{
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:16px;
+}
+
+.licence-btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:14px 28px;
+    border-radius:999px;
+    text-decoration:none;
+    background:var(--gold);
+    color:#08141d;
+    font-weight:700;
+    cursor:pointer;
+    border:none;
+}
+
 </style>
 </head>
 
 <body>
+
+<div id="licence-overlay">
+  <div class="licence-panel">
+    <h2>Studio Oddscape Terrain Licence</h2>
+
+    <p>
+    This terrain model, visualisation and associated files are provided
+    for personal evaluation, educational use and landscape interpretation.
+    </p>
+
+    <p>
+    Redistribution, resale, republication, AI training, derivative works,
+    commercial use or hosting elsewhere is prohibited without written
+    permission from Studio Oddscape.
+    </p>
+
+    <p>
+    By continuing, you acknowledge and accept these terms.
+    </p>
+
+    <button class="licence-btn" onclick="acceptLicence()">
+      Continue to Terrain Model
+    </button>
+  </div>
+</div>
+
 <div class="page">
 
 <header>
@@ -191,7 +268,16 @@ Applications include landscape interpretation, education, upland heritage engage
 
 <div class="button-row">
 <a class="button" href="licence.html">Request Licence</a>
-<a class="button apple-ar" rel="ar" href="images/crib_goch/terrain_delivery_pro_v2_16.usdz">View AR</a>
+<a class="button apple-ar" href="#" onclick="openModelLicence(event)">
+  View AR
+</a>
+
+<a id="arLink"
+   rel="ar"
+   href="images/crib_goch/terrain_delivery_pro_v2_16.usdz"
+   style="position:absolute;left:-9999px;">
+   <img src="images/crib_goch/Terrain_Preview.png" alt="">
+</a>
 <a class="button" href="archive.html">Back to Archive</a>
 </div>
 <div class="caption" style="max-width:760px;margin:24px auto 0;">
@@ -224,6 +310,19 @@ Terrain Visualisation • LiDAR Analysis<br>
     isApple ? "apple-device" : "non-apple-device"
   );
 })();
+</script>
+
+
+<script>
+function openModelLicence(event){
+    event.preventDefault();
+    document.getElementById('licence-overlay').style.display='flex';
+}
+
+function acceptLicence(){
+    document.getElementById('licence-overlay').style.display='none';
+    document.getElementById('arLink').click();
+}
 </script>
 
 </body>
