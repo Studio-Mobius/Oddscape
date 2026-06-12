@@ -111,6 +111,56 @@ footer{text-align:center;padding:40px 40px;margin-top:20px;border-top:1px solid 
   .text{font-size:18px;line-height:1.7}
   .button{font-size:10px;padding:12px 16px}
 }
+
+.viewer-container{
+  position:relative;
+}
+
+.compass{
+  position:absolute;
+  top:20px;
+  right:20px;
+  width:70px;
+  height:70px;
+  border:1px solid rgba(217,188,130,.35);
+  border-radius:50%;
+  background:rgba(8,20,29,.75);
+  backdrop-filter:blur(4px);
+  z-index:100;
+}
+
+.compass-label{
+  position:absolute;
+  top:6px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#d9bc82;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.compass-needle{
+  position:absolute;
+  left:50%;
+  top:18px;
+  width:2px;
+  height:34px;
+  background:#d9bc82;
+  transform-origin:center bottom;
+  transform:translateX(-50%) rotate(0deg);
+}
+
+.compass-needle::before{
+  content:"";
+  position:absolute;
+  top:-8px;
+  left:50%;
+  transform:translateX(-50%);
+  border-left:6px solid transparent;
+  border-right:6px solid transparent;
+  border-bottom:12px solid #d9bc82;
+}
 </style>
 </head>
 
