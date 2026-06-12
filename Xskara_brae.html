@@ -115,10 +115,88 @@ footer{text-align:center;padding:40px 40px;margin-top:20px;border-top:1px solid 
 .viewer-container{
   position:relative;
 }
+
+/* ===== Oddscape Licence Overlay ===== */
+
+#licence-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.94);
+    backdrop-filter:blur(4px);
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.licence-panel{
+    width:min(700px,100%);
+    background:rgba(16,33,44,.95);
+    border:1px solid rgba(217,188,130,.2);
+    border-radius:18px;
+    padding:32px;
+    text-align:center;
+}
+
+.licence-panel h2{
+    color:var(--gold);
+    margin-bottom:20px;
+}
+
+.licence-panel p{
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:16px;
+}
+
+.licence-btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:14px 28px;
+    border-radius:999px;
+    text-decoration:none;
+    background:var(--gold);
+    color:#08141d;
+    font-weight:700;
+    cursor:pointer;
+    border:none;
+}
+
 </style>
 </head>
 
 <body>
+  
+  <div id="licence-overlay">
+
+    <div class="licence-panel">
+
+        <h2>Studio Oddscape Terrain Licence</h2>
+
+        <p>
+        This terrain model, visualisation and associated files are provided
+        for personal evaluation, educational use and landscape interpretation.
+        </p>
+
+        <p>
+        Redistribution, resale, republication, AI training, derivative works,
+        commercial use or hosting elsewhere is prohibited without written
+        permission from Studio Oddscape.
+        </p>
+
+        <p>
+        By continuing, you acknowledge and accept these terms.
+        </p>
+
+        <button class="licence-btn" onclick="acceptLicence()">
+            Continue to Terrain Model
+        </button>
+
+    </div>
+
+</div>
+  
 <div class="page">
 
 <header>
@@ -221,6 +299,12 @@ Terrain Visualisation • LiDAR Analysis<br>
     isApple ? "apple-device" : "non-apple-device"
   );
 })();
+</script>
+
+<script>
+function acceptLicence() {
+    document.getElementById('licence-overlay').style.display = 'none';
+}
 </script>
 
 </body>
