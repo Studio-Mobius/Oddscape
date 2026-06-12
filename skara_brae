@@ -138,16 +138,16 @@ footer{text-align:center;padding:40px 40px;margin-top:20px;border-top:1px solid 
     <img src="images/skara_brae/Skara_Brae_Terrain_Preview.png" alt="Skara Brae terrain preview">
   </a>
 
-  <a href="images/crib_goch/hillshade_preview.png">
-    <img src="images/crib_goch/hillshade_preview.png" alt="Llyn Llydaw and Crib Goch hillshade">
+  <a href="images/skara_brae/Skara_Brae_Hillshade_Preview.png">
+    <img src="images/skara_brae/Skara_Brae_Hillshade_Preview.png" alt="Skara Brae hillshade">
   </a>
 
-  <a href="images/crib_goch/colour_rem_preview.png">
-    <img src="images/crib_goch/colour_rem_preview.png" alt="Llyn Llydaw and Crib Goch colour relief model">
+  <a href="images/skara_brae/Skara_Brae_colour_rem_preview.png">
+    <img src="images/skara_brae/Skara_Brae_colour_rem_preview.png" alt="Skara Brae colour relief model">
   </a>
 
-  <a href="images/crib_goch/3D_crib_goch_usdz.png">
-    <img src="images/crib_goch/3D_crib_goch_usdz.png" alt="Llyn Llydaw and Crib Goch 3D engine preview">
+  <a href="images/skara_brae/Skara_Brae.usdz">
+    <img src="images/skara_brae/Skara_Brae.usdz" alt="Skara Brae 3D engine preview">
   </a>
 
 </div>
@@ -164,7 +164,7 @@ Source data: Orkney 50cm DTM and Scottish LiDAR elevation datasets.
 <div class="text">
 
 <p>
-Situated on the western coast of Mainland Orkney, Skara Brae is one of Europe's best-preserved Neolithic settlements and forms part of the Heart of Neolithic Orkney UNESCO World Heritage Site.
+Situated on the western coast of Mainland Orkney archipelago, Skara Brae is one of Europe's best-preserved Neolithic settlements and forms part of the Heart of Neolithic Orkney UNESCO World Heritage Site.
 </p>
 
 <br>
