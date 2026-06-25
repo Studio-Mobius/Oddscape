@@ -1,0 +1,25 @@
+OLD_page_versions/
+PENDING_WRK/
+
+*.tif
+*.tiff
+*.laz
+*.las
+*.qgz
+*.zip
+*.obj
+*.fbx
+*.dae
+*.ply
+*.stl
+*.blend
+*.aux.xml
+*.tfw
+*.vrt
+*.gpkg
+
+images/Bawdsey/
+images/Deben Sutton Hoo/
+images/River Alde/
+images/Shingle Street/
+images/birsay_bay/
