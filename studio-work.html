@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=960">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Studio Work | Studio Oddscape</title>
 
@@ -333,6 +333,60 @@ footer {
   padding: 40px 70px;
   font-size: 15px;
 }
+
+python3 - << 'PY'
+from pathlib import Path
+p = Path("studio-work.html")
+s = p.read_text()
+
+css = """
+@media (max-width: 980px) {
+  .page {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: clamp(44px, 10vw, 86px);
+    letter-spacing: -1px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    letter-spacing: 4px;
+  }
+
+  .hud-line {
+    width: min(610px, 80%);
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .section {
+    padding: 42px 28px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-img {
+    height: 240px;
+  }
+}
+"""
+
+s = s.replace("</style>", css + "\n</style>")
+p.write_text(s)
+PY
+
+git diff
 </style>
 </head>
 
