@@ -1,0 +1,40 @@
+ODDSCAPE TERRAIN ENGINE V32 QA REPORT
+====================================
+
+Project: Oddscape_Birsay_Bay_BEFORE_CLEANUP
+Generated: 2026-06-11 17:17:09
+
+TERRAIN STATISTICS
+------------------
+Rows: 1864
+Columns: 2483
+Total cells: 4628312
+Minimum elevation: -0.610
+Maximum elevation: 44.320
+Mean elevation: 16.136
+Standard deviation: 9.885
+
+VOID / NODATA CHECK
+-------------------
+Nodata cells: 1743018
+Nodata percentage: 37.660%
+
+SPIKE CHECK
+-----------
+Spike threshold: 34.597
+Potential spikes detected: 0
+Spike percentage: 0.00000%
+
+OUTPUT FILES
+------------
+Terrain preview: /tmp/oddscape_pro_v2_16_before_Oddscape_Birsay_Bay/06_Renders/Terrain_Preview.png
+Hillshade preview: /tmp/oddscape_pro_v2_16_before_Oddscape_Birsay_Bay/06_Renders/Hillshade_Preview.png
+Spike mask: /tmp/oddscape_pro_v2_16_before_Oddscape_Birsay_Bay/05_QA/Spike_Mask.png
+Void mask: /tmp/oddscape_pro_v2_16_before_Oddscape_Birsay_Bay/05_QA/Void_Mask.png
+
+WARNINGS
+--------
+- Void/nodata percentage above 2%.
+- Void/nodata percentage above 10%.
+
+DELIVERY STATUS: FAIL — CLEANUP REQUIRED

@@ -1,0 +1,51 @@
+ODDSCAPE TERRAIN ENGINE Professional v2.14 CLEANUP REPORT
+============================================
+
+Project: Oddscape_Shingle_Street_v2.14
+Generated: 2026-06-03 12:11:37
+
+CLEANUP ACTIONS
+---------------
+Original raster shape: 6000 columns × 10000 rows
+Cleaned raster shape: 6000 columns × 10000 rows
+Crop window: rows 0–10000, columns 0–6000
+Coastal compression enabled: True
+Coastal/sea void cells compressed: 0
+Sea plane level used: None
+Sea plane mode: Low percentile
+Coastal softening enabled: True
+Coastal softening cells: 0
+Coastal ramp pixels: 35
+Coastal ramp strength: 0.75
+Original void cells inside cleanup stage: 0
+Filled void cells: 0
+Remaining void cells: 0
+
+BEFORE / AFTER QA
+-----------------
+Before nodata: 0.000%
+After nodata: 0.000%
+Before spikes: 2
+After spikes: 2
+Before status: PASS WITH WARNINGS
+After status: PASS WITH WARNINGS
+
+NOTE
+----
+V32.6 performs coastal-aware raster cleanup and information-aware framing before mesh generation.
+It compresses edge-connected sea/nodata voids to a sea plane, softens the coastal edge into a ramp, then fills small internal voids.
+SMART FRAMING
+-------------
+Smart framing enabled: True
+Smart framing mode: Manual crop rectangle
+Smart framing margin pixels: None
+Smart framing inland context pixels: None
+Smart coastal frame used: False
+Information-aware frame used: False
+Information focus cells: 0
+Information focus threshold percentile: None
+Information focus context pixels: None
+Smart framing removed cells: 0
+
+STRICT NODATA CELL REJECTION
+-----------------------------

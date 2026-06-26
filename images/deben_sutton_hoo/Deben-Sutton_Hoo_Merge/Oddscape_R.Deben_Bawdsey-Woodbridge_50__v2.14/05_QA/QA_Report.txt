@@ -1,0 +1,39 @@
+ODDSCAPE TERRAIN ENGINE V32.5 QA REPORT
+=======================================
+
+Project: Oddscape_R.Deben_Bawdsey-Woodbridge_50__v2.14_AFTER_CLEANUP
+Generated: 2026-06-03 14:30:33
+
+TERRAIN STATISTICS
+------------------
+Rows: 10000
+Columns: 6226
+Total cells: 62260000
+Minimum elevation: -2.652
+Maximum elevation: 54.913
+Mean elevation: 13.432
+Standard deviation: 12.673
+
+VOID / NODATA CHECK
+-------------------
+Nodata cells: 0
+Nodata percentage: 0.000%
+
+SPIKE CHECK
+-----------
+Spike threshold: 44.356
+Potential spikes detected: 0
+Spike percentage: 0.00000%
+
+OUTPUT FILES
+------------
+Terrain preview: /tmp/oddscape_pro_v2_14_after_Oddscape_R.Deben_Bawdsey-Woodbridge_50__v2.14/06_Renders/Terrain_Preview.png
+Hillshade preview: /tmp/oddscape_pro_v2_14_after_Oddscape_R.Deben_Bawdsey-Woodbridge_50__v2.14/06_Renders/Hillshade_Preview.png
+Spike mask: /tmp/oddscape_pro_v2_14_after_Oddscape_R.Deben_Bawdsey-Woodbridge_50__v2.14/05_QA/Spike_Mask.png
+Void mask: /tmp/oddscape_pro_v2_14_after_Oddscape_R.Deben_Bawdsey-Woodbridge_50__v2.14/05_QA/Void_Mask.png
+
+WARNINGS
+--------
+None
+
+DELIVERY STATUS: PASS

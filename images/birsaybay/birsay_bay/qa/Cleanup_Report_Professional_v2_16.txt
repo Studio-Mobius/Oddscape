@@ -1,0 +1,51 @@
+ODDSCAPE TERRAIN ENGINE Professional v2.17 CLEANUP REPORT
+============================================
+
+Project: Oddscape_Birsay_Bay
+Generated: 2026-06-11 17:17:27
+
+CLEANUP ACTIONS
+---------------
+Original raster shape: 2483 columns × 1864 rows
+Cleaned raster shape: 2483 columns × 1864 rows
+Crop window: rows 0–1864, columns 0–2483
+Coastal compression enabled: True
+Coastal/sea void cells compressed: 1729506
+Sea plane level used: -0.23000000417232513
+Sea plane mode: Low percentile
+Coastal softening enabled: True
+Coastal softening cells: 380618
+Coastal ramp pixels: 35
+Coastal ramp strength: 0.75
+Original void cells inside cleanup stage: 13780
+Filled void cells: 13780
+Remaining void cells: 0
+
+BEFORE / AFTER QA
+-----------------
+Before nodata: 37.660%
+After nodata: 0.000%
+Before spikes: 0
+After spikes: 0
+Before status: FAIL — CLEANUP REQUIRED
+After status: PASS
+
+NOTE
+----
+V32.6 performs coastal-aware raster cleanup and information-aware framing before mesh generation.
+It compresses edge-connected sea/nodata voids to a sea plane, softens the coastal edge into a ramp, then fills small internal voids.
+SMART FRAMING
+-------------
+Smart framing enabled: True
+Smart framing mode: Manual crop rectangle
+Smart framing margin pixels: None
+Smart framing inland context pixels: None
+Smart coastal frame used: False
+Information-aware frame used: False
+Information focus cells: 0
+Information focus threshold percentile: None
+Information focus context pixels: None
+Smart framing removed cells: 0
+
+STRICT NODATA CELL REJECTION
+-----------------------------

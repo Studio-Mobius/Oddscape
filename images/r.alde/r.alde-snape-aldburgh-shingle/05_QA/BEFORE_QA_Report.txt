@@ -1,0 +1,40 @@
+ODDSCAPE TERRAIN ENGINE V32.5 QA REPORT
+=======================================
+
+Project: Oddscape_R.Alde_Snape-Aldburgh-Shngle_v2.14_BEFORE_CLEANUP
+Generated: 2026-06-03 17:59:24
+
+TERRAIN STATISTICS
+------------------
+Rows: 5000
+Columns: 3750
+Total cells: 18750000
+Minimum elevation: -4.433
+Maximum elevation: 33.535
+Mean elevation: 6.910
+Standard deviation: 8.334
+
+VOID / NODATA CHECK
+-------------------
+Nodata cells: 5917131
+Nodata percentage: 31.558%
+
+SPIKE CHECK
+-----------
+Spike threshold: 29.167
+Potential spikes detected: 0
+Spike percentage: 0.00000%
+
+OUTPUT FILES
+------------
+Terrain preview: /tmp/oddscape_pro_v2_14_before_Oddscape_R.Alde_Snape-Aldburgh-Shngle_v2.14/06_Renders/Terrain_Preview.png
+Hillshade preview: /tmp/oddscape_pro_v2_14_before_Oddscape_R.Alde_Snape-Aldburgh-Shngle_v2.14/06_Renders/Hillshade_Preview.png
+Spike mask: /tmp/oddscape_pro_v2_14_before_Oddscape_R.Alde_Snape-Aldburgh-Shngle_v2.14/05_QA/Spike_Mask.png
+Void mask: /tmp/oddscape_pro_v2_14_before_Oddscape_R.Alde_Snape-Aldburgh-Shngle_v2.14/05_QA/Void_Mask.png
+
+WARNINGS
+--------
+- Void/nodata percentage above 2%.
+- Void/nodata percentage above 10%.
+
+DELIVERY STATUS: FAIL — CLEANUP REQUIRED
