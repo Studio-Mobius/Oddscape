@@ -239,19 +239,22 @@ const dotsBox=document.getElementById("dots");
 const counter=document.getElementById("counter");
 
 function updateSlide(){
-  const slide=slides[current];
-  img.src=slide.img;
-  img.alt=slide.title;
-  imageLink.href=slide.href;
-  primaryLink.href=slide.href;
-  slideTag.textContent=slide.tag;
-  slideTitle.textContent=slide.title;
-  slideCaption.textContent=slide.text;
-  slideMeta.textContent=slide.meta;
-  counter.textContent=(current+1)+" / "+slides.length;
+  const slide = slides[current];
 
-  Array.from(dotsBox.children).forEach((dot,i)=>{
-    dot.classList.toggle("active",i===current);
+  img.src = slide.img;
+  img.alt = slide.title;
+
+  imageLink.href = slide.href;
+  primaryLink.href = slide.href;
+
+  slideTag.textContent = slide.tag || "";
+  slideTitle.textContent = slide.title || "";
+  slideCaption.textContent = slide.text || "";
+  slideMeta.textContent = slide.meta || "";
+  counter.textContent = (current + 1) + " / " + slides.length;
+
+  Array.from(dotsBox.children).forEach((dot, i) => {
+    dot.classList.toggle("active", i === current);
   });
 }
 
