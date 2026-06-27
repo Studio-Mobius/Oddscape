@@ -152,7 +152,6 @@ const slides = [
   {label:"Terrain + REM", src:"images/wookeyhole/terrain-rem-overlay.png", caption:"Terrain and REM overlay combining surface relief with relative elevation interpretation."}
 ];
 let current = 0;
-const fullImageLink = document.getElementById('fullImageLink');
 const caption = document.getElementById('slideCaption');
 const dotsBox = document.getElementById('dots');
 const counter = document.getElementById('counter');
@@ -173,8 +172,7 @@ function showSlide(index){
   img.classList.add('is-changing');
   window.setTimeout(() => {
     img.src = slide.src;
-    fullImageLink.href = slide.src;
-    img.alt = 'Wookey Hole — ' + slide.label;
+        img.alt = 'Wookey Hole — ' + slide.label;
     caption.textContent = slide.caption;
     counter.textContent = (current + 1) + ' / ' + slides.length;
     Array.from(dotsBox.children).forEach((dot, i) => dot.classList.toggle('active', i === current));
