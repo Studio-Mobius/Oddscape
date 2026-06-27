@@ -32,7 +32,7 @@ h1{margin-top:15px;color:var(--text);font-size:clamp(38px,5vw,58px);font-weight:
 .image-frame{z-index:1;width:min(640px,62vw);max-height:430px;border-radius:14px;overflow:hidden;border:1px solid rgba(217,188,130,.34);background:rgba(0,0,0,.28);box-shadow:0 0 52px rgba(0,0,0,.45)}
 .image-frame img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;opacity:1;transform:translateX(0);transition:opacity .34s ease, transform .34s ease}
 .image-frame img.is-changing{opacity:0;transform:translateX(28px)}
-.arrow{z-index:5;
+.arrow{z-index:50;
     position:absolute;
     top:50%;
     transform:translateY(-50%);
@@ -84,14 +84,14 @@ footer{text-align:center;padding:31px 32px 44px;border-top:1px solid rgba(217,18
   .stage{padding:34px 18px 40px}
   .carousel{margin-top:34px;min-height:0}
   .image-frame{z-index:1;width:min(72vw,500px)}
-  .arrow{z-index:5;width:42px;height:42px}
+  .arrow{z-index:50;width:42px;height:42px}
   .arrow.prev{left:-8px}
   .arrow.next{right:-8px}
   .meta{grid-template-columns:1fr;margin-top:34px}
   .meta div{border-right:none;border-bottom:1px solid rgba(217,188,130,.32)}
   .meta div:last-child{border-bottom:none}
 }
-@media(max-width:520px){.image-frame{z-index:1;width:70vw}.arrow.prev{left:-28}.arrow.next{right:-28}h1{font-size:38px}}
+@media(max-width:520px){.image-frame{z-index:1;width:70vw}.arrow{z-index:50;width:42px;height:42px}.arrow.prev{left:6px}.arrow.next{right:6px}h1{font-size:38px}}
 </style>
 </head>
 <body>
