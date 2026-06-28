@@ -225,6 +225,11 @@ const slides=[
     href:"wookey.html"
   }
 ];
+    
+slides.forEach(slide => {
+  const preload = new Image();
+  preload.src = slide.img;
+});
 
 let current=0;
 
