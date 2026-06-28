@@ -281,6 +281,14 @@ const slides = [
   {label:"Terrain + REM", src:"images/wookeyhole/terrain-rem-overlay.png", caption:"Terrain and REM overlay combining surface relief with relative elevation interpretation."}
 ];
 
+slides.forEach(slide => {
+
+  const preload = new Image();
+
+  preload.src = slide.src;
+
+});
+
 let current = 2;
 
 const img = document.getElementById("slideImage");
