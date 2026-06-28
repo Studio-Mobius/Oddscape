@@ -1,0 +1,26 @@
+ODDSCAPE TERRAIN FORGE v2.32 PUBLISHER MANIFEST
+================================================
+
+Place: Wookey Hole
+Slug: wookey-hole
+Generated: 2026-06-28T17:13:51
+
+REQUIRED WEBSITE ASSETS
+-----------------------
+PASS — Place HTML: wookey-hole.html
+PASS — Hero WebP: images/wookey-hole/web/hero.webp
+PASS — Archive thumbnail: images/archive_web/wookey-hole.webp
+PASS — Hillshade WebP: images/wookey-hole/web/hillshade.webp
+PASS — Colour elevation WebP: images/wookey-hole/web/colour-elevation.webp
+PASS — Oddscape REM WebP: images/wookey-hole/web/oddscape-rem.webp
+PASS — Terrain + REM WebP: images/wookey-hole/web/terrain-rem-overlay.webp
+PASS — Oddscape sculptural WebP: images/wookey-hole/web/oddscape-sculptural.webp
+
+OPTIONAL / CONDITIONAL ASSETS
+-----------------------------
+PASS — USDZ: images/wookey-hole/3D/wookey-hole.usdz
+PASS — GLB: images/wookey-hole/3D/wookey-hole.glb
+— — PDF: not supplied
+— — QR: not supplied
+
+WEBSITE STATUS: PASS — READY TO PUBLISH

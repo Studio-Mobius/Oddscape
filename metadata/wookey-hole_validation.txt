@@ -1,0 +1,21 @@
+Wookey Hole — Client View Pack Validation
+=================================================
+
+Generated: 2026-06-28T17:13:51
+Engine: Oddscape Terrain Forge v2.32 Publisher Edition
+Slug: wookey-hole
+
+PUBLICATION CHECKLIST
+---------------------
+HTML page: PASS - wookey-hole.html
+Hero image: PASS - images/wookey-hole/web/hero.webp
+Hillshade: PASS - images/wookey-hole/web/hillshade.webp
+REM interpretation: PASS - images/wookey-hole/web/oddscape-rem.webp
+Terrain + REM overlay: PASS - images/wookey-hole/web/terrain-rem-overlay.webp
+USDZ model: PASS - images/wookey-hole/3D/wookey-hole.usdz
+GLB model: PASS - images/wookey-hole/3D/wookey-hole.glb
+Place Report PDF: MISSING / NOT REQUESTED 
+
+SAFETY NOTE
+-----------
+This pack excludes raw LiDAR, GeoTIFF, QA folders, OBJ source models and working files by design.
