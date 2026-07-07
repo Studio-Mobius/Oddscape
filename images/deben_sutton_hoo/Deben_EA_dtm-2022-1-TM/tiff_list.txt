@@ -1,9 +1,0 @@
-./lidar_composite_dtm-2022-1-TM24se/TM24se_DTM_1m.tif
-./lidar_composite_dtm-2022-1-TM23ne/TM23ne_DTM_1m.tif
-./lidar_composite_dtm-2022-1-TM34sw/TM34sw_DTM_1m.tif
-./lidar_composite_dtm-2022-1-TM25se/TM25se_DTM_1m.tif
-./lidar_composite_dtm-2022-1-TM24ne/TM24ne_DTM_1m.tif
-./lidar_composite_dtm-2022-1-TM34nw/TM34nw_DTM_1m.tif
-./lidar_composite_dtm-2022-1-TM35sw/TM35sw_DTM_1m.tif
-./lidar_composite_dtm-2022-1-TM33ne/TM33ne_DTM_1m.tif
-./lidar_composite_dtm-2022-1-TM33nw/TM33nw_DTM_1m.tif
