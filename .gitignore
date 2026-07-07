@@ -82,3 +82,9 @@ images/source/
 Exports/
 Temp/
 Scratch/
+
+# Oddscape working / review folders
+OLD_page_versions/
+PENDING_WRK/
+OBJ_CHECK/
+**/OBJ_CHECK/
