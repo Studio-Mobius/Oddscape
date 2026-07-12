@@ -263,6 +263,68 @@ nav a.nav-current{
   }
 }
 /* ODDSCAPE MASTER HEADER — END */
+/* STUDIO WORK FOOTER CTA — BEGIN */
+.studio-work-cta{
+  max-width:860px;
+  margin:64px auto 0;
+  padding:44px 38px;
+  text-align:center;
+  border-top:1px solid rgba(217,188,130,.22);
+  border-bottom:1px solid rgba(217,188,130,.22);
+  background:rgba(0,0,0,.10)
+}
+
+.studio-work-cta-kicker{
+  margin-bottom:14px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:650;
+  letter-spacing:3px;
+  text-transform:uppercase
+}
+
+.studio-work-cta h2{
+  color:var(--gold);
+  font-size:clamp(28px,4vw,40px);
+  line-height:1.15
+}
+
+.studio-work-cta p{
+  max-width:680px;
+  margin:18px auto 0;
+  color:rgba(220,226,230,.82);
+  font-size:16px;
+  line-height:1.7
+}
+
+.studio-work-cta-button{
+  display:inline-block;
+  margin-top:26px;
+  padding:14px 25px;
+  border:1px solid rgba(217,188,130,.42);
+  color:var(--gold);
+  background:rgba(0,0,0,.10);
+  font-size:11px;
+  letter-spacing:2.5px;
+  text-decoration:none;
+  text-transform:uppercase
+}
+
+.studio-work-cta-button:hover{
+  background:rgba(217,188,130,.08)
+}
+
+@media(max-width:700px){
+  .studio-work-cta{
+    margin-top:48px;
+    padding:36px 24px
+  }
+
+  .studio-work-cta p{
+    font-size:15px
+  }
+}
+/* STUDIO WORK FOOTER CTA — END */
 </style>
 </head>
 
@@ -357,6 +419,21 @@ The AR model is a preview terrain visualisation. Production mesh exports are pre
 
 </div>
 
+<section class="studio-work-cta" aria-labelledby="studio-work-cta-title">
+  <div class="studio-work-cta-kicker">Studio Oddscape</div>
+
+  <h2 id="studio-work-cta-title">Explore the Creative Studio</h2>
+
+  <p>
+    Discover terrain-derived prints, cartographic compositions and visual
+    studies developed from LiDAR, elevation data, bathymetry and landscape
+    interpretation.
+  </p>
+
+  <a class="studio-work-cta-button" href="studio-work.html">
+    Browse Studio Work
+  </a>
+</section>
 <footer>
 <div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
 <div class="footer-text">
