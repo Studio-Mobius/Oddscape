@@ -226,52 +226,104 @@ body{
     }
 }
 
-/* Oddscape home link */
-.oddscape-home{
-    position:fixed;
-    top:18px;
-    right:18px;
-    z-index:1000;
-    display:block;
-    width:34px;
-    height:42px;
-    opacity:.88;
-    text-decoration:none;
-    transition:opacity .18s ease, transform .18s ease;
+
+
+/* Logo-to-QR reveal */
+
+.reveal-stage{
+    position:relative;
+    width:min(150px,52vw);
+    aspect-ratio:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.oddscape-home img{
-    display:block;
-    width:100%;
-    height:100%;
+.reveal-logo{
+    position:absolute;
+    inset:0;
+    margin:auto;
+    width:72%;
+    height:72%;
     object-fit:contain;
+    opacity:1;
+    transform:scale(1);
+    transition:
+        opacity .46s ease,
+        transform .46s ease,
+        filter .46s ease;
+    filter:drop-shadow(0 0 8px rgba(217,188,130,.16));
+    pointer-events:none;
 }
 
-.oddscape-home:hover,
-.oddscape-home:focus{
-    opacity:1;
-    transform:scale(1.08);
-    outline:none;
+.qr-creature{
+    width:100% !important;
+    opacity:0;
+    transform:scale(.82);
+    transition:
+        opacity .46s ease,
+        transform .46s ease;
 }
+
+.reveal-stage.qr-visible .reveal-logo{
+    opacity:0;
+    transform:scale(.72);
+    filter:drop-shadow(0 0 18px rgba(217,188,130,.08));
+}
+
+.reveal-stage.qr-visible .qr-creature{
+    opacity:1;
+    transform:scale(1);
+}
+
+@media(max-width:520px){
+    .reveal-stage{
+        width:min(142px,56vw);
+    }
+}
+
+
+/* ODDSCAPE LOGO QR SEQUENCE — BEGIN */
+
+.reveal-logo.logo-spin{
+    animation:oddscapeLogoSpin .65s ease-in-out;
+}
+
+@keyframes oddscapeLogoSpin{
+    0%{
+        transform:rotate(0deg) scale(1);
+    }
+
+    45%{
+        transform:rotate(180deg) scale(.92);
+    }
+
+    100%{
+        transform:rotate(360deg) scale(1);
+    }
+}
+
+/* Keep the transition between logo and QR clean. */
+
+.reveal-logo{
+    transition:
+        opacity .38s ease,
+        transform .38s ease,
+        filter .38s ease;
+}
+
+.reveal-stage .qr-creature{
+    transition:
+        opacity .38s ease,
+        transform .38s ease;
+}
+
+/* ODDSCAPE LOGO QR SEQUENCE — END */
 
 </style>
 </head>
 
 <body>
-
-<a
-    class="oddscape-home"
-    href="https://oddscape.co.uk/"
-    aria-label="Visit Studio Oddscape"
-    title="Visit Studio Oddscape"
->
-    <img
-        src="../images/Oddbrand/Ologoalpha.png"
-        alt="Oddscape"
-    >
-</a>
-
-
 <main class="page">
     <section class="stage">
 
@@ -281,15 +333,26 @@ body{
             href="https://oddscape.co.uk/pocket/brodgar.html"
             aria-label="Open the Ring of Brodgar OddPocket"
         >
-            <div
-                class="qr-creature"
-                id="qrCreature"
-            >
+            <div class="reveal-stage" id="revealStage">
+
                 <img
-                    class="qr-image"
-                    src="qr.png"
-                    alt="Scan to open the Ring of Brodgar OddPocket"
+                    class="reveal-logo"
+                    id="revealLogo"
+                    src="../images/Oddbrand/Ologoalpha.png"
+                    alt="Oddscape"
                 >
+
+                <div
+                    class="qr-creature"
+                    id="qrCreature"
+                >
+                    <img
+                        class="qr-image"
+                        src="qr.png"
+                        alt="Scan to open the Ring of Brodgar OddPocket"
+                    >
+                </div>
+
             </div>
         </a>
 
@@ -303,95 +366,137 @@ body{
 </main>
 
 <script>
+const revealStage = document.getElementById("revealStage");
+const revealLogo = document.getElementById("revealLogo");
 const qrCreature = document.getElementById("qrCreature");
 const qrLink = document.getElementById("qrLink");
-const caption = document.getElementById("caption");
 
 const movementClasses = [
     "shiver-small",
     "shiver-medium",
     "shiver-double",
-    "spin"
+    "spin",
+    "frozen"
 ];
 
-let movementTimer;
-let freezeTimer;
-let movementCount = 0;
-let frozen = false;
-let animating = false;
+let paused = false;
+let running = false;
 
-function randomDelay(minimum,maximum){
-    return Math.floor(
-        Math.random() * (maximum - minimum + 1)
-    ) + minimum;
+function wait(milliseconds){
+    return new Promise(resolve => {
+        window.setTimeout(resolve, milliseconds);
+    });
 }
 
-function removeMovement(){
+async function waitUntilReleased(){
+    while(paused){
+        await wait(100);
+    }
+}
+
+function clearQrMotion(){
     movementClasses.forEach(className => {
         qrCreature.classList.remove(className);
     });
 }
 
-function chooseMovement(){
-    movementCount++;
+function restartClass(element,className){
+    element.classList.remove(className);
 
-    if(movementCount % 9 === 0){
-        return "spin";
-    }
+    void element.offsetWidth;
 
-    if(movementCount % 7 === 0){
-        return "shiver-double";
-    }
-
-    if(movementCount % 4 === 0){
-        return "shiver-medium";
-    }
-
-    return "shiver-small";
+    element.classList.add(className);
 }
 
-function scheduleMovement(){
-    clearTimeout(movementTimer);
+function animationFinished(element){
+    return new Promise(resolve => {
+        element.addEventListener(
+            "animationend",
+            resolve,
+            {once:true}
+        );
+    });
+}
 
-    if(frozen){
+async function logoSpin(){
+    restartClass(revealLogo,"logo-spin");
+    await animationFinished(revealLogo);
+    revealLogo.classList.remove("logo-spin");
+}
+
+async function qrMove(className){
+    clearQrMotion();
+    restartClass(qrCreature,className);
+    await animationFinished(qrCreature);
+    qrCreature.classList.remove(className);
+}
+
+async function runSequence(){
+    if(running){
         return;
     }
 
-    caption.textContent = "waiting";
+    running = true;
 
-    movementTimer = setTimeout(
-        performMovement,
-        randomDelay(2600,5200)
-    );
-}
+    while(true){
 
-function performMovement(){
-    if(frozen || animating){
-        return;
+        /*
+        1. Logo remains visible for one second.
+        */
+
+        revealStage.classList.remove("qr-visible");
+        clearQrMotion();
+
+        await waitUntilReleased();
+        await wait(1000);
+
+        /*
+        2. Logo performs one full spin.
+        */
+
+        await waitUntilReleased();
+        await logoSpin();
+
+        /*
+        3. Cross-fade from logo to QR.
+        */
+
+        revealStage.classList.add("qr-visible");
+
+        await waitUntilReleased();
+        await wait(500);
+
+        /*
+        4. QR jitters.
+        */
+
+        await qrMove("shiver-double");
+
+        await waitUntilReleased();
+        await wait(900);
+
+        /*
+        5. QR performs one full spin.
+        */
+
+        await qrMove("spin");
+
+        await waitUntilReleased();
+        await wait(900);
+
+        /*
+        6. QR jitters again.
+        */
+
+        await qrMove("shiver-medium");
+
+        await waitUntilReleased();
+        await wait(1200);
+
+        /*
+        Then return to the logo and repeat.
+        */
     }
-
-    animating = true;
-
-    removeMovement();
-
-    void qrCreature.offsetWidth;
-
-    qrCreature.classList.add(
-        chooseMovement()
-    );
-
-    qrCreature.addEventListener(
-        "animationend",
-        () => {
-            removeMovement();
-            animating = false;
-
-            if(!frozen){
-                scheduleMovement();
-            }
-        },
-        {once:true}
-    );
 }
 
 function gentleBuzz(){
@@ -400,88 +505,38 @@ function gentleBuzz(){
     }
 }
 
-function freezeQR(duration = 10000){
-    frozen = true;
-
-    clearTimeout(movementTimer);
-    clearTimeout(freezeTimer);
-
-    removeMovement();
-
+function pauseSequence(){
+    paused = true;
+    clearQrMotion();
     qrCreature.classList.add("frozen");
-
-    freezeTimer = setTimeout(
-        releaseQR,
-        duration
-    );
 }
 
-function releaseQR(){
-    clearTimeout(freezeTimer);
-
-    frozen = false;
-
+function resumeSequence(){
+    paused = false;
     qrCreature.classList.remove("frozen");
-
-    movementTimer = setTimeout(
-        scheduleMovement,
-        1200
-    );
 }
 
-qrLink.addEventListener(
-    "mouseenter",
-    () => {
-        freezeQR(12000);
-    }
-);
-
-qrLink.addEventListener(
-    "mouseleave",
-    () => {
-        clearTimeout(freezeTimer);
-
-        setTimeout(
-            releaseQR,
-            750
-        );
-    }
-);
+qrLink.addEventListener("mouseenter",pauseSequence);
+qrLink.addEventListener("mouseleave",resumeSequence);
 
 qrLink.addEventListener(
     "touchstart",
     () => {
         gentleBuzz();
-        freezeQR(12000);
+        pauseSequence();
+
+        window.setTimeout(
+            resumeSequence,
+            10000
+        );
     },
     {passive:true}
 );
 
-qrLink.addEventListener(
-    "mousedown",
-    () => {
-        freezeQR(12000);
-    }
-);
+qrLink.addEventListener("focus",pauseSequence);
+qrLink.addEventListener("blur",resumeSequence);
 
-qrLink.addEventListener(
-    "focus",
-    () => {
-        freezeQR(12000);
-    }
-);
-
-qrLink.addEventListener(
-    "blur",
-    releaseQR
-);
-
-/* First movement after a short quiet pause */
-
-movementTimer = setTimeout(
-    performMovement,
-    2600
-);
+runSequence();
 </script>
 
 </body>
