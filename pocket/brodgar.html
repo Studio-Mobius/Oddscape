@@ -387,6 +387,201 @@ model-viewer{
         scroll-behavior:auto !important;
     }
 }
+
+/* ODDSCAPE ODDPOCKET LAYOUT + HOME LINKS */
+header{
+    position:relative;
+}
+
+.oddscape-home-mark{
+    position:absolute;
+    top:10px;
+    right:8px;
+    display:flex;
+    width:34px;
+    height:42px;
+    align-items:center;
+    justify-content:center;
+    opacity:.78;
+    transition:
+        opacity .2s ease,
+        transform .2s ease,
+        filter .2s ease;
+}
+
+.oddscape-home-mark img{
+    display:block;
+    width:26px;
+    height:32px;
+    object-fit:contain;
+}
+
+.oddscape-home-mark:hover,
+.oddscape-home-mark:focus{
+    opacity:1;
+    transform:translateY(-2px);
+    filter:drop-shadow(0 0 8px rgba(217,188,130,.28));
+    outline:none;
+}
+
+.brodgar-heading{
+    margin:2px auto 20px;
+    text-align:center;
+}
+
+.brodgar-heading h1{
+    margin-top:8px;
+}
+
+.brodgar-description{
+    max-width:590px;
+    margin:20px auto 0;
+    text-align:center;
+}
+
+.brodgar-description .intro-copy{
+    margin:0 auto;
+}
+
+.oddscape-journey{
+    margin-top:38px;
+    padding:34px 22px;
+    border-top:1px solid rgba(217,188,130,.22);
+    border-bottom:1px solid rgba(217,188,130,.22);
+    background:rgba(3,12,20,.20);
+}
+
+.journey-kicker{
+    color:var(--muted) !important;
+    font-size:10px !important;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.journey-mark{
+    display:inline-flex;
+    width:86px;
+    height:104px;
+    margin-top:18px;
+    align-items:center;
+    justify-content:center;
+    opacity:.9;
+    transition:
+        transform .22s ease,
+        opacity .22s ease,
+        filter .22s ease;
+}
+
+.journey-mark img{
+    display:block;
+    width:78px;
+    height:94px;
+    object-fit:contain;
+}
+
+.journey-mark:hover,
+.journey-mark:focus{
+    transform:translateY(-3px) scale(1.025);
+    opacity:1;
+    filter:drop-shadow(0 0 12px rgba(217,188,130,.26));
+    outline:none;
+}
+
+.oddscape-journey h2{
+    margin-top:20px;
+    color:var(--gold);
+    font-size:clamp(24px,5vw,34px);
+}
+
+.journey-copy{
+    max-width:510px;
+    margin:12px auto 0;
+    color:#c4cfd6 !important;
+    font-size:14px !important;
+    line-height:1.65;
+}
+
+.journey-button{
+    margin-top:21px;
+    font-weight:750;
+}
+
+@media(max-width:520px){
+    .oddscape-home-mark{
+        top:3px;
+        right:2px;
+        width:30px;
+        height:38px;
+    }
+
+    .oddscape-home-mark img{
+        width:23px;
+        height:29px;
+    }
+
+    .brodgar-heading{
+        margin-bottom:16px;
+    }
+
+    .brodgar-description{
+        margin-top:18px;
+        padding:0 6px;
+    }
+
+    .oddscape-journey{
+        padding:30px 18px;
+    }
+}
+
+
+/* FINAL ODDPOCKET HUD MARK */
+.hud{
+    height:48px;
+}
+
+.hud::before,
+.hud::after{
+    width:calc(50% - 30px);
+}
+
+.hud-mark{
+    width:39px;
+    height:47px;
+}
+
+.hud-mark img{
+    display:block;
+    width:39px;
+    height:47px;
+    object-fit:contain;
+    opacity:.9;
+    filter:drop-shadow(
+        0 0 5px rgba(217,188,130,.16)
+    );
+}
+
+
+
+/* Clickable HUD logo */
+
+.hud-home-link{
+    transition:
+        transform .2s ease,
+        opacity .2s ease,
+        filter .2s ease;
+    text-decoration:none;
+}
+
+.hud-home-link:hover,
+.hud-home-link:focus{
+    transform:translate(-50%,-50%) scale(1.06);
+    filter:drop-shadow(0 0 10px rgba(217,188,130,.30));
+    opacity:1;
+    outline:none;
+}
+
+
 </style>
 
 <script
@@ -400,33 +595,29 @@ model-viewer{
 <main class="page">
 
     <header>
-        <div class="brand">Oddscape</div>
-        <div class="product">OddPocket</div>
-
-        <div class="hud" aria-hidden="true">
-            <span class="hud-mark">
-                <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="7"></circle>
-                    <path d="M12 8v8"></path>
-                    <path d="M8 12h8"></path>
-                </svg>
-            </span>
+<div class="brand">Oddscape</div>
+<div class="hud" aria-hidden="true">
+            
+<a
+    class="hud-mark hud-home-link"
+    href="../index.html"
+    title="Visit Studio Oddscape"
+    aria-label="Visit Studio Oddscape"
+>
+    <img
+        src="../images/Oddbrand/Ologoalpha.png"
+        alt="Studio Oddscape"
+    >
+</a>
         </div>
     </header>
 
-    <section class="intro">
-        <p class="kicker">Take the landscape with you</p>
+<section class="brodgar-heading" aria-labelledby="brodgar-title">
+    <p class="kicker">Take the landscape with you</p>
+    <h1 id="brodgar-title">Ring of Brodgar</h1>
+</section>
 
-        <h1>Ring of Brodgar</h1>
-
-        <p class="intro-copy">
-            Explore this Neolithic landscape in interactive 3D.
-            On a compatible phone, place the terrain directly into
-            your surroundings using augmented reality.
-        </p>
-    </section>
-
-    <section
+<section
         class="viewer-shell"
         aria-label="Interactive Ring of Brodgar terrain"
     >
@@ -470,6 +661,19 @@ model-viewer{
         </div>
     </section>
 
+<section class="brodgar-description">
+    <p class="intro-copy">
+        Explore this Neolithic landscape in interactive 3D.
+            On a compatible phone, place the terrain directly into
+            your surroundings using augmented reality.
+    </p>
+</section>
+
+
+    
+
+    
+
     <p id="status" class="status" aria-live="polite"></p>
 
     <section class="guidance">
@@ -500,13 +704,27 @@ model-viewer{
         </div>
     </section>
 
-    <section class="explore">
-        <p>Curious what else is hidden in the landscape?</p>
+    
+<section class="explore oddscape-journey">
+    <p class="journey-kicker">Continue the journey</p>
 
-        <a class="home-link" href="../index.html">
-            Explore Oddscape
-        </a>
-    </section>
+    <a
+        class="journey-mark"
+        href="../index.html"
+        aria-label="Explore Studio Oddscape"
+    >
+        <img src="oddscape-mark.png" alt="Oddscape">
+    </a>
+<p class="journey-copy">
+        Discover more terrain studies, interactive OddViews,
+        Place Reports and landscape visualisations.
+    </p>
+
+    <a class="home-link journey-button" href="../index.html">
+        Visit Studio Oddscape →
+    </a>
+</section>
+
 
 </main>
 
