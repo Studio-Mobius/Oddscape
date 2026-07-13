@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Oddscape — Ring of Brodgar</title>
+
+<style>
+:root{
+    --gold:#d9bc82;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    background:transparent;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.page{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+}
+
+.stage{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Complete Oddscape gold frame */
+
+.qr-frame{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:17px;
+
+    border:2px solid rgba(217,188,130,.88);
+    border-radius:12px;
+
+    background:transparent;
+
+    box-shadow:
+        0 0 12px rgba(217,188,130,.12),
+        inset 0 0 9px rgba(217,188,130,.045);
+
+    text-decoration:none;
+    -webkit-tap-highlight-color:transparent;
+}
+
+/* Prevent old decorative frame rules appearing */
+
+.qr-frame::before,
+.qr-frame::after{
+    display:none;
+    content:none;
+}
+
+/* QR size */
+
+.qr-creature{
+    width:min(150px,52vw);
+    aspect-ratio:1;
+    transform-origin:center center;
+    will-change:transform;
+}
+
+.qr-image{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    pointer-events:none;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/* Invisible support element used by the JavaScript */
+
+.animation-support{
+    display:none !important;
+}
+
+/* Movement classes */
+
+.qr-creature.shiver-small{
+    animation:shiverSmall .24s linear;
+}
+
+.qr-creature.shiver-medium{
+    animation:shiverMedium .34s linear;
+}
+
+.qr-creature.shiver-double{
+    animation:shiverDouble .58s linear;
+}
+
+.qr-creature.spin{
+    animation:qrSpin .72s cubic-bezier(.45,.05,.55,.95);
+}
+
+.qr-creature.frozen{
+    animation:none !important;
+    transform:none !important;
+}
+
+/* Small jitter */
+
+@keyframes shiverSmall{
+    0%   {transform:translate(0,0) rotate(0deg);}
+    10%  {transform:translate(-3px,1px) rotate(-1deg);}
+    20%  {transform:translate(3px,-1px) rotate(1deg);}
+    30%  {transform:translate(-2px,-2px) rotate(-.8deg);}
+    40%  {transform:translate(2px,2px) rotate(.8deg);}
+    50%  {transform:translate(-3px,0) rotate(-1.1deg);}
+    60%  {transform:translate(3px,0) rotate(1.1deg);}
+    72%  {transform:translate(-1px,1px) rotate(-.4deg);}
+    84%  {transform:translate(1px,-1px) rotate(.4deg);}
+    100% {transform:translate(0,0) rotate(0deg);}
+}
+
+/* Stronger jitter */
+
+@keyframes shiverMedium{
+    0%   {transform:translate(0,0) rotate(0deg);}
+    7%   {transform:translate(-4px,1px) rotate(-1.4deg);}
+    14%  {transform:translate(4px,-1px) rotate(1.4deg);}
+    21%  {transform:translate(-3px,-2px) rotate(-1deg);}
+    28%  {transform:translate(3px,2px) rotate(1deg);}
+    36%  {transform:translate(-4px,0) rotate(-1.5deg);}
+    44%  {transform:translate(4px,0) rotate(1.5deg);}
+    54%  {transform:translate(-2px,2px) rotate(-.8deg);}
+    64%  {transform:translate(2px,-2px) rotate(.8deg);}
+    76%  {transform:translate(-1px,0) rotate(-.3deg);}
+    88%  {transform:translate(1px,0) rotate(.3deg);}
+    100% {transform:translate(0,0) rotate(0deg);}
+}
+
+/* Double nervous twitch */
+
+@keyframes shiverDouble{
+    0%   {transform:translate(0,0) rotate(0deg);}
+    6%   {transform:translate(-4px,1px) rotate(-1.5deg);}
+    12%  {transform:translate(4px,-1px) rotate(1.5deg);}
+    18%  {transform:translate(-3px,-2px) rotate(-1.1deg);}
+    24%  {transform:translate(3px,2px) rotate(1.1deg);}
+    31%  {transform:translate(0,0) rotate(0deg);}
+    43%  {transform:translate(-5px,0) rotate(-1.7deg);}
+    50%  {transform:translate(5px,1px) rotate(1.7deg);}
+    57%  {transform:translate(-3px,-1px) rotate(-1deg);}
+    64%  {transform:translate(3px,1px) rotate(1deg);}
+    73%  {transform:translate(-2px,0) rotate(-.6deg);}
+    82%  {transform:translate(2px,0) rotate(.6deg);}
+    91%  {transform:translate(-1px,0) rotate(-.2deg);}
+    100% {transform:translate(0,0) rotate(0deg);}
+}
+
+/* Occasional full spin */
+
+@keyframes qrSpin{
+    0%{
+        transform:rotate(0deg) scale(1);
+    }
+
+    25%{
+        transform:rotate(90deg) scale(.96);
+    }
+
+    50%{
+        transform:rotate(180deg) scale(.94);
+    }
+
+    75%{
+        transform:rotate(270deg) scale(.96);
+    }
+
+    100%{
+        transform:rotate(360deg) scale(1);
+    }
+}
+
+@media(max-width:520px){
+    .page{
+        padding:16px;
+    }
+
+    .qr-frame{
+        padding:15px;
+    }
+
+    .qr-creature{
+        width:min(142px,56vw);
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    .qr-creature{
+        animation:none !important;
+        transform:none !important;
+    }
+}
+
+/* Oddscape home link */
+.oddscape-home{
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:1000;
+    display:block;
+    width:34px;
+    height:42px;
+    opacity:.88;
+    text-decoration:none;
+    transition:opacity .18s ease, transform .18s ease;
+}
+
+.oddscape-home img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.oddscape-home:hover,
+.oddscape-home:focus{
+    opacity:1;
+    transform:scale(1.08);
+    outline:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<a
+    class="oddscape-home"
+    href="https://oddscape.co.uk/"
+    aria-label="Visit Studio Oddscape"
+    title="Visit Studio Oddscape"
+>
+    <img
+        src="../images/Oddbrand/Ologoalpha.png"
+        alt="Oddscape"
+    >
+</a>
+
+
+<main class="page">
+    <section class="stage">
+
+        <a
+            class="qr-frame"
+            id="qrLink"
+            href="https://oddscape.co.uk/pocket/brodgar.html"
+            aria-label="Open the Ring of Brodgar OddPocket"
+        >
+            <div
+                class="qr-creature"
+                id="qrCreature"
+            >
+                <img
+                    class="qr-image"
+                    src="qr.png"
+                    alt="Scan to open the Ring of Brodgar OddPocket"
+                >
+            </div>
+        </a>
+
+        <p
+            id="caption"
+            class="animation-support"
+            aria-hidden="true"
+        ></p>
+
+    </section>
+</main>
+
+<script>
+const qrCreature = document.getElementById("qrCreature");
+const qrLink = document.getElementById("qrLink");
+const caption = document.getElementById("caption");
+
+const movementClasses = [
+    "shiver-small",
+    "shiver-medium",
+    "shiver-double",
+    "spin"
+];
+
+let movementTimer;
+let freezeTimer;
+let movementCount = 0;
+let frozen = false;
+let animating = false;
+
+function randomDelay(minimum,maximum){
+    return Math.floor(
+        Math.random() * (maximum - minimum + 1)
+    ) + minimum;
+}
+
+function removeMovement(){
+    movementClasses.forEach(className => {
+        qrCreature.classList.remove(className);
+    });
+}
+
+function chooseMovement(){
+    movementCount++;
+
+    if(movementCount % 9 === 0){
+        return "spin";
+    }
+
+    if(movementCount % 7 === 0){
+        return "shiver-double";
+    }
+
+    if(movementCount % 4 === 0){
+        return "shiver-medium";
+    }
+
+    return "shiver-small";
+}
+
+function scheduleMovement(){
+    clearTimeout(movementTimer);
+
+    if(frozen){
+        return;
+    }
+
+    caption.textContent = "waiting";
+
+    movementTimer = setTimeout(
+        performMovement,
+        randomDelay(2600,5200)
+    );
+}
+
+function performMovement(){
+    if(frozen || animating){
+        return;
+    }
+
+    animating = true;
+
+    removeMovement();
+
+    void qrCreature.offsetWidth;
+
+    qrCreature.classList.add(
+        chooseMovement()
+    );
+
+    qrCreature.addEventListener(
+        "animationend",
+        () => {
+            removeMovement();
+            animating = false;
+
+            if(!frozen){
+                scheduleMovement();
+            }
+        },
+        {once:true}
+    );
+}
+
+function gentleBuzz(){
+    if("vibrate" in navigator){
+        navigator.vibrate([30,45,30]);
+    }
+}
+
+function freezeQR(duration = 10000){
+    frozen = true;
+
+    clearTimeout(movementTimer);
+    clearTimeout(freezeTimer);
+
+    removeMovement();
+
+    qrCreature.classList.add("frozen");
+
+    freezeTimer = setTimeout(
+        releaseQR,
+        duration
+    );
+}
+
+function releaseQR(){
+    clearTimeout(freezeTimer);
+
+    frozen = false;
+
+    qrCreature.classList.remove("frozen");
+
+    movementTimer = setTimeout(
+        scheduleMovement,
+        1200
+    );
+}
+
+qrLink.addEventListener(
+    "mouseenter",
+    () => {
+        freezeQR(12000);
+    }
+);
+
+qrLink.addEventListener(
+    "mouseleave",
+    () => {
+        clearTimeout(freezeTimer);
+
+        setTimeout(
+            releaseQR,
+            750
+        );
+    }
+);
+
+qrLink.addEventListener(
+    "touchstart",
+    () => {
+        gentleBuzz();
+        freezeQR(12000);
+    },
+    {passive:true}
+);
+
+qrLink.addEventListener(
+    "mousedown",
+    () => {
+        freezeQR(12000);
+    }
+);
+
+qrLink.addEventListener(
+    "focus",
+    () => {
+        freezeQR(12000);
+    }
+);
+
+qrLink.addEventListener(
+    "blur",
+    releaseQR
+);
+
+/* First movement after a short quiet pause */
+
+movementTimer = setTimeout(
+    performMovement,
+    2600
+);
+</script>
+
+</body>
+</html>
