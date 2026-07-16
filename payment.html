@@ -397,12 +397,77 @@ nav a.nav-current{
   }
 }
 /* ODDSCAPE MASTER HEADER — END */
+
+/* ODDSCAPE CENTRED HUD LOGO */
+.hud{
+  height:48px;
+}
+
+.hud::before,
+.hud::after{
+  width:calc(50% - 30px);
+}
+
+.hud-marker{
+  width:39px;
+  height:47px;
+}
+
+.hud-marker img{
+  display:block;
+  width:39px;
+  height:47px;
+  object-fit:contain;
+  opacity:.9;
+  filter:drop-shadow(0 0 5px rgba(217,188,130,.16));
+}
+
+
+/* ODDSCAPE CENTRED HUD LOGO — BEGIN */
+.hud{
+    height:48px;
+}
+
+.hud::before,
+.hud::after{
+    width:calc(50% - 30px);
+}
+
+.hud-marker{
+    width:39px;
+    height:47px;
+}
+
+.hud-marker img{
+    display:block;
+    width:39px;
+    height:47px;
+    object-fit:contain;
+    opacity:.9;
+    filter:drop-shadow(0 0 5px rgba(217,188,130,.16));
+}
+/* ODDSCAPE CENTRED HUD LOGO — END */
+
 </style>
 </head>
 
 <body>
 
-<header><a href="index.html" class="logo">Studio Oddscape</a><div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div><div class="hud"><span class="hud-marker"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></span></div></header>
+<header><a href="index.html" class="logo">Studio Oddscape</a><div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div><div class="hud"><span class="hud-marker">
+  <img
+    src="images/Oddbrand/Ologoalpha.png"
+    alt=""
+    aria-hidden="true"
+  >
+</span></div></header>
+
+<nav>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="start.html">Start a Project</a>
+  <a href="faq.html">FAQ</a>
+  <a href="moon.html">Planetary</a>
+</nav>
 
 <section>
 
@@ -533,6 +598,14 @@ nav a.nav-current{
     </div>
 
 </footer>
+
+
+<!-- Cloudflare Web Analytics -->
+<script type='module'
+        src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "51b75344f80f4950aa81517de7433366"}'>
+</script>
+<!-- End Cloudflare Web Analytics -->
 
 </body>
 </html>
