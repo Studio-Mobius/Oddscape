@@ -320,6 +320,91 @@ body{
 
 /* ODDSCAPE LOGO QR SEQUENCE — END */
 
+
+/* ODDSCAPE METHODOLOGY FOOTER LINK — BEGIN */
+.methodology-footer-link{
+  max-width:860px;
+  margin:56px auto 0;
+  padding:28px 24px;
+  text-align:center;
+  border-top:1px solid rgba(217,188,130,.22);
+}
+
+.methodology-footer-link .methodology-kicker{
+  margin:0 0 10px;
+  color:var(--muted, #9aa5ac);
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+
+.methodology-footer-link a{
+  display:inline-block;
+  color:var(--gold, #d9bc82);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+.methodology-footer-link a:hover,
+.methodology-footer-link a:focus{
+  text-decoration:underline;
+}
+/* ODDSCAPE METHODOLOGY FOOTER LINK — END */
+
+
+/* ==========================================================
+   ODDSCAPE HEADER MKIII
+   ========================================================== */
+
+nav{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:18px;
+    width:100%;
+    margin:0;
+    padding:0 18px;
+    border-top:1px solid rgba(217,188,130,.22);
+    border-bottom:1px solid rgba(217,188,130,.22);
+}
+
+nav a{
+    flex:0 1 auto;
+    padding:18px 0;
+    border:none !important;
+    background:none !important;
+    text-decoration:none;
+    text-align:center;
+    white-space:nowrap;
+    letter-spacing:.12em;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+@media(max-width:760px){
+
+    nav{
+        gap:8px;
+        padding:0 10px;
+    }
+
+    nav a{
+        font-size:11px;
+        letter-spacing:.08em;
+        padding:18px 0;
+    }
+}
+
+/* ==========================================================
+   END HEADER MKIII
+   ========================================================== */
+
 </style>
 </head>
 
@@ -546,6 +631,12 @@ runSequence();
         data-cf-beacon='{"token": "51b75344f80f4950aa81517de7433366"}'>
 </script>
 <!-- End Cloudflare Web Analytics -->
+
+
+<section class="methodology-footer-link" aria-label="Methodology">
+  <p class="methodology-kicker">How the work is made</p>
+  <a href="../faq.html">Methodology →</a>
+</section>
 
 </body>
 </html>

@@ -355,6 +355,123 @@ nav a.nav-current{
 }
 /* ODDSCAPE CENTRED HUD LOGO — END */
 
+
+/* ODDSCAPE METHODOLOGY FOOTER LINK — BEGIN */
+.methodology-footer-link{
+  max-width:860px;
+  margin:56px auto 0;
+  padding:28px 24px;
+  text-align:center;
+  border-top:1px solid rgba(217,188,130,.22);
+}
+
+.methodology-footer-link .methodology-kicker{
+  margin:0 0 10px;
+  color:var(--muted, #9aa5ac);
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+
+.methodology-footer-link a{
+  display:inline-block;
+  color:var(--gold, #d9bc82);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+.methodology-footer-link a:hover,
+.methodology-footer-link a:focus{
+  text-decoration:underline;
+}
+/* ODDSCAPE METHODOLOGY FOOTER LINK — END */
+
+
+
+
+
+
+/* ==========================================================
+   ODDSCAPE HEADER MKIII
+   ========================================================== */
+
+nav{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:18px;
+    width:100%;
+    margin:0;
+    padding:0 18px;
+    border-top:1px solid rgba(217,188,130,.22);
+    border-bottom:1px solid rgba(217,188,130,.22);
+}
+
+nav a{
+    flex:0 1 auto;
+    padding:18px 0;
+    border:none !important;
+    background:none !important;
+    text-decoration:none;
+    text-align:center;
+    white-space:nowrap;
+    letter-spacing:.12em;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+@media(max-width:760px){
+
+    nav{
+        gap:8px;
+        padding:0 10px;
+    }
+
+    nav a{
+        font-size:11px;
+        letter-spacing:.08em;
+        padding:18px 0;
+    }
+}
+
+/* ==========================================================
+   END HEADER MKIII
+   ========================================================== */
+
+
+/* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — BEGIN */
+@media (max-width:760px){
+  nav{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:space-between !important;
+    align-items:center !important;
+    width:100% !important;
+    gap:4px !important;
+    padding:0 8px !important;
+  }
+
+  nav a{
+    flex:1 1 0 !important;
+    min-width:0 !important;
+    padding:18px 2px !important;
+    border:none !important;
+    background:none !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+    font-size:10px !important;
+    letter-spacing:.04em !important;
+    line-height:1.15 !important;
+  }
+}
+/* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — END */
+
 </style>
 <style id="studio-note-style">
 
@@ -428,8 +545,7 @@ color:var(--gold);
   <a href="archive.html">Terrain Archive</a>
   <a href="commissions.html">Commissions</a>
   <a href="start.html">Start a Project</a>
-  <a href="faq.html">FAQ</a>
-  <a href="moon.html">Planetary</a>
+  <a href="moon.html">Astra</a>
 </nav><main class="stage"><div class="kicker">Oddscape Gallery</div><h1>Studio Work</h1><div class="intro">Terrain-derived prints, cartographic compositions and visual studies developed from LiDAR, elevation data, bathymetry and landscape interpretation.</div><section class="carousel" aria-label="Studio Work carousel"><button class="hud-arrow prev" type="button" aria-label="Previous item" onclick="moveSlide(-1)"><svg class="nav-symbol nav-left" viewBox="0 0 140 90" aria-hidden="true">
   <path fill="currentColor" fill-rule="evenodd" d="M82 13a32 32 0 1 1 0 64a32 32 0 0 1 0-64Zm0 7a25 25 0 1 0 0 50a25 25 0 0 0 0-50Z"/>
   <rect x="40" y="40" width="82" height="10" fill="currentColor"/>
@@ -632,7 +748,13 @@ Studio Oddscape
 
 </div>
 
-<footer><div class="footer-brand">Studio Oddscape<small>oddscape.co.uk</small></div><div class="footer-text">Terrain Visualisation • LiDAR Analysis • 3D Terrain Modelling<br>Immersive Landscape Interpretation • UK</div><div class="footer-copy">© Studio Oddscape MMXXVI — All Rights Reserved</div></footer></div><script>
+<footer><div class="footer-brand">Studio Oddscape<small>oddscape.co.uk</small></div><div class="footer-text">Terrain Visualisation • LiDAR Analysis • 3D Terrain Modelling<br>Immersive Landscape Interpretation • UK</div><div class="footer-copy">© Studio Oddscape MMXXVI — All Rights Reserved</div>
+<section class="methodology-footer-link" aria-label="Methodology">
+  <p class="methodology-kicker">How the work is made</p>
+  <a href="faq.html">Methodology →</a>
+</section>
+
+</footer></div><script>
 const slides=[{"title": "Alde Estuary No. 1", "tag": "Terrain Edition", "img": "images/alde/alde-map.png", "text": "A LiDAR-derived terrain composition of the Alde Estuary, Suffolk. A monochrome study of tidal form, coastal edge and shifting landscape.", "meta": "A3 Open Edition Print — £75", "href": "https://www.paypal.com/ncp/payment/K6AGV56V2LQBW", "cta": "Acquire Print (£75)"}, {"title": "Shingle Street / Orford Ness", "tag": "In Development", "img": "images/shingle-street.png", "text": "A coastal terrain study exploring shingle movement, estuarine structure and the fragile line between land, water and memory.", "meta": "Studio edition in development", "href": "mailto:studio@oddscape.co.uk?subject=Shingle%20Street%20Print%20Enquiry", "cta": "Register Interest"}, {"title": "Deben Terrain Study", "tag": "In Development", "img": "images/deben.png", "text": "A terrain-led interpretation of the River Deben, combining landform, river morphology and digital elevation modelling.", "meta": "Studio edition in development", "href": "mailto:studio@oddscape.co.uk?subject=Deben%20Terrain%20Print%20Enquiry", "cta": "Register Interest"}];let current=0;const img=document.getElementById('slideImage'),imageLink=document.getElementById('imageLink'),primaryLink=document.getElementById('primaryLink'),slideTag=document.getElementById('slideTag'),slideTitle=document.getElementById('slideTitle'),slideCaption=document.getElementById('slideCaption'),slideMeta=document.getElementById('slideMeta'),dotsBox=document.getElementById('dots'),counter=document.getElementById('counter');
 function updateLinks(slide){imageLink.href=slide.href||'#';primaryLink.href=slide.href||'#';if(slide.cta)primaryLink.textContent=slide.cta;}
 function buildDots(){dotsBox.innerHTML='';slides.forEach((slide,i)=>{const dot=document.createElement('button');dot.className='dot'+(i===current?' active':'');dot.type='button';dot.setAttribute('aria-label','Go to '+slide.title);dot.onclick=()=>showSlide(i);dotsBox.appendChild(dot);});}
