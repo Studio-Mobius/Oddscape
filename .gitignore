@@ -89,3 +89,26 @@ PENDING_WRK/
 OBJ_CHECK/
 **/OBJ_CHECK/
 # Git Guardian test
+
+# Oddscape local working backups and one-off repair files
+backups_before_*/
+*_before_*.html
+*.html.backup-*
+wookey-hole_before_grid_*.html
+
+# Temporary inspection/export folders
+images/3D/usdz/*_inspect/
+
+# Local-network test assets
+outreach/*_local_*.png
+
+# One-off website repair utilities
+add_studio_note.sh
+add_studio_work_footer_cta.sh
+copy_studio_work_header.sh
+final_oddview_oddpocket_polish.py
+fix_nav_and_move_invite.py
+oddscape_navigation_cleanup.py
+studio_note_mki.sh
+update_all_live_headers.sh
+update_oddscape_headers.sh
