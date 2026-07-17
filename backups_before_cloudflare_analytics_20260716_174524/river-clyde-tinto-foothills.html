@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>River Clyde / Tinto Foothills | Studio Oddscape</title>
+
+<style>
+:root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+.page{width:min(960px,100%);margin:0 auto;background:radial-gradient(circle at top,#233848 0%,#10212c 45%,#08141d 100%);overflow:hidden}
+
+header{text-align:center;padding:55px 40px 30px}
+.logo{display:block;font-size:clamp(42px,8vw,74px);font-weight:800;color:var(--gold);line-height:.95;text-decoration:none}
+.subtitle{margin-top:18px;font-size:13px;letter-spacing:6px;color:rgba(220,226,230,.75)}
+.hud{width:520px;max-width:80%;height:24px;margin:22px auto;position:relative}
+.hud::before,.hud::after{content:"";position:absolute;top:50%;width:calc(50% - 24px);height:1px}
+.hud::before{left:0;background:linear-gradient(90deg,transparent,rgba(217,188,130,.55))}
+.hud::after{right:0;background:linear-gradient(90deg,rgba(217,188,130,.55),transparent)}
+.hud-marker{position:absolute;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%)}
+.hud-marker svg{width:100%;height:100%;fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round}
+
+nav{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+nav a{text-decoration:none;color:var(--text);padding:16px 34px;font-size:14px;border-right:1px solid var(--line)}
+nav a:last-child{border-right:none}
+nav a:hover{color:var(--gold)}
+
+.content{padding:34px 60px 60px}
+.section-title{font-size:30px;font-weight:800;color:var(--gold);margin-bottom:14px}
+.section-rule{height:1px;background:var(--line);margin-bottom:24px}
+
+.hero{border-radius:18px;overflow:hidden;box-shadow:0 0 50px rgba(0,0,0,.35)}
+.hero img{display:block;width:100%;height:auto}
+
+.caption{margin-top:18px;font-size:15px;line-height:1.8;color:var(--muted);text-align:center}
+.project-tag{margin-top:55px;font-size:18px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;text-align:center}
+.project-title{
+  margin-top:18px;
+  font-size:48px;
+  font-weight:700;
+  line-height:1.2;
+  text-align:center;
+  color:var(--gold);
+}
+.text{margin:28px auto 0;max-width:760px;font-size:21px;line-height:1.9;text-align:center}
+
+.button-row{margin-top:45px;display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.button{text-decoration:none;padding:14px 28px;border:1px solid rgba(217,188,130,.3);color:var(--gold);letter-spacing:3px;font-size:12px;text-transform:uppercase}
+.button:hover{background:rgba(217,188,130,.08)}
+.non-apple-device .apple-ar{display:none}
+
+footer{text-align:center;padding:60px 40px;margin-top:60px;border-top:1px solid rgba(217,188,130,.12)}
+.footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
+.footer-text{margin-top:16px;font-size:14px;line-height:1.8;color:#cfd5d9}
+.footer-copy{margin-top:24px;font-size:11px;color:#8d98a0}
+
+@media(max-width:700px){
+  header{padding:36px 24px 22px}
+  .subtitle{font-size:11px;letter-spacing:3px}
+  nav a{padding:14px 18px;font-size:14px}
+  .content{padding:32px 28px 50px}
+  .section-title{font-size:30px}
+  .project-tag{font-size:13px}
+  .project-title{font-size:34px}
+  .text{font-size:18px;line-height:1.7}
+  .button{font-size:10px;padding:12px 16px}
+}
+
+/* ===== Oddscape Licence Overlay ===== */
+
+#licence-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.20);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    z-index:9999;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.licence-panel{
+    width:min(700px,100%);
+    background:rgba(16,33,44,.25);
+    border:1px solid rgba(217,188,130,.4);
+    border-radius:18px;
+    padding:32px;
+    text-align:center;
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+}
+
+.licence-panel h2{
+    color:var(--gold);
+    margin-bottom:20px;
+}
+
+.licence-panel p{
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:16px;
+}
+
+.licence-btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:14px 28px;
+    border-radius:999px;
+    text-decoration:none;
+    background:var(--gold);
+    color:#08141d;
+    font-weight:700;
+    cursor:pointer;
+    border:none;
+}
+
+/* ODDSCAPE MASTER HEADER — BEGIN */
+header{
+  text-align:center;
+  padding:40px 32px 24px
+}
+
+.logo{
+  display:block;
+  font-size:clamp(44px,7vw,78px);
+  font-weight:800;
+  color:var(--gold);
+  line-height:.95;
+  letter-spacing:-2px;
+  text-decoration:none;
+  text-shadow:0 2px 18px rgba(0,0,0,.45)
+}
+
+.subtitle{
+  margin-top:16px;
+  font-size:12px;
+  letter-spacing:5px;
+  color:rgba(220,226,230,.68);
+  text-transform:uppercase
+}
+
+.hud{
+  width:520px;
+  max-width:80%;
+  height:24px;
+  margin:22px auto 0;
+  position:relative
+}
+
+.hud:before,
+.hud:after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:calc(50% - 24px);
+  height:1px
+}
+
+.hud:before{
+  left:0;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(217,188,130,.55)
+  )
+}
+
+.hud:after{
+  right:0;
+  background:linear-gradient(
+    90deg,
+    rgba(217,188,130,.55),
+    transparent
+  )
+}
+
+.hud-marker{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:22px;
+  height:22px;
+  transform:translate(-50%,-50%)
+}
+
+.hud-marker svg{
+  width:100%;
+  height:100%;
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:1.4;
+  stroke-linecap:round
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  flex-wrap:nowrap;
+  width:100%;
+  border-top:1px solid rgba(217,188,130,.28);
+  border-bottom:1px solid rgba(217,188,130,.28);
+  background:rgba(0,0,0,.10)
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  padding:17px 34px;
+  font-size:13px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  text-align:center;
+  white-space:nowrap;
+  border-right:1px solid var(--line)
+}
+
+nav a:last-child{
+  border-right:none
+}
+
+nav a:hover,
+nav a.nav-current{
+  color:var(--gold);
+  background:rgba(217,188,130,.035)
+}
+
+@media(max-width:820px){
+  header{
+    padding:30px 20px 20px
+  }
+
+  .logo{
+    font-size:clamp(44px,9vw,64px)
+  }
+
+  .subtitle{
+    font-size:10px;
+    letter-spacing:3px
+  }
+
+  nav a{
+    padding:13px 16px;
+    font-size:11px
+  }
+}
+
+@media(max-width:520px){
+  header{
+    padding-left:16px;
+    padding-right:16px
+  }
+
+  nav a{
+    flex:1 1 0;
+    min-width:0;
+    padding:13px 4px;
+    font-size:clamp(8px,2.5vw,10px);
+    letter-spacing:.5px
+  }
+}
+/* ODDSCAPE MASTER HEADER — END */
+/* STUDIO WORK FOOTER CTA — BEGIN */
+.studio-work-cta{
+  max-width:860px;
+  margin:64px auto 0;
+  padding:44px 38px;
+  text-align:center;
+  border-top:1px solid rgba(217,188,130,.22);
+  border-bottom:1px solid rgba(217,188,130,.22);
+  background:rgba(0,0,0,.10)
+}
+
+.studio-work-cta-kicker{
+  margin-bottom:14px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:650;
+  letter-spacing:3px;
+  text-transform:uppercase
+}
+
+.studio-work-cta h2{
+  color:var(--gold);
+  font-size:clamp(28px,4vw,40px);
+  line-height:1.15
+}
+
+.studio-work-cta p{
+  max-width:680px;
+  margin:18px auto 0;
+  color:rgba(220,226,230,.82);
+  font-size:16px;
+  line-height:1.7
+}
+
+.studio-work-cta-button{
+  display:inline-block;
+  margin-top:26px;
+  padding:14px 25px;
+  border:1px solid rgba(217,188,130,.42);
+  color:var(--gold);
+  background:rgba(0,0,0,.10);
+  font-size:11px;
+  letter-spacing:2.5px;
+  text-decoration:none;
+  text-transform:uppercase
+}
+
+.studio-work-cta-button:hover{
+  background:rgba(217,188,130,.08)
+}
+
+@media(max-width:700px){
+  .studio-work-cta{
+    margin-top:48px;
+    padding:36px 24px
+  }
+
+  .studio-work-cta p{
+    font-size:15px
+  }
+}
+/* STUDIO WORK FOOTER CTA — END */
+
+/* ODDSCAPE CENTRED HUD LOGO */
+.hud{
+  height:48px;
+}
+
+.hud::before,
+.hud::after{
+  width:calc(50% - 30px);
+}
+
+.hud-marker{
+  width:39px;
+  height:47px;
+}
+
+.hud-marker img{
+  display:block;
+  width:39px;
+  height:47px;
+  object-fit:contain;
+  opacity:.9;
+  filter:drop-shadow(0 0 5px rgba(217,188,130,.16));
+}
+
+
+/* ODDSCAPE CENTRED HUD LOGO — BEGIN */
+.hud{
+    height:48px;
+}
+
+.hud::before,
+.hud::after{
+    width:calc(50% - 30px);
+}
+
+.hud-marker{
+    width:39px;
+    height:47px;
+}
+
+.hud-marker img{
+    display:block;
+    width:39px;
+    height:47px;
+    object-fit:contain;
+    opacity:.9;
+    filter:drop-shadow(0 0 5px rgba(217,188,130,.16));
+}
+/* ODDSCAPE CENTRED HUD LOGO — END */
+
+</style>
+</head>
+
+<body>
+
+<div id="licence-overlay">
+  <div class="licence-panel">
+    <h2>Studio Oddscape Terrain Licence</h2>
+
+    <p>
+    This terrain model, visualisation and associated files are provided
+    for personal evaluation, educational use and landscape interpretation.
+    </p>
+
+    <p>
+    Redistribution, resale, republication, AI training, derivative works,
+    commercial use or hosting elsewhere is prohibited without written
+    permission from Studio Oddscape.
+    </p>
+
+    <p>
+    By continuing, you acknowledge and accept these terms.
+    </p>
+
+    <button class="licence-btn" onclick="acceptLicence()">
+      Continue to Terrain Model
+    </button>
+  </div>
+</div>
+
+<div class="page">
+
+<header><a href="index.html" class="logo">Studio Oddscape</a><div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div><div class="hud"><span class="hud-marker">
+  <img
+    src="images/Oddbrand/Ologoalpha.png"
+    alt=""
+    aria-hidden="true"
+  >
+</span></div></header>
+
+<nav>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="start.html">Start a Project</a>
+  <a href="faq.html">FAQ</a>
+  <a href="moon.html">Planetary</a>
+</nav>
+
+<div class="content">
+
+<div class="hero">
+<img src="images/tinto/tinto.png" alt="River Clyde — Tinto Foothills terrain study">
+</div>
+
+<div class="caption">
+Terrain study exploring the River Clyde as it flows through the northeast foothills of Tinto, revealing the relationship between the meandering river, floodplain and surrounding upland landforms.
+</div>
+
+<div class="project-tag">LiDAR Terrain Study</div>
+
+<div class="project-title">River Clyde — Tinto Foothills Terrain Study</div>
+
+<div class="text">
+<p>
+Upland landscapes contain complex relationships between slope, drainage, exposure, access, settlement and land use. LiDAR-derived terrain models allow these relationships to be seen with unusual clarity.
+</p>
+
+<br>
+
+<p>
+The River Clyde — Tinto Foothills study uses 1m Digital Terrain Model data to reveal subtle landform structures, field systems, drainage features and topographic transitions across the upland landscape.
+</p>
+
+<br>
+
+<p>
+The result is both analytical and visual: a terrain interpretation that can support landscape assessment, education, planning, outdoor interpretation and immersive AR viewing.
+</p>
+</div>
+
+<div class="button-row">
+<a class="button" href="licence.html">Request Licence</a>
+<a class="button apple-ar" href="#" onclick="openModelLicence(event)">
+  View AR
+</a>
+
+<a id="arLink"
+   rel="ar"
+   href="images/3D/usdz/r.clyde_tintofoothills.usdz"
+   style="position:absolute;left:-9999px;">
+   <img src="images/tinto/tinto.png" alt="">
+</a>
+<a class="button" href="archive.html">Back to Archive</a>
+</div>
+
+<div class="caption" style="max-width:760px;margin:24px auto 0;">
+The AR model is a preview terrain visualisation. Production mesh exports are prepared separately and quoted according to area, resolution, cleanup and delivery format.
+</div>
+
+</div>
+
+<section class="studio-work-cta" aria-labelledby="studio-work-cta-title">
+  <div class="studio-work-cta-kicker">Studio Oddscape</div>
+
+  <h2 id="studio-work-cta-title">Explore the Creative Studio</h2>
+
+  <p>
+    Discover terrain-derived prints, cartographic compositions and visual
+    studies developed from LiDAR, elevation data, bathymetry and landscape
+    interpretation.
+  </p>
+
+  <a class="studio-work-cta-button" href="studio-work.html">
+    Browse Studio Work
+  </a>
+</section>
+<footer>
+<div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
+<div class="footer-text">
+Terrain Visualisation • LiDAR Analysis<br>
+3D Terrain Modelling • Immersive Landscape Interpretation • UK
+</div>
+<div class="footer-copy">© Studio Oddscape MMXXVI — All Rights Reserved</div>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  const ua = navigator.userAgent || "";
+  const platform = navigator.platform || "";
+  const isApple =
+    /iPad|iPhone|iPod|Macintosh/.test(ua) ||
+    /Mac/.test(platform);
+  document.body.classList.add(isApple ? "apple-device" : "non-apple-device");
+})();
+</script>
+
+
+<script>
+function openModelLicence(event){
+    event.preventDefault();
+    document.getElementById('licence-overlay').style.display='flex';
+}
+
+function acceptLicence(){
+    document.getElementById('licence-overlay').style.display='none';
+    document.getElementById('arLink').click();
+}
+</script>
+
+</body>
+</html>

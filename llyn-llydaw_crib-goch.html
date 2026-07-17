@@ -539,6 +539,128 @@ nav a:hover{
 /* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — END */
 
 </style>
+
+<style id="oddscape-terrain-hud-normalise">
+/* ODDSCAPE TERRAIN PAGE HUD — AUTHORITATIVE FINAL RULES */
+
+header .hud{
+  display:block !important;
+  position:relative !important;
+  inset:auto !important;
+  float:none !important;
+  clear:both !important;
+
+  width:min(520px,80%) !important;
+  max-width:520px !important;
+  height:48px !important;
+
+  margin:22px auto 0 !important;
+  padding:0 !important;
+
+  overflow:visible !important;
+  background:none !important;
+  transform:none !important;
+}
+
+header .hud::before,
+header .hud::after{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  top:50% !important;
+
+  width:calc(50% - 30px) !important;
+  height:1px !important;
+
+  transform:none !important;
+}
+
+header .hud::before{
+  left:0 !important;
+  right:auto !important;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(217,188,130,.55)
+  ) !important;
+}
+
+header .hud::after{
+  right:0 !important;
+  left:auto !important;
+  background:linear-gradient(
+    90deg,
+    rgba(217,188,130,.55),
+    transparent
+  ) !important;
+}
+
+header .hud-marker{
+  display:block !important;
+  position:absolute !important;
+
+  left:50% !important;
+  right:auto !important;
+  top:50% !important;
+  bottom:auto !important;
+
+  width:39px !important;
+  height:47px !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  transform:translate(-50%,-50%) !important;
+  overflow:visible !important;
+}
+
+header .hud-marker img{
+  display:block !important;
+  position:static !important;
+
+  width:39px !important;
+  height:47px !important;
+  max-width:none !important;
+  max-height:none !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  object-fit:contain !important;
+  object-position:center !important;
+
+  opacity:.9 !important;
+  transform:none !important;
+}
+
+@media (max-width:700px){
+  header{
+    overflow:visible !important;
+  }
+
+  header .hud{
+    width:min(420px,82%) !important;
+    height:42px !important;
+    margin:18px auto 0 !important;
+  }
+
+  header .hud::before,
+  header .hud::after{
+    width:calc(50% - 27px) !important;
+  }
+
+  header .hud-marker{
+    width:34px !important;
+    height:41px !important;
+  }
+
+  header .hud-marker img{
+    width:34px !important;
+    height:41px !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -577,14 +699,6 @@ nav a:hover{
     aria-hidden="true"
   >
 </span></div></header>
-
-<nav>
-  <a href="archive.html">Terrain Archive</a>
-  <a href="commissions.html">Commissions</a>
-  <a href="start.html">Start a Project</a>
-  <a href="moon.html">Astra</a>
-</nav>
-
 <div class="content">
 
 <div class="terrain-row">

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050b13">
+<title>Ring of Brodgar — OddPocket</title>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<style>
+:root{--ink:#edf7ff;--muted:#a9c1d2;--gold:#d9b958;--deep:#030911}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0;background:var(--deep);color:var(--ink)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:flex;justify-content:center;padding:clamp(18px,5vw,42px);background:radial-gradient(circle at 50% 12%,rgba(41,118,169,.18),transparent 38%),linear-gradient(180deg,#06101b,#02060b 72%)}
+.shell{width:min(100%,620px)}
+.card{position:relative;overflow:hidden;border:1px solid rgba(94,174,232,.65);border-radius:22px;padding:clamp(24px,6vw,42px);background:linear-gradient(145deg,rgba(9,34,56,.98),rgba(4,15,27,.99));box-shadow:0 30px 90px rgba(0,0,0,.55)}
+.card:before,.card:after{content:"";position:absolute;width:48px;height:48px;pointer-events:none}
+.card:before{left:14px;top:14px;border-left:2px solid var(--gold);border-top:2px solid var(--gold)}
+.card:after{right:14px;bottom:14px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold)}
+.kicker{margin:0 0 12px;text-align:center;color:var(--gold);font-size:.78rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase}
+h1{margin:0;text-align:center;font-size:clamp(2rem,8vw,3.2rem);line-height:1.08}
+.intro{max-width:34rem;margin:18px auto 25px;text-align:center;color:var(--muted);font-size:clamp(1rem,3.7vw,1.22rem);line-height:1.52}
+.terrain-card{position:relative;overflow:hidden;border:1px solid rgba(217,185,88,.88);border-radius:16px;background:#07111d}
+#pocketTerrain{display:block;width:100%;height:clamp(330px,62vw,470px);background:#07111d;--poster-color:transparent}
+#pocketTerrain::part(default-ar-button){display:none}
+.apple-quicklook{position:absolute;inset:0;z-index:5;display:none;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.apple-quicklook img{position:absolute;width:1px;height:1px;opacity:.001}
+.tap-band{position:absolute;left:16px;right:16px;bottom:16px;z-index:7;min-height:64px;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 18px;color:#f1d77e;font-weight:800;font-size:clamp(1rem,4vw,1.14rem);text-align:center;border:1px solid rgba(217,185,88,.88);border-radius:12px;background:rgba(4,15,27,.88);pointer-events:none}
+.phone{width:24px;height:32px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.android-ar{position:absolute;left:16px;right:16px;bottom:16px;z-index:8;min-height:64px;border:1px solid rgba(217,185,88,.88);border-radius:12px;color:#f1d77e;background:rgba(4,15,27,.91);font:inherit;font-weight:800;font-size:clamp(1rem,4vw,1.14rem);display:none}
+.device-note{margin:14px 0 0;text-align:center;color:#8aa2b4;font-size:.83rem}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.facts li{min-height:64px;display:flex;flex-direction:column;justify-content:center;padding:9px;text-align:center;border:1px solid rgba(94,174,232,.18);border-radius:9px;background:rgba(255,255,255,.018)}
+.facts strong{color:var(--gold);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.facts span{margin-top:4px;color:var(--muted);font-size:.82rem}
+.links{display:grid;gap:10px;margin-top:18px}
+.links a{display:flex;align-items:center;justify-content:center;min-height:52px;padding:12px 16px;border:1px solid rgba(94,174,232,.35);border-radius:9px;color:#b9d9ef;text-decoration:none;font-weight:700}
+.note{margin:20px 0 0;text-align:center;color:#8099ab;font-size:.82rem}.brand{margin:24px 0 2px;text-align:center;color:#6f899b;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+html.is-apple .apple-quicklook,html.is-apple .tap-band{display:flex}
+html.is-android .android-ar{display:block}
+html.is-android .tap-band{display:none}
+html.is-desktop .tap-band{display:flex}
+@media(max-width:420px){.facts{grid-template-columns:1fr}.facts li{min-height:48px}}
+</style>
+</head>
+<body>
+<main class="shell"><section class="card">
+<p class="kicker">OddPocket</p>
+<h1>Ring of Brodgar</h1>
+<p class="intro">Explore the actual terrain, then place this LiDAR landscape in your space where supported.</p>
+<div class="terrain-card">
+<model-viewer id="pocketTerrain" src="../models/terrain.glb" ios-src="../models/terrain.usdz" alt="Interactive Ring of Brodgar terrain" camera-controls auto-rotate shadow-intensity="1" exposure="1" interaction-prompt="auto" ar ar-modes="scene-viewer webxr quick-look">
+<button class="android-ar" slot="ar-button" type="button">View terrain in AR</button>
+</model-viewer>
+<a class="apple-quicklook" rel="ar" href="../models/terrain.usdz" aria-label="Place Ring of Brodgar in your space"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=""></a>
+<div class="tap-band"><svg class="phone" viewBox="0 0 24 32" aria-hidden="true"><rect x="4" y="1.5" width="16" height="29" rx="2.6"></rect><line x1="9" y1="5" x2="15" y2="5"></line><circle cx="12" cy="26.5" r="1"></circle></svg><span id="tapText">Tap the terrain to place it in your space</span></div>
+</div>
+<p class="device-note" id="deviceNote">Loading the best experience for this device…</p>
+<ul class="facts"><li><strong>Place</strong><span>Orkney, Scotland</span></li><li><strong>Source</strong><span>LiDAR terrain</span></li><li><strong>Access</strong><span>No app required</span></li></ul>
+<div class="links"><a href="../index.html#oddview">Explore in OddView</a><a href="../archive.html">Browse Terrain Archive</a></div>
+<p class="note">Licensed Oddscape material — do not redistribute.</p><p class="brand">Studio Oddscape MMXXVI</p>
+</section></main>
+<script>
+(function(){
+ var ua=navigator.userAgent||"",apple=/iPhone|iPad|iPod/.test(ua),android=/Android/.test(ua);
+ var root=document.documentElement,note=document.getElementById("deviceNote"),tap=document.getElementById("tapText");
+ if(apple){root.className+=" is-apple";note.textContent="Tap the terrain to open Apple Quick Look. No app required.";tap.textContent="Tap the terrain to place it in your space";}
+ else if(android){root.className+=" is-android";note.textContent="Rotate and zoom here, or use the AR button where supported.";}
+ else{root.className+=" is-desktop";note.textContent="Rotate and zoom the terrain directly in your browser.";tap.textContent="Drag to rotate · scroll to zoom";}
+})();
+</script>
+</body></html>

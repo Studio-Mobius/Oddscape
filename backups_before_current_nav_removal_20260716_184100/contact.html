@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact | Oddscape</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Contact Oddscape for terrain visualisation, LiDAR interpretation, Place Reports and landscape studies.">
+<meta http-equiv="refresh" content="0; url=mailto:studio@oddscape.co.uk">
+<style>
+/* ODDSCAPE MASTER HEADER — BEGIN */
+header{
+  text-align:center;
+  padding:40px 32px 24px
+}
+
+.logo{
+  display:block;
+  font-size:clamp(44px,7vw,78px);
+  font-weight:800;
+  color:var(--gold);
+  line-height:.95;
+  letter-spacing:-2px;
+  text-decoration:none;
+  text-shadow:0 2px 18px rgba(0,0,0,.45)
+}
+
+.subtitle{
+  margin-top:16px;
+  font-size:12px;
+  letter-spacing:5px;
+  color:rgba(220,226,230,.68);
+  text-transform:uppercase
+}
+
+.hud{
+  width:520px;
+  max-width:80%;
+  height:24px;
+  margin:22px auto 0;
+  position:relative
+}
+
+.hud:before,
+.hud:after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:calc(50% - 24px);
+  height:1px
+}
+
+.hud:before{
+  left:0;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(217,188,130,.55)
+  )
+}
+
+.hud:after{
+  right:0;
+  background:linear-gradient(
+    90deg,
+    rgba(217,188,130,.55),
+    transparent
+  )
+}
+
+.hud-marker{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:22px;
+  height:22px;
+  transform:translate(-50%,-50%)
+}
+
+.hud-marker svg{
+  width:100%;
+  height:100%;
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:1.4;
+  stroke-linecap:round
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  flex-wrap:nowrap;
+  width:100%;
+  border-top:1px solid rgba(217,188,130,.28);
+  border-bottom:1px solid rgba(217,188,130,.28);
+  background:rgba(0,0,0,.10)
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  padding:17px 34px;
+  font-size:13px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  text-align:center;
+  white-space:nowrap;
+  border-right:1px solid var(--line)
+}
+
+nav a:last-child{
+  border-right:none
+}
+
+nav a:hover,
+nav a.nav-current{
+  color:var(--gold);
+  background:rgba(217,188,130,.035)
+}
+
+@media(max-width:820px){
+  header{
+    padding:30px 20px 20px
+  }
+
+  .logo{
+    font-size:clamp(44px,9vw,64px)
+  }
+
+  .subtitle{
+    font-size:10px;
+    letter-spacing:3px
+  }
+
+  nav a{
+    padding:13px 16px;
+    font-size:11px
+  }
+}
+
+@media(max-width:520px){
+  header{
+    padding-left:16px;
+    padding-right:16px
+  }
+
+  nav a{
+    flex:1 1 0;
+    min-width:0;
+    padding:13px 4px;
+    font-size:clamp(8px,2.5vw,10px);
+    letter-spacing:.5px
+  }
+}
+/* ODDSCAPE MASTER HEADER — END */
+
+/* ODDSCAPE CENTRED HUD LOGO — BEGIN */
+.hud{
+    height:48px;
+}
+
+.hud::before,
+.hud::after{
+    width:calc(50% - 30px);
+}
+
+.hud-marker{
+    width:39px;
+    height:47px;
+}
+
+.hud-marker img{
+    display:block;
+    width:39px;
+    height:47px;
+    object-fit:contain;
+    opacity:.9;
+    filter:drop-shadow(0 0 5px rgba(217,188,130,.16));
+}
+/* ODDSCAPE CENTRED HUD LOGO — END */
+
+
+/* ODDSCAPE METHODOLOGY FOOTER LINK — BEGIN */
+.methodology-footer-link{
+  max-width:860px;
+  margin:56px auto 0;
+  padding:28px 24px;
+  text-align:center;
+  border-top:1px solid rgba(217,188,130,.22);
+}
+
+.methodology-footer-link .methodology-kicker{
+  margin:0 0 10px;
+  color:var(--muted, #9aa5ac);
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+
+.methodology-footer-link a{
+  display:inline-block;
+  color:var(--gold, #d9bc82);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+.methodology-footer-link a:hover,
+.methodology-footer-link a:focus{
+  text-decoration:underline;
+}
+/* ODDSCAPE METHODOLOGY FOOTER LINK — END */
+
+
+/* ODDSCAPE MOBILE NAV 2x2 — BEGIN */
+@media (max-width: 760px){
+  nav{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  nav a{
+    min-width:0 !important;
+    padding:22px 10px !important;
+    text-align:center !important;
+    white-space:normal !important;
+  }
+}
+/* ODDSCAPE MOBILE NAV 2x2 — END */
+
+</style>
+</head>
+<body>
+
+<header><a href="index.html" class="logo">Studio Oddscape</a><div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div><div class="hud"><span class="hud-marker">
+  <img
+    src="images/Oddbrand/Ologoalpha.png"
+    alt=""
+    aria-hidden="true"
+  >
+</span></div></header>
+
+<nav>
+  <a href="archive.html">Terrain Archive</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="start.html">Start a Project</a>
+  <a href="moon.html">Planetary</a>
+</nav>
+<p>Contact Oddscape: <a href="mailto:studio@oddscape.co.uk">studio@oddscape.co.uk</a></p>
+
+<!-- Cloudflare Web Analytics -->
+<script type='module'
+        src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "51b75344f80f4950aa81517de7433366"}'>
+</script>
+<!-- End Cloudflare Web Analytics -->
+
+
+<section class="methodology-footer-link" aria-label="Methodology">
+  <p class="methodology-kicker">How the work is made</p>
+  <a href="faq.html">Methodology →</a>
+</section>
+
+</body>
+</html>
