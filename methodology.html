@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology | Studio Oddscape</title>
+<meta name="description" content="How We Work.">
+<style>
+:root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.22)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{min-height:100%}
+body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+.page{width:100%;min-height:100vh;background:radial-gradient(circle at 50% 15%,#233848 0%,#10212c 38%,#071018 72%,#000 100%);overflow:hidden}
+header{text-align:center;padding:40px 32px 24px}
+.logo{display:block;color:var(--gold);font-size:clamp(44px,7vw,78px);font-weight:800;line-height:.95;letter-spacing:-2px;text-decoration:none;text-shadow:0 2px 18px rgba(0,0,0,.45)}
+.subtitle{margin-top:16px;color:rgba(220,226,230,.68);font-size:12px;letter-spacing:5px;text-transform:uppercase}
+.hud{
+    width:520px;
+    max-width:80%;
+    height:48px;
+    margin:22px auto 0;
+    position:relative;
+}
+
+.hud:before,
+.hud:after{
+    content:"";
+    position:absolute;
+    top:50%;
+    width:calc(50% - 30px);
+    height:1px;
+}
+
+.hud:before{
+    left:0;
+    background:linear-gradient(90deg,transparent,rgba(217,188,130,.55));
+}
+
+.hud:after{
+    right:0;
+    background:linear-gradient(90deg,rgba(217,188,130,.55),transparent);
+}
+
+.hud-marker{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:39px;
+    height:47px;
+    transform:translate(-50%,-50%);
+}
+
+.hud-marker img{
+    display:block;
+    width:39px;
+    height:47px;
+    object-fit:contain;
+    opacity:.9;
+    filter:drop-shadow(0 0 5px rgba(217,188,130,.16));
+}
+nav{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(217,188,130,.28);border-bottom:1px solid rgba(217,188,130,.28);background:rgba(0,0,0,.10)}nav a{padding:17px 34px;border-right:1px solid var(--line);color:var(--text);font-size:13px;letter-spacing:1.8px;text-decoration:none;text-transform:uppercase}nav a:last-child{border-right:none}nav a:hover,nav a.nav-current{color:var(--gold);background:rgba(217,188,130,.035)}
+.stage{
+    max-width:860px;
+    margin:0 auto;
+    padding:52px 40px 70px;
+}
+.page-heading{
+    max-width:720px;
+    margin:0 auto;
+}
+.kicker{color:var(--gold);font-size:13px;font-weight:650;letter-spacing:3px;text-transform:uppercase}h1{margin-top:15px;color:var(--gold);font-size:clamp(38px,5vw,58px);font-weight:700;line-height:1.05;text-shadow:0 2px 15px rgba(0,0,0,.55)}
+
+.intro{
+    max-width:680px;
+    margin:22px auto 0;
+    color:rgba(220,226,230,.82);
+    font-size:18px;
+    line-height:1.75;
+}
+
+.rule{width:120px;height:1px;margin:34px auto 42px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+.editorial{
+    max-width:660px;
+    margin:0 auto;
+}
+
+.editorial section{
+    margin-top:42px;
+}
+
+.editorial section:first-child{
+    margin-top:0;
+}
+
+.editorial h2{
+    margin-bottom:14px;
+    color:var(--gold);
+    font-size:clamp(24px,3vw,34px);
+    line-height:1.2;
+}
+
+.editorial p{
+    margin-top:14px;
+    color:rgba(220,226,230,.84);
+    font-size:18px;
+    line-height:1.8;
+}
+
+.editorial ul{
+    margin:18px 0 0 22px;
+}
+
+.editorial li{
+    margin:8px 0;
+    color:rgba(220,226,230,.82);
+    font-size:16px;
+    line-height:1.65;
+}
+
+.panel{margin-top:34px;padding:30px 32px;border:1px solid rgba(217,188,130,.22);background:rgba(0,0,0,.12)}
+.button-row{margin-top:34px;text-align:center}
+.button{display:inline-block;margin:6px;padding:14px 25px;border:1px solid rgba(217,188,130,.42);color:var(--gold);background:rgba(0,0,0,.10);font-size:11px;letter-spacing:2.5px;text-decoration:none;text-transform:uppercase}
+.button:hover{background:rgba(217,188,130,.08)}
+.methodology-item{padding:26px 0;border-top:1px solid rgba(217,188,130,.16)}
+.methodology-item:first-child{border-top:0;padding-top:0}
+.methodology-item:last-child{text-align:center;}
+.methodology-item h2{font-size:23px}
+.methodology-item p{margin-top:8px}
+.statement{max-width:640px;margin:0 auto;padding:42px 38px;border-top:1px solid rgba(217,188,130,.22);border-bottom:1px solid rgba(217,188,130,.22);background:rgba(0,0,0,.10);text-align:center}
+.statement p{font-size:18px;line-height:1.75}
+.statement p+p{margin-top:18px}
+footer{margin-top:60px;padding:60px 40px;border-top:1px solid rgba(217,188,130,.12);text-align:center}
+.footer-brand{color:var(--gold);font-size:18px;line-height:1.6}
+.footer-text{margin-top:16px;color:#cfd5d9;font-size:14px;line-height:1.8}
+.footer-link{display:inline-block;margin:22px 4px 0;padding:6px 14px;border:1px solid rgba(217,188,130,.25);color:var(--gold);font-size:11px;letter-spacing:2px;text-decoration:none;text-transform:uppercase}
+.footer-copy{max-width:760px;margin:24px auto 0;color:#8d98a0;font-size:11px;line-height:1.6}
+@media(max-width:820px){header{padding:30px 20px 20px}
+.subtitle{font-size:10px;letter-spacing:3px}nav a{padding:13px 16px;font-size:11px}
+.stage{padding:42px 28px 58px}}@media(max-width:520px){header{padding-left:16px;padding-right:16px}nav a{flex:1 1 0;min-width:0;padding:13px 4px;font-size:clamp(8px,2.5vw,10px);letter-spacing:.5px}
+.stage{padding-left:20px;padding-right:20px}
+
+.intro,.editorial p,.statement p{font-size:16px}
+
+.panel,.statement{padding:28px 22px}}
+</style>
+</head>
+<body><div class="page">
+<header><a href="index.html" class="logo">Studio Oddscape</a><div class="subtitle">Reading the Landscape</div><div class="hud"><span class="hud-marker">
+    <img src="images/Oddbrand/Ologoalpha.png"
+         alt=""
+         aria-hidden="true">
+</span></div></header>
+
+<main class="stage"><div class="page-heading"><div class="kicker">How We Work</div><h1>Methodology</h1><div class="intro">Studio Oddscape combines terrain data, landscape interpretation and digital modelling to reveal spatial relationships that are often difficult to recognise through conventional mapping alone.
+
+This page explains the principles behind the Oddscape workflow, from source data through interpretation to publication.</div><div class="rule"></div></div><div class="editorial" aria-label="Methodology">
+
+<section class="methodology-item">
+  <h2>Reading the Landscape</h2>
+  <p>
+    Every landscape tells a story, but not every story is immediately visible.
+    Studio Oddscape combines terrain data, landscape interpretation and
+    three-dimensional visualisation to reveal spatial relationships that are
+    often difficult to recognise from conventional mapping or aerial
+    photography alone. The process is designed to support understanding rather
+    than simply produce attractive images. Every project follows the same broad
+    principles while adapting to the characteristics of each landscape and the
+    quality of the available data.
+  </p>
+</section>
+
+<section class="methodology-item">
+  <h2>Defining the Study</h2>
+  <p>
+    Every project begins by identifying the landscape to be examined and the
+    questions the terrain is expected to answer. The study area may be defined
+    by a site boundary, river catchment, coastline, archaeological landscape,
+    route corridor or wider topographic relationship. The intended audience and
+    required outputs are established at the outset to ensure the work is
+    appropriate to its purpose.
+  </p>
+</section>
+
+<section class="methodology-item">
+  <h2>Selecting the Data</h2>
+  <p>
+    Suitable source datasets are reviewed before modelling begins. Depending on
+    the project these may include LiDAR-derived Digital Terrain Models (DTMs),
+    Digital Elevation Models (DEMs), bathymetric surveys, aerial photography,
+    historic mapping, publicly available geospatial datasets and client-supplied
+    survey information. Dataset resolution, coverage, coordinate systems and
+    known limitations are assessed before processing begins. The highest available resolution is not always the most appropriate for the question being investigated.
+  </p>
+</section>
+
+<section class="methodology-item">
+  <h2>Preparing the Terrain</h2>
+  <p>
+    The source data is prepared for interpretation. This may involve clipping
+    study areas, mosaicking tiles, correcting voids, aligning datasets,
+    integrating bathymetry or generating derived terrain products. Processing
+    is deliberately conservative. The objective is to clarify the landscape
+    without introducing artificial detail or obscuring uncertainty within the
+    original data.
+  </p>
+</section>
+
+<section class="methodology-item">
+  <h2>Interpreting Landform</h2>
+  <p>
+    Terrain is rarely understood through a single image. Different
+    visualisations reveal different aspects of the same landscape. Hillshade
+    emphasises form and shadow, colour elevation illustrates changes in height,
+    Relative Elevation Models reveal subtle local variation, and three-dimensional
+    terrain models provide a spatial understanding of enclosure, visibility,
+    movement and topographic relationships. These visualisations are considered
+    together rather than independently, allowing the landscape to be read from
+    multiple perspectives.
+  </p>
+</section>
+
+<section class="methodology-item">
+  <h2>Building Three-Dimensional Models</h2>
+  <p>
+    Where appropriate, the interpreted terrain is converted into interactive
+    three-dimensional models suitable for web browsers, augmented reality and
+    digital presentation. Model complexity, texture resolution and file formats
+    are balanced to achieve efficient performance across a range of devices
+    while preserving the essential characteristics of the landscape. Public web
+    models are often simplified versions of higher-resolution archive or
+    project models.
+  </p>
+</section>
+
+<section class="methodology-item">
+  <h2>Quality Assurance</h2>
+  <p>
+    Every terrain study is reviewed before publication. Checks typically
+    include source data integrity, spatial alignment, clipping accuracy, visual
+    artefacts, terrain continuity, orientation, scale and consistency between
+    published outputs. Where vertical exaggeration or interpretative visual
+    techniques have been used, these form part of the visual methodology rather
+    than representing unmodified survey data.
+  </p>
+</section>
+
+<section class="methodology-item">
+  <h2>Publication</h2>
+  <p>
+    Completed studies may be presented as high-resolution terrain imagery,
+    interactive web viewers, augmented reality models, presentation graphics,
+    digital terrain models or Oddscape Place Reports. The chosen format depends
+    on the purpose of the project and the needs of its intended audience.
+  </p>
+</section>
+
+<section class="methodology-item">
+  <h2>A Note on Interpretation</h2>
+  <p>
+    Studio Oddscape produces interpretative visualisations derived from
+    geospatial information. These outputs are intended to support understanding,
+    communication and exploration of terrain. They do not replace topographic
+    survey, engineering design, statutory mapping or site investigation where
+    those are required.
+  </p>
+</section>
+
+<section class="methodology-item">
+  <h2>The Oddscape Approach</h2>
+  <p>Good terrain data records the landscape.</p>
+<p>Interpretation reveals its relationships.</p>
+<p>Understanding those relationships is the purpose of Studio Oddscape.
+  </p>
+</section>
+
+<div class="button-row">
+    <a class="button" href="contact.html">
+        Contact Studio Oddscape
+    </a>
+</div></div></main>
+<footer><div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div><div class="footer-text">Terrain Visualisation • LiDAR Analysis<br>3D Terrain Modelling • Immersive Landscape Interpretation • UK</div><a href="privacy.html" class="footer-link">Privacy</a><a href="copyright.html" class="footer-link">Copyright</a><div class="footer-copy">Terrain visualisations and interactive models shown on this site are derived from publicly available geospatial datasets including Environment Agency LiDAR data and Scottish Remote Sensing Portal LiDAR datasets where stated.<br><br>© Studio Oddscape MMXXVI — All Rights Reserved</div></footer>
+</div></body></html>
