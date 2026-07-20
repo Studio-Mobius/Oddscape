@@ -851,7 +851,7 @@ nav a:hover{
 <section id="oddview" class="oddview-window" aria-label="Interactive OddView terrain">
   <div class="oddview-toolbar">
     <div><span class="oddview-live"></span>OddView Live</div>
-    <div class="oddview-place">Ring of Brodgar</div>
+    <div class="oddview-place">Ness of Brodgar</div>
 
     <button type="button" id="oddpocketPhone" class="oddpocket-phone"
       onclick="document.getElementById('oddpocketBackdrop').style.display='flex';
@@ -973,7 +973,7 @@ Commission your study from £250
                 var s=document.getElementById('oddpocketStatus');
                 if(this.checked){
                   q.className='oddpocket-qr-shell is-unlocked';
-                  s.innerHTML='Scan to open Ring of Brodgar';
+                  s.innerHTML='Scan to open Ness of Brodgar';
                 }else{
                   q.className='oddpocket-qr-shell';
                   s.innerHTML='QR locked';
@@ -1257,7 +1257,7 @@ Terrain visualisations and interactive models shown on this site are derived fro
   function updateQrState() {
     if (acceptBox.checked) {
       qrShell.className = "oddpocket-qr-shell is-unlocked";
-      status.textContent = "Scan to open Ring of Brodgar";
+      status.textContent = "Scan to open Ness of Brodgar";
     } else {
       qrShell.className = "oddpocket-qr-shell";
       status.textContent = "QR locked";
