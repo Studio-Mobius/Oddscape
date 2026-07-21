@@ -32,7 +32,9 @@ nav a:hover{color:var(--gold)}
 .panel{border:1px solid rgba(217,188,130,.18);background:rgba(10,18,24,.18);border-radius:16px;padding:32px;margin-bottom:32px}
 .panel h2{font-size:30px;color:var(--gold);margin-bottom:18px}
 .panel p{font-size:16px;line-height:1.75;color:#cfd5d9}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.grid {display:grid;gap:18px;margin-top:22px
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .card{border:1px solid rgba(217,188,130,.16);background:rgba(10,18,24,.16);border-radius:12px;padding:22px;text-decoration:none;color:var(--text)}
 .card:hover{background:rgba(217,188,130,.06)}
 .card h2{font-size:20px;color:var(--gold);margin-bottom:12px}
@@ -48,6 +50,10 @@ footer{text-align:center;padding:24px 40px 60px;margin-top:0}
 .footer-link{display:inline-block;margin-top:22px;color:var(--gold);text-decoration:none;border:1px solid rgba(217,188,130,.25);padding:6px 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase}
 .footer-copy{max-width:760px;margin:24px auto 0;font-size:11px;line-height:1.6;color:#8d98a0}
 @media(max-width:700px){
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
   header{padding:36px 24px 22px}
   .subtitle{font-size:11px;letter-spacing:3px}
   nav a{padding:14px 18px;font-size:14px}
@@ -843,9 +849,6 @@ nav a:hover{
   >
 </span></div></header>
 <div class="content">
-<div class="section-title">Landscape Analysis</div>
-<div class="section-rule"></div>
-
 <section id="oddview" class="oddview-window" aria-label="Interactive OddView terrain">
   <div class="oddview-toolbar">
     <div><span class="oddview-live"></span>OddView Live</div>
@@ -884,7 +887,7 @@ nav a:hover{
 
     <div class="oddview-panel">
       <p><strong>OddView</strong></p>
-      <p>Rotate, zoom and explore the terrain directly in the browser.</p>
+      <p>Interactive terrain analysis in your browser.</p>
       <p>Desktop 3D + Apple Quick Look AR</p>
     </div>
 
@@ -896,12 +899,14 @@ nav a:hover{
   </div>
 
   <div class="oddview-caption">
-    Drag to rotate · Scroll to zoom · Explore the landscape
+    Drag to rotate · Scroll to zoom
   </div>
 </section>
 
 <div class="intro">
-Immersive terrain visualisation, LiDAR interpretation, terrain modelling, bathymetry and AR landscape models for heritage, coastal and large-scale landscapes.
+Studio Oddscape creates high-resolution digital terrain models that reveal landscapes in ways conventional mapping cannot.
+<br><br>
+From archaeology and heritage to rivers, coastlines and immersive terrain visualisation, Oddscape transforms geospatial data into clear terrain intelligence for research, education and professional practice.
 </div>
 <div class="hero-links">
 </div>
@@ -910,30 +915,22 @@ Immersive terrain visualisation, LiDAR interpretation, terrain modelling, bathym
 
 
 <div class="grid">
-<a href="archive.html" class="card">
-<h2>3D Terrain Models</h2>
-<p>High-resolution terrain models for visualisation, analysis and AR.</p>
-</a>
-<a href="archive.html" class="card">
-<h2>AR & Immersive</h2>
-<p>Explore landscapes in augmented reality on iOS and visionOS.</p>
-</a>
-<a href="commissions.html" class="card">
-<h2>LiDAR DEM + REM</h2>
-<p>Digital Elevation Models and Relative Elevation Models for precise analysis.</p>
-</a>
-<a href="commissions.html" class="card">
-<h2>Terrain + Bathymetry</h2>
-<p>Integrated landform and seabed modelling for coastal and estuarine landscapes.</p>
-</a>
-<a href="archive.html" class="card">
-<h2>Licensed for Use</h2>
-<p>Clear, project-based licences for commercial, education and heritage use.</p>
-</a>
-<a href="faq.html" class="card">
-<h2>Practical FAQ</h2>
-<p>Commissions, formats, licensing, printing, accuracy and project enquiries.</p>
-</a>
+<article class="card">
+<h2>Terrain Intelligence</h2>
+<p>High-resolution terrain models, LiDAR analysis and landscape interpretation that make complex places easier to understand.</p>
+</article>
+<article class="card">
+<h2>Immersive Landscapes</h2>
+<p>Explore real terrain interactively in a browser, on a phone or tablet, and through augmented reality.</p>
+</article>
+<article class="card">
+<h2>Rivers, Coasts &amp; Bathymetry</h2>
+<p>Integrated landform and seabed models for rivers, estuaries, coastlines and connected landscapes.</p>
+</article>
+<article class="card">
+<h2>Professional Applications</h2>
+<p>Terrain models and visuals for heritage, research, education and professional practice, with clear project licensing.</p>
+</article>
 </div>
 
 <div id="oddpocketBackdrop" class="oddpocket-backdrop" role="dialog"
@@ -975,6 +972,11 @@ Immersive terrain visualisation, LiDAR interpretation, terrain modelling, bathym
 <section class="methodology-footer-link" aria-label="Methodology">
   <p class="methodology-kicker">How the work is made</p>
   <a href="methodology.html">Methodology →</a>
+</section>
+
+<section class="methodology-footer-link" aria-label="Practical FAQ">
+  <p class="methodology-kicker">Questions before commissioning?</p>
+  <a href="faq.html">Practical FAQ →</a>
 </section>
 
 <footer>
