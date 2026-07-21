@@ -668,6 +668,79 @@ header .hud-marker img{
     line-height:1.72;
   }
 }
+
+/* ODDSCAPE GLOBAL FOOTER — BEGIN */
+footer{
+  margin-top:0 !important;
+  padding:28px 40px 36px !important;
+  border-top:1px solid rgba(217,188,130,.12) !important;
+  text-align:center !important;
+}
+
+.footer-brand{
+  display:none !important;
+}
+
+.footer-text{
+  margin-top:0 !important;
+  color:#cfd5d9 !important;
+  font-size:14px !important;
+  line-height:1.8 !important;
+  letter-spacing:normal !important;
+  text-transform:none !important;
+}
+
+.footer-copy{
+  max-width:760px !important;
+  margin:14px auto 0 !important;
+  color:#8d98a0 !important;
+  font-size:11px !important;
+  line-height:1.6 !important;
+}
+
+@media(max-width:700px){
+  footer{
+    padding:24px 28px 32px !important;
+  }
+}
+/* ODDSCAPE GLOBAL FOOTER — END */
+
+/* ODDSCAPE HUD GLOW FIX — BEGIN */
+.hud{
+  background:none !important;
+}
+/* ODDSCAPE HUD GLOW FIX — END */
+
+/* ARCHIVAL STUDIO WORK LINK — BEGIN */
+.archive-studio-link{
+  max-width:760px;
+  margin:24px auto 0;
+  padding:22px 24px;
+  border-top:1px solid rgba(217,188,130,.18);
+  text-align:center;
+}
+
+.archive-studio-link a{
+  color:var(--gold, #d9bc82);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+.archive-studio-link a:hover,
+.archive-studio-link a:focus{
+  text-decoration:underline;
+}
+
+@media(max-width:700px){
+  .archive-studio-link{
+    margin-top:18px;
+    padding:20px 20px;
+  }
+}
+/* ARCHIVAL STUDIO WORK LINK — END */
 </style>
 
 </head>
@@ -790,34 +863,29 @@ The AR model is a preview terrain visualisation. Production mesh exports are pre
 </div>
 
 </div>
-
-<section class="studio-work-cta" aria-labelledby="studio-work-cta-title">
-  <div class="studio-work-cta-kicker">Studio Oddscape</div>
-
-  <h2 id="studio-work-cta-title">Explore the Creative Studio</h2>
-
-  <p>
-    Discover terrain-derived prints, cartographic compositions and visual
-    studies developed from LiDAR, elevation data, bathymetry and landscape
-    interpretation.
-  </p>
-
-  <a class="studio-work-cta-button" href="studio-work.html">
-    Browse Studio Work
-  </a>
+<section class="archive-studio-link" aria-label="Studio Work">
+  <a href="studio-work.html">Explore the Creative Studio →</a>
 </section>
+
 <footer>
-<div class="footer-brand">Studio Oddscape<br>oddscape.co.uk</div>
-<div class="footer-text">
-Terrain Visualisation • LiDAR Analysis<br>
-3D Terrain Modelling • Immersive Landscape Interpretation • UK
-</div>
-<div class="footer-copy">© Studio Oddscape MMXXVI — All Rights Reserved</div>
 
-<section class="methodology-footer-link" aria-label="Methodology">
-  <p class="methodology-kicker">How the work is made</p>
-  <a href="faq.html">Methodology →</a>
-</section>
+
+
+  <div class="footer-text">
+    Terrain Visualisation • LiDAR Analysis<br>
+    3D Terrain Modelling • Immersive Landscape Interpretation • UK
+  </div>
+
+  <div class="footer-copy">
+    Terrain visualisations and interactive models shown on this site are
+    derived from publicly available geospatial datasets including
+    Environment Agency LiDAR data and Scottish Remote Sensing Portal
+    LiDAR datasets where stated.
+
+    <br><br>
+
+    © Studio Oddscape MMXXVI — All Rights Reserved
+  </div>
 
 </footer>
 
