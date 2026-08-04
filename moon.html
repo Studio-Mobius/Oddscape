@@ -373,6 +373,26 @@ footer{
   }
 }
 /* ARCHIVAL STUDIO WORK LINK — END */
+
+/* PLANETODD HUD TAPER FIX — BEGIN */
+header .hud::before{
+  background:linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(217,188,130,.55) 100%
+  ) !important;
+}
+
+header .hud::after{
+  background:linear-gradient(
+    90deg,
+    rgba(217,188,130,.55) 0%,
+    transparent 100%
+  ) !important;
+  transform:none !important;
+}
+/* PLANETODD HUD TAPER FIX — END */
+
 </style>
 </head>
 <body>
