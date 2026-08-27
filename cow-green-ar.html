@@ -263,7 +263,6 @@ nav a.nav-current{
   }
 }
 /* ODDSCAPE MASTER HEADER — END */
-
 /* STUDIO WORK FOOTER CTA — BEGIN */
 .studio-work-cta{
   max-width:860px;
@@ -351,6 +350,7 @@ nav a.nav-current{
   filter:drop-shadow(0 0 5px rgba(217,188,130,.16));
 }
 
+
 /* ODDSCAPE CENTRED HUD LOGO — BEGIN */
 .hud{
     height:48px;
@@ -375,6 +375,7 @@ nav a.nav-current{
     filter:drop-shadow(0 0 5px rgba(217,188,130,.16));
 }
 /* ODDSCAPE CENTRED HUD LOGO — END */
+
 
 /* ODDSCAPE METHODOLOGY FOOTER LINK — BEGIN */
 .methodology-footer-link{
@@ -408,6 +409,11 @@ nav a.nav-current{
   text-decoration:underline;
 }
 /* ODDSCAPE METHODOLOGY FOOTER LINK — END */
+
+
+
+
+
 
 /* ==========================================================
    ODDSCAPE HEADER MKIII
@@ -458,6 +464,7 @@ nav a:hover{
 /* ==========================================================
    END HEADER MKIII
    ========================================================== */
+
 
 /* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — BEGIN */
 @media (max-width:760px){
@@ -715,20 +722,20 @@ footer{
 
 <header><a href="index.html" class="logo">Studio Oddscape</a><div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div><div class="hud"><span class="hud-marker">
   <img
-    src="images/Oddbrand/Ologoalpha.png"
+    src="https://oddscape.co.uk/images/Oddbrand/Ologoalpha.png"
     alt=""
     aria-hidden="true"
   >
 </span></div></header>
-
 <div class="content">
 
 <div class="hero">
-<img src="images/cow-green/Cow_Green_Hillshade_10km2.png" alt="Cow Green Reservoir terrain study">
+<img src="https://oddscape.co.uk/images/cow-green/Cow_Green_Hillshade_10km2.png"
+     alt="Cow Green Reservoir hillshade terrain study">
 </div>
 
 <div class="caption">
-Terrain study of Cow Green Reservoir and the upper Tees landscape, revealing the relationship between the reservoir basin, surrounding slopes, drainage structure and upland landform.
+Cow Green Reservoir — high-resolution terrain hillshade derived from Digital Terrain Model data.
 </div>
 
 <div class="project-tag">LiDAR Terrain Study</div>
@@ -737,50 +744,52 @@ Terrain study of Cow Green Reservoir and the upper Tees landscape, revealing the
 
 <div class="text">
 <p>
-Upland landscapes contain complex relationships between slope, drainage, exposure, access, water and land use. LiDAR-derived terrain models allow these relationships to be seen with unusual clarity.
+Studio Oddscape terrain study of Cow Green Reservoir and the upper Tees landscape.
 </p>
 
 <br>
 
 <p>
-The Cow Green study uses high-resolution Digital Terrain Model data to reveal the reservoir basin, surrounding slopes, drainage structure, reservoir margins and the broader landform of the upper Tees landscape.
+The terrain model reveals the reservoir basin, surrounding slopes,
+drainage structure and wider upland landform.
 </p>
 
 <br>
 
 <p>
-The result is both analytical and visual: a terrain interpretation that can support landscape assessment, education, planning, outdoor interpretation and immersive AR viewing.
+A lightweight hillshade terrain model is available below in augmented reality.
 </p>
 </div>
 
 <div class="button-row">
+
 <a class="button" href="licence.html">Request Licence</a>
 
-<a class="button apple-ar" href="#" onclick="openModelLicence(event)">
-  View AR
-</a>
-
-<a id="arLink"
+<a class="button"
    rel="ar"
-   href="models/Cow_Green_DTM_10km2_Terrain_AR.usdz"
-   style="position:absolute;left:-9999px;">
-   <img src="images/cow-green/Cow_Green_Hillshade_10km2.png" alt="">
+   href="https://oddscape.co.uk/models/Cow_Green_DTM_10km2_Terrain_AR.usdz">
+  View AR
+  <img src="https://oddscape.co.uk/images/cow-green/Cow_Green_Hillshade_10km2.png"
+       alt=""
+       style="display:none;">
 </a>
 
 <a class="button" href="archive.html">Back to Archive</a>
+
 </div>
 
 <div class="caption" style="max-width:760px;margin:24px auto 0;">
-The AR model is a preview terrain visualisation. Production mesh exports are prepared separately and quoted according to area, resolution, cleanup and delivery format.
+The AR model is a lightweight hillshade terrain preview of Cow Green Reservoir.
 </div>
 
 </div>
-
 <section class="archive-studio-link" aria-label="Studio Work">
   <a href="studio-work.html">Explore the Creative Studio →</a>
 </section>
 
 <footer>
+
+
 
   <div class="footer-text">
     Terrain Visualisation • LiDAR Analysis<br>
@@ -813,6 +822,7 @@ The AR model is a preview terrain visualisation. Production mesh exports are pre
 })();
 </script>
 
+
 <script>
 function openModelLicence(event){
     event.preventDefault();
@@ -824,6 +834,7 @@ function acceptLicence(){
     document.getElementById('arLink').click();
 }
 </script>
+
 
 <!-- Cloudflare Web Analytics -->
 <script type='module'
