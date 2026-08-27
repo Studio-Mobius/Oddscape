@@ -493,6 +493,37 @@ nav a:hover{
 }
 /* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — END */
 
+
+.cow-green-viewer{
+  width:100%;
+  max-width:760px;
+  margin:42px auto 0;
+  border:1px solid rgba(217,188,130,.18);
+  background:#05080d;
+}
+
+.cow-green-viewer model-viewer{
+  display:block;
+  width:100%;
+  height:520px;
+  background:#05080d;
+}
+
+.viewer-caption{
+  padding:12px 16px;
+  border-top:1px solid rgba(217,188,130,.12);
+  color:var(--muted);
+  text-align:center;
+  font-size:11px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+
+@media(max-width:700px){
+  .cow-green-viewer model-viewer{
+    height:420px;
+  }
+}
 </style>
 
 <style id="oddscape-terrain-hud-normalise">
@@ -689,6 +720,8 @@ footer{
 /* ARCHIVAL STUDIO WORK LINK — END */
 </style>
 
+<script type="module"
+src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -757,6 +790,22 @@ The Cow Green study uses high-resolution Digital Terrain Model data to reveal th
 <p>
 The commissioned study produced terrain visualisation, contour information and 3D terrain outputs, with a lightweight model prepared for browser download and immersive AR viewing.
 </p>
+</div>
+
+<div class="cow-green-viewer">
+<model-viewer
+  src="models/Cow_Green_DTM_10km2_Terrain_WEB.glb?v=cowgreen-final"
+  alt="Interactive 3D terrain model of Cow Green Reservoir"
+  camera-controls
+  shadow-intensity="1"
+  exposure="1"
+  interaction-prompt="auto"
+  touch-action="pan-y">
+</model-viewer>
+
+<div class="viewer-caption">
+Interactive terrain model · drag to rotate · scroll or pinch to zoom
+</div>
 </div>
 
 <div class="button-row">
