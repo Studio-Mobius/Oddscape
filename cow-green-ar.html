@@ -494,12 +494,7 @@ nav a:hover{
 /* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — END */
 
 
-.ar-match{
-  background:transparent;
-  color:var(--gold);
-  font:inherit;
-  cursor:pointer;
-}
+
 </style>
 
 <style id="oddscape-terrain-hud-normalise">
@@ -782,19 +777,26 @@ from the full-resolution Studio Oddscape terrain model.
 
 <div class="cow-green-viewer">
   <model-viewer
-    src="models/Cow_Green_CONTROL_RAINBOW.glb"
-    ios-src="models/Cow_Green_DTM_10km2_Terrain_AR.usdz"
-    alt="Interactive 3D terrain model of Cow Green Reservoir"
-    camera-controls
-    auto-rotate
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    shadow-intensity="1"
-    exposure="1"
-    interaction-prompt="auto"
-    touch-action="pan-y"
-    style="width:100%;height:620px;background:#0b0d0e;">
-  </model-viewer>
+  id="cowGreenViewer"
+  src="models/Cow_Green_DTM_10km2_Terrain_WEB.glb"
+  ios-src="models/Cow_Green_DTM_10km2_Terrain_AR.usdz"
+  alt="Interactive 3D terrain model of Cow Green Reservoir"
+  camera-controls
+  auto-rotate
+  ar
+  ar-modes="webxr scene-viewer quick-look"
+  shadow-intensity="1"
+  exposure="1"
+  interaction-prompt="auto"
+  touch-action="pan-y">
+
+  <button class="button"
+          slot="ar-button"
+          type="button">
+    View AR
+  </button>
+
+</model-viewer>
 
   <div class="caption" style="max-width:760px;margin:18px auto 32px;">
     Interactive terrain preview — drag to rotate, scroll or pinch to zoom.
@@ -803,11 +805,6 @@ from the full-resolution Studio Oddscape terrain model.
 
 <div class="button-row">
 <a class="button" href="licence.html">Request Licence</a>
-<button class="button ar-match" type="button"
-        onclick="document.querySelector('model-viewer').activateAR()">
-  View AR
-</button>
-
 <a class="button" href="archive.html">Back to Archive</a>
 </div>
 
