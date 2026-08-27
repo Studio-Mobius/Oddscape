@@ -493,6 +493,39 @@ nav a:hover{
 }
 /* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — END */
 
+
+.cow-green-viewer{
+  width:100%;
+  max-width:1000px;
+  margin:36px auto 30px;
+  overflow:hidden;
+  border:1px solid rgba(217,188,130,.20);
+  background:#05080d;
+}
+
+.cow-green-viewer model-viewer{
+  display:block;
+  width:100%;
+  height:620px;
+  background:radial-gradient(circle at center,#101826 0%,#05080d 74%);
+  --poster-color:transparent;
+}
+
+.cow-green-viewer-caption{
+  padding:12px 16px;
+  border-top:1px solid rgba(217,188,130,.15);
+  color:#8d98a0;
+  text-align:center;
+  font-size:11px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+
+@media(max-width:700px){
+  .cow-green-viewer model-viewer{
+    height:480px;
+  }
+}
 </style>
 
 <style id="oddscape-terrain-hud-normalise">
@@ -689,6 +722,8 @@ footer{
 /* ARCHIVAL STUDIO WORK LINK — END */
 </style>
 
+<script type="module"
+src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -741,6 +776,26 @@ Terrain study of Cow Green Reservoir and the upper Tees landscape, developed fro
 
 <div class="project-title">Cow Green Reservoir</div>
 
+<div class="cow-green-viewer">
+  <model-viewer
+    src="models/Cow_Green_DTM_10km2_Terrain_WEB.glb"
+    ios-src="models/Cow_Green_DTM_10km2_Terrain_AR.usdz"
+    alt="Interactive 3D terrain model of Cow Green Reservoir"
+    camera-controls
+    auto-rotate
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    shadow-intensity="1"
+    exposure="0.85"
+    interaction-prompt="auto"
+    touch-action="pan-y">
+  </model-viewer>
+
+  <div class="cow-green-viewer-caption">
+    Interactive terrain model · drag to rotate · scroll to zoom
+  </div>
+</div>
+
 <div class="text">
 <p>
 Cow Green Reservoir sits within a complex upland landscape where terrain, drainage, reservoir form and surrounding moorland are closely related. High-resolution terrain data allows those relationships to be examined as a continuous surface.
@@ -761,10 +816,6 @@ The result is both analytical and visual: a commissioned terrain interpretation 
 
 <div class="button-row">
 <a class="button" href="licence.html">Request Licence</a>
-<a class="button" href="models/Cow_Green_DTM_10km2_Terrain_WEB.glb">
-  View 3D Model
-</a>
-
 <a class="button apple-ar" href="#" onclick="openModelLicence(event)">
   View AR
 </a>
