@@ -779,6 +779,7 @@ from the full-resolution Studio Oddscape terrain model.
     ios-src="models/Cow_Green_DTM_10km2_Terrain_AR.usdz"
     alt="Interactive 3D terrain model of Cow Green Reservoir"
     camera-controls
+    camera-orbit="180deg 35deg auto"
     ar
     ar-modes="webxr scene-viewer quick-look"
     shadow-intensity="1"
@@ -793,17 +794,10 @@ from the full-resolution Studio Oddscape terrain model.
 
 <div class="button-row">
 <a class="button" href="licence.html">Request Licence</a>
-
-<a class="button apple-ar" href="#" onclick="openModelLicence(event)">
+<button class="button" type="button"
+        onclick="document.querySelector('model-viewer').activateAR()">
   View AR
-</a>
-
-<a id="arLink"
-   rel="ar"
-   href="models/Cow_Green_DTM_10km2_Terrain_AR.usdz"
-   style="position:absolute;left:-9999px;">
-   <img src="images/cow-green/Cow_Green_Hillshade_10km2.png" alt="">
-</a>
+</button>
 
 <a class="button" href="archive.html">Back to Archive</a>
 </div>
@@ -854,15 +848,7 @@ The AR model is a preview of the Cow Green Reservoir terrain study. Production m
 
 
 <script>
-function openModelLicence(event){
-    event.preventDefault();
-    document.getElementById('licence-overlay').style.display='flex';
-}
 
-function acceptLicence(){
-    document.getElementById('licence-overlay').style.display='none';
-    document.getElementById('arLink').click();
-}
 </script>
 
 
