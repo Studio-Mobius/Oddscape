@@ -493,6 +493,13 @@ nav a:hover{
 }
 /* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — END */
 
+
+.ar-match{
+  background:transparent;
+  color:var(--gold);
+  font:inherit;
+  cursor:pointer;
+}
 </style>
 
 <style id="oddscape-terrain-hud-normalise">
@@ -796,7 +803,7 @@ from the full-resolution Studio Oddscape terrain model.
 
 <div class="button-row">
 <a class="button" href="licence.html">Request Licence</a>
-<button class="button" type="button"
+<button class="button ar-match" type="button"
         onclick="document.querySelector('model-viewer').activateAR()">
   View AR
 </button>
