@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lunar Landing Sites | Studio Oddscape™</title>
+<meta name="description" content="Explore the Apollo lunar landing sites through measured lunar terrain, interactive 3D models and Studio Oddscape™ terrain interpretation.">
+<link rel="preconnect" href="https://ajax.googleapis.com">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<style>
+:root{--gold:#d9bc82;--text:#dce3e8;--muted:#9aa5ac;--line:rgba(217,188,130,.20);--blue:#8fcaff;--top:#203746;--mid:#10232f;--bottom:#06141d;--panel:#08131c}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--bottom);scroll-behavior:smooth}body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(circle at top,var(--top) 0%,var(--mid) 42%,var(--bottom) 100%);line-height:1.65}.page{width:min(1080px,100%);margin:auto;padding:max(26px,env(safe-area-inset-top)) 22px max(42px,env(safe-area-inset-bottom))}header{text-align:center;padding:12px 0 36px}.brand{color:var(--gold);font-weight:800;font-size:clamp(42px,8vw,74px);letter-spacing:-2px;line-height:.95}.strap{margin-top:14px;color:var(--blue);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase}.hud{position:relative;width:min(470px,82%);height:44px;margin:24px auto 0}.hud:before,.hud:after{content:"";position:absolute;top:50%;width:calc(50% - 31px);height:1px;background:linear-gradient(90deg,transparent,rgba(217,188,130,.58))}.hud:before{left:0}.hud:after{right:0;transform:scaleX(-1)}.hud-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:var(--gold);font-size:34px;line-height:1}.hero{text-align:center}.kicker{color:var(--muted);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase}.hero h1{margin-top:8px;color:var(--gold);font-size:clamp(42px,8vw,78px);line-height:1.05}.lede{max-width:760px;margin:20px auto 0;color:#cbd5db;font-size:clamp(17px,2.4vw,22px)}.hero-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:38px;align-items:stretch}.viewer-shell,.hero-image{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#05080d;box-shadow:0 28px 80px rgba(0,0,0,.42)}.viewer-toolbar{min-height:46px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#080d15;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}.live{display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:#58d9ff;box-shadow:0 0 10px #58d9ff}model-viewer{display:block;width:100%;height:640px;background:radial-gradient(circle at center,#101826 0%,#05080d 74%);--poster-color:transparent}.viewer-caption{padding:12px 16px;border-top:1px solid var(--line);background:#080d15;color:var(--muted);text-align:center;font-size:10px;letter-spacing:1.4px;text-transform:uppercase}.hero-image img{display:block;width:100%;height:100%;min-height:580px;object-fit:cover}.hero-image figcaption,.story-card figcaption{padding:12px 14px;color:var(--muted);font-size:12px;background:#080d15;border-top:1px solid var(--line)}.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}.button{display:inline-block;padding:14px 24px;border:1px solid rgba(217,188,130,.5);color:var(--gold);text-decoration:none;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.button.primary{background:var(--gold);color:#07121b}.section{margin-top:74px}.section-head{max-width:760px;margin:0 auto 30px;text-align:center}.section h2{color:var(--gold);font-size:clamp(30px,5vw,48px);line-height:1.15}.section-head p{margin-top:12px;color:#c7d1d7}.timeline{display:grid;gap:22px}.story-card{display:grid;grid-template-columns:minmax(260px,.9fr) 1.1fr;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:rgba(4,12,20,.42)}.story-card:nth-child(even){grid-template-columns:1.1fr minmax(260px,.9fr)}.story-card:nth-child(even) figure{order:2}.story-card img{display:block;width:100%;height:100%;min-height:330px;object-fit:cover}.story-copy{padding:34px}.eyebrow{color:var(--blue);font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase}.story-copy h3{margin-top:8px;color:var(--gold);font-size:29px}.story-copy p{margin-top:13px;color:#c7d1d7}.story-copy a{color:var(--gold)}.quote{margin:28px auto 0;max-width:720px;padding:26px 30px;border-left:3px solid var(--gold);background:rgba(217,188,130,.06);font-size:20px;color:#e3e7ea}.future-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.future-card{padding:24px;border:1px solid var(--line);border-radius:14px;background:rgba(4,12,20,.35)}.future-card h3{color:var(--gold);font-size:20px}.future-card p{margin-top:8px;color:#c4cfd6;font-size:14px}.ack{margin-top:72px;padding:34px;border:1px solid var(--line);border-radius:16px;background:rgba(4,12,20,.4)}.ack h2{font-size:30px}.ack p{margin-top:14px;color:#c6d0d6}.credits{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.credits a{color:var(--gold)}footer{text-align:center;margin-top:44px;color:var(--muted);font-size:12px}.tm{font-size:.58em;vertical-align:super}
+@media(max-width:820px){.hero-grid,.story-card,.story-card:nth-child(even){grid-template-columns:1fr}.story-card:nth-child(even) figure{order:0}.hero-image img{min-height:430px}model-viewer{height:520px}.future-grid{grid-template-columns:1fr}}@media(max-width:520px){.page{padding-left:14px;padding-right:14px}.hero h1{font-size:44px}.story-copy{padding:24px}.story-card img{min-height:260px}model-viewer{height:470px}.hero-image img{min-height:380px}}
+/* ODDSCAPE MASTER HEADER — BEGIN */
+header{
+  text-align:center;
+  padding:40px 32px 24px
+}
+
+.logo{
+  display:block;
+  font-size:clamp(44px,7vw,78px);
+  font-weight:800;
+  color:var(--gold);
+  line-height:.95;
+  letter-spacing:-2px;
+  text-decoration:none;
+  text-shadow:0 2px 18px rgba(0,0,0,.45)
+}
+
+.subtitle{
+  margin-top:16px;
+  font-size:12px;
+  letter-spacing:5px;
+  color:rgba(220,226,230,.68);
+  text-transform:uppercase
+}
+
+.hud{
+  width:520px;
+  max-width:80%;
+  height:24px;
+  margin:22px auto 0;
+  position:relative
+}
+
+.hud:before,
+.hud:after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:calc(50% - 24px);
+  height:1px
+}
+
+.hud:before{
+  left:0;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(217,188,130,.55)
+  )
+}
+
+.hud:after{
+  right:0;
+  background:linear-gradient(
+    90deg,
+    rgba(217,188,130,.55),
+    transparent
+  )
+}
+
+.hud-marker{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:22px;
+  height:22px;
+  transform:translate(-50%,-50%)
+}
+
+.hud-marker svg{
+  width:100%;
+  height:100%;
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:1.4;
+  stroke-linecap:round
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  flex-wrap:nowrap;
+  width:100%;
+  border-top:1px solid rgba(217,188,130,.28);
+  border-bottom:1px solid rgba(217,188,130,.28);
+  background:rgba(0,0,0,.10)
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  padding:17px 34px;
+  font-size:13px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  text-align:center;
+  white-space:nowrap;
+  border-right:1px solid var(--line)
+}
+
+nav a:last-child{
+  border-right:none
+}
+
+nav a:hover,
+nav a.nav-current{
+  color:var(--gold);
+  background:rgba(217,188,130,.035)
+}
+
+@media(max-width:820px){
+  header{
+    padding:30px 20px 20px
+  }
+
+  .logo{
+    font-size:clamp(44px,9vw,64px)
+  }
+
+  .subtitle{
+    font-size:10px;
+    letter-spacing:3px
+  }
+
+  nav a{
+    padding:13px 16px;
+    font-size:11px
+  }
+}
+
+@media(max-width:520px){
+  header{
+    padding-left:16px;
+    padding-right:16px
+  }
+
+  nav a{
+    flex:1 1 0;
+    min-width:0;
+    padding:13px 4px;
+    font-size:clamp(8px,2.5vw,10px);
+    letter-spacing:.5px
+  }
+}
+/* ODDSCAPE MASTER HEADER — END */
+
+/* ODDSCAPE CENTRED HUD LOGO — BEGIN */
+.hud{
+    height:48px;
+}
+
+.hud::before,
+.hud::after{
+    width:calc(50% - 30px);
+}
+
+.hud-marker{
+    width:39px;
+    height:47px;
+}
+
+.hud-marker img{
+    display:block;
+    width:39px;
+    height:47px;
+    object-fit:contain;
+    opacity:.9;
+    filter:drop-shadow(0 0 5px rgba(217,188,130,.16));
+}
+/* ODDSCAPE CENTRED HUD LOGO — END */
+
+
+/* ODDSCAPE METHODOLOGY FOOTER LINK — BEGIN */
+.methodology-footer-link{
+  max-width:860px;
+  margin:56px auto 0;
+  padding:28px 24px;
+  text-align:center;
+  border-top:1px solid rgba(217,188,130,.22);
+}
+
+.methodology-footer-link .methodology-kicker{
+  margin:0 0 10px;
+  color:var(--muted, #9aa5ac);
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+
+.methodology-footer-link a{
+  display:inline-block;
+  color:var(--gold, #d9bc82);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+.methodology-footer-link a:hover,
+.methodology-footer-link a:focus{
+  text-decoration:underline;
+}
+/* ODDSCAPE METHODOLOGY FOOTER LINK — END */
+
+
+
+
+
+
+/* ==========================================================
+   ODDSCAPE HEADER MKIII
+   ========================================================== */
+
+nav{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:18px;
+    width:100%;
+    margin:0;
+    padding:0 18px;
+    border-top:1px solid rgba(217,188,130,.22);
+    border-bottom:1px solid rgba(217,188,130,.22);
+}
+
+nav a{
+    flex:0 1 auto;
+    padding:18px 0;
+    border:none !important;
+    background:none !important;
+    text-decoration:none;
+    text-align:center;
+    white-space:nowrap;
+    letter-spacing:.12em;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+@media(max-width:760px){
+
+    nav{
+        gap:8px;
+        padding:0 10px;
+    }
+
+    nav a{
+        font-size:11px;
+        letter-spacing:.08em;
+        padding:18px 0;
+    }
+}
+
+/* ==========================================================
+   END HEADER MKIII
+   ========================================================== */
+
+
+/* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — BEGIN */
+@media (max-width:760px){
+  nav{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:space-between !important;
+    align-items:center !important;
+    width:100% !important;
+    gap:4px !important;
+    padding:0 8px !important;
+  }
+
+  nav a{
+    flex:1 1 0 !important;
+    min-width:0 !important;
+    padding:18px 2px !important;
+    border:none !important;
+    background:none !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+    font-size:10px !important;
+    letter-spacing:.04em !important;
+    line-height:1.15 !important;
+  }
+}
+/* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — END */
+
+
+/* ODDSCAPE GLOBAL FOOTER — BEGIN */
+footer{
+  margin-top:0 !important;
+  padding:28px 40px 36px !important;
+  border-top:1px solid rgba(217,188,130,.12) !important;
+  text-align:center !important;
+}
+
+.footer-brand{
+  display:none !important;
+}
+
+.footer-text{
+  margin-top:0 !important;
+  color:#cfd5d9 !important;
+  font-size:14px !important;
+  line-height:1.8 !important;
+  letter-spacing:normal !important;
+  text-transform:none !important;
+}
+
+.footer-copy{
+  max-width:760px !important;
+  margin:14px auto 0 !important;
+  color:#8d98a0 !important;
+  font-size:11px !important;
+  line-height:1.6 !important;
+}
+
+@media(max-width:700px){
+  footer{
+    padding:24px 28px 32px !important;
+  }
+}
+/* ODDSCAPE GLOBAL FOOTER — END */
+
+/* ODDSCAPE HUD GLOW FIX — BEGIN */
+.hud{
+  background:none !important;
+}
+/* ODDSCAPE HUD GLOW FIX — END */
+
+/* ARCHIVAL STUDIO WORK LINK — BEGIN */
+.archive-studio-link{
+  max-width:760px;
+  margin:24px auto 0;
+  padding:22px 24px;
+  border-top:1px solid rgba(217,188,130,.18);
+  text-align:center;
+}
+
+.archive-studio-link a{
+  color:var(--gold, #d9bc82);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+.archive-studio-link a:hover,
+.archive-studio-link a:focus{
+  text-decoration:underline;
+}
+
+@media(max-width:700px){
+  .archive-studio-link{
+    margin-top:18px;
+    padding:20px 20px;
+  }
+}
+/* ARCHIVAL STUDIO WORK LINK — END */
+
+/* PLANETODD HUD TAPER FIX — BEGIN */
+header .hud::before{
+  background:linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(217,188,130,.55) 100%
+  ) !important;
+}
+
+header .hud::after{
+  background:linear-gradient(
+    90deg,
+    rgba(217,188,130,.55) 0%,
+    transparent 100%
+  ) !important;
+  transform:none !important;
+}
+/* PLANETODD HUD TAPER FIX — END */
+
+
+
+/* LUNAR LANDING SITES — BEGIN */
+
+.landing-intro{
+  max-width:820px;
+  margin:30px auto 0;
+  color:#cbd5db;
+  text-align:center;
+  font-size:16px;
+}
+
+.landing-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin-top:34px;
+}
+
+.landing-card{
+  position:relative;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(4,12,20,.42);
+  overflow:hidden;
+}
+
+.landing-card.primary-site{
+  border-color:rgba(217,188,130,.52);
+  box-shadow:0 20px 55px rgba(0,0,0,.28);
+}
+
+.landing-status{
+  display:inline-block;
+  margin-bottom:14px;
+  padding:5px 9px;
+  border:1px solid rgba(143,202,255,.30);
+  color:var(--blue);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.primary-site .landing-status{
+  color:var(--gold);
+  border-color:rgba(217,188,130,.42);
+}
+
+.landing-mission{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2.6px;
+  text-transform:uppercase;
+}
+
+.landing-card h3{
+  margin-top:6px;
+  color:var(--gold);
+  font-size:27px;
+  line-height:1.15;
+}
+
+.landing-place{
+  margin-top:4px;
+  color:#e2e7ea;
+  font-size:16px;
+}
+
+.landing-coords{
+  margin-top:14px;
+  color:var(--blue);
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+.landing-card p{
+  margin-top:13px;
+  color:#c3cdd3;
+  font-size:14px;
+}
+
+.site-number{
+  position:absolute;
+  right:18px;
+  top:10px;
+  color:rgba(217,188,130,.07);
+  font-size:84px;
+  font-weight:800;
+  line-height:1;
+}
+
+.apollo-feature{
+  display:grid;
+  grid-template-columns:minmax(280px,.9fr) 1.1fr;
+  margin-top:34px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:rgba(4,12,20,.45);
+}
+
+.apollo-feature figure{
+  min-height:440px;
+}
+
+.apollo-feature img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.apollo-feature figcaption{
+  padding:12px 14px;
+  color:var(--muted);
+  font-size:12px;
+  background:#080d15;
+  border-top:1px solid var(--line);
+}
+
+.apollo-feature-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:38px;
+}
+
+.apollo-feature-copy h3{
+  margin-top:8px;
+  color:var(--gold);
+  font-size:34px;
+}
+
+.apollo-feature-copy p{
+  margin-top:15px;
+  color:#c7d1d7;
+}
+
+.tile-spec{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  margin-top:24px;
+  border:1px solid var(--line);
+  background:var(--line);
+}
+
+.tile-spec div{
+  padding:16px;
+  background:#08131c;
+}
+
+.tile-spec strong{
+  display:block;
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+
+.tile-spec span{
+  display:block;
+  margin-top:5px;
+  color:#c4cdd2;
+  font-size:12px;
+}
+
+@media(max-width:820px){
+  .landing-grid{
+    grid-template-columns:1fr;
+  }
+
+  .apollo-feature{
+    grid-template-columns:1fr;
+  }
+
+  .apollo-feature figure{
+    min-height:360px;
+  }
+}
+
+@media(max-width:520px){
+  .landing-card{
+    padding:23px;
+  }
+
+  .tile-spec{
+    grid-template-columns:1fr;
+  }
+
+  .apollo-feature-copy{
+    padding:25px;
+  }
+}
+
+/* LUNAR LANDING SITES — END */
+
+</style>
+</head>
+<body>
+<main class="page">
+<header><a href="index.html" class="logo">Studio Oddscape</a><div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div><div class="hud"><span class="hud-marker">
+  <img
+    src="images/Oddbrand/Ologoalpha.png"
+    alt=""
+    aria-hidden="true"
+  >
+</span></div></header>
+<section class="hero">
+  <p class="kicker">PlanetOdd // Lunar Terrain Collection</p>
+  <h1>Lunar Landing Sites</h1>
+
+  <p class="lede">
+    Six places on another world where human beings landed, explored and returned
+    with a new understanding of the Moon.
+  </p>
+
+  <p class="landing-intro">
+    Studio Oddscape is developing a series of detailed lunar terrain tiles,
+    connecting the global OddMoon<span class="tm">™</span> model to the landscapes
+    explored by the Apollo missions.
+  </p>
+
+  <div class="hero-grid">
+    <div class="viewer-shell">
+      <div class="viewer-toolbar">
+        <div><span class="live"></span>OddView<span class="tm">™</span> Live</div>
+        <div>Landing Sites // Global Context</div>
+      </div>
+
+      <model-viewer
+        src="models/oddmoon_mki.glb?v=20260904"
+        ios-src="models/oddmoon_mki.usdz?v=20260904b"
+        alt="Interactive global terrain model of the Moon"
+        camera-controls
+        auto-rotate
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        shadow-intensity="1"
+        exposure="0.60"
+        interaction-prompt="auto"
+        touch-action="pan-y">
+      </model-viewer>
+
+      <div class="viewer-caption">
+        Global OddMoon terrain · Drag to rotate · Pinch to zoom · View in AR
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a class="button primary" href="#landing-sites">Explore the landing sites</a>
+    <a class="button" href="moon.html">Return to OddMoon<span class="tm">™</span></a>
+  </div>
+</section>
+
+
+<section class="section" id="landing-sites">
+  <div class="section-head">
+    <p class="kicker">Apollo // 1969–1972</p>
+    <h2>Six landings. Six lunar landscapes.</h2>
+    <p>
+      Each mission encountered a different part of the Moon: mare plains,
+      ejecta deposits, highlands, mountain fronts, valleys and volcanic terrain.
+      The landing-site collection will reconstruct those places as measurable
+      terrain rather than isolated map points.
+    </p>
+  </div>
+
+  <div class="landing-grid">
+
+    <article class="landing-card primary-site" id="apollo11">
+      <span class="site-number">11</span>
+      <div class="landing-status">First terrain tile</div>
+      <div class="landing-mission">Apollo 11 · 20 July 1969</div>
+      <h3>Mare Tranquillitatis</h3>
+      <div class="landing-place">Tranquility Base</div>
+      <div class="landing-coords">0.674° N · 23.473° E</div>
+      <p>
+        Neil Armstrong and Buzz Aldrin made humanity's first landing on another
+        world here, on the relatively smooth basaltic plains of the Sea of Tranquility.
+      </p>
+    </article>
+
+    <article class="landing-card">
+      <span class="site-number">12</span>
+      <div class="landing-status">Planned tile</div>
+      <div class="landing-mission">Apollo 12 · 19 November 1969</div>
+      <h3>Oceanus Procellarum</h3>
+      <div class="landing-place">Surveyor Crater region</div>
+      <div class="landing-coords">3.013° S · 23.421° W</div>
+      <p>
+        A precision landing on the Ocean of Storms placed Conrad and Bean close
+        to the earlier robotic Surveyor 3 spacecraft.
+      </p>
+    </article>
+
+    <article class="landing-card">
+      <span class="site-number">14</span>
+      <div class="landing-status">Planned tile</div>
+      <div class="landing-mission">Apollo 14 · 5 February 1971</div>
+      <h3>Fra Mauro</h3>
+      <div class="landing-place">Fra Mauro Formation</div>
+      <div class="landing-coords">3.646° S · 17.471° W</div>
+      <p>
+        Apollo 14 explored rugged ejecta deposits associated with the immense
+        Imbrium impact basin.
+      </p>
+    </article>
+
+    <article class="landing-card">
+      <span class="site-number">15</span>
+      <div class="landing-status">Planned tile</div>
+      <div class="landing-mission">Apollo 15 · 30 July 1971</div>
+      <h3>Hadley–Apennine</h3>
+      <div class="landing-place">Hadley Rille</div>
+      <div class="landing-coords">26.132° N · 3.634° E</div>
+      <p>
+        One of the most dramatic Apollo landscapes: a sinuous rille beside the
+        towering lunar Apennine mountain front.
+      </p>
+    </article>
+
+    <article class="landing-card">
+      <span class="site-number">16</span>
+      <div class="landing-status">Planned tile</div>
+      <div class="landing-mission">Apollo 16 · 21 April 1972</div>
+      <h3>Descartes Highlands</h3>
+      <div class="landing-place">Descartes region</div>
+      <div class="landing-coords">8.973° S · 15.501° E</div>
+      <p>
+        Apollo 16 was the only Apollo landing devoted principally to the ancient
+        lunar highlands rather than the darker mare plains.
+      </p>
+    </article>
+
+    <article class="landing-card">
+      <span class="site-number">17</span>
+      <div class="landing-status">Planned tile</div>
+      <div class="landing-mission">Apollo 17 · 11 December 1972</div>
+      <h3>Taurus–Littrow</h3>
+      <div class="landing-place">Taurus–Littrow Valley</div>
+      <div class="landing-coords">20.191° N · 30.772° E</div>
+      <p>
+        The final Apollo landing took place within a spectacular mountain-ringed
+        valley containing some of the most varied geology visited by astronauts.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <p class="kicker">Tile 001 // Apollo 11</p>
+    <h2>Tranquility Base</h2>
+    <p>
+      The first detailed landing-site terrain tile will focus on the landscape
+      surrounding Apollo 11's landing point in Mare Tranquillitatis.
+    </p>
+  </div>
+
+  <div class="apollo-feature">
+    <figure>
+      <img
+        src="images/moon/apollo11-aldrin.webp"
+        alt="Buzz Aldrin photographed on the lunar surface during Apollo 11">
+      <figcaption>
+        Buzz Aldrin on the lunar surface during Apollo 11,
+        photographed by Neil Armstrong. Credit: NASA.
+      </figcaption>
+    </figure>
+
+    <div class="apollo-feature-copy">
+      <div class="eyebrow">Mare Tranquillitatis · 1969</div>
+      <h3>Where the Moon became ground</h3>
+
+      <p>
+        Apollo 11 transformed the Moon from an observed celestial body into a
+        landscape crossed by human beings. The Oddscape landing-site series begins
+        here.
+      </p>
+
+      <p>
+        The terrain tile will be derived from lunar elevation data and registered
+        imagery within the same planetary coordinate framework as OddMoon<span class="tm">™</span>,
+        allowing the local landscape to remain geographically connected to the
+        global Moon.
+      </p>
+
+      <div class="tile-spec">
+        <div>
+          <strong>Status</strong>
+          <span>Terrain preparation</span>
+        </div>
+        <div>
+          <strong>Terrain</strong>
+          <span>Mare basalt plain</span>
+        </div>
+        <div>
+          <strong>Delivery</strong>
+          <span>OddView™ / GLB / USDZ / AR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <p class="kicker">From globe to ground</p>
+    <h2>A lunar terrain archive</h2>
+    <p>
+      The Apollo sites are the beginning. The same system can extend from the
+      global Moon into significant craters, valleys, mountain systems, polar
+      terrain and future exploration sites.
+    </p>
+  </div>
+
+  <div class="future-grid">
+    <div class="future-card">
+      <h3>Global context</h3>
+      <p>
+        Every landing site remains registered to the canonical OddMoon terrain
+        rather than becoming an isolated 3D object.
+      </p>
+    </div>
+
+    <div class="future-card">
+      <h3>Measured terrain</h3>
+      <p>
+        Elevation and imagery are retained as geospatial source material with
+        resolution, extent and provenance recorded.
+      </p>
+    </div>
+
+    <div class="future-card">
+      <h3>Terrain in your pocket</h3>
+      <p>
+        Detailed lunar landscapes can move from browser exploration into
+        augmented reality through OddView<span class="tm">™</span>.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="ack">
+  <h2>Data and acknowledgement</h2>
+
+  <p>
+    Studio Oddscape<span class="tm">™</span> gratefully acknowledges NASA,
+    the Lunar Reconnaissance Orbiter mission and the Lunar Orbiter Laser
+    Altimeter teams whose openly accessible lunar datasets make this terrain
+    interpretation possible.
+  </p>
+
+  <p>
+    Historic Apollo imagery is used with acknowledgement to NASA.
+  </p>
+
+  <div class="credits">
+    Lunar topographic data — NASA LRO/LOLA.
+    Apollo imagery — NASA.
+    Oddscape<span class="tm">™</span>,
+    OddView<span class="tm">™</span>,
+    OddMoon<span class="tm">™</span> and
+    OddPocket<span class="tm">™</span> are trademarks of Studio Oddscape.
+  </div>
+</section>
+
+
+<section class="archive-studio-link" aria-label="Studio Work">
+  <a href="studio-work.html">Explore the Creative Studio →</a>
+</section>
+
+<footer>
+
+
+
+  <div class="footer-text">
+    Terrain Visualisation • LiDAR Analysis<br>
+    3D Terrain Modelling • Immersive Landscape Interpretation • UK
+  </div>
+
+  <div class="footer-copy">
+    Terrain visualisations and interactive models shown on this site are
+    derived from publicly available geospatial datasets including
+    Environment Agency LiDAR data and Scottish Remote Sensing Portal
+    LiDAR datasets where stated.
+
+    <br><br>
+
+    © Studio Oddscape MMXXVI — All Rights Reserved
+  </div>
+
+</footer>
+</main>
+
+<!-- Cloudflare Web Analytics -->
+<script type='module'
+        src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "51b75344f80f4950aa81517de7433366"}'>
+</script>
+<!-- End Cloudflare Web Analytics -->
+
+</body>
+</html>
