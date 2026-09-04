@@ -762,12 +762,20 @@ header .hud::after{
 
   <div class="apollo-feature">
     <figure>
-      <img
-        src="images/moon/apollo11-preview/Apollo11_TranquilityBase_Hillshade.png"
-        alt="Hillshade derived from the 2 metre LROC NAC digital terrain model of the Apollo 11 landing region">
+      <model-viewer
+        src="models/luna-landings/Apollo11_TranquilityBase_MKI.glb?v=20260904a"
+        poster="images/moon/apollo11-preview/Apollo11_TranquilityBase_Hillshade.png"
+        alt="Interactive 3D terrain model of the Apollo 11 landing region at Tranquility Base"
+        camera-controls
+        auto-rotate
+        interaction-prompt="auto"
+        touch-action="pan-y"
+        shadow-intensity="0.8"
+        exposure="0.85">
+      </model-viewer>
       <figcaption>
-        Tranquility Base terrain hillshade derived from NASA LRO/LROC NAC elevation data.
-        Native terrain grid: 2 m.
+        Interactive Tranquility Base terrain derived from NASA LRO/LROC NAC data.
+        Delivery terrain: 8 m grid · Source terrain retained at 2 m.
       </figcaption>
     </figure>
 
@@ -797,7 +805,7 @@ header .hud::after{
       <div class="tile-spec">
         <div>
           <strong>Status</strong>
-          <span>3D tile in preparation</span>
+          <span>Interactive terrain live</span>
         </div>
         <div>
           <strong>Resolution</strong>
