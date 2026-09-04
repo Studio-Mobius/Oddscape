@@ -669,14 +669,15 @@ header .hud::after{
 
     <article class="landing-card primary-site" id="apollo11">
       <span class="site-number">11</span>
-      <div class="landing-status">First terrain tile</div>
+      <div class="landing-status">Terrain tile in production</div>
       <div class="landing-mission">Apollo 11 · 20 July 1969</div>
       <h3>Mare Tranquillitatis</h3>
       <div class="landing-place">Tranquility Base</div>
       <div class="landing-coords">0.674° N · 23.473° E</div>
       <p>
         Neil Armstrong and Buzz Aldrin made humanity's first landing on another
-        world here, on the relatively smooth basaltic plains of the Sea of Tranquility.
+        world here, on the basaltic plains of the Sea of Tranquility. A 2 m LROC
+        NAC terrain tile is now in production for this site.
       </p>
     </article>
 
@@ -762,43 +763,49 @@ header .hud::after{
   <div class="apollo-feature">
     <figure>
       <img
-        src="images/moon/apollo11-aldrin.webp"
-        alt="Buzz Aldrin photographed on the lunar surface during Apollo 11">
+        src="images/moon/apollo11-preview/Apollo11_TranquilityBase_Hillshade.png"
+        alt="Hillshade derived from the 2 metre LROC NAC digital terrain model of the Apollo 11 landing region">
       <figcaption>
-        Buzz Aldrin on the lunar surface during Apollo 11,
-        photographed by Neil Armstrong. Credit: NASA.
+        Tranquility Base terrain hillshade derived from NASA LRO/LROC NAC elevation data.
+        Native terrain grid: 2 m.
       </figcaption>
     </figure>
 
     <div class="apollo-feature-copy">
-      <div class="eyebrow">Mare Tranquillitatis · 1969</div>
-      <h3>Where the Moon became ground</h3>
+      <div class="eyebrow">Tile 001 · Mare Tranquillitatis</div>
+      <h3>Tranquility Base in measured terrain</h3>
 
       <p>
-        Apollo 11 transformed the Moon from an observed celestial body into a
-        landscape crossed by human beings. The Oddscape landing-site series begins
-        here.
+        The first Luna Landings tile is now being built from a NASA LRO/LROC
+        Narrow Angle Camera digital terrain model covering the Apollo 11 landing
+        region.
       </p>
 
       <p>
-        The terrain tile will be derived from lunar elevation data and registered
-        imagery within the same planetary coordinate framework as OddMoon<span class="tm">™</span>,
-        allowing the local landscape to remain geographically connected to the
-        global Moon.
+        The working tile measures approximately 4 × 6 km at a native 2 m terrain
+        grid, with registered LROC orthophotography prepared on the same raster
+        geometry. The Apollo 11 landing point lies within the tile at approximately
+        0.674° N, 23.473° E.
+      </p>
+
+      <p>
+        This source terrain is retained as the geospatial master. A lighter
+        interactive version will be produced for OddView<span class="tm">™</span>,
+        GLB, USDZ and augmented-reality delivery.
       </p>
 
       <div class="tile-spec">
         <div>
           <strong>Status</strong>
-          <span>Terrain preparation</span>
+          <span>3D tile in preparation</span>
         </div>
         <div>
-          <strong>Terrain</strong>
-          <span>Mare basalt plain</span>
+          <strong>Resolution</strong>
+          <span>2 m terrain grid</span>
         </div>
         <div>
-          <strong>Delivery</strong>
-          <span>OddView™ / GLB / USDZ / AR</span>
+          <strong>Extent</strong>
+          <span>Approx. 4 × 6 km</span>
         </div>
       </div>
     </div>
