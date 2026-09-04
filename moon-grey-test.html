@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<script type="module"
+src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<style>
+html,body {
+    margin:0;
+    width:100%;
+    height:100%;
+    background:#000;
+}
+
+model-viewer {
+    width:100%;
+    height:100%;
+}
+</style>
+</head>
+
+<body>
+
+<model-viewer
+    src="models/oddmoon_mki.glb?v=20260904"
+    ios-src="models/oddmoon_mki_GREY_TEST.usdz?v=20260904-test"
+    camera-controls
+    ar
+    ar-modes="quick-look webxr scene-viewer"
+    exposure="0.60"
+    shadow-intensity="1">
+</model-viewer>
+
+</body>
+</html>
