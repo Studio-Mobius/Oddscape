@@ -593,6 +593,67 @@ header .hud::after{
 
 /* LUNAR LANDING SITES — END */
 
+
+
+/* APOLLO 11 TILE NAVIGATION — BEGIN */
+
+.landing-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease;
+}
+
+.landing-link:hover,
+.landing-link:focus{
+  transform:translateY(-2px);
+  border-color:rgba(217,188,130,.72);
+  background:rgba(217,188,130,.055);
+  outline:none;
+}
+
+.apollo-feature figure{
+  position:relative;
+}
+
+.tile-nav-logo{
+  position:absolute;
+  z-index:20;
+  top:14px;
+  left:14px;
+  width:46px;
+  height:46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(217,188,130,.38);
+  border-radius:50%;
+  background:rgba(6,20,29,.78);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+  box-shadow:0 5px 18px rgba(0,0,0,.35);
+}
+
+.tile-nav-logo img{
+  display:block;
+  width:28px;
+  height:34px;
+  object-fit:contain;
+}
+
+.tile-nav-logo:hover,
+.tile-nav-logo:focus{
+  background:rgba(217,188,130,.12);
+  border-color:rgba(217,188,130,.7);
+  outline:none;
+}
+
+/* APOLLO 11 TILE NAVIGATION — END */
+
 </style>
 </head>
 <body>
@@ -667,7 +728,10 @@ header .hud::after{
 
   <div class="landing-grid">
 
-    <article class="landing-card primary-site" id="apollo11">
+    <a class="landing-card primary-site landing-link"
+       id="apollo11"
+       href="#apollo11-tile"
+       aria-label="Open the interactive Apollo 11 Tranquility Base terrain tile">
       <span class="site-number">11</span>
       <div class="landing-status">Terrain tile in production</div>
       <div class="landing-mission">Apollo 11 · 20 July 1969</div>
@@ -679,7 +743,7 @@ header .hud::after{
         world here, on the basaltic plains of the Sea of Tranquility. A 2 m LROC
         NAC terrain tile is now in production for this site.
       </p>
-    </article>
+    </a>
 
     <article class="landing-card">
       <span class="site-number">12</span>
@@ -750,7 +814,7 @@ header .hud::after{
 </section>
 
 
-<section class="section">
+<section class="section" id="apollo11-tile">
   <div class="section-head">
     <p class="kicker">Tile 001 // Apollo 11</p>
     <h2>Tranquility Base</h2>
@@ -762,6 +826,16 @@ header .hud::after{
 
   <div class="apollo-feature">
     <figure>
+      <a class="tile-nav-logo"
+         href="#landing-sites"
+         title="Back to Lunar Landing Sites"
+         aria-label="Back to Lunar Landing Sites">
+        <img
+          src="images/Oddbrand/Ologoalpha.png"
+          alt=""
+          aria-hidden="true">
+      </a>
+
       <model-viewer
         src="models/luna-landings/Apollo11_TranquilityBase_MKI.glb?v=20260904a"
         poster="images/moon/apollo11-preview/Apollo11_TranquilityBase_Hillshade.png"
