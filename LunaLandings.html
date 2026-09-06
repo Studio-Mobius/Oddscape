@@ -656,32 +656,7 @@ header .hud::after{
 
 
 
-/* APOLLO TILE CENTRED NAV MARK — BEGIN */
 
-.tile-hud-nav{
-  display:block;
-  width:42px;
-  height:50px;
-  margin:0 auto 10px;
-  text-decoration:none;
-}
-
-.tile-hud-nav img{
-  display:block;
-  width:42px;
-  height:50px;
-  object-fit:contain;
-  opacity:.9;
-  filter:drop-shadow(0 0 5px rgba(217,188,130,.16));
-}
-
-.tile-hud-nav:hover,
-.tile-hud-nav:focus{
-  opacity:.78;
-  outline:none;
-}
-
-/* APOLLO TILE CENTRED NAV MARK — END */
 
 </style>
 </head>
@@ -855,17 +830,7 @@ header .hud::after{
 
   <div class="apollo-feature">
     <figure>
-      <a class="tile-hud-nav"
-         href="#landing-sites"
-         title="Back to Lunar Landing Sites"
-         aria-label="Back to Lunar Landing Sites">
-        <img
-          src="images/Oddbrand/Ologoalpha.png"
-          alt=""
-          aria-hidden="true">
-      </a>
-
-      <model-viewer
+<model-viewer
         src="models/luna-landings/Apollo11_TranquilityBase_MKI.glb?v=20260906f"
         poster="images/moon/apollo11-preview/Apollo11_TranquilityBase_Hillshade.png"
         alt="Interactive 3D terrain model of the Apollo 11 landing region at Tranquility Base"
