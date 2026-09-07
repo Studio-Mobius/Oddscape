@@ -662,6 +662,79 @@ header .hud::after{
 
 
 
+
+/* ODDSCAPE ODDMOON — APOLLO HOTSPOTS — BEGIN */
+
+.apollo-orb-hotspot{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border:2px solid #d9bc82;
+  border-radius:50%;
+  background:rgba(6,20,29,.72);
+  color:#d9bc82;
+  text-decoration:none;
+  font-size:9px;
+  font-weight:800;
+  line-height:1;
+  box-shadow:0 2px 8px rgba(0,0,0,.35);
+  transform:translate(-50%,-50%);
+  cursor:pointer;
+}
+
+.apollo-orb-hotspot span{
+  pointer-events:none;
+}
+
+.apollo-orb-hotspot small{
+  position:absolute;
+  left:50%;
+  top:34px;
+  transform:translateX(-50%);
+  padding:5px 8px;
+  border:1px solid rgba(217,188,130,.32);
+  border-radius:5px;
+  background:rgba(5,8,13,.92);
+  color:#d9bc82;
+  white-space:nowrap;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.3px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .15s ease;
+}
+
+.apollo-orb-hotspot:hover small,
+.apollo-orb-hotspot:focus small,
+.apollo-orb-hotspot:focus-visible small{
+  opacity:1;
+}
+
+.apollo-orb-hotspot:hover,
+.apollo-orb-hotspot:focus{
+  background:#d9bc82;
+  color:#07121b;
+  outline:none;
+}
+
+@media(max-width:600px){
+  .apollo-orb-hotspot{
+    width:26px;
+    height:26px;
+    font-size:8px;
+  }
+
+  .apollo-orb-hotspot small{
+    top:31px;
+    font-size:8px;
+  }
+}
+
+/* ODDSCAPE ODDMOON — APOLLO HOTSPOTS — END */
 </style>
 </head>
 <body>
@@ -698,7 +771,7 @@ header .hud::after{
       <model-viewer
         src="models/oddmoon_mki.glb?v=20260904"
         ios-src="models/oddmoon_mki.usdz?v=20260904b"
-        alt="Interactive global terrain model of the Moon"
+        alt="Interactive 3D terrain model of the Moon built from NASA elevation data"
         camera-controls
         auto-rotate
         ar
@@ -707,6 +780,67 @@ header .hud::after{
         exposure="0.60"
         interaction-prompt="auto"
         touch-action="pan-y">
+
+        <a class="apollo-orb-hotspot"
+           slot="hotspot-apollo11"
+           data-position="0.949286m 0.012176m -0.412229m"
+           data-normal="0.917185 0.011765 -0.398289"
+           href="LunaLandings.html#apollo11-tile"
+           aria-label="Apollo 11 · Tranquility Base">
+          <span>11</span>
+          <small>Apollo 11 · Tranquility Base</small>
+        </a>
+
+        <a class="apollo-orb-hotspot"
+           slot="hotspot-apollo12"
+           data-position="0.948409m -0.054391m 0.410837m"
+           data-normal="0.916337 -0.052552 0.396944"
+           href="apollo12-oceanus-procellarum.html"
+           aria-label="Apollo 12 · Oceanus Procellarum">
+          <span>12</span>
+          <small>Apollo 12 · Oceanus Procellarum</small>
+        </a>
+
+        <a class="apollo-orb-hotspot"
+           slot="hotspot-apollo14"
+           data-position="0.985255m -0.065805m 0.310108m"
+           data-normal="0.951937 -0.063580 0.299622"
+           href="apollo14-fra-mauro.html"
+           aria-label="Apollo 14 · Fra Mauro">
+          <span>14</span>
+          <small>Apollo 14 · Fra Mauro</small>
+        </a>
+
+        <a class="apollo-orb-hotspot"
+           slot="hotspot-apollo15"
+           data-position="0.927334m 0.455860m -0.058893m"
+           data-normal="0.895975 0.440444 -0.056902"
+           href="apollo15-hadley-apennine.html"
+           aria-label="Apollo 15 · Hadley–Apennine">
+          <span>15</span>
+          <small>Apollo 15 · Hadley–Apennine</small>
+        </a>
+
+        <a class="apollo-orb-hotspot"
+           slot="hotspot-apollo16"
+           data-position="0.985151m -0.161428m -0.273210m"
+           data-normal="0.951837 -0.155969 -0.263971"
+           href="apollo16-descartes-highlands.html"
+           aria-label="Apollo 16 · Descartes Highlands">
+          <span>16</span>
+          <small>Apollo 16 · Descartes Highlands</small>
+        </a>
+
+        <a class="apollo-orb-hotspot"
+           slot="hotspot-apollo17"
+           data-position="0.834630m 0.357233m -0.496993m"
+           data-normal="0.806406 0.345152 -0.480186"
+           href="apollo17-taurus-littrow.html"
+           aria-label="Apollo 17 · Taurus–Littrow">
+          <span>17</span>
+          <small>Apollo 17 · Taurus–Littrow</small>
+        </a>
+
       </model-viewer>
 
       <div class="viewer-caption">
