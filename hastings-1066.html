@@ -445,6 +445,149 @@ nav a:hover{
 }
 /* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — END */
 
+
+/* HASTINGS 1066 EDUCATION LAYOUT — BEGIN */
+
+.hastings-visuals{
+  width:min(1100px,100%);
+  margin:34px auto 32px;
+}
+
+.hastings-hero{
+  margin:0;
+}
+
+.hastings-hero img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:16px;
+}
+
+.hastings-visuals figcaption{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  text-align:center;
+}
+
+.hastings-intro{
+  max-width:850px;
+  margin:30px auto 34px;
+  text-align:center;
+}
+
+.hastings-intro p{
+  margin:0;
+  font-size:18px;
+  line-height:1.65;
+  color:var(--text);
+}
+
+.hastings-support-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.hastings-support-grid figure{
+  margin:0;
+}
+
+.hastings-support-grid img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:14px;
+}
+
+@media (max-width:760px){
+
+  main.stage{
+    padding-top:38px !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .stage .kicker{
+    font-size:11px !important;
+    letter-spacing:2.4px !important;
+    margin-bottom:18px !important;
+  }
+
+  .stage h1{
+    font-size:44px !important;
+    line-height:1 !important;
+    margin:0 !important;
+    letter-spacing:-1px !important;
+  }
+
+  .stage h1 + p{
+    font-size:15px !important;
+    line-height:1.35 !important;
+    letter-spacing:1.8px !important;
+    margin:8px auto 0 !important;
+    max-width:330px;
+  }
+
+  .place-sub{
+    font-size:14px !important;
+    letter-spacing:1.2px !important;
+    margin:14px 0 22px !important;
+  }
+
+  .hastings-visuals{
+    margin:0 auto 28px;
+  }
+
+  .hastings-hero img{
+    border-radius:14px;
+  }
+
+  .hastings-visuals figcaption{
+    font-size:10px;
+    letter-spacing:1.1px;
+    margin-top:8px;
+  }
+
+  .hastings-intro{
+    margin:22px auto 26px;
+    padding:0 4px;
+  }
+
+  .hastings-intro p{
+    font-size:16px;
+    line-height:1.55;
+  }
+
+  .hastings-support-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .meta{
+    margin-top:30px !important;
+  }
+
+  .project-attribution{
+    padding:20px 0 !important;
+    margin:28px 0 32px !important;
+  }
+
+  .project-attribution h2{
+    font-size:20px !important;
+  }
+
+  .project-attribution p{
+    font-size:14px !important;
+    line-height:1.55 !important;
+  }
+}
+
+/* HASTINGS 1066 EDUCATION LAYOUT — END */
+
 </style>
 
 <style id="oddscape-terrain-hud-normalise">
@@ -721,41 +864,43 @@ footer{
   <div class="place-sub">Historical Landscape Study</div>
   
 
-<section class="terrain-output-grid" aria-label="Hastings 1066 terrain visualisations">
+<section class="hastings-visuals" aria-label="Hastings 1066 terrain visualisations">
 
-  <figure class="terrain-output">
+  <figure class="hastings-hero">
     <img
       src="images/hastings_1066/hastings_1066_hillshade.jpg"
-      alt="Hastings 1066 LiDAR hillshade terrain"
-      loading="lazy">
-    <figcaption>Terrain — Environment Agency 1 m LiDAR DTM</figcaption>
+      alt="Hastings 1066 LiDAR hillshade terrain">
+    <figcaption>Environment Agency 1 m LiDAR terrain</figcaption>
   </figure>
 
-  <figure class="terrain-output">
-    <img
-      src="images/hastings_1066/hastings_1066_battlefield.jpg"
-      alt="Registered Battle of Hastings battlefield over terrain"
-      loading="lazy">
-    <figcaption>Registered Battlefield — Historic England</figcaption>
-  </figure>
+  <div class="hastings-intro">
+    <p>
+      Hastings 1066 interpreted by Studio Oddscape using Environment Agency
+      1 m LiDAR terrain data and Historic England registered battlefield data.
+      The terrain places Battle Abbey and the designated battlefield within
+      its wider landscape context.
+    </p>
+  </div>
 
-  <figure class="terrain-output">
-    <img
-      src="images/hastings_1066/hastings_1066_profile.png"
-      alt="Elevation profile across the registered Battle of Hastings battlefield"
-      loading="lazy">
-    <figcaption>Battlefield Relief Profile</figcaption>
-  </figure>
+  <div class="hastings-support-grid">
+
+    <figure>
+      <img
+        src="images/hastings_1066/hastings_1066_battlefield.jpg"
+        alt="Registered Battle of Hastings battlefield over terrain">
+      <figcaption>Registered Battlefield — Historic England</figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="images/hastings_1066/hastings_1066_profile.png"
+        alt="Elevation profile across the registered Battle of Hastings battlefield">
+      <figcaption>Battlefield Relief Profile</figcaption>
+    </figure>
+
+  </div>
 
 </section>
-
-
-<div class="wookey-grid-caption">
-  Hastings 1066 interpreted by Studio Oddscape using Environment Agency
-  1 m LiDAR terrain data and Historic England registered battlefield data.
-  The terrain places Battle Abbey and the designated battlefield within
-  its wider landscape context.
-</div>
 
 <section class="meta" aria-label="Study metadata">
   <div><span>Location</span><p>Battle, East Sussex</p></div>
