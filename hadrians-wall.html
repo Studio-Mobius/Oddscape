@@ -879,10 +879,20 @@ footer{
 <section class="hastings-visuals" aria-label="Hadrian’s Wall terrain visualisations">
 
   <figure class="hastings-hero">
-    <img
-      src="images/hadrians_wall/hadrians_wall_core_overlay.png?v=20260911a"
-      alt="Hadrian’s Wall core heritage corridor shown over terrain">
-    <figcaption>Hadrian’s Wall — Heritage Corridor and Terrain</figcaption>
+    <model-viewer
+      src="models/Hadrians_Wall_Oddscape_History.glb"
+      ios-src="models/Hadrians_Wall_Oddscape_History.usdz"
+      alt="Interactive 3D terrain model of Hadrian’s Wall"
+      camera-controls
+      auto-rotate
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      shadow-intensity="1"
+      exposure="0.85"
+      interaction-prompt="auto"
+      touch-action="pan-y">
+    </model-viewer>
+    <figcaption>Interactive Hadrian’s Wall terrain model</figcaption>
   </figure>
 
   <div class="hastings-intro">
@@ -912,13 +922,26 @@ footer{
 
   </div>
 
+  <div class="button-row" style="margin-top:24px;">
+    <a class="button apple-ar"
+       href="#"
+       onclick="openAssetLicence(event,'models/Hadrians_Wall_Oddscape_History.usdz')">
+       View AR (USDZ)
+    </a>
+    <a class="button"
+       href="#"
+       onclick="openAssetLicence(event,'models/Hadrians_Wall_Oddscape_History.glb')">
+       Download GLB
+    </a>
+  </div>
+
 </section>
 
 <section class="meta" aria-label="Study metadata">
   <div><span>Location</span><p>Hadrian’s Wall, Northern England</p></div>
   <div><span>Terrain Model</span><p>High-resolution DTM</p></div>
   <div><span>Heritage Data</span><p>Historic England — NHLE</p></div>
-  <div><span>Outputs</span><p>Hillshade • Heritage Overlay<br>Terrain Interpretation</p></div>
+  <div><span>Outputs</span><p>Hillshade • Heritage Overlay • Terrain Interpretation<br>GLB • USDZ</p></div>
   <div><span>Use</span><p>Historical landscape interpretation<br>and terrain analysis</p></div>
 </section>
 
