@@ -453,16 +453,18 @@ nav a:hover{
   margin:34px auto 32px;
 }
 
+.hastings-hero model-viewer{
+  display:block;
+  width:100%;
+  height:70vh;
+  min-height:520px;
+  background:#111;
+}
+
 .hastings-hero{
   margin:0;
 }
 
-.hastings-hero img{
-  display:block;
-  width:100%;
-  height:auto;
-  border-radius:16px;
-}
 
 .hastings-visuals figcaption{
   margin-top:10px;
@@ -587,6 +589,14 @@ nav a:hover{
 }
 
 /* HASTINGS 1066 EDUCATION LAYOUT — END */
+
+
+@media (max-width: 760px){
+  .hastings-hero model-viewer{
+    height:58vh;
+    min-height:420px;
+  }
+}
 
 </style>
 
@@ -837,6 +847,7 @@ footer{
 /* ARCHIVAL STUDIO WORK LINK — END */
 </style>
 
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
 <div id="licence-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;align-items:center;justify-content:center;padding:20px">
@@ -867,10 +878,20 @@ footer{
 <section class="hastings-visuals" aria-label="Hastings 1066 terrain visualisations">
 
   <figure class="hastings-hero">
-    <img
-      src="images/hastings_1066/hastings_1066_hillshade.jpg"
-      alt="Hastings 1066 LiDAR hillshade terrain">
-    <figcaption>Environment Agency 1 m LiDAR terrain</figcaption>
+    <model-viewer
+      src="models/Hastings_1066_Oddscape_History.glb"
+      ios-src="models/Hastings_1066_Oddscape_History.usdz"
+      alt="Interactive 3D terrain model of the Battle of Hastings landscape"
+      camera-controls
+      auto-rotate
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      shadow-intensity="1"
+      exposure="0.85"
+      interaction-prompt="auto"
+      touch-action="pan-y">
+    </model-viewer>
+    <figcaption>Interactive Hastings 1066 terrain model</figcaption>
   </figure>
 
   <div class="hastings-intro">
