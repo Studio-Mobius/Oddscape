@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alde–Ore Inundation Evolution</title>
+<style>
+html,body{margin:0;background:#111;color:#eee;font-family:Arial,sans-serif}
+.wrap{max-width:1100px;margin:auto;padding:18px}
+h1{font-size:24px;margin:0 0 4px}
+.sub{font-size:11px;letter-spacing:.14em;color:#aaa}
+.viewer{position:relative;margin-top:14px;background:#222}
+#base{display:block;width:100%;height:auto}
+#overlay{position:absolute;inset:0;width:100%;height:100%}
+.controls{margin-top:15px}
+.level{font-size:32px;font-weight:700;margin:3px 0}
+input[type=range]{width:100%}
+button{padding:8px 16px;margin-right:8px}
+.note{font-size:12px;line-height:1.45;color:#aaa;margin-top:14px}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:10px;font-size:13px}
+.swatch{display:inline-block;width:15px;height:15px;margin-right:6px;vertical-align:-3px}
+.blue{background:rgba(35,105,205,.33)}
+.amber{background:rgba(235,155,45,.33)}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<h1>Alde–Ore Inundation Evolution</h1>
+<div class="sub">STUDIO ODDSCAPE · HYDROSCAPE</div>
+
+<div class="viewer">
+<img id="base"
+ src="ALDE_ORE_BASELINE_WATER_030_BLUE33.png">
+<canvas id="overlay" width="3125" height="4250"></canvas>
+</div>
+
+<div class="controls">
+<div class="sub">HYDROSCAPE WORKING LEVEL</div>
+<div class="level" id="level">+0.30 m</div>
+
+<input id="slider"
+ type="range"
+ min="30" max="250" value="30" step="1">
+
+<div style="margin-top:10px">
+<button id="play">▶ Play</button>
+<button id="reset">Reset</button>
+</div>
+
+<div class="legend">
+<span><i class="swatch blue"></i>Existing water</span>
+<span><i class="swatch amber"></i>Connectivity +0.30–2.00 m</span>
+<span><i class="swatch" style="background:rgba(235,55,45,.33)"></i>Additional connectivity +2.00–2.50 m</span>
+</div>
+</div>
+
+<div class="note">
+Presentation baseline: +0.30 m Hydroscape working level.
+Working elevation levels are model values and must not be interpreted as ODN,
+ALAT, tidal height or absolute flood level until source vertical datums are harmonised.
+Hydroscape represents terrain-constrained minimum-spill hydraulic connectivity,
+not a hydrodynamic simulation.
+</div>
+
+</div>
+
+<script>
+const W=3125,H=4250;
+
+const canvas=document.getElementById("overlay");
+const ctx=canvas.getContext("2d",{willReadFrequently:true});
+const slider=document.getElementById("slider");
+const levelEl=document.getElementById("level");
+const play=document.getElementById("play");
+const reset=document.getElementById("reset");
+
+const gateways=[
+{id:"G01",level:.070,x:1823,y:485, area:93.93},
+{id:"G02",level:.737,x:658, y:290, area:17.27},
+{id:"G03",level:.949,x:2260,y:1780,area:181.06},
+{id:"G04",level:.998,x:711, y:367, area:18.33},
+{id:"G05",level:1.027,x:716,y:167, area:34.52},
+{id:"G06",level:1.644,x:1640,y:2826,area:53.42},
+{id:"G07",level:1.697,x:888,y:337, area:37.71},
+{id:"G08",level:1.729,x:1788,y:2408,area:92.77},
+{id:"G09",level:1.866,x:2232,y:2162,area:106.45},
+{id:"G10",level:1.975,x:1047,y:2368,area:184.47}
+];
+
+let levelData=null;
+let timer=null;
+
+const levelImg=new Image();
+levelImg.src="V4_CROP_LEVELS_250_RGB.png";
+
+levelImg.onload=()=>{
+ const c=document.createElement("canvas");
+ c.width=W;c.height=H;
+ const x=c.getContext("2d",{willReadFrequently:true});
+ x.drawImage(levelImg,0,0);
+ levelData=x.getImageData(0,0,W,H).data;
+ render(+slider.value);
+};
+
+function render(cm){
+ if(!levelData)return;
+
+ const metres=cm/100;
+ const out=ctx.createImageData(W,H);
+ const d=out.data;
+
+ // Transparent canvas except for new connectivity.
+ // RGB level encoding = centimetres + 1.
+ for(let p=0,i=0;p<levelData.length;p+=4,i+=4){
+   const code=levelData[p] + (levelData[p+1] << 8);
+   const cellCm=code>0 ? code-1 : -1;
+
+   const px=i/4;
+   const x=px%W;
+   const y=Math.floor(px/W);
+
+   // Presentation exclusion: isolated offshore sandbar
+   const offshoreSandbar=(x>=2798 && x<=2878 && y>=1865 && y<=2018);
+
+   if(cellCm>30 && cellCm<=cm && !offshoreSandbar){
+      if(cellCm<=200){
+         // +0.30 → +2.00 m: amber
+         d[i]=235;
+         d[i+1]=155;
+         d[i+2]=45;
+         d[i+3]=84;
+      }else{
+         // +2.00 → +2.50 m: RED
+         d[i]=235;
+         d[i+1]=55;
+         d[i+2]=45;
+         d[i+3]=84;
+      }
+   }
+ }
+
+ ctx.clearRect(0,0,W,H);
+ ctx.putImageData(out,0,0);
+
+
+ levelEl.textContent=`+${metres.toFixed(2)} m`;
+}
+
+slider.oninput=()=>render(+slider.value);
+
+play.onclick=()=>{
+ if(timer){
+   clearInterval(timer);
+   timer=null;
+   play.textContent="▶ Play";
+   return;
+ }
+
+ play.textContent="❚❚ Pause";
+
+ timer=setInterval(()=>{
+   let v=+slider.value;
+
+   if(v>=250){
+      clearInterval(timer);
+      timer=null;
+      play.textContent="▶ Play";
+      return;
+   }
+
+   slider.value=++v;
+   render(v);
+ },90);
+};
+
+reset.onclick=()=>{
+ if(timer){
+   clearInterval(timer);
+   timer=null;
+ }
+ play.textContent="▶ Play";
+ slider.value=30;
+ render(30);
+};
+</script>
+</body>
+</html>
