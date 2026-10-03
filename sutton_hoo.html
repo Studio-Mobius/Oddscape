@@ -694,6 +694,7 @@ footer{
 /* ARCHIVAL STUDIO WORK LINK — END */
 </style>
 
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
 </head>
 <body>
 <div id="licence-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;align-items:center;justify-content:center;padding:20px">
@@ -717,6 +718,25 @@ footer{
   <h1>Sutton Hoo</h1>
   <div class="place-sub">Archaeological Terrain Study</div>
   
+
+<section class="terrain-3d-hero" aria-label="Interactive Sutton Hoo terrain model" style="margin:36px auto 34px;">
+  <model-viewer
+    src="images/3D/glb/sutton_hoo_mounds_textured.glb?v=3"
+    ios-src="images/3D/usdz/S_Hoo_ODDSCAPE.usdz?v=3"
+    alt="Interactive 3D terrain model of the Sutton Hoo burial mounds"
+    camera-controls
+    touch-action="pan-y"
+    interaction-prompt="auto"
+    shadow-intensity="0.8"
+    exposure="1.05"
+    environment-image="neutral"
+    camera-orbit="35deg 55deg auto"
+    min-camera-orbit="auto 15deg auto"
+    max-camera-orbit="auto 80deg auto"
+    field-of-view="28deg"
+    style="width:100%;height:62vh;min-height:420px;max-height:680px;background:transparent;">
+  </model-viewer>
+</section>
 
 <section class="terrain-output-grid" aria-label="Sutton Hoo terrain visualisations">
 
