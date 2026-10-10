@@ -777,8 +777,8 @@ footer{
 
 <div class="orford-3d-hero">
 <model-viewer
-  src="images/orfordness/Orford_Ness_3D_HERO_TIGHT_125.glb"
-  ios-src="images/3D/usdz/Orford_Ness_3D_HERO_AR_30m_125.usdz?v=4"
+  src="models/Orford_Ness_V8_LITE.glb"
+  ios-src="models/Orford_Ness_V8_LITE.usdz"
   alt="Interactive 3D terrain model of Orford Ness and the Alde-Ore landscape"
   camera-controls
   touch-action="pan-y"
@@ -848,10 +848,24 @@ three dimensions and placed directly into physical space using augmented reality
 
   <a id="arLink"
      rel="ar"
-     href="images/3D/usdz/Orford_Ness_3D_HERO_AR_30m_125.usdz?v=4"
+     href="models/Orford_Ness_V8_LITE.usdz"
      style="position:absolute;left:-9999px;">
      <img src="images/orfordness/orfordness_2026_hillshade.png" style="width:100%;max-width:1100px;height:auto;display:block;margin:auto;" alt="">
   </a>
+</div>
+
+<div id="orford-ar-qr" class="orford-ar-qr" style="display:none;text-align:center;margin:34px auto;max-width:360px;">
+  <img
+    src="Orford_Ness_V8_AR_QR.png"
+    alt="QR code linking to the Orford Ness augmented reality terrain model"
+    width="196"
+    height="196"
+    loading="lazy"
+    style="display:block;margin:0 auto 12px;background:white;padding:10px;border-radius:8px;max-width:100%;height:auto;"
+  >
+  <div style="font-size:0.9rem;letter-spacing:0.04em;">
+    Scan to view Orford Ness in AR
+  </div>
 </div>
 
 <div class="caption" style="max-width:760px;margin:24px auto 0;">
@@ -1052,6 +1066,10 @@ function openModelLicence(event){
 
 function acceptLicence(){
     document.getElementById('licence-overlay').style.display='none';
+
+    const qr = document.getElementById('orford-ar-qr');
+    if (qr) qr.style.display = 'block';
+
     document.getElementById('arLink').click();
 }
 </script>
