@@ -51,7 +51,7 @@ button{padding:8px 16px;margin-right:8px}
 <button id="fullscreen">Full screen</button>
 </div>
 
-<div class="controls">
+<div class="controls" id="connectPanel">
 <div class="sub">HYDROSCAPE WORKING LEVEL</div>
 <div class="level" id="level">+0.30 m</div>
 
@@ -65,6 +65,7 @@ button{padding:8px 16px;margin-right:8px}
 </div>
 
 
+</div>
 <div class="tidepanel" id="tidePanel">
 <div class="sub">28 SEPTEMBER 2026 · OBSERVED TIDE · UTC</div>
 <div class="level" id="tideTime">06:45 UTC</div>
@@ -86,7 +87,6 @@ or a hydrodynamic prediction.
 <span><i class="swatch blue"></i>Existing water</span>
 <span><i class="swatch amber"></i>Connectivity +0.30–2.00 m</span>
 <span><i class="swatch" style="background:rgba(235,55,45,.33)"></i>Additional connectivity +2.00–2.50 m</span>
-</div>
 </div>
 
 <div class="note">
@@ -212,7 +212,7 @@ function render(cm){
  levelEl.textContent=`+${metres.toFixed(2)} m`;
 }
 
-slider.oninput=()=>render(+slider.value);
+slider.oninput=()=>{if(currentMode==="connectivity")render(+slider.value);};
 
 play.onclick=()=>{
  if(timer){
@@ -290,6 +290,7 @@ document.getElementById("connectMode").onclick=()=>{
  stopTide();
  currentMode="connectivity";
  tidePanel.classList.remove("visible");
+ document.getElementById("connectPanel").style.display="block";
  document.getElementById("connectMode").classList.add("active");
  document.getElementById("tideMode").classList.remove("active");
  render(+slider.value);
@@ -299,6 +300,7 @@ document.getElementById("tideMode").onclick=()=>{
  stopConnectivity();
  currentMode="tide";
  tidePanel.classList.add("visible");
+ document.getElementById("connectPanel").style.display="none";
  document.getElementById("tideMode").classList.add("active");
  document.getElementById("connectMode").classList.remove("active");
  renderTide(tideIndex);
