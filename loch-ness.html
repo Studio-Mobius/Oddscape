@@ -738,10 +738,13 @@ footer{
   through an integrated three-dimensional reconstruction of
   terrestrial topography and underwater bathymetry.</p>
 
-  <p>Studio Oddscape combines LiDAR, OS Terrain 50 and bathymetric
-  elevation data to reveal the form of the Great Glen and the
-  submerged landscape of Loch Ness. The lakebed is deliberately
+  <p>Studio Oddscape combines LiDAR and OS Terrain 50 terrain data with
+  a bathymetric elevation surface to reveal the form of the Great Glen
+  and the submerged landscape of Loch Ness. The lakebed is deliberately
   exposed for interpretation.</p>
+
+  <p><strong>Data note:</strong> This release names LiDAR and OS Terrain 50
+  as terrain inputs, but does not identify the bathymetry source or survey date.</p>
 
   <figure style="margin:35px auto;max-width:900px">
     <img src="images/hydroscape/loch_ness/loch_ness_V4_hillshade.png"
@@ -756,9 +759,10 @@ footer{
     <div><span>Outputs</span><p>Interactive GLB and USDZ augmented reality</p></div>
   </section>
 
-  <p>This is a geospatial terrain and bathymetry visualisation,
-  not a validated hydrodynamic simulation. Terrain elevations
-  are presented without vertical exaggeration.</p>
+  <p>This is an interpretive terrain and bathymetry visualisation,
+  not a calibrated hydrodynamic or flood model. It does not simulate
+  flow or changing water levels. Terrain elevations are shown without
+  vertical exaggeration.</p>
 
   <div class="button-row">
     <button class="button apple-ar" type="button"
@@ -766,34 +770,38 @@ footer{
       View in AR
     </button>
     <a class="button" href="images/hydroscape/loch_ness/Loch_Ness_ODDSCAPE_UKCEH_V3.glb" download>Download GLB</a>
-    <a class="button" href="licence.html">Request Licence</a>
+    <a class="button" href="licence.html">Licence this Study</a>
+    <a class="button" href="start.html">Commission a Study</a>
     <a class="button" href="archive.html">Back to Archive</a>
   </div>
 
-<section aria-label="Hydroscape water volume" style="margin:48px 0;">
-  <h2>Hydroscape — Loch Ness Water Volume</h2>
+<section class="hydroscape-water" aria-labelledby="hydroscape-water-title">
+  <h2 id="hydroscape-water-title">Hydroscape — Loch Ness Water Volume</h2>
 
   <p>
-    A standalone three-dimensional representation of the water
-    occupying Loch Ness, developed alongside Oddscape's integrated
-    terrain and bathymetry model.
+    This standalone three-dimensional water volume accompanies the
+    terrain and bathymetry study. It is an experimental interpretation
+    for exploring the lake's form, not a simulation of water movement.
   </p>
 
-  <p>
-    This experimental water-volume model provides a foundation for
-    exploring hydrological connectivity across the Great Glen.
-    It is not a calibrated hydrodynamic simulation.
-  </p>
-
-  <p>
+  <figure style="margin:28px auto;max-width:900px">
     <a rel="ar"
        href="images/hydroscape/loch_ness/loch_ness_water_volume_BLUE_2m_AR.usdz">
       <img src="images/hydroscape/loch_ness/loch_ness_V4_hillshade.png"
-           alt="Open Loch Ness blue water volume in augmented reality"
-           style="width:180px;max-width:100%;border-radius:8px;display:block;">
+           alt="Loch Ness shaded relief; open the standalone water-volume model in AR"
+           loading="lazy" style="width:100%;height:auto">
     </a>
-    <p>Tap the image to view Blue Loch Ness in Augmented Reality.</p>
-  </p>
+    <figcaption style="margin-top:10px;color:var(--muted);line-height:1.6">
+      Terrain context image. Tap to open the blue water-volume model in
+      Apple AR Quick Look on iPhone or iPad.
+    </figcaption>
+  </figure>
+
+  <div class="button-row" style="margin-top:20px">
+    <a class="button"
+       href="images/hydroscape/loch_ness/loch_ness_water_volume_BLUE_2m_AR.usdz"
+       download>Download Water Volume (USDZ)</a>
+  </div>
 </section>
 
 </main>
