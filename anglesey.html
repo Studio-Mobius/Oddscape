@@ -694,17 +694,8 @@ footer{
 /* ARCHIVAL STUDIO WORK LINK — END */
 </style>
 
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
 </head>
 <body>
-<div id="licence-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;align-items:center;justify-content:center;padding:20px">
-  <div style="width:min(700px,100%);background:rgba(16,33,44,.94);border:1px solid rgba(217,188,130,.4);border-radius:18px;padding:32px;text-align:center">
-    <h2 style="color:var(--gold);margin-bottom:20px">Studio Oddscape Terrain Licence</h2>
-    <p style="color:var(--muted);line-height:1.7;margin-bottom:16px">This terrain model, visualisation and associated files are provided for personal evaluation, educational use and landscape interpretation.</p>
-    <p style="color:var(--muted);line-height:1.7;margin-bottom:16px">Redistribution, resale, republication, AI training, derivative works, commercial use or hosting elsewhere is prohibited without written permission from Studio Oddscape.</p>
-    <button style="margin-top:12px;padding:14px 28px;border-radius:999px;background:var(--gold);color:#08141d;font-weight:700;border:none;cursor:pointer" onclick="acceptAssetLicence()">Continue to Terrain Model</button>
-  </div>
-</div>
 <div class="page">
 <header><a href="index.html" class="logo">Studio Oddscape</a><div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div><div class="hud"><span class="hud-marker">
   <img
@@ -719,53 +710,14 @@ footer{
   <div class="place-sub">Terrestrial & Marine Terrain Study</div>
   
 
-<img src="images/anglesey_archipelago_v3_hillshade.png" alt="Anglesey Archipelago V3 terrain hillshade" style="display:block;width:100%;height:auto;max-height:680px;object-fit:contain;margin:36px auto 34px;">
-<div id="anglesey-viewer-gate" style="text-align:center;margin:28px auto;">
-  <button
-    id="anglesey-licence-button"
-    onclick="document.getElementById('licence-overlay').style.display='flex'"
-    style="padding:14px 28px;border-radius:999px;background:#d9bc82;color:#08141d;font-weight:700;border:none;cursor:pointer;">
-    Accept Terrain Licence to Explore 3D
-  </button>
-</div>
+<p role="status" style="text-align:center;margin:36px auto;color:var(--muted);">Models and imagery are temporarily unavailable while this study is reviewed.</p>
 
-<div id="anglesey-viewer-container" style="display:none;">
-<section class="anglesey-3d" style="max-width:1100px;margin:50px auto;text-align:center;">
-  <h2>Anglesey Archipelago — Interactive Terrain</h2>
-  <p>Explore the combined land and seafloor model in 3D,
-  or place the landscape on a table using augmented reality.</p>
-
-  <model-viewer
-    src="images/anglesey/3D/anglesey_v3_preview.glb"
-    ios-src="images/anglesey/3D/anglesey_v3_preview.usdz"
-    alt="Anglesey Archipelago combined land and seafloor terrain"
-    camera-controls
-    touch-action="pan-y"
-    ar
-    ar-modes="quick-look webxr scene-viewer"
-    interaction-prompt="auto"
-    shadow-intensity="0.8"
-    exposure="1.05"
-    environment-image="neutral"
-    camera-orbit="35deg 55deg auto"
-    field-of-view="28deg"
-    style="display:block;width:100%;height:62vh;min-height:420px;max-height:680px;background:transparent;margin:30px auto;">
-  </model-viewer>
-</section>
-</div>
-
-
-
-
-
-<div class="wookey-grid-caption"><strong>Anglesey Archipelago — V3 Terrain Hillshade</strong><p>Terrestrial and marine landscape visualisation.</p>
+<div class="wookey-grid-caption"><strong>Anglesey Archipelago — Terrain Study</strong><p>Terrestrial and marine landscape visualisation.</p>
     The Anglesey Archipelago study combines terrestrial elevation
     and marine bathymetric survey data to explore the relationship
     between the islands, coastlines and surrounding seabed.
     The study encompasses Ynys Môn, Holy Island, the Menai Strait,
     the Skerries and adjacent Irish Sea environments.
-    The V3 study includes an interactive combined land and seafloor
-    model with augmented-reality viewing.
     </div>
 
   
@@ -774,7 +726,7 @@ footer{
   <section class="meta" aria-label="Study metadata">
     <div><span>Location</span><p>Ynys Môn / Anglesey, North Wales</p></div>
     <div><span>Terrain Model</span><p>Welsh Government 1 m DTM</p></div>
-    <div><span>Outputs</span><p>V3 terrain hillshade<br>Interactive 3D and tabletop AR</p></div>
+    <div><span>Outputs</span><p>Terrain study<br>Publication under review</p></div>
     <div><span>Use</span><p>Coastal landscape interpretation<br>and terrestrial–marine visualisation</p></div>
   </section>
   <div class="button-row">
@@ -824,13 +776,6 @@ footer{
 
 
 
-<script>
-function acceptAssetLicence() {
-  document.getElementById('licence-overlay').style.display = 'none';
-  document.getElementById('anglesey-viewer-gate').style.display = 'none';
-  document.getElementById('anglesey-viewer-container').style.display = 'block';
-}
-</script>
 </body>
 </html>
 
