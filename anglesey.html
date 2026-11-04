@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="Explore Anglesey and its surrounding seafloor in an interpretative 3D land-and-seascape visualisation by Studio Oddscape." name="description"/>
+<link href="images/anglesey-v3-hi1420/assets/Ologoalpha.png" rel="icon" type="image/png"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Anglesey Archipelago | Studio Oddscape</title>
 <style>
 :root{
@@ -446,7 +449,6 @@ nav a:hover{
 /* ODDSCAPE GLOBAL ONE-LINE MOBILE NAV — END */
 
 </style>
-
 <style id="oddscape-terrain-hud-normalise">
 /* ODDSCAPE TERRAIN PAGE HUD — AUTHORITATIVE FINAL RULES */
 
@@ -567,7 +569,6 @@ header .hud-marker img{
   }
 }
 </style>
-
 <style id="oddscape-terrain-output-standard">
 /* WEBSITE MKI — FINAL TERRAIN OUTPUT STANDARD */
 
@@ -693,89 +694,98 @@ footer{
 }
 /* ARCHIVAL STUDIO WORK LINK — END */
 </style>
-
+<script src="images/anglesey-v3-hi1420/assets/vendor/model-viewer.min.js" type="module"></script>
 </head>
-<body>
+<body id="top">
+<div id="licence-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;align-items:center;justify-content:center;padding:20px">
+<div style="width:min(700px,100%);background:rgba(16,33,44,.94);border:1px solid rgba(217,188,130,.4);border-radius:18px;padding:32px;text-align:center">
+<h2 style="color:var(--gold);margin-bottom:20px">Anglesey Archipelago — interpretation and sources</h2>
+<p style="color:var(--muted);line-height:1.7;margin-bottom:16px">V3 HI1420 replacement. Read the scientific disclaimer and source-specific licences before exploring this interpretation.</p>
+<p style="color:var(--muted);line-height:1.7;margin-bottom:16px">This is a geographical interpretation assembled from sources with different vertical references. Underlying dataset rights remain with their owners; Oddscape’s presentation does not remove rights granted by those licences.</p>
+<button onclick="acceptAssetLicence()" style="margin-top:12px;padding:14px 28px;border-radius:999px;background:var(--gold);color:#08141d;font-weight:700;border:none;cursor:pointer">Continue to Terrain Model</button>
+</div>
+</div>
 <div class="page">
-<header><a href="index.html" class="logo">Studio Oddscape</a><div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div><div class="hud"><span class="hud-marker">
-  <img
-    src="images/Oddbrand/Ologoalpha.png"
-    alt=""
-    aria-hidden="true"
-  >
+<header><a class="logo" href="index.html">Studio Oddscape</a><div class="subtitle">Terrain Visualisation // Commissioned Landscape Interpretation</div><div class="hud"><span class="hud-marker">
+<img alt="" aria-hidden="true" src="images/anglesey-v3-hi1420/assets/Ologoalpha.png"/>
 </span></div></header>
 <main class="stage">
-  <div class="kicker">Oddscape Terrain Interpretation</div>
-  <h1>Anglesey Archipelago</h1>
-  <div class="place-sub">Terrestrial & Marine Terrain Study</div>
-  
-
-<p role="status" style="text-align:center;margin:36px auto;color:var(--muted);">Models and imagery are temporarily unavailable while this study is reviewed.</p>
-
-<div class="wookey-grid-caption"><strong>Anglesey Archipelago — Terrain Study</strong><p>Terrestrial and marine landscape visualisation.</p>
+<div class="kicker">Oddscape Terrain Interpretation</div>
+<h1>Anglesey Archipelago</h1>
+<div class="place-sub">Terrestrial &amp; Marine Terrain Study</div>
+<p style="margin:24px auto;line-height:1.7">A scientifically sourced, interpretative 3D geospatial visualisation.<br/>Explore Anglesey and its surrounding submarine landscapes through terrestrial LiDAR and hydrographic survey data.</p>
+<p role="status" style="color:var(--gold);line-height:1.7">Edition: V3 HI1420 replacement · 4 November 2026</p>
+<img alt="Anglesey Archipelago V3 HI1420 terrain hillshade" src="images/anglesey-v3-hi1420/assets/archipelago-hillshade.png" style="display:block;width:100%;height:auto;max-height:680px;object-fit:contain;margin:36px auto 34px;"/>
+<div id="anglesey-viewer-gate" style="text-align:center;margin:28px auto;">
+<button id="anglesey-licence-button" onclick="document.getElementById('licence-overlay').style.display='flex'" style="padding:14px 28px;border-radius:999px;background:#d9bc82;color:#08141d;font-weight:700;border:none;cursor:pointer;">
+    Read Interpretation Notes to Explore 3D
+  </button>
+</div>
+<div id="anglesey-viewer-container" style="display:none;">
+<section class="anglesey-3d" style="max-width:1100px;margin:50px auto;text-align:center;">
+<h2>Anglesey Archipelago — Interactive Terrain</h2>
+<p>Explore the combined land and seafloor model in your browser. Credited GLB and USDZ downloads are available below.</p>
+<model-viewer alt="Anglesey Archipelago combined land and seafloor terrain" camera-controls="" camera-orbit="35deg 55deg auto" environment-image="neutral" exposure="1.05" field-of-view="28deg" interaction-prompt="auto" shadow-intensity="0.8" src="images/anglesey-v3-hi1420/assets/Anglesey_Archipelago_V3_HI1420.glb" style="display:block;width:100%;height:62vh;min-height:420px;max-height:680px;background:transparent;margin:30px auto;" touch-action="pan-y">
+</model-viewer>
+</section>
+</div>
+<div class="wookey-grid-caption"><strong>Anglesey Archipelago — V3 HI1420 Replacement Terrain Hillshade</strong><p>Terrestrial and marine landscape visualisation.</p>
     The Anglesey Archipelago study combines terrestrial elevation
     and marine bathymetric survey data to explore the relationship
     between the islands, coastlines and surrounding seabed.
     The study encompasses Ynys Môn, Holy Island, the Menai Strait,
     the Skerries and adjacent Irish Sea environments.
+    The V3 study includes an interactive combined land and seafloor
+    model, with downloadable GLB and USDZ files accompanied by source credits and licence notices.
     </div>
-
-  
-  
-  
-  <section class="meta" aria-label="Study metadata">
-    <div><span>Location</span><p>Ynys Môn / Anglesey, North Wales</p></div>
-    <div><span>Terrain Model</span><p>Welsh Government 1 m DTM</p></div>
-    <div><span>Outputs</span><p>Terrain study<br>Publication under review</p></div>
-    <div><span>Use</span><p>Coastal landscape interpretation<br>and terrestrial–marine visualisation</p></div>
-  </section>
-  <div class="button-row">
-      
-      
-      <a class="button" href="licence.html">Request Licence</a>
-      <a class="button" href="archive.html">Back to Archive</a>
-  </div>
-</main>
-<section class="archive-studio-link" aria-label="Studio Work">
-  <a href="studio-work.html">Explore the Creative Studio →</a>
+<section id="scientific-notes" style="max-width:950px;margin:32px auto;text-align:left;line-height:1.7"><h2>Scientific classification and datum disclaimer</h2>
+<p>A scientifically sourced, interpretative 3D geospatial visualisation of Anglesey’s land and seascape, intended for geographical interpretation, education and research communication.</p>
+<p>This visualisation combines datasets acquired at different times, resolutions and vertical reference systems. A unified vertical datum has not been verified across all sources. The combined surface is therefore not a calibrated scientific elevation model: its displayed land heights and seabed depths must not be used for quantitative elevation or depth measurements, cross-shore gradients, engineering design or navigation.</p>
+<p>Vertical exaggeration: 1.0 (none). An 8 m working mosaic supports the original 224 m sampled regional mesh; neither the mesh nor its texture implies native survey accuracy. Source-native anomalies, coverage limits and differences between marine references remain.</p>
+<p>Source data retain their respective licences. Contains United Kingdom Hydrographic Office data © Crown copyright and database right.</p>
+<p>Welsh Government / Natural Resources Wales LiDAR, via DataMapWales. Contains public sector information licensed under the <a href="images/anglesey-v3-hi1420/licences/OGL_v3.txt" style="color:var(--gold)">Open Government Licence v3.0</a>.</p>
+<p>EMODnet Bathymetry Consortium (2024), <a href="https://doi.org/10.12770/cf51df64-56f9-4a99-b1aa-36b8d7b743a1" style="color:var(--gold)">EMODnet Digital Bathymetry (DTM 2024)</a>. Created by EMODnet; owned by the European Union; licensed under <a href="images/anglesey-v3-hi1420/licences/CC_BY_4_legalcode.txt" style="color:var(--gold)">CC BY 4.0</a>. Oddscape’s clipping, resampling, source-priority mosaic, meshing and visual treatments are adaptations of these sources.</p>
+<p><a href="images/anglesey-v3-hi1420/sources-and-limitations.html" style="color:var(--gold)">Complete sources, survey credits, licences and limitations</a> · <a href="images/anglesey-v3-hi1420/CREDITS_AND_LICENCES.txt" style="color:var(--gold)">Companion attribution notice</a>. No provider endorses this model. Underlying licensed rights are preserved.</p>
+<p>The download packages include the unchanged model and its credits/licence notices; retain those notices with the model.</p>
+<div class="button-row"><a class="button" download="" href="images/anglesey-v3-hi1420/downloads/Anglesey_Archipelago_V3_HI1420_GLB_with_notices.zip">GLB + licence notices</a><a class="button" download="" href="images/anglesey-v3-hi1420/downloads/Anglesey_Archipelago_V3_HI1420_USDZ_with_notices.zip">USDZ + licence notices</a></div></section><section aria-label="Study metadata" class="meta">
+<div><span>Location</span><p>Ynys Môn / Anglesey, North Wales</p></div>
+<div><span>Terrain Model</span><p>Welsh Government 1 m DTM</p></div>
+<div><span>Outputs</span><p>V3 HI1420 terrain hillshade<br/>Interactive browser-based 3D<br/>GLB / USDZ downloads</p></div>
+<div><span>Use</span><p>Coastal landscape interpretation<br/>and terrestrial–marine visualisation</p></div>
 </section>
-
+<div class="button-row">
+<a class="button" href="images/anglesey-v3-hi1420/sources-and-limitations.html">Source licences &amp; credits</a>
+<a class="button" href="archive.html">Back to Archive</a>
+</div>
+</main>
+<section aria-label="Studio Work" class="archive-studio-link">
+<a href="studio-work.html">Explore the Creative Studio →</a>
+</section>
 <footer>
-
-
-
-  <div class="footer-text">
-    Terrain Visualisation • LiDAR Analysis<br>
+<div class="footer-text">
+    Terrain Visualisation • LiDAR Analysis<br/>
     3D Terrain Modelling • Immersive Landscape Interpretation • UK
   </div>
-
-  <div class="footer-copy">
+<div class="footer-copy">
     Terrain visualisations and interactive models shown on this site are
-    derived from publicly available geospatial, heritage and planetary datasets,
-    with sources credited on individual project pages.
+    derived from the credited terrestrial and marine datasets,
+    with their original source rights, credits and interpretation limits recorded on this page.
 
-    <br><br>
+    <br/><br/>
 
-    © Studio Oddscape MMXXVI — All Rights Reserved
+    © Studio Oddscape MMXXVI — presentation. Underlying data retain their respective licences.
   </div>
-
 </footer>
 </div>
 <script>
 /* Anglesey Archipelago terrain presentation. */
 </script>
-
-<!-- Cloudflare Web Analytics -->
-<script type='module'
-        src='https://static.cloudflareinsights.com/beacon.min.js'
-        data-cf-beacon='{"token": "51b75344f80f4950aa81517de7433366"}'>
+<script>
+function acceptAssetLicence() {
+  document.getElementById('licence-overlay').style.display = 'none';
+  document.getElementById('anglesey-viewer-gate').style.display = 'none';
+  document.getElementById('anglesey-viewer-container').style.display = 'block';
+}
 </script>
-<!-- End Cloudflare Web Analytics -->
-
-
-
-
-
 </body>
 </html>
-
